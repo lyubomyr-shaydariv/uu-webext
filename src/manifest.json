@@ -10,7 +10,7 @@
 	},
 	"background": {
 		"scripts": [
-			"modules.js",
+			"core.js",
 			"modules/fbclid.js",
 			"modules/gclid.js",
 			"modules/mailchimp.js",

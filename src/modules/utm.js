@@ -1,5 +1,4 @@
-(function() {
-
+registerModule(function() {
 	const utmParameters = [
 		"utm_campaign",
 		"utm_cid",
@@ -11,13 +10,11 @@
 		"utm_source",
 		"utm_term"
 	];
-
-	modules.push({
+	return {
 		redirect: function(url) {
 			for ( const utmParameter of utmParameters ) {
 				url.searchParams.delete(utmParameter);
 			}
 		}
-	});
-
-})();
+	};
+});

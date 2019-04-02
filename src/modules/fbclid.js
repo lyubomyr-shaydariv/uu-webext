@@ -1,9 +1,7 @@
-(function() {
-
-	modules.push({
+registerModule(function() {
+	return {
 		redirect: function(url) {
 			url.searchParams.delete("fbclid");
 		}
-	});
-
-})();
+	};
+});

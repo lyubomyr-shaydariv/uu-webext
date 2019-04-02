@@ -19,7 +19,7 @@
 	function redirect(url) {
 		const originalUrlString = url.toString();
 		let redirectUrl = url;
-		for ( const module of modules ) {
+		for ( const module of getModules() ) {
 			const redirectUrlCandidate = module.redirect(redirectUrl);
 			if ( redirectUrlCandidate ) {
 				redirectUrl = redirectUrlCandidate;
