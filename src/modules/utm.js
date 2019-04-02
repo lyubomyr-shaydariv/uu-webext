@@ -15,6 +15,9 @@ registerModule(function() {
 			for ( const utmParameter of utmParameters ) {
 				url.searchParams.delete(utmParameter);
 			}
+			url.hash = parseHashFromUrl(url)
+				.filter(e => utmParameters.indexOf(e[0]) === -1)
+				.reduce(toHashForUrl(), "");
 		}
 	};
 });
