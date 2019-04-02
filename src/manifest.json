@@ -16,8 +16,8 @@
 		]
 	},
 	"permissions": [
-		"https://www.evernote.com/OutboundRedirect.action?*",
-		"http://www.evernote.com/OutboundRedirect.action?*",
+		"http://*/*?*",
+		"https://*/*?*",
 		"webRequest",
 		"webRequestBlocking"
 	]

@@ -17,11 +17,15 @@
 	};
 
 	function redirect(url) {
+		let redirectUrl = url;
 		for ( const module of modules ) {
-			const redirectUrl = module.redirect(url);
-			if ( redirectUrl ) {
-				return redirectUrl;
+			const redirectUrlCandidate = module.redirect(redirectUrl);
+			if ( redirectUrlCandidate ) {
+				redirectUrl = redirectUrlCandidate;
 			}
+		}
+		if ( redirectUrl !== url ) {
+			return redirectUrl;
 		}
 	}
 
