@@ -1,1 +1,3 @@
-const modules = [];
+const modules = (function() {
+	return [];
+})();
