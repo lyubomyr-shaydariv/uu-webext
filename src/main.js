@@ -17,6 +17,7 @@
 	};
 
 	function redirect(url) {
+		const originalUrlString = url.toString();
 		let redirectUrl = url;
 		for ( const module of modules ) {
 			const redirectUrlCandidate = module.redirect(redirectUrl);
@@ -24,7 +25,7 @@
 				redirectUrl = redirectUrlCandidate;
 			}
 		}
-		if ( redirectUrl !== url ) {
+		if ( redirectUrl.toString() !== originalUrlString ) {
 			return redirectUrl;
 		}
 	}
@@ -33,7 +34,7 @@
 		const url = new URL(details.url);
 		const redirectUrl = redirect(url);
 		if ( redirectUrl ) {
-			return { redirectUrl };
+			return { redirectUrl: redirectUrl.toString() };
 		}
 	}, filter, ["blocking"]);
 
