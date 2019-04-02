@@ -1,0 +1,20 @@
+{
+	"name": "Just Let Me Go",
+	"version": "0",
+	"manifest_version": 2,
+	"author": "Lyubomyr Shaydariv",
+	"description": "Bypasses tracked redirects for some sites",
+	"icons" :{
+		"48" : "icon-48x48.png",
+		"128" : "icon-128x128.png"
+	},
+	"background": {
+		"scripts": [
+			"background.js"
+		]
+	},
+	"permissions": [
+		"webRequest",
+		"webRequestBlocking"
+	]
+}
