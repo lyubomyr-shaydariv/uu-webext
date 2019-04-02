@@ -10,7 +10,9 @@
 	},
 	"background": {
 		"scripts": [
-			"background.js"
+			"modules.js",
+			"modules/evernote.js",
+			"main.js"
 		]
 	},
 	"permissions": [
