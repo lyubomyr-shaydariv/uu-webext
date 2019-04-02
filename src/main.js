@@ -16,13 +16,20 @@
 		]
 	};
 
-	chrome.webRequest.onBeforeRequest.addListener(function(details) {
-		const url = new URL(details.url);
+	function redirect(url) {
 		for ( const module of modules ) {
 			const redirectUrl = module.redirect(url);
 			if ( redirectUrl ) {
-				return { redirectUrl };
+				return redirectUrl;
 			}
+		}
+	}
+
+	chrome.webRequest.onBeforeRequest.addListener(function(details) {
+		const url = new URL(details.url);
+		const redirectUrl = redirect(url);
+		if ( redirectUrl ) {
+			return { redirectUrl };
 		}
 	}, filter, ["blocking"]);
 
