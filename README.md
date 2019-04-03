@@ -7,6 +7,7 @@ The extesion:
     * UTM
 * bypasses tracking redirects:
     * Evernote
+    * Google
 
 Inspired by:
 
