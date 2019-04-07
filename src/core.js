@@ -19,7 +19,12 @@
 	}
 
 	function toHashForUrl() {
-		return (a, e) => `${a}${a.length === 0 ? "#" : "&"}${e[0]}=${e[1]}`;
+		return (a, e) => {
+			if ( typeof(e[1]) === "undefined" ) {
+				return `${a}${a.length === 0 ? "#" : "&"}${e[0]}`;
+			}
+			return `${a}${a.length === 0 ? "#" : "&"}${e[0]}=${e[1]}`;
+		};
 	}
 
 	global.getModules = getModules;
