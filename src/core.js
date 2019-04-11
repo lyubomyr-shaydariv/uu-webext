@@ -14,6 +14,10 @@
 			.map(kv => kv.split(/=/));
 	}
 
+	function parseSearchFromUrl(url) {
+		return Array.from(url.searchParams.entries());
+	}
+
 	function registerModule(createModule) {
 		modules.push(createModule());
 	}
@@ -27,9 +31,20 @@
 		};
 	}
 
+	function toSearchForUrl() {
+		return (a, e) => {
+			if ( typeof(e[1]) === "undefined" || e[1] === "" ) {
+				return `${a}${a.length === 0 ? "?" : "&"}${e[0]}`;
+			}
+			return `${a}${a.length === 0 ? "?" : "&"}${e[0]}=${e[1]}`;
+		};
+	}
+
 	global.getModules = getModules;
 	global.parseHashFromUrl = parseHashFromUrl;
+	global.parseSearchFromUrl = parseSearchFromUrl;
 	global.registerModule = registerModule;
 	global.toHashForUrl = toHashForUrl;
+	global.toSearchForUrl = toSearchForUrl;
 
 })(this);
