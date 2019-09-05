@@ -25,18 +25,18 @@
 	function toHashForUrl() {
 		return (a, e) => {
 			if ( typeof(e[1]) === "undefined" ) {
-				return `${a}${a.length === 0 ? "#" : "&"}${e[0]}`;
+				return `${a}${a.length === 0 ? "#" : "&"}${encodeURIComponent(e[0])}`;
 			}
-			return `${a}${a.length === 0 ? "#" : "&"}${e[0]}=${e[1]}`;
+			return `${a}${a.length === 0 ? "#" : "&"}${encodeURIComponent(e[0])}=${encodeURIComponent(e[1])}`;
 		};
 	}
 
 	function toSearchForUrl() {
 		return (a, e) => {
 			if ( typeof(e[1]) === "undefined" || e[1] === "" ) {
-				return `${a}${a.length === 0 ? "?" : "&"}${e[0]}`;
+				return `${a}${a.length === 0 ? "?" : "&"}${encodeURIComponent(e[0])}`;
 			}
-			return `${a}${a.length === 0 ? "?" : "&"}${e[0]}=${e[1]}`;
+			return `${a}${a.length === 0 ? "?" : "&"}${encodeURIComponent(e[0])}=${encodeURIComponent(e[1])}`;
 		};
 	}
 
