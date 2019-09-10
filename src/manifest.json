@@ -3,7 +3,7 @@
 	"version": "0",
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
-	"description": "Strips Facebook Click ID, Google Click ID, MailChimp, and UTM tracking parameters, and bypasses tracking redirects from Evernote, Google",
+	"description": "Strips Facebook Click ID, Google Click ID, Instagram Share ID, MailChimp, and UTM tracking parameters, and bypasses tracking redirects from Evernote, Google",
 	"icons" :{
 		"48" : "icon-48x48.png",
 		"128" : "icon-128x128.png"
@@ -13,6 +13,7 @@
 			"core.js",
 			"modules/fbclid.js",
 			"modules/gclid.js",
+			"modules/igshid.js",
 			"modules/mailchimp.js",
 			"modules/utm.js",
 			"modules/evernote.js",

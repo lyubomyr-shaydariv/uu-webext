@@ -3,6 +3,7 @@ The extesion:
 * removes tracking parameters:
     * Facebook Click ID
     * Google Click ID
+    * Instagram Share ID
     * MailChimp
     * UTM
 * bypasses tracking redirects:
