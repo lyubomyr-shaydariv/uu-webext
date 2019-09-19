@@ -8,6 +8,7 @@ The extesion:
     * UTM
 * bypasses tracking redirects:
     * Evernote
+    * Facebook
     * Google
 
 Inspired by:
