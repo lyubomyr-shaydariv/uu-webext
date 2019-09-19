@@ -10,6 +10,7 @@ The extesion:
     * Evernote
     * Facebook
     * Google
+    * VK
 
 Inspired by:
 
