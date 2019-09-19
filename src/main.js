@@ -1,5 +1,7 @@
 (function() {
 
+	const MAX_LOOPS = 10;
+
 	const filter = {
 		urls: chrome.runtime.getManifest()
 			.permissions
@@ -17,15 +19,22 @@
 	};
 
 	function redirect(url) {
-		const originalUrlString = url.toString();
-		let redirectUrl = url;
-		for ( const module of getModules() ) {
-			const redirectUrlCandidate = module.redirect(redirectUrl);
-			if ( redirectUrlCandidate ) {
-				redirectUrl = redirectUrlCandidate;
+		let redirectUrl = new URL(url);
+main:
+		for ( let i = 0; i < MAX_LOOPS; i++ ) {
+			const thisLoopRedirectUrl = redirectUrl.toString();
+			for ( const module of getModules() ) {
+				const maybeRedirectUrl = module.redirect(redirectUrl);
+				if ( maybeRedirectUrl ) {
+					redirectUrl = maybeRedirectUrl;
+				}
+			}
+			if ( thisLoopRedirectUrl === redirectUrl.toString() ) {
+				break main;
 			}
 		}
-		if ( redirectUrl.toString() !== originalUrlString ) {
+		if ( redirectUrl.toString() !== url.toString() ) {
+			console.log("REDIRECT: " + url + " => " + redirectUrl, url, redirectUrl);
 			return redirectUrl;
 		}
 	}
