@@ -1,10 +1,11 @@
 registerModule(function() {
-	const urlParameters = new Set(["fbclid"]);
+	function isSafeKeyPair(k, v) {
+		return k !== "fbclid";
+	};
 	return {
 		redirect: function(url) {
-			url.search = parseSearchFromUrl(url)
-				.filter(e => !urlParameters.has(e[0]))
-				.reduce(toSearchForUrl(), "");
+			url.search = removeSearchPair(url.search, isSafeKeyPair);
+			url.hash = removeHashPair(url.hash, isSafeKeyPair);
 		}
 	};
 });

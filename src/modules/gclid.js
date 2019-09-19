@@ -1,10 +1,11 @@
 registerModule(function() {
-	const urlParameters = new Set(["gclid"]);
+	function isSafeKeyPair(k, v) {
+		return k !== "gclid";
+	};
 	return {
 		redirect: function(url) {
-			url.search = parseSearchFromUrl(url)
-				.filter(e => !urlParameters.has(e[0]))
-				.reduce(toSearchForUrl(), "");
+			url.search = removeSearchPair(url.search, isSafeKeyPair);
+			url.hash = removeHashPair(url.hash, isSafeKeyPair);
 		}
 	};
 });
