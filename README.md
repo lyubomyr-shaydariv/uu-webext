@@ -9,7 +9,7 @@ The extesion:
 * bypasses tracking redirects:
     * Evernote
     * Facebook
-    * Google
+    * Google (including AMP)
     * Reddit
     * VK
 
