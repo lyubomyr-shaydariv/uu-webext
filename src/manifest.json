@@ -3,7 +3,7 @@
 	"version": "0",
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
-	"description": "Strips Facebook Click ID, Google Click ID, Instagram Share ID, MailChimp, and UTM tracking parameters, and bypasses tracking redirects from Evernote, Facebook, Google (including AMP), Reddit, and VK",
+	"description": "Strips Facebook Click ID, Google Click ID, Instagram Share ID, MailChimp, and UTM tracking parameters, and bypasses tracking redirects from Evernote, Facebook, Google (including AMP), Medium, Reddit, and VK",
 	"icons" :{
 		"48" : "icon-48x48.png",
 		"128" : "icon-128x128.png"
@@ -19,6 +19,7 @@
 			"modules/utm.js",
 			"modules/evernote.js",
 			"modules/google.js",
+			"modules/medium.js",
 			"modules/reddit.js",
 			"modules/vk.js",
 			"main.js"
