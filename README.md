@@ -13,6 +13,7 @@ The extesion:
     * Medium
     * Reddit
     * VK
+* warns click trackers:
 
 Inspired by:
 

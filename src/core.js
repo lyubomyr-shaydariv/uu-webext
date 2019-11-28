@@ -8,6 +8,10 @@
 		}
 	};
 
+	global.getRedirectToWarningPage = function(url) {
+		return new URL("chrome-extension://" + chrome.runtime.id + "/warn.html?url=" + encodeURIComponent(url));
+	};
+
 	global.registerModule = function(createModule) {
 		modules.push(createModule());
 	};
