@@ -14,6 +14,7 @@ The extesion:
     * Reddit
     * VK
 * warns click trackers:
+    * Mandrill
 
 Inspired by:
 
