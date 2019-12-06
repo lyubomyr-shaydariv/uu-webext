@@ -6,6 +6,7 @@ The extesion:
     * Instagram Share ID
     * MailChimp
     * UTM
+    * Yandex Click ID
 * bypasses tracking redirects:
     * Evernote
     * Facebook
