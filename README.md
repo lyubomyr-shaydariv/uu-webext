@@ -2,6 +2,7 @@ The extesion:
 
 * removes tracking parameters:
     * Facebook Click ID
+    * Google Analytics
     * Google Click ID
     * Instagram Share ID
     * MailChimp
