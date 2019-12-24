@@ -40,6 +40,9 @@ main:
 	}
 
 	chrome.webRequest.onBeforeRequest.addListener(function(details) {
+		if ( details.initiator && details.initiator.startsWith("chrome-extension://" + chrome.runtime.id) ) {
+			return;
+		}
 		const url = new URL(details.url);
 		const redirectUrl = redirect(url);
 		if ( redirectUrl ) {
