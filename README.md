@@ -12,6 +12,7 @@ The extesion:
     * Evernote
     * Facebook
     * Google (including AMP)
+    * Instagram
     * Medium
     * Reddit
     * VK
