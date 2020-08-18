@@ -1,4 +1,4 @@
-The extesion:
+The extension:
 
 * removes tracking parameters:
     * Facebook Click ID
@@ -18,7 +18,7 @@ The extesion:
     * VK
 * warns click trackers:
     * Mandrill
-* redirects to :
+* redirects to:
     * the old version of Reddit ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for))
 
 Inspired by:
