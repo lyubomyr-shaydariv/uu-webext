@@ -25,6 +25,7 @@
 			"modules/mandrill.js",
 			"modules/medium.js",
 			"modules/reddit.js",
+			"modules/tumblr.js",
 			"modules/vk.js",
 			"modules/yclid.js",
 			"main.js"

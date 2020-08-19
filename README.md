@@ -15,6 +15,7 @@ The extension:
     * Instagram
     * Medium
     * Reddit
+    * Tumblr
     * VK
 * warns click trackers:
     * Mandrill
