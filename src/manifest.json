@@ -28,6 +28,7 @@
 			"modules/tumblr.js",
 			"modules/vk.js",
 			"modules/yclid.js",
+			"modules/youtube.js",
 			"main.js"
 		]
 	},

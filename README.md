@@ -18,6 +18,7 @@ The extension:
     * Reddit
     * Tumblr
     * VK
+    * YouTube
 * redirects to:
     * the old version of Reddit ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for))
 
