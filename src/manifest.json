@@ -26,6 +26,7 @@
 			"modules/medium.js",
 			"modules/reddit.js",
 			"modules/tumblr.js",
+			"modules/twitter.js",
 			"modules/vk.js",
 			"modules/yclid.js",
 			"modules/youtube.js",

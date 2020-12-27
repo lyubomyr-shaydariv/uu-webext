@@ -6,6 +6,7 @@ The extension:
     * ![google](favicons/google.png) Google Click ID
     * ![instagram](favicons/instagram.png) Instagram Share ID
     * ![mailchimp](favicons/mailchimp.png) MailChimp
+    * ![twitter](favicons/twitter.png) Twitter
     * UTM
     * ![yandex](favicons/yandex.png) Yandex Click ID
 * bypasses tracking redirects:
