@@ -10,7 +10,7 @@
 					new URL(permission);
 					return true;
 				} catch ( err ) {
-					return false;
+					return false || permission === "<all_urls>";
 				}
 			}),
 		types: [
