@@ -16,7 +16,7 @@ The extension:
 	* ![instagram](favicons/instagram.png) Instagram
 	* ![mandrill](favicons/mandrill.png) Mandrill
 	* ![medium](favicons/medium.png) Medium
-	* ![reddit](favicons/reddit.png) Reddit
+	* ![reddit](favicons/reddit.png) Reddit (including AMP)
 	* ![tumblr](favicons/tumblr.png) Tumblr
 	* ![vk](favicons/vk.png) VK
 	* ![youtube](favicons/youtube.png) YouTube
