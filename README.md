@@ -1,25 +1,25 @@
 The extension:
 
 * removes tracking parameters:
-	* ![facebook](favicons/facebook.png) Facebook Click ID
-	* ![google-analytics](favicons/google-analytics.png) Google Analytics
-	* ![google](favicons/google.png) Google Click ID
-	* ![instagram](favicons/instagram.png) Instagram Share ID
-	* ![mailchimp](favicons/mailchimp.png) MailChimp
-	* ![twitter](favicons/twitter.png) Twitter
+	* ![facebook](favicons/facebook.com.png) Facebook Click ID
+	* ![google-analytics](favicons/accounts.google.com.png) Google Analytics
+	* ![google](favicons/google.com.png) Google Click ID
+	* ![instagram](favicons/instagram.com.png) Instagram Share ID
+	* ![mailchimp](favicons/mailchimp.com.png) MailChimp
+	* ![twitter](favicons/twitter.com.png) Twitter
 	* UTM
-	* ![yandex](favicons/yandex.png) Yandex Click ID
+	* ![yandex](favicons/yandex.ru.png) Yandex Click ID
 * bypasses tracking redirects:
-	* ![evernote](favicons/evernote.png) Evernote
-	* ![facebook](favicons/facebook.png) Facebook
-	* ![google](favicons/google.png) Google (including AMP)
-	* ![instagram](favicons/instagram.png) Instagram
-	* ![mandrill](favicons/mandrill.png) Mandrill
-	* ![medium](favicons/medium.png) Medium
-	* ![reddit](favicons/reddit.png) Reddit (including AMP)
-	* ![tumblr](favicons/tumblr.png) Tumblr
-	* ![vk](favicons/vk.png) VK
-	* ![youtube](favicons/youtube.png) YouTube
+	* ![evernote](favicons/evernote.com.png) Evernote
+	* ![facebook](favicons/facebook.com.png) Facebook
+	* ![google](favicons/google.com.png) Google (including AMP)
+	* ![instagram](favicons/instagram.com.png) Instagram
+	* ![mandrill](favicons/mandrillapp.com.png) Mandrill
+	* ![medium](favicons/medium.com.png) Medium
+	* ![reddit](favicons/reddit.com.png) Reddit (including AMP)
+	* ![tumblr](favicons/tumblr.com.png) Tumblr
+	* ![vk](favicons/vk.com.png) VK
+	* ![youtube](favicons/youtube.com.png) YouTube
 * redirects to:
 	* the old version of Reddit ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for))
 
