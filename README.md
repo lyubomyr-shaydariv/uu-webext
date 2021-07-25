@@ -2,7 +2,7 @@ The extension:
 
 * removes tracking parameters:
 	* ![facebook](favicons/facebook.com.png) Facebook Click ID
-	* ![google-analytics](favicons/accounts.google.com.png) Google Analytics
+	* ![google-analytics](favicons/analytics.google.com.png) Google Analytics
 	* ![google](favicons/google.com.png) Google Click ID
 	* ![instagram](favicons/instagram.com.png) Instagram Share ID
 	* ![mailchimp](favicons/mailchimp.com.png) MailChimp
