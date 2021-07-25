@@ -13,10 +13,11 @@ while read -r DOMAIN; do
 		mv "$BASE_DIR/$DOMAIN" "$BASE_DIR/$DOMAIN.png"
 		;;
 	*)
-		echo "TODO: $BASE_DIR/$DOMAIN is not a PNG" >&2
-		exit 1
+		echo "$BASE_DIR/$DOMAIN is not a PNG" >&2
+		echo 'ERROR'
+		continue
 		;;
 	esac
 	echo 'OK'
 done < <(find "$BASE_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.png' -printf "%f\n")
-echo 'done!'
+echo 'done!' >&2
