@@ -18,6 +18,7 @@
 			"modules/evernote.js",
 			"modules/facebook.js",
 			"modules/google.js",
+			"modules/hubspot.js",
 			"modules/humblebundle.js",
 			"modules/instagram.js",
 			"modules/mailchimp.js",
