@@ -1,6 +1,6 @@
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !== "sc_cid";
+		return k !== "sc_cid" && k !== "mkt_tok";
 	};
 	return {
 		redirect: function(url) {
