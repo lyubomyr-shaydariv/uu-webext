@@ -1,28 +1,18 @@
-The extension:
+The browser extension sanitizes **tracked URLs** and **tracked redirects/pages** for the following services:
 
-* removes tracking parameters:
-	* ![facebook](favicons/facebook.com.png) Facebook Click ID
-	* ![google-analytics](favicons/analytics.google.com.png) Google Analytics
-	* ![google](favicons/google.com.png) Google Click ID
-	* ![instagram](favicons/instagram.com.png) Instagram Share ID
-	* ![mailchimp](favicons/mailchimp.com.png) MailChimp
-	* ![twitter](favicons/twitter.com.png) Twitter
-	* UTM
-	* ![yandex](favicons/yandex.ru.png) Yandex Click ID
-* bypasses tracking redirects:
-	* ![evernote](favicons/evernote.com.png) Evernote
-	* ![facebook](favicons/facebook.com.png) Facebook
-	* ![google](favicons/google.com.png) Google (including AMP)
-	* ![instagram](favicons/instagram.com.png) Instagram
-	* ![mandrill](favicons/mandrillapp.com.png) Mandrill
-	* ![medium](favicons/medium.com.png) Medium
-	* ![reddit](favicons/reddit.com.png) Reddit (including AMP)
-	* ![tumblr](favicons/tumblr.com.png) Tumblr
-	* ![vk](favicons/vk.com.png) VK
-	* ![youtube](favicons/youtube.com.png) YouTube
-* redirects to:
-	* the old version of Reddit ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for))
+* ![evernote](favicons/evernote.com.png) Evernote (redirects)
+* ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
+* ![google](favicons/google.com.png) Google (URLs, redirects including AMP)
+* ![instagram](favicons/instagram.com.png) Instagram (URLs)
+* ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
+* ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
+* ![medium](favicons/medium.com.png) Medium (redirects)
+* ![reddit](favicons/reddit.com.png) Reddit (redirects including AMP + suppresses the new version of Reddit by redirecting to the old version ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for)))
+* ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
+* ![twitter](favicons/twitter.com.png) Twitter (redirects)
+* Urchin Tracking Module (URLs)
+* ![vk](favicons/vk.com.png) VK (redirects)
+* ![yandex](favicons/yandex.ru.png) Yandex (URLs)
+* ![youtube](favicons/youtube.com.png) YouTube (redirects)
 
-Inspired by:
-
-* [Tracking Token Stripper](https://github.com/jparise/chrome-utm-stripper) by Jon Parise.
+Inspired by [Tracking Token Stripper](https://github.com/jparise/chrome-utm-stripper) by Jon Parise.

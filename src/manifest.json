@@ -14,11 +14,7 @@
 			"core.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
-			"modules/fbclid.js",
-			"modules/ga.js",
-			"modules/gclid.js",
 			"modules/google.js",
-			"modules/igshid.js",
 			"modules/instagram.js",
 			"modules/mailchimp.js",
 			"modules/mandrill.js",
@@ -28,7 +24,7 @@
 			"modules/twitter.js",
 			"modules/utm.js",
 			"modules/vk.js",
-			"modules/yclid.js",
+			"modules/yandex.js",
 			"modules/youtube.js",
 			"main.js"
 		]
