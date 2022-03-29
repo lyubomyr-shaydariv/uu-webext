@@ -1,6 +1,6 @@
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !== "yclid";
+		return k !== "yclid" && k !== "_openstat";
 	};
 	return {
 		redirect: function(url) {
