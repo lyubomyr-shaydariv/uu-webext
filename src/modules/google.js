@@ -27,7 +27,7 @@ registerModule(function() {
 });
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !== "_ga" && k !== "gclid";
+		return k !== "_ga" && k !== "gclid" && !k.startsWith("ga_");
 	};
 	return {
 		redirect: function(url) {
