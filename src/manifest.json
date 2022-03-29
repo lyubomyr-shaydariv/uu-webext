@@ -22,6 +22,7 @@
 			"modules/google.js",
 			"modules/hubspot.js",
 			"modules/humblebundle.js",
+			"modules/ibm.js",
 			"modules/instagram.js",
 			"modules/mailchimp.js",
 			"modules/mandrill.js",

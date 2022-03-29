@@ -10,6 +10,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![google](favicons/google.com.png) Google (URLs, redirects including AMP)
 * ![hubspot](favicons/hubspot.com.png) HubSpot (URLs)
 * ![humblebundle](favicons/humblebundle.com.png) Humble Bundle (URLs)
+* ![ibm](favicons/ibm.com.png) IBM (URLs)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs)
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
