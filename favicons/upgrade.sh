@@ -9,13 +9,19 @@ for DOMAIN in $@; do
 	echo "processing $DOMAIN... " >&2
 	TEMP_FILE="$BASE_DIR/$DOMAIN"
 	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$TEMP_FILE"
-	case "$(file "$TEMP_FILE")" in
+	FILE_TYPE="$(file "$TEMP_FILE")"
+	case "$FILE_TYPE" in
+	*'JPEG image data'*)
+		mogrify -strip "$TEMP_FILE"
+		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.jpg"
+		;;
 	*'PNG image data'*)
 		mogrify -strip "$TEMP_FILE"
 		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.png"
 		;;
 	*)
-		echo "$BASE_DIR/$DOMAIN is not a PNG" >&2
+		echo "cannot determine file type of $BASE_DIR/$DOMAIN" >&2
+		echo "$FILE_TYPE" >&2
 		continue
 		;;
 	esac

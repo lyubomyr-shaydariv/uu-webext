@@ -14,6 +14,7 @@
 			"core.js",
 			"modules/actionmap.js",
 			"modules/adobe.js",
+			"modules/aliexpress.js",
 			"modules/at.js",
 			"modules/dpgmediagroup.js",
 			"modules/evernote.js",
