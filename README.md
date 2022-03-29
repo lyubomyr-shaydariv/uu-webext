@@ -14,6 +14,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitter](favicons/twitter.com.png) Twitter (redirects)
 * Urchin Tracking Module (URLs)
+* ![vero](favicons/www.getvero.com.png) Vero (URLs)
 * ![vk](favicons/vk.com.png) VK (redirects)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
 * ![youtube](favicons/youtube.com.png) YouTube (redirects)

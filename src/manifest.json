@@ -26,6 +26,7 @@
 			"modules/tumblr.js",
 			"modules/twitter.js",
 			"modules/utm.js",
+			"modules/vero.js",
 			"modules/vk.js",
 			"modules/yandex.js",
 			"modules/youtube.js",
