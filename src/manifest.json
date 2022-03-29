@@ -20,6 +20,7 @@
 			"modules/instagram.js",
 			"modules/mailchimp.js",
 			"modules/mandrill.js",
+			"modules/matomo.js",
 			"modules/medium.js",
 			"modules/reddit.js",
 			"modules/tumblr.js",
