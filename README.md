@@ -15,6 +15,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![medium](favicons/medium.com.png) Medium (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects including AMP + suppresses the new version of Reddit by redirecting to the old version ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for)))
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
+* ![twitch](favicons/twitch.tv.png) Twitch (URLs)
 * ![twitter](favicons/twitter.com.png) Twitter (redirects)
 * Urchin Tracking Module (URLs)
 * ![vero](favicons/www.getvero.com.png) Vero (URLs)
