@@ -17,6 +17,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects including AMP + suppresses the new version of Reddit by redirecting to the old version ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for)))
+* SC (URLs)
 * STM (URLs)
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)
