@@ -28,6 +28,7 @@
 			"modules/mandrill.js",
 			"modules/matomo.js",
 			"modules/medium.js",
+			"modules/ns.js",
 			"modules/reddit.js",
 			"modules/sc.js",
 			"modules/stm.js",
