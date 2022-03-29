@@ -12,6 +12,7 @@
 	"background": {
 		"scripts": [
 			"core.js",
+			"modules/adobe.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
 			"modules/google.js",
