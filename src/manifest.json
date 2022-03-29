@@ -13,6 +13,7 @@
 		"scripts": [
 			"core.js",
 			"modules/adobe.js",
+			"modules/dpgmediagroup.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
 			"modules/google.js",
