@@ -36,6 +36,7 @@
 			"modules/yahoo.js",
 			"modules/yandex.js",
 			"modules/youtube.js",
+			"modules/zeit.js",
 			"main.js"
 		]
 	},

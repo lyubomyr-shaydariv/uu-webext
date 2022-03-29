@@ -24,5 +24,6 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
 * ![youtube](favicons/youtube.com.png) YouTube (redirects)
+* ![zeit](favicons/zeit.de.png) Zeit (URLs)
 
 Inspired by [Tracking Token Stripper](https://github.com/jparise/chrome-utm-stripper) by Jon Parise.
