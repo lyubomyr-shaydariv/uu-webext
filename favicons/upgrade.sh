@@ -4,9 +4,9 @@ set -e
 
 BASE_DIR="$(dirname "$0")"
 
-while read -r DOMAIN; do
+for DOMAIN in $@; do
 	DOMAIN="${DOMAIN%.*}"
-	echo -n "processing $DOMAIN... "
+	echo "processing $DOMAIN... " >&2
 	TEMP_FILE="$BASE_DIR/$DOMAIN"
 	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$TEMP_FILE"
 	case "$(file "$TEMP_FILE")" in
@@ -16,10 +16,7 @@ while read -r DOMAIN; do
 		;;
 	*)
 		echo "$BASE_DIR/$DOMAIN is not a PNG" >&2
-		echo 'ERROR'
 		continue
 		;;
 	esac
-	echo 'OK'
-done < <(find "$BASE_DIR" -mindepth 1 -maxdepth 1 -type f -name '*.png' -printf "%f\n")
-echo 'done!' >&2
+done
