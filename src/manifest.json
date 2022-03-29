@@ -24,6 +24,7 @@
 			"modules/humblebundle.js",
 			"modules/ibm.js",
 			"modules/instagram.js",
+			"modules/itm.js",
 			"modules/mailchimp.js",
 			"modules/mandrill.js",
 			"modules/matomo.js",
