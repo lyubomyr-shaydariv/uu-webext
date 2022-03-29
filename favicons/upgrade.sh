@@ -11,6 +11,7 @@ while read -r DOMAIN; do
 	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$TEMP_FILE"
 	case "$(file "$TEMP_FILE")" in
 	*'PNG image data'*)
+		mogrify -strip "$TEMP_FILE"
 		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.png"
 		;;
 	*)
