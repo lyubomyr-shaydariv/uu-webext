@@ -9,7 +9,7 @@ registerModule(function() {
 });
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !== "fbclid";
+		return k !== "fbclid" && k !== "fb_action_ids" && k !== "fb_action_types" && k !== "fb_ref" && k !== "fb_source";
 	};
 	return {
 		redirect: function(url) {
