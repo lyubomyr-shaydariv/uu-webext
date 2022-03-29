@@ -12,6 +12,7 @@
 	"background": {
 		"scripts": [
 			"core.js",
+			"modules/actionmap.js",
 			"modules/adobe.js",
 			"modules/at.js",
 			"modules/dpgmediagroup.js",

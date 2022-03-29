@@ -1,5 +1,6 @@
 The browser extension sanitizes **tracked URLs** and **tracked redirects/pages** for the following services:
 
+* Action Map (URLs)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * AT (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
