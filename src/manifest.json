@@ -12,6 +12,7 @@
 	"background": {
 		"scripts": [
 			"core.js",
+			"modules/_.js",
 			"modules/actionmap.js",
 			"modules/adobe.js",
 			"modules/aliexpress.js",
