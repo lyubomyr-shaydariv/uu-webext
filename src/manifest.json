@@ -29,6 +29,7 @@
 			"modules/matomo.js",
 			"modules/medium.js",
 			"modules/reddit.js",
+			"modules/stm.js",
 			"modules/tumblr.js",
 			"modules/twitch.js",
 			"modules/twitter.js",
