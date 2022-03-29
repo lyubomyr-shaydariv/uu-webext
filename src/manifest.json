@@ -33,6 +33,7 @@
 			"modules/utm.js",
 			"modules/vero.js",
 			"modules/vk.js",
+			"modules/yahoo.js",
 			"modules/yandex.js",
 			"modules/youtube.js",
 			"main.js"
