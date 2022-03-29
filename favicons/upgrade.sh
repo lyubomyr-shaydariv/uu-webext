@@ -7,10 +7,11 @@ BASE_DIR="$(dirname "$0")"
 while read -r DOMAIN; do
 	DOMAIN="${DOMAIN%.*}"
 	echo -n "processing $DOMAIN... "
-	curl --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$BASE_DIR/$DOMAIN"
-	case "$(file "$BASE_DIR/$DOMAIN")" in
+	TEMP_FILE="$BASE_DIR/$DOMAIN"
+	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$TEMP_FILE"
+	case "$(file "$TEMP_FILE")" in
 	*'PNG image data'*)
-		mv "$BASE_DIR/$DOMAIN" "$BASE_DIR/$DOMAIN.png"
+		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.png"
 		;;
 	*)
 		echo "$BASE_DIR/$DOMAIN is not a PNG" >&2
