@@ -1,6 +1,6 @@
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !==  "c_id" && k !==  "campaign_id" && k !==  "cmpid" && k !==  "mbid" && k !==  "ncid";
+		return k !== "c_id" && k !== "campaign_id" && k !== "cmpid" && k !== "mbid" && k !== "ncid" && k !== "rb_clickid";
 	};
 	return {
 		redirect: function(url) {
