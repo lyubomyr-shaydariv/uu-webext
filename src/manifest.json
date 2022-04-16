@@ -27,6 +27,7 @@
 			"modules/instagram.js",
 			"modules/itm.js",
 			"modules/mailchimp.js",
+			"modules/mailerlite.js",
 			"modules/mandrill.js",
 			"modules/matomo.js",
 			"modules/medium.js",
