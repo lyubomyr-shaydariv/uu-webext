@@ -1,6 +1,6 @@
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
-		return k !== "_hsenc" && k !== "_hsmi" && k !== "__hssc" && k !== "__hstc" && k !== "hsCtaTracking";
+		return k !== "_hsenc" && k !== "_hsmi" && k !== "__hsfp" && k !== "__hssc" && k !== "__hstc" && k !== "hsCtaTracking";
 	};
 	return {
 		redirect: function(url) {
