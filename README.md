@@ -17,6 +17,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
+* ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
 * NS (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)

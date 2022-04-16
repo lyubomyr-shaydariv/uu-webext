@@ -30,6 +30,7 @@
 			"modules/mandrill.js",
 			"modules/matomo.js",
 			"modules/medium.js",
+			"modules/microsoft.js",
 			"modules/ns.js",
 			"modules/omeda.js",
 			"modules/oracle.js",
