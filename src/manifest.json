@@ -44,6 +44,7 @@
 			"modules/utm.js",
 			"modules/vero.js",
 			"modules/vk.js",
+			"modules/wickedreports.js",
 			"modules/yahoo.js",
 			"modules/yandex.js",
 			"modules/youtube.js",

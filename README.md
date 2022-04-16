@@ -31,6 +31,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * Urchin Tracking Module (URLs)
 * ![vero](favicons/www.getvero.com.png) Vero (URLs)
 * ![vk](favicons/vk.com.png) VK (redirects)
+* ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
 * ![youtube](favicons/youtube.com.png) YouTube (redirects)
