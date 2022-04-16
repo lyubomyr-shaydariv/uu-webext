@@ -17,6 +17,7 @@
 			"modules/adobe.js",
 			"modules/aliexpress.js",
 			"modules/at.js",
+			"modules/drip.js",
 			"modules/dpgmediagroup.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
