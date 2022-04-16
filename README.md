@@ -33,5 +33,3 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![youtube](favicons/youtube.com.png) YouTube (redirects)
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
-
-Inspired by [Tracking Token Stripper](https://github.com/jparise/chrome-utm-stripper) by Jon Parise.
