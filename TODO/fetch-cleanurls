@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+curl https://rules2.clearurls.xyz/data.minify.json \
+	| jq --raw-output --sort-keys . \
+	> .cleanurls.json
