@@ -28,6 +28,7 @@
 			"modules/ibm.js",
 			"modules/instagram.js",
 			"modules/itm.js",
+			"modules/linkedin.js",
 			"modules/mailchimp.js",
 			"modules/mailerlite.js",
 			"modules/mandrill.js",
