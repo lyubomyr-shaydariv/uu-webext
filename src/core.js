@@ -43,10 +43,12 @@
 		}
 	};
 
-	global.cleanHashPairs = function(hash, filter) {
-		if ( hash && hash !== "#" ) {
-			hash = hash.replace(/([#&]([^=&]+)(?:=([^#&]*))?)/g, function(match, _, k, v) {
-				return filter(k, [v]) ? match : "";
+	const hashPairsRx = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
+
+	global.parseAndCleanHashPairs = function(hash, filter) {
+		if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
+			hash = hash.replace(hashPairsRx, function(match, _, key, value) {
+				return filter(key, [value]) ? match : "";
 			});
 			if ( hash.startsWith("&") ) {
 				hash = "#" + hash.substring(1);
@@ -61,7 +63,7 @@
 
 	global.cleanSearchAndHashPairs = function(url, filter) {
 		cleanSearchParams(url.searchParams, filter);
-		url.hash = cleanHashPairs(url.hash, filter);
+		url.hash = parseAndCleanHashPairs(url.hash, filter);
 	};
 
 })(this);
