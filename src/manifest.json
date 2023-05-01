@@ -19,6 +19,7 @@
 			"modules/amazon.js",
 			"modules/at.js",
 			"modules/bing.js",
+			"modules/changeorg.js",
 			"modules/drip.js",
 			"modules/dpgmediagroup.js",
 			"modules/duckduckgo.js",

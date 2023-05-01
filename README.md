@@ -6,6 +6,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![amazon](favicons/amazon.com.png) Amazon (URLs)
 * AT (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
+* ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![drip](favicons/drip.com.png) Drip (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
 * ![duckduckgo](favicons/duckduckgo.com.png) DuckDuckGo (redirects)
