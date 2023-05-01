@@ -30,6 +30,7 @@
 			"modules/hubspot.js",
 			"modules/humblebundle.js",
 			"modules/ibm.js",
+			"modules/imdb.js",
 			"modules/instagram.js",
 			"modules/itm.js",
 			"modules/linkedin.js",

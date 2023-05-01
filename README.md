@@ -17,6 +17,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![hubspot](favicons/hubspot.com.png) HubSpot (URLs)
 * ![humblebundle](favicons/humblebundle.com.png) Humble Bundle (URLs)
 * ![ibm](favicons/ibm.com.png) IBM (URLs)
+* ![imdb](favicons/imdb.com.png) IMDb (URLs and redirects)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
 * `itm_...` (URLs)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
