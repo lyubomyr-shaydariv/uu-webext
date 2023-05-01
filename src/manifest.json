@@ -44,6 +44,7 @@
 			"modules/oracle.js",
 			"modules/reddit.js",
 			"modules/sc.js",
+			"modules/sourceforge.js",
 			"modules/spotify.js",
 			"modules/stm.js",
 			"modules/tiktok.js",
