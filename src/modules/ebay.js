@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "_trkparms" && k !== "_trksid" && k !== "amdata" && k !== "epid" && k !== "hash" && k !== "var";
 	};
 	const domainRx = /^(?:[^.]+\.)?ebay\.[^.]+$/;

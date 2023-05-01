@@ -20,7 +20,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "cxt" && k !== "s" && k !== "t" && !k.startsWith("ref_");
 	};
 	return {
@@ -32,7 +32,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "twclid";
 	};
 	return {

@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "mc_cid" && k !== "mc_eid";
 	};
 	return {

@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "spJobID" && k !== "spMailingID" && k !== "spReportId" && k !== "spUserID";
 	};
 	return {

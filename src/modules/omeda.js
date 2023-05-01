@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "oly_anon_id" && k !== "oly_enc_id";
 	};
 	return {

@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "wt_mc" && k !== "wt_zmc";
 	};
 	return {

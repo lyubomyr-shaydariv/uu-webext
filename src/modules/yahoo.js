@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "guccounter";
 	};
 	const domainRx = /^(?:[^.]+\.)?yahoo\.[^.]+$/;
@@ -12,7 +12,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "soc_src" && k !== "soc_trk";
 	};
 	return {

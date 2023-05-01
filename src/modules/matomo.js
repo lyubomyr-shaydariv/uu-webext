@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return !k.startsWith("mtm_") && !k.startsWith("pk_");
 	};
 	return {

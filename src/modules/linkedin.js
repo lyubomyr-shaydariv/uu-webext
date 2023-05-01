@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "eBP" && k !== "lgCta" && k !== "lgTemp" && k !== "lipi" && k !== "midSig" && k !== "midToken" && k !== "recommendedFlavor" && k !== "refId" && k !== "trackingId" && k !== "trk" && k !== "trkEmail";
 	};
 	return {

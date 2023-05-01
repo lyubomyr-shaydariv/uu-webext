@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "_encoding" && k !== "ascsubtag" && k !== "pd_rd_*" && k !== "pf" && k !== "pf_rd_*" && k !== "psc" && k !== "ref_" && k !== "tag";
 	};
 	const domainRx = /^(?:[^.]+\.)?amazon\.[^.]+$/;

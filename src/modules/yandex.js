@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "lr" && k !== "redircnt";
 	}
 	const domainRx = /^(?:[^.]+\.)?yandex\.[^.]+$/;
@@ -12,7 +12,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "yclid" && k !== "_openstat";
 	};
 	return {

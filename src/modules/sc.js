@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "sc_campaign" && k !== "sc_channel" && k !== "sc_content" && k !== "sc_country" && k !== "sc_geo" && k !== "sc_medium" && k !== "sc_outcome";
 	};
 	return {

@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "at_campaign" && k !== "at_medium" && !k.startsWith("at_custom");
 	};
 	return {

@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "click_key" && k !== "click_sum" && k !== "organic_search_click" && k !== "ref";
 	};
 	return {

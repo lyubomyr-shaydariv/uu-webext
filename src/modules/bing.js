@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "cvid" && k !== "form" && k !== "pq" && k !== "qs" && k !== "sc" && k !== "sk" && k !== "sp";
 	};
 	return {

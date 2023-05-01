@@ -27,22 +27,26 @@
 		}
 	};
 
-	global.cleanSearchPairs = function(search, filter) {
-		if ( search && search !== "?" ) {
-			search = search.replace(/([?&]([^=&]+)(?:=([^?&]*))?)/g, function(match, _, k, v) {
-				return filter(k, v) ? match : "";
-			});
-			if ( search.startsWith("&") ) {
-				search = "?" + search.substring(1);
+	global.cleanSearchParams = function(searchParams, filter) {
+		if ( !searchParams || !filter ) {
+			return;
+		}
+		const keysToDelete = new Set();
+		for ( const key of searchParams.keys() ) {
+			const values = searchParams.getAll(key);
+			if ( !filter(key, values) ) {
+				keysToDelete.add(key);
 			}
 		}
-		return search;
+		for ( const keyToDelete of keysToDelete ) {
+			searchParams.delete(keyToDelete);
+		}
 	};
 
 	global.cleanHashPairs = function(hash, filter) {
 		if ( hash && hash !== "#" ) {
 			hash = hash.replace(/([#&]([^=&]+)(?:=([^#&]*))?)/g, function(match, _, k, v) {
-				return filter(k, v) ? match : "";
+				return filter(k, [v]) ? match : "";
 			});
 			if ( hash.startsWith("&") ) {
 				hash = "#" + hash.substring(1);
@@ -56,7 +60,7 @@
 (function(global) {
 
 	global.cleanSearchAndHashPairs = function(url, filter) {
-		url.search = cleanSearchPairs(url.search, filter);
+		cleanSearchParams(url.searchParams, filter);
 		url.hash = cleanHashPairs(url.hash, filter);
 	};
 

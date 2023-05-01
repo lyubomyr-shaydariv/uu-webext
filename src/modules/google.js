@@ -26,7 +26,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "ei" && k !== "gs_gbg" && k !== "gs_lcp" && k !== "gs_mss" && k !== "gs_rn" && k !== "gws_rd" && k !== "sei" && k !== "ved";
 	};
 	const domainRx = /^(?:[^.]+\.)?google\.[^.]+$/;
@@ -39,7 +39,7 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "_ga" && k !== "gclid" && k !== "dclid" && k !== "gs_l" && !k.startsWith("ga_");
 	};
 	return {

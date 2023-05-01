@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "action_object_map" && k !== "action_ref_map" && k !== "action_type_map";
 	};
 	return {

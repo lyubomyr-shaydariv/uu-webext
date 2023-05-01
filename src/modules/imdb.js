@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "ref_" && !k.startsWith("pf_rd_");
 	};
 	return {

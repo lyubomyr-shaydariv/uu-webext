@@ -1,5 +1,5 @@
 registerModule(function() {
-	function filter(k, v) {
+	function filter(k, vs) {
 		return k !== "tt_content" && k !== "tt_medium";
 	};
 	return {
