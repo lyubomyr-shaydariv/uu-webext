@@ -2,7 +2,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 
 * Action Map (URLs)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
-* ![aliexpress](favicons/aliexpress.com.jpg) AliExpress (URLs)
+* ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs)
 * AT (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
