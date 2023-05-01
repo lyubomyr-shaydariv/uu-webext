@@ -18,6 +18,7 @@
 			"modules/aliexpress.js",
 			"modules/amazon.js",
 			"modules/at.js",
+			"modules/bilibili.js",
 			"modules/bing.js",
 			"modules/changeorg.js",
 			"modules/drip.js",

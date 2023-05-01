@@ -5,6 +5,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs)
 * AT (URLs)
+* ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![drip](favicons/drip.com.png) Drip (URLs)
