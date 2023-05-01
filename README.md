@@ -32,6 +32,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![reddit](favicons/reddit.com.png) Reddit (redirects including AMP + suppresses the new version of Reddit by redirecting to the old version ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for)))
 * SC (URLs)
 * STM (URLs)
+* ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs)
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)
