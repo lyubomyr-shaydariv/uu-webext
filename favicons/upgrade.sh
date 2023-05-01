@@ -12,6 +12,7 @@ for FAVICON in "$@"; do
 	FILE_TYPE="$(file "$TEMP_FILE")"
 	case "$FILE_TYPE" in
 	*'JPEG image data'*)
+		echo "$DOMAIN provided a JPEG favicon" >&2
 		mogrify -strip "$TEMP_FILE"
 		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.jpg"
 		;;
