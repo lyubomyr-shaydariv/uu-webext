@@ -17,6 +17,7 @@
 			"modules/adobe.js",
 			"modules/aliexpress.js",
 			"modules/at.js",
+			"modules/bing.js",
 			"modules/drip.js",
 			"modules/dpgmediagroup.js",
 			"modules/duckduckgo.js",
