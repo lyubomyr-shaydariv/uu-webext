@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "bing.com" || url.hostname === "www.bing.com" ) {
+			if ( url.hostname === "bing.com" || url.hostname.endsWith(".bing.com") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

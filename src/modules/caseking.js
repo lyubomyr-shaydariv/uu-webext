@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "caseking.de" || url.hostname === "www.caseking.de" ) {
+			if ( url.hostname === "caseking.de" || url.hostname.endsWith(".caseking.de") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

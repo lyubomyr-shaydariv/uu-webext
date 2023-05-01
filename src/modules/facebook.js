@@ -1,7 +1,7 @@
 registerModule(function() {
 	return {
 		redirect: function(url) {
-			if ( (url.hostname === "www.facebook.com" || url.hostname === "facebook.com") && url.pathname === "/l.php" ) {
+			if ( (url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com")) && url.pathname === "/l.php" ) {
 				return extractQueryPairAsUrl(url.searchParams, "u");
 			}
 		}
@@ -13,7 +13,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.facebook.com" || url.hostname === "facebook.com" ) {
+			if ( url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

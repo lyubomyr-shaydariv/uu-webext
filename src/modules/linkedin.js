@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.linkedin.com" || url.hostname === "linkedin.com" ) {
+			if ( url.hostname === "linkedin.com" || url.hostname.endsWith(".linkedin.com") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}
@@ -13,7 +13,7 @@ registerModule(function() {
 registerModule(function() {
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.linkedin.com" && url.pathname === "/safety/go" ) {
+			if ( (url.hostname === "linkedin.com" || url.hostname.endsWith(".linkedin.com")) && url.pathname === "/safety/go" ) {
 				return extractQueryPairAsUrl(url.searchParams, "url");
 			}
 		}

@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.youtube.com" || url.hostname === "youtube.com" ) {
+			if ( url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}
@@ -13,7 +13,7 @@ registerModule(function() {
 registerModule(function() {
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.youtube.com" && url.pathname === "/redirect" ) {
+			if ( (url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com")) && url.pathname === "/redirect" ) {
 				return extractQueryPairAsUrl(url.searchParams, "q");
 			}
 		}

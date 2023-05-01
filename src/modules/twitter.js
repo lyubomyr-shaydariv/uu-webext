@@ -2,7 +2,7 @@ registerModule(function() {
 	const dataRx = /twitterurl=(https?.*?\/\d+)/gm;
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "twitter.com" || url.hostname === "www.twitter.com" ) {
+			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
 				const rawRefUrl = url.searchParams.get("ref_url");
 				if ( rawRefUrl ) {
 					const refUrl = new URL(rawRefUrl);

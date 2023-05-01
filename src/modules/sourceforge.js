@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "sourceforge.net" || url.hostname === "www.sourceforge.net" ) {
+			if ( url.hostname === "sourceforge.net" || url.hostname.endsWith(".sourceforge.net") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

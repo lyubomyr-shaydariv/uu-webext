@@ -2,7 +2,7 @@ registerModule(function() {
 	const ampPrefix = "/amp/s/";
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.google.com" ) {
+			if ( url.hostname === "www.google.com" || url.hostname.endsWith(".google.com") ) {
 				if ( url.pathname === "/url" ) {
 					return extractQueryPairAsUrl(url.searchParams, "q");
 				}

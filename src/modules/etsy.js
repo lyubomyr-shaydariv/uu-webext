@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "etsy.com" || url.hostname === "www.etsy.com" ) {
+			if ( url.hostname === "etsy.com" || url.hostname.endsWith(".etsy.com") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

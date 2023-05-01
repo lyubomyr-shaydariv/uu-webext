@@ -4,7 +4,7 @@ registerModule(function() {
 	};
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "change.org" || url.hostname === "www.change.org" ) {
+			if ( url.hostname === "change.org" || url.hostname.endsWith(".change.org") ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}
