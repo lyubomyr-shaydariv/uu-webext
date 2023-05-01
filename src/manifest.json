@@ -21,6 +21,7 @@
 			"modules/dpgmediagroup.js",
 			"modules/duckduckgo.js",
 			"modules/ebay.js",
+			"modules/etsy.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
 			"modules/google.js",

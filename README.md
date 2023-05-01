@@ -8,6 +8,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
 * ![duckduckgo](favicons/duckduckgo.com.png) DuckDuckGo (redirects)
 * ![ebay](favicons/ebay.com.png) Ebay (URLs)
+* ![etsy](favicons/etsy.com.png) Etsy (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
 * ![google](favicons/google.com.png) Google (URLs, redirects including AMP)
