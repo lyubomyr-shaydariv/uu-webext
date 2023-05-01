@@ -15,7 +15,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![ibm](favicons/ibm.com.png) IBM (URLs)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
 * `itm_...` (URLs)
-* ![linkedin](favicons/www.linkedin.com.png) LinkedIn (redirects)
+* ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
 * ![mailerlite](favicons/mailerlite.com.png) MailerLite (URLs)
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
