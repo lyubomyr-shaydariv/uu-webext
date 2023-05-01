@@ -45,6 +45,7 @@
 			"modules/reddit.js",
 			"modules/sc.js",
 			"modules/stm.js",
+			"modules/tiktok.js",
 			"modules/tumblr.js",
 			"modules/twitch.js",
 			"modules/twitter.js",
