@@ -21,6 +21,19 @@ registerModule(function() {
 });
 registerModule(function() {
 	function isSafeKeyPair(k, v) {
+		return k !== "cxt" && k !== "s" && k !== "t" && !k.startsWith("ref_");
+	};
+	return {
+		redirect: function(url) {
+			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
+				url.search = removeSearchPair(url.search, isSafeKeyPair);
+				url.hash = removeHashPair(url.hash, isSafeKeyPair);
+			}
+		}
+	};
+});
+registerModule(function() {
+	function isSafeKeyPair(k, v) {
 		return k !== "twclid";
 	};
 	return {
