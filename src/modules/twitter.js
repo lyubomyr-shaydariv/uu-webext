@@ -20,26 +20,24 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function isSafeKeyPair(k, v) {
+	function filter(k, v) {
 		return k !== "cxt" && k !== "s" && k !== "t" && !k.startsWith("ref_");
 	};
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
-				url.search = removeSearchPair(url.search, isSafeKeyPair);
-				url.hash = removeHashPair(url.hash, isSafeKeyPair);
+				cleanSearchAndHashPairs(url, filter);
 			}
 		}
 	};
 });
 registerModule(function() {
-	function isSafeKeyPair(k, v) {
+	function filter(k, v) {
 		return k !== "twclid";
 	};
 	return {
 		redirect: function(url) {
-			url.search = removeSearchPair(url.search, isSafeKeyPair);
-			url.hash = removeHashPair(url.hash, isSafeKeyPair);
+			cleanSearchAndHashPairs(url, filter);
 		}
 	};
 });

@@ -8,12 +8,16 @@
 		}
 	};
 
-	global.getRedirectToWarningPage = function(url) {
-		return new URL("chrome-extension://" + chrome.runtime.id + "/warn.html?url=" + encodeURIComponent(url));
-	};
-
 	global.registerModule = function(createModule) {
 		modules.push(createModule());
+	};
+
+})(this);
+
+(function(global) {
+
+	global.getRedirectToWarningPage = function(url) {
+		return new URL("chrome-extension://" + chrome.runtime.id + "/warn.html?url=" + encodeURIComponent(url));
 	};
 
 	global.extractQueryPairAsUrl = function(query, key) {
@@ -23,7 +27,19 @@
 		}
 	};
 
-	global.removeHashPair = function(hash, filter) {
+	global.cleanSearchPairs = function(search, filter) {
+		if ( search && search !== "?" ) {
+			search = search.replace(/([?&]([^=&]+)(?:=([^?&]*))?)/g, function(match, _, k, v) {
+				return filter(k, v) ? match : "";
+			});
+			if ( search.startsWith("&") ) {
+				search = "?" + search.substring(1);
+			}
+		}
+		return search;
+	};
+
+	global.cleanHashPairs = function(hash, filter) {
 		if ( hash && hash !== "#" ) {
 			hash = hash.replace(/([#&]([^=&]+)(?:=([^#&]*))?)/g, function(match, _, k, v) {
 				return filter(k, v) ? match : "";
@@ -35,16 +51,13 @@
 		return hash;
 	};
 
-	global.removeSearchPair = function(search, filter) {
-		if ( search && search !== "?" ) {
-			search = search.replace(/([?&]([^=&]+)(?:=([^?&]*))?)/g, function(match, _, k, v) {
-				return filter(k, v) ? match : "";
-			});
-			if ( search.startsWith("&") ) {
-				search = "?" + search.substring(1);
-			}
-		}
-		return search;
+})(this);
+
+(function(global) {
+
+	global.cleanSearchAndHashPairs = function(url, filter) {
+		url.search = cleanSearchPairs(url.search, filter);
+		url.hash = cleanHashPairs(url.hash, filter);
 	};
 
 })(this);

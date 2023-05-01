@@ -26,27 +26,25 @@ registerModule(function() {
 	};
 });
 registerModule(function() {
-	function isSafeKeyPair(k, v) {
+	function filter(k, v) {
 		return k !== "ei" && k !== "gs_gbg" && k !== "gs_lcp" && k !== "gs_mss" && k !== "gs_rn" && k !== "gws_rd" && k !== "sei" && k !== "ved";
 	};
 	const domainRx = /^(?:[^.]+\.)?google\.[^.]+$/;
 	return {
 		redirect: function(url) {
 			if ( domainRx.test(url.hostname) ) {
-				url.search = removeSearchPair(url.search, isSafeKeyPair);
-				url.hash = removeHashPair(url.hash, isSafeKeyPair);
+				cleanSearchAndHashPairs(url, filter);
 			}
 		}
 	};
 });
 registerModule(function() {
-	function isSafeKeyPair(k, v) {
+	function filter(k, v) {
 		return k !== "_ga" && k !== "gclid" && k !== "dclid" && k !== "gs_l" && !k.startsWith("ga_");
 	};
 	return {
 		redirect: function(url) {
-			url.search = removeSearchPair(url.search, isSafeKeyPair);
-			url.hash = removeHashPair(url.hash, isSafeKeyPair);
+			cleanSearchAndHashPairs(url, filter);
 		}
 	};
 });
