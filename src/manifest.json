@@ -20,6 +20,7 @@
 			"modules/drip.js",
 			"modules/dpgmediagroup.js",
 			"modules/duckduckgo.js",
+			"modules/ebay.js",
 			"modules/evernote.js",
 			"modules/facebook.js",
 			"modules/google.js",
