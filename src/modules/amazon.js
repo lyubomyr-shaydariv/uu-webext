@@ -11,3 +11,11 @@ registerModule(function() {
 		}
 	};
 });
+registerModule(function() {
+	const keysToRemove = ["trk", "trkCampaign"];
+	return {
+		redirect: function(url) {
+			cleanAllSearchAndHashPairs(url, [...keysToRemove]);
+		}
+	};
+});
