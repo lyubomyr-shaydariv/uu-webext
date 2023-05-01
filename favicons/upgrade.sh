@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
-BASE_DIR="$(dirname "$0")"
+BASE_DIR="$(dirname -- $(readlink -f -- "$0"))"
 
-for DOMAIN in $@; do
-	DOMAIN="${DOMAIN%.*}"
+for FAVICON in "$@"; do
+	DOMAIN="${FAVICON%.*}"
 	echo "processing $DOMAIN... " >&2
 	TEMP_FILE="$BASE_DIR/$DOMAIN"
 	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$TEMP_FILE"
@@ -20,8 +20,7 @@ for DOMAIN in $@; do
 		mv "$TEMP_FILE" "$BASE_DIR/$DOMAIN.png"
 		;;
 	*)
-		echo "cannot determine file type of $BASE_DIR/$DOMAIN" >&2
-		echo "$FILE_TYPE" >&2
+		echo "cannot determine file type of $BASE_DIR/$DOMAIN ($FILE_TYPE)" >&2
 		continue
 		;;
 	esac
