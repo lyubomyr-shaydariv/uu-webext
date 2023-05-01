@@ -20,6 +20,7 @@
 			"modules/at.js",
 			"modules/bilibili.js",
 			"modules/bing.js",
+			"modules/caseking.js",
 			"modules/changeorg.js",
 			"modules/drip.js",
 			"modules/dpgmediagroup.js",

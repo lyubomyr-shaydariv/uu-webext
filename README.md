@@ -7,6 +7,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * AT (URLs)
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
+* ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![drip](favicons/drip.com.png) Drip (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
