@@ -37,6 +37,6 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
-* ![youtube](favicons/youtube.com.png) YouTube (redirects)
+* ![youtube](favicons/youtube.com.png) YouTube (URLs, redirects)
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
