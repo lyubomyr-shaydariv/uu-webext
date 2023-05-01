@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	const dataRx = /twitterurl=(https?.*?\/\d+)/gm;
 	return {
 		redirect: function(url) {
@@ -18,8 +18,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "cxt" && k !== "s" && k !== "t" && !k.startsWith("ref_");
 	};
@@ -30,8 +30,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "twclid";
 	};
@@ -40,4 +40,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

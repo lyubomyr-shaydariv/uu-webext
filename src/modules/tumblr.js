@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "t.umblr.com" && url.pathname === "/redirect" ) {
@@ -6,4 +6,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

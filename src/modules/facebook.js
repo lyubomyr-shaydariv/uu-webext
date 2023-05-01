@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com")) && url.pathname === "/l.php" ) {
@@ -6,8 +6,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "hrc" && k !== "refsrc";
 	};
@@ -18,8 +18,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "fbclid" && k !== "fb_action_ids" && k !== "fb_action_types" && k !== "fb_ref" && k !== "fb_source";
 	};
@@ -28,4 +28,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "callback";
 	};
@@ -9,4 +9,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

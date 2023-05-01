@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "wt_mc" && k !== "wt_zmc";
 	};
@@ -7,4 +7,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

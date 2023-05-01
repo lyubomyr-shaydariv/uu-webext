@@ -23,8 +23,8 @@
 main:
 		for ( let i = 0; i < MAX_LOOPS; i++ ) {
 			const thisLoopRedirectUrl = redirectUrl.toString();
-			for ( const module of getModules() ) {
-				const maybeRedirectUrl = module.redirect(redirectUrl);
+			for ( const rule of getRules() ) {
+				const maybeRedirectUrl = rule.redirect(redirectUrl);
 				if ( maybeRedirectUrl ) {
 					redirectUrl = maybeRedirectUrl;
 				}

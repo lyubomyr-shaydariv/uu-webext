@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "oly_anon_id" && k !== "oly_enc_id";
 	};
@@ -7,4 +7,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

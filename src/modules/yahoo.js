@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "guccounter";
 	};
@@ -10,8 +10,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "soc_src" && k !== "soc_trk";
 	};
@@ -20,4 +20,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

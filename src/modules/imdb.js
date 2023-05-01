@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "ref_" && !k.startsWith("pf_rd_");
 	};
@@ -9,4 +9,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

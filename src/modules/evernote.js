@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "www.evernote.com" && url.pathname === "/OutboundRedirect.action" ) {
@@ -6,4 +6,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

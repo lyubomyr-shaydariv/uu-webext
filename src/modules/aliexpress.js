@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "algo_expid" && k !== "algo_pvid" && k !== "btsid" && k !== "expid" && k !== "initiative_id" && k !== "scm_id" && k !== "spm" && k !== "ws_ab_test";
 	};
@@ -10,8 +10,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "aff_platform" && k !== "aff_trace_key";
 	};
@@ -20,4 +20,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

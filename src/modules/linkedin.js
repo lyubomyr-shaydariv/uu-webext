@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "eBP" && k !== "lgCta" && k !== "lgTemp" && k !== "lipi" && k !== "midSig" && k !== "midToken" && k !== "recommendedFlavor" && k !== "refId" && k !== "trackingId" && k !== "trk" && k !== "trkEmail";
 	};
@@ -9,8 +9,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "linkedin.com" || url.hostname.endsWith(".linkedin.com")) && url.pathname === "/safety/go" ) {
@@ -18,4 +18,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

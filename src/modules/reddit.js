@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "out.reddit.com") && /^\/[^/]+$/.test(url.pathname) ) {
@@ -10,4 +10,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

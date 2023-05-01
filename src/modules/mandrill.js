@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "mandrillapp.com" && url.pathname.startsWith("/track/click/") ) {
@@ -10,4 +10,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

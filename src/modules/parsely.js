@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	const keysToRemove = ["Campaign"];
 	return {
 		redirect: function(url) {
@@ -7,4 +7,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

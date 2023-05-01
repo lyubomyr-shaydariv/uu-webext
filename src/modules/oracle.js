@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "elqTrack" && k !== "elqTrackId";
 	};
@@ -7,12 +7,12 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	const keysToRemove = ["assetId", "assetType", "campaignId", "recipientId", "siteId"];
 	return {
 		redirect: function(url) {
 			cleanAllSearchAndHashPairs(url, [...keysToRemove]);
 		}
 	};
-});
+})());

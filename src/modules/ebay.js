@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "_trkparms" && k !== "_trksid" && k !== "amdata" && k !== "epid" && k !== "hash" && k !== "var";
 	};
@@ -10,4 +10,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

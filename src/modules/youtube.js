@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "feature" && k !== "kw";
 	};
@@ -9,8 +9,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com")) && url.pathname === "/redirect" ) {
@@ -18,4 +18,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

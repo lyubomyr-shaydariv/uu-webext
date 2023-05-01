@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "utm_campaign" && k !== "utm_cid" && k !== "utm_content" && k !== "utm_medium" && k !== "utm_name" && k != "utm_nooverride" && k !== "utm_reader" && k !== "utm_referrer" && k !== "utm_source" && k !== "utm_term" && k != "nr_email_referer";
 	};
@@ -7,4 +7,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

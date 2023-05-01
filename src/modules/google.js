@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	const ampPrefix = "/amp/s/";
 	return {
 		redirect: function(url) {
@@ -24,8 +24,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "ei" && k !== "gs_gbg" && k !== "gs_lcp" && k !== "gs_mss" && k !== "gs_rn" && k !== "gws_rd" && k !== "sei" && k !== "ved";
 	};
@@ -37,8 +37,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "_ga" && k !== "gclid" && k !== "dclid" && k !== "gs_l" && !k.startsWith("ga_");
 	};
@@ -47,4 +47,4 @@ registerModule(function() {
 			cleanSearchAndHashPairs(url, filter);
 		}
 	};
-});
+})());

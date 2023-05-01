@@ -1,4 +1,4 @@
-registerModule(function() {
+addRule((function() {
 	function filter(k, vs) {
 		return k !== "_branch_match_id" && k !== "source";
 	};
@@ -9,8 +9,8 @@ registerModule(function() {
 			}
 		}
 	};
-});
-registerModule(function() {
+})());
+addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "medium.com" && url.pathname === "/r/" ) {
@@ -18,4 +18,4 @@ registerModule(function() {
 			}
 		}
 	};
-});
+})());

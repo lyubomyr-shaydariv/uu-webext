@@ -1,15 +1,15 @@
 (function(global) {
 
-	const modules = [];
+	const rules = [];
 
-	global.getModules = function* () {
-		for ( const module of modules ) {
-			yield module;
+	global.getRules = function* () {
+		for ( const rule of rules ) {
+			yield rule;
 		}
 	};
 
-	global.registerModule = function(createModule) {
-		modules.push(createModule());
+	global.addRule = function(rule) {
+		rules.push(rule);
 	};
 
 })(this);
