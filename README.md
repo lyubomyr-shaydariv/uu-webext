@@ -33,6 +33,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * NS (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
+* ![parsely](favicons/parse.ly.png) Parse.ly (TODO URLs)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects including AMP + suppresses the new version of Reddit by redirecting to the old version ([Reddit's website uses DRM for fingerprinting | Lobsters](https://lobste.rs/s/kvkbh3/reddit_s_website_uses_drm_for)))
 * SC (URLs)
 * STM (URLs)
