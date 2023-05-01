@@ -8,3 +8,11 @@ registerModule(function() {
 		}
 	};
 });
+registerModule(function() {
+	const keysToRemove = ["assetId", "assetType", "campaignId", "recipientId", "siteId"];
+	return {
+		redirect: function(url) {
+			cleanAllSearchAndHashPairs(url, [...keysToRemove]);
+		}
+	};
+});
