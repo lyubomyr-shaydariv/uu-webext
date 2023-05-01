@@ -43,12 +43,51 @@
 		}
 	};
 
+	global.cleanAllSearchParams = function(searchParams, allKeys) {
+		if ( !searchParams || !allKeys ) {
+			return;
+		}
+		for ( const key of allKeys ) {
+			if ( !searchParams.has(key) ) {
+				return;
+			}
+		}
+		for ( const key of allKeys ) {
+			searchParams.delete(key);
+		}
+	};
+
 	const hashPairsRx = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
 
 	global.parseAndCleanHashPairs = function(hash, filter) {
 		if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
 			hash = hash.replace(hashPairsRx, function(match, _, key, value) {
 				return filter(key, [value]) ? match : "";
+			});
+			if ( hash.startsWith("&") ) {
+				hash = "#" + hash.substring(1);
+			}
+		}
+		return hash;
+	};
+
+	global.parseAndCleanAllHashPairs = function(hash, allKeys) {
+main:
+		if ( hash && allKeys && hash !== "#" && hash.indexOf("=") !== -1 ) {
+			const parsedKeys = new Set();
+			for ( const [_1, _2, parsedKey] of hash.matchAll(hashPairsRx) ) {
+				parsedKeys.add(parsedKey);
+			}
+			for ( const key of allKeys ) {
+				if ( !parsedKeys.has(key) ) {
+					break main;
+				}
+			}
+			const filter = function(key) {
+				return !allKeys.includes(key);
+			};
+			hash = hash.replace(hashPairsRx, function(match, _, key, value) {
+				return filter(key) ? match : "";
 			});
 			if ( hash.startsWith("&") ) {
 				hash = "#" + hash.substring(1);
@@ -64,6 +103,11 @@
 	global.cleanSearchAndHashPairs = function(url, filter) {
 		cleanSearchParams(url.searchParams, filter);
 		url.hash = parseAndCleanHashPairs(url.hash, filter);
+	};
+
+	global.cleanAllSearchAndHashPairs = function(url, allKeys) {
+		cleanAllSearchParams(url.searchParams, allKeys);
+		url.hash = parseAndCleanAllHashPairs(url.hash, allKeys);
 	};
 
 })(this);
