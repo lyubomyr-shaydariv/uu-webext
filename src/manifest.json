@@ -16,6 +16,7 @@
 			"modules/actionmap.js",
 			"modules/adobe.js",
 			"modules/aliexpress.js",
+			"modules/amazon.js",
 			"modules/at.js",
 			"modules/bing.js",
 			"modules/drip.js",
