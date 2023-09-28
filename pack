@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
+
+readonly BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+readonly TAG="$(git describe --tags || printf '-')"
+
+cd "$BASE_DIR/src"
+zip -r ../"just-let-me-go.$BRANCH.$TAG.zip" manifest.json .
