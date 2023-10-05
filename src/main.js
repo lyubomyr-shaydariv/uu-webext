@@ -34,13 +34,13 @@ main:
 			}
 		}
 		if ( redirectUrl.toString() !== url.toString() ) {
-			console.log("REDIRECT: " + url + " => " + redirectUrl, url, redirectUrl);
+			console.log(`REDIRECT: ${url} => ${redirectUrl}`);
 			return redirectUrl;
 		}
 	}
 
 	chrome.webRequest.onBeforeRequest.addListener(function(details) {
-		if ( details.initiator && details.initiator.startsWith("chrome-extension://" + chrome.runtime.id) ) {
+		if ( details.initiator && details.initiator.startsWith(`chrome-extension://${chrome.runtime.id}`) ) {
 			return;
 		}
 		const url = new URL(details.url);

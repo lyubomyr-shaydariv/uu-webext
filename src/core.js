@@ -17,7 +17,7 @@
 (function(global) {
 
 	global.getRedirectToWarningPage = function(url) {
-		return new URL("chrome-extension://" + chrome.runtime.id + "/warn.html?url=" + encodeURIComponent(url));
+		return new URL(`chrome-extension://${chrome.runtime.id}/warn.html?url=${encodeURIComponent(url)}`);
 	};
 
 	global.extractQueryPairAsUrl = function(query, key) {
@@ -61,11 +61,9 @@
 
 	global.parseAndCleanHashPairs = function(hash, filter) {
 		if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
-			hash = hash.replace(hashPairsRx, function(match, _, key, value) {
-				return filter(key, [value]) ? match : "";
-			});
+			hash = hash.replace(hashPairsRx, (match, _, key, value) => filter(key, [value]) ? match : "");
 			if ( hash.startsWith("&") ) {
-				hash = "#" + hash.substring(1);
+				hash = `#${hash.substring(1)}`;
 			}
 		}
 		return hash;
@@ -86,11 +84,9 @@ main:
 			const filter = function(key) {
 				return !allKeys.includes(key);
 			};
-			hash = hash.replace(hashPairsRx, function(match, _, key, value) {
-				return filter(key) ? match : "";
-			});
+			hash = hash.replace(hashPairsRx, (match, _, key, value) => filter(key) ? match : "");
 			if ( hash.startsWith("&") ) {
-				hash = "#" + hash.substring(1);
+				hash = `#${hash.substring(1)}`;
 			}
 		}
 		return hash;
