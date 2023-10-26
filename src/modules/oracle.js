@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "elqTrack" && k !== "elqTrackId";
-	};
+	const filter = createFilterByConstantKeys("elqTrack", "elqTrackId");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

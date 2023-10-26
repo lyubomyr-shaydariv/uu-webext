@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "cvid" && k !== "form" && k !== "pq" && k !== "qs" && k !== "sc" && k !== "sk" && k !== "sp";
-	};
+	const filter = createFilterByConstantKeys("cvid", "form", "pq", "qs", "sc", "sk", "sp");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "bing.com" || url.hostname.endsWith(".bing.com") ) {

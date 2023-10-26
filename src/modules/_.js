@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "c_id" && k !== "campaign_id" && k !== "cmpid" && k !== "mbid" && k !== "ncid" && k !== "rb_clickid";
-	};
+	const filter = createFilterByConstantKeys("c_id", "campaign_id", "cmpid", "mbid", "ncid", "rb_clickid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

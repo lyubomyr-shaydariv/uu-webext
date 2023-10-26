@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "_trkparms" && k !== "_trksid" && k !== "amdata" && k !== "epid" && k !== "hash" && k !== "var";
-	};
+	const filter = createFilterByConstantKeys("_trkparms", "_trksid", "amdata", "epid", "hash", "var");
 	const domainRx = /^(?:[^.]+\.)?ebay\.[^.]+$/;
 	return {
 		redirect: function(url) {

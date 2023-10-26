@@ -26,9 +26,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "ei" && k !== "gs_gbg" && k !== "gs_lcp" && k !== "gs_mss" && k !== "gs_rn" && k !== "gws_rd" && k !== "sei" && k !== "ved";
-	};
+	const filter = createFilterByConstantKeys("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
 	const domainRx = /^(?:[^.]+\.)?google\.[^.]+$/;
 	return {
 		redirect: function(url) {

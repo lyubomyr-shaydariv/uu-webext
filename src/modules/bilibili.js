@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "callback";
-	};
+	const filter = createFilterByConstantKeys("callback");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "bilibili.com" || url.hostname.endsWith(".bilibili.com") ) {

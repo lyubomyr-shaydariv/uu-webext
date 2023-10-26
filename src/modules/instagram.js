@@ -8,9 +8,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "igshid";
-	};
+	const filter = createFilterByConstantKeys("igshid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

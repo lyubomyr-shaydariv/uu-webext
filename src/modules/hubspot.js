@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "_hsenc" && k !== "_hsmi" && k !== "__hsfp" && k !== "__hssc" && k !== "__hstc" && k !== "hsCtaTracking";
-	};
+	const filter = createFilterByConstantKeys("_hsenc", "_hsmi", "__hsfp", "__hssc", "__hstc", "hsCtaTracking");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

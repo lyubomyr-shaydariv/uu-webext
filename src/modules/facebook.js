@@ -8,9 +8,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "hrc" && k !== "refsrc";
-	};
+	const filter = createFilterByConstantKeys("hrc", "refsrc");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com") ) {
@@ -20,9 +18,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "fbclid" && k !== "fb_action_ids" && k !== "fb_action_types" && k !== "fb_ref" && k !== "fb_source";
-	};
+	const filter = createFilterByConstantKeys("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

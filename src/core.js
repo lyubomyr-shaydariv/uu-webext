@@ -110,4 +110,16 @@ main:
 		url.hash = parseAndCleanAllHashPairs(url.hash, allKeys);
 	};
 
+	global.createFilterByConstantKeys = function(...keys) {
+		if ( keys.length === 0 ) {
+			return (k, vs) => true;
+		}
+		if ( keys.length === 1 ) {
+			const onlyKey = keys[0];
+			return (k, vs) => k !== onlyKey;
+		}
+		const keySet = new Set(keys);
+		return (k, vs) => !keySet.has(k);
+	};
+
 })(this);

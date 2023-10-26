@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "position" && k !== "source";
-	};
+	const filter = createFilterByConstantKeys("position", "source");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "sourceforge.net" || url.hostname.endsWith(".sourceforge.net") ) {

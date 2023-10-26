@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "lr" && k !== "redircnt";
-	}
+	const filter = createFilterByConstantKeys("lr", "redircnt");
 	const domainRx = /^(?:[^.]+\.)?yandex\.[^.]+$/;
 	return {
 		redirect: function(url) {
@@ -12,9 +10,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "yclid" && k !== "_openstat";
-	};
+	const filter = createFilterByConstantKeys("yclid", "_openstat");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

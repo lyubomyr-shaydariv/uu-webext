@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "guccounter";
-	};
+	const filter = createFilterByConstantKeys("guccounter");
 	const domainRx = /^(?:[^.]+\.)?yahoo\.[^.]+$/;
 	return {
 		redirect: function(url) {
@@ -12,9 +10,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "soc_src" && k !== "soc_trk";
-	};
+	const filter = createFilterByConstantKeys("soc_src", "soc_trk");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

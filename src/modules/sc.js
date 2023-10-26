@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "sc_campaign" && k !== "sc_channel" && k !== "sc_content" && k !== "sc_country" && k !== "sc_geo" && k !== "sc_medium" && k !== "sc_outcome";
-	};
+	const filter = createFilterByConstantKeys("sc_campaign", "sc_channel", "sc_content", "sc_country", "sc_geo", "sc_medium", "sc_outcome");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

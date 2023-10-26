@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "wickedid";
-	};
+	const filter = createFilterByConstantKeys("wickedid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

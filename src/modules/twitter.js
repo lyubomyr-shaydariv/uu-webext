@@ -32,9 +32,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "twclid";
-	};
+	const filter = createFilterByConstantKeys("twclid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

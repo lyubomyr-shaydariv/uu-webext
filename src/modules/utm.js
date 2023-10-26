@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "utm_campaign" && k !== "utm_cid" && k !== "utm_content" && k !== "utm_medium" && k !== "utm_name" && k != "utm_nooverride" && k !== "utm_reader" && k !== "utm_referrer" && k !== "utm_source" && k !== "utm_term" && k != "nr_email_referer";
-	};
+	const filter = createFilterByConstantKeys("utm_campaign", "utm_cid", "utm_content", "utm_medium", "utm_name", "utm_nooverride", "utm_reader", "utm_referrer", "utm_source", "utm_term", "nr_email_referer");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

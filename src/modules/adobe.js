@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "sc_cid" && k !== "mkt_tok" && k != "s_cid";
-	};
+	const filter = createFilterByConstantKeys("sc_cid", "mkt_tok", "s_cid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

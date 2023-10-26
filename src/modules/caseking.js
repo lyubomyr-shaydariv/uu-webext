@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "campaign" && k !== "sPartner";
-	};
+	const filter = createFilterByConstantKeys("campaign", "sPartner");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "caseking.de" || url.hostname.endsWith(".caseking.de") ) {

@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "wt_mc" && k !== "wt_zmc";
-	};
+	const filter = createFilterByConstantKeys("wt_mc", "wt_zmc");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);
