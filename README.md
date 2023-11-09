@@ -30,6 +30,7 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
 * ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
+* ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * NS (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)

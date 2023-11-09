@@ -43,6 +43,7 @@
 			"modules/matomo.js",
 			"modules/medium.js",
 			"modules/microsoft.js",
+			"modules/netflix.js",
 			"modules/ns.js",
 			"modules/omeda.js",
 			"modules/oracle.js",
