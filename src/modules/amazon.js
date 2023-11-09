@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "_encoding" && k !== "ascsubtag" && k !== "pd_rd_*" && k !== "pf" && k !== "pf_rd_*" && k !== "psc" && k !== "ref_" && k !== "tag";
-	};
+	const filter = createFilterByConstantKeys("_encoding", "aaxitk", "ascsubtag", "camp", "creative", "creativeASIN", "crid", "dchild", "field-lbr_brands_browse-bin", "hsa_cr_id", "keywords", "linkCode", "ms3_c", "pd_rd_*", "pf", "pf_rd_*", "psc", "qid", "qualifier", "ref_", "refRID", "rnid", "s", "smid", "spIA", "sprefix", "tag", "th");
 	const domainRx = /^(?:[^.]+\.)?amazon\.[^.]+$/;
 	return {
 		redirect: function(url) {
