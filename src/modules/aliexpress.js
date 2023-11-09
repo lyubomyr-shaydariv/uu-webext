@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "algo_expid" && k !== "algo_pvid" && k !== "btsid" && k !== "expid" && k !== "initiative_id" && k !== "scm_id" && k !== "spm" && k !== "ws_ab_test";
-	};
+	const filter = createFilterByConstantKeys("af", "aff_request_id", "algo_expid", "algo_pvid", "btsid", "cv", "dp", "expid", "gps-id", "initiative_id", "mall_affr", "scm_id", "sk", "spm", "terminal_id", "ws_ab_test");
 	const domainRx = /^(?:[^.]+\.)?aliexpress\.[^.]+$/;
 	return {
 		redirect: function(url) {
