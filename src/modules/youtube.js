@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("feature", "kw");
+	const filter = createFilterByConstantKeys("feature", "kw", "si");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com") ) {
