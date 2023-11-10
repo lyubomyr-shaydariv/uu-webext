@@ -187,6 +187,11 @@
 		],
 		"type": "module"
 	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "just-let-me-go@firefox"
+		}
+	},
 	"content_security_policy": "object-src 'self'; script-src 'self';",
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
 	"developer": {
