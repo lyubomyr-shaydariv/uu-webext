@@ -36,6 +36,7 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * NS (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
+* ![outlook](favicons/outlook.com.png) Outlook (redirects)
 * ![parsely](favicons/parse.ly.png) Parse.ly (TODO URLs)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * SC (URLs)

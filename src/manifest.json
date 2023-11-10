@@ -47,6 +47,7 @@
 			"modules/ns.js",
 			"modules/omeda.js",
 			"modules/oracle.js",
+			"modules/outlook.js",
 			"modules/parsely.js",
 			"modules/reddit.js",
 			"modules/sc.js",
