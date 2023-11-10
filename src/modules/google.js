@@ -38,7 +38,7 @@ addRule((function() {
 })());
 addRule((function() {
 	function filter(k, vs) {
-		return k !== "_ga" && k !== "gclid" && k !== "dclid" && k !== "gs_l" && !k.startsWith("ga_");
+		return k !== "_ga" && k !== "dclid" && !k.startsWith("ga_") && k !== "gclid" && k !== "gclsrc" && k !== "gs_l";
 	};
 	return {
 		redirect: function(url) {
