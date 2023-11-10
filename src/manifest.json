@@ -64,6 +64,7 @@
 			"modules/yahoo.js",
 			"modules/yandex.js",
 			"modules/youtube.js",
+			"modules/zanox.js",
 			"modules/zeit.js",
 			"main.js"
 		]

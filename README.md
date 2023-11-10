@@ -53,6 +53,7 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
 * ![youtube](favicons/youtube.com.png) YouTube (URLs, redirects)
+* Zanox (URLs)
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
 
