@@ -1,4 +1,6 @@
-The browser extension sanitizes **tracked URLs** and **tracked redirects/pages** for the following services:
+## uU ![uU](icon-32x32.png)
+
+uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
 
 * Action Map (URLs)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
@@ -53,3 +55,5 @@ The browser extension sanitizes **tracked URLs** and **tracked redirects/pages**
 * ![youtube](favicons/youtube.com.png) YouTube (URLs, redirects)
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
+
+_* uU is a shortcut for "untrack URLs"._

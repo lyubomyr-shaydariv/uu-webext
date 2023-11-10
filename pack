@@ -8,4 +8,4 @@ readonly BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 readonly TAG="$(git describe --tags || printf '-')"
 
 cd "$BASE_DIR/src"
-zip -r ../"just-let-me-go.$BRANCH.$TAG.zip" manifest.json .
+zip -r ../"untrack-urls-webext.$BRANCH.$TAG.zip" manifest.json .
