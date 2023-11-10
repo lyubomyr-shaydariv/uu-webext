@@ -11,6 +11,7 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * ![bing](favicons/bing.com.png) Bing (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
+* ![customer.io](favicons/customer.io.png) Customer.io (redirects)
 * ![drip](favicons/drip.com.png) Drip (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
 * ![duckduckgo](favicons/duckduckgo.com.png) DuckDuckGo (redirects)
