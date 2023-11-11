@@ -71,6 +71,9 @@
 			"main.js"
 		]
 	},
+	"options_ui": {
+		"page": "options.html"
+	},
 	"permissions": [
 		"<all_urls>",
 		"webRequest",
