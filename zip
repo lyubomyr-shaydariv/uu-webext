@@ -7,5 +7,6 @@ readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
 readonly BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 readonly TAG="$(git describe --tags || printf '-')"
 
+mkdir -p "$BASE_DIR/out"
 cd "$BASE_DIR/src"
-zip -r ../"untrack-urls-webext.$BRANCH.$TAG.zip" manifest.json .
+zip -r ../"out/untrack-urls-webext.$BRANCH.$TAG.zip" manifest.json .
