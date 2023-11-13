@@ -10,9 +10,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "aff_platform" && k !== "aff_trace_key";
-	};
+	const filter = createFilterByConstantKeys("aff_platform", "aff_trace_key");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);
