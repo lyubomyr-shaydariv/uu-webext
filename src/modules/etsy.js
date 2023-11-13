@@ -3,7 +3,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "etsy.com" || url.hostname.endsWith(".etsy.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};

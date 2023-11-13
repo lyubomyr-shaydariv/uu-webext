@@ -5,7 +5,7 @@ addRule((function() {
 	);
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());

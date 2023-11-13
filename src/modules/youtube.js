@@ -3,7 +3,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};
@@ -13,7 +13,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "youtu.be" ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};

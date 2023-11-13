@@ -6,7 +6,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "imdb.com" || url.hostname.endsWith(".imdb.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};

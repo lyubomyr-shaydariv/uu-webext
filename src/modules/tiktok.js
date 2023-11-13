@@ -3,7 +3,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "tiktok.com" || url.hostname.endsWith(".tiktok.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};

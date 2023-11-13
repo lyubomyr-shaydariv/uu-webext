@@ -11,7 +11,7 @@ addRule((function() {
 	const filter = EXCLUDE("igshid");
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());

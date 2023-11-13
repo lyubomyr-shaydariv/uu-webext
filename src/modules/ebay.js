@@ -3,7 +3,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?ebay\.[^.]+$/.test(url.hostname) ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};

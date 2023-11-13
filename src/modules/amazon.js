@@ -3,7 +3,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?amazon\.[^.]+$/.test(url.hostname) ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};
@@ -12,7 +12,7 @@ addRule((function() {
 	const filter = EXCLUDE("trk", "trkCampaign");
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());

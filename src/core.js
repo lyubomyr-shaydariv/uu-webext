@@ -27,7 +27,11 @@
 		}
 	};
 
-	global.cleanSearchParams = function(searchParams, filter) {
+})(this);
+
+(function(global) {
+
+	function cleanSearchParams(searchParams, filter) {
 		if ( !searchParams || !filter ) {
 			return;
 		}
@@ -45,7 +49,7 @@
 
 	const hashPairsRx = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
 
-	global.parseAndCleanHashPairs = function(hash, filter) {
+	function parseAndCleanHashPairs(hash, filter) {
 		if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
 			hash = hash.replace(hashPairsRx, (match, _, key, value) => filter(key, [value]) ? match : "");
 			if ( hash.startsWith("&") ) {
@@ -54,19 +58,6 @@
 		}
 		return hash;
 	};
-
-})(this);
-
-(function(global) {
-
-	global.cleanSearchAndHashPairs = function(url, filter) {
-		cleanSearchParams(url.searchParams, filter);
-		url.hash = parseAndCleanHashPairs(url.hash, filter);
-	};
-
-})(this);
-
-(function(global) {
 
 	global.AND = function(...predicates) {
 		switch ( predicates.length ) {
@@ -120,6 +111,11 @@
 				return true;
 			};
 		}
+	};
+
+	global.FILTER_ENTRIES = function(url, filter) {
+		cleanSearchParams(url.searchParams, filter);
+		url.hash = parseAndCleanHashPairs(url.hash, filter);
 	};
 
 })(this);

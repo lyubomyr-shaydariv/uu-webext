@@ -26,7 +26,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};
@@ -35,7 +35,7 @@ addRule((function() {
 	const filter = EXCLUDE("twclid");
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());

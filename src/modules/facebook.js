@@ -12,7 +12,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com") ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};
@@ -21,7 +21,7 @@ addRule((function() {
 	const filter = EXCLUDE("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());

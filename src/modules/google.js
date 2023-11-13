@@ -30,7 +30,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?google\.[^.]+$/.test(url.hostname) ) {
-				cleanSearchAndHashPairs(url, filter);
+				FILTER_ENTRIES(url, filter);
 			}
 		}
 	};
@@ -42,7 +42,7 @@ addRule((function() {
 	);
 	return {
 		redirect: function(url) {
-			cleanSearchAndHashPairs(url, filter);
+			FILTER_ENTRIES(url, filter);
 		}
 	};
 })());
