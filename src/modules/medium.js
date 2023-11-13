@@ -10,10 +10,13 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const at = AT_HOSTNAME("medium.com");
+	const at = AND(
+		AT_HOSTNAME("medium.com"),
+		AT_PATHNAME("/r/")
+	);
 	return {
 		redirect: function(url) {
-			if ( at(url) && url.pathname === "/r/" ) {
+			if ( at(url) ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}

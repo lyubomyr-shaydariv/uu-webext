@@ -1,8 +1,11 @@
 addRule((function() {
-	const at = AT_HOSTNAME("duckduckgo.com");
+	const at = AND(
+		AT_HOSTNAME("duckduckgo.com"),
+		AT_PATHNAME("/l/")
+	);
 	return {
 		redirect: function(url) {
-			if ( at(url) && url.pathname === "/l/" ) {
+			if ( at(url) ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "uddg");
 			}
 		}

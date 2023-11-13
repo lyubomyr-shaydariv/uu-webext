@@ -131,6 +131,26 @@
 		}
 	};
 
+	global.AT_PATHNAME = function(...pathnames) {
+		switch ( pathnames.length ) {
+		case 0:
+			return (url) => true;
+		case 1:
+			pathnames = pathnames.slice(0, 1);
+			return (url) => url.pathname === pathnames[0];
+		default:
+			pathnames = pathnames.slice();
+			return (url) => {
+				for ( const pathname of pathnames ) {
+					if ( url.pathname === pathname ) {
+						return true;
+					}
+				}
+				return false;
+			};
+		}
+	};
+
 	global.EXCLUDE = function(...names) {
 		switch ( names.length ) {
 		case 0:

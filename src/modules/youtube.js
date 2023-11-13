@@ -21,10 +21,13 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const at = AT_DOMAIN("youtube.com");
+	const at = AND(
+		AT_DOMAIN("youtube.com"),
+		AT_PATHNAME("/redirect")
+	);
 	return {
 		redirect: function(url) {
-			if ( at(url) && url.pathname === "/redirect" ) {
+			if ( at(url) ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 			}
 		}

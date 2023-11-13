@@ -1,8 +1,11 @@
 addRule((function() {
-	const at = AT_DOMAIN("facebook.com");
+	const at = AND(
+		AT_DOMAIN("facebook.com"),
+		AT_PATHNAME("/l.php")
+	);
 	return {
 		redirect: function(url) {
-			if ( at(url) && url.pathname === "/l.php" ) {
+			if ( at(url) ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "u");
 			}
 		}

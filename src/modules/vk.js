@@ -1,8 +1,11 @@
 addRule((function() {
-	const at = AT_DOMAIN("vk.com");
+	const at = AND(
+		AT_DOMAIN("vk.com"),
+		AT_PATHNAME("/away.php")
+	);
 	return {
 		redirect: function(url) {
-			if ( at(url) && url.pathname === "/away.php" ) {
+			if ( at(url) ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "to");
 			}
 		}
