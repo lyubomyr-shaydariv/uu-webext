@@ -5,7 +5,7 @@ addRule((function() {
 				try {
 					return new URL(JSON.parse(JSON.parse(atob(url.searchParams.get("p"))).p).url);
 				} catch ( ignored ) {
-					return getRedirectToWarningPage(url);
+					return REDIRECT_CONFIRMATION_URL(url);
 				}
 			}
 		}

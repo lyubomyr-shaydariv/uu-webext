@@ -16,14 +16,6 @@
 
 (function(global) {
 
-	global.getRedirectToWarningPage = function(url) {
-		return new URL(`chrome-extension://${chrome.runtime.id}/warn.html?url=${encodeURIComponent(url)}`);
-	};
-
-})(this);
-
-(function(global) {
-
 	function cleanSearchParams(searchParams, filter) {
 		if ( !searchParams || !filter ) {
 			return;
@@ -109,6 +101,10 @@
 	global.FILTER_ENTRIES = function(url, filter) {
 		cleanSearchParams(url.searchParams, filter);
 		url.hash = parseAndCleanHashPairs(url.hash, filter);
+	};
+
+	global.REDIRECT_CONFIRMATION_URL = function(url) {
+		return new URL(`chrome-extension://${chrome.runtime.id}/warn.html?url=${encodeURIComponent(url)}`);
 	};
 
 	global.REDIRECT_FROM_SEARCH_PARAMS = function(url, key) {

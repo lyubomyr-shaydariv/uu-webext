@@ -8,7 +8,7 @@ addRule((function() {
 					try {
 						return new URL(JSON.parse(atob(encodedBlob)).href);
 					} catch ( ignored ) {
-						return getRedirectToWarningPage(url);
+						return REDIRECT_CONFIRMATION_URL(url);
 					}
 				}
 			}
