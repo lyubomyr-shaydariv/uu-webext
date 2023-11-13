@@ -7,10 +7,10 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const keysToRemove = ["assetId", "assetType", "campaignId", "recipientId", "siteId"];
+	const filter = EXCLUDE("assetId", "assetType", "campaignId", "recipientId", "siteId");
 	return {
 		redirect: function(url) {
-			cleanAllSearchAndHashPairs(url, [...keysToRemove]);
+			cleanSearchAndHashPairs(url, filter);
 		}
 	};
 })());

@@ -9,10 +9,10 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const keysToRemove = ["trk", "trkCampaign"];
+	const filter = EXCLUDE("trk", "trkCampaign");
 	return {
 		redirect: function(url) {
-			cleanAllSearchAndHashPairs(url, [...keysToRemove]);
+			cleanSearchAndHashPairs(url, filter);
 		}
 	};
 })());
