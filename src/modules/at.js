@@ -1,7 +1,8 @@
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "at_campaign" && k !== "at_medium" && !k.startsWith("at_custom");
-	};
+	const filter = AND(
+		EXCLUDE("at_campaign", "at_medium"),
+		EXCLUDE_BY_STARTS_WITH("at_custom")
+	);
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

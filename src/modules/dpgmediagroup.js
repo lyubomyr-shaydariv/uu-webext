@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return !k.startsWith("dpg_");
-	};
+	const filter = EXCLUDE_BY_STARTS_WITH("dpg_");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

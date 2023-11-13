@@ -19,9 +19,10 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "cxt" && k !== "s" && k !== "t" && !k.startsWith("ref_");
-	};
+	const filter = AND(
+		EXCLUDE("cxt", "s", "t"),
+		EXCLUDE_BY_STARTS_WITH("ref_")
+	);
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {

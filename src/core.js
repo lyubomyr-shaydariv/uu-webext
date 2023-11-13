@@ -110,6 +110,26 @@ main:
 
 (function(global) {
 
+	global.AND = function(...predicates) {
+		switch ( predicates.length ) {
+		case 0:
+			return (name, values) => true;
+		case 1:
+			predicates = predicates.slice(0, 1);
+			return (name, values) => predicates[0](name, values);
+		default:
+			predicates = predicates.slice();
+			return (name, values) => {
+				for ( const predicate of predicates ) {
+					if ( !predicate(name, values) ) {
+						return false;
+					}
+				}
+				return true;
+			};
+		}
+	};
+
 	global.EXCLUDE = function(...names) {
 		switch ( names.length ) {
 		case 0:
@@ -120,6 +140,27 @@ main:
 		default:
 			names = new Set(names);
 			return (name, values) => !names.has(name);
+		}
+	};
+
+	// TODO extract the _BY_STARTS_WITH as an operator?
+	global.EXCLUDE_BY_STARTS_WITH = function(...names) {
+		switch ( names.length ) {
+		case 0:
+			return (name, values) => true;
+		case 1:
+			names = names.slice(0, 1);
+			return (name, values) => !name.startsWith(names[0]);
+		default:
+			names = names.slice();
+			return (name, values) => {
+				for ( const n of names ) {
+					if ( name.startsWith(n) ) {
+						return false;
+					}
+				}
+				return true;
+			};
 		}
 	};
 

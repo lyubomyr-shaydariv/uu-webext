@@ -36,9 +36,10 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	function filter(k, vs) {
-		return k !== "_ga" && k !== "dclid" && !k.startsWith("ga_") && k !== "gclid" && k !== "gclsrc" && k !== "gs_l";
-	};
+	const filter = AND(
+		EXCLUDE("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
+		EXCLUDE_BY_STARTS_WITH("ga_")
+	);
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

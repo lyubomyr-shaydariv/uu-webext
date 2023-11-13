@@ -1,7 +1,5 @@
 addRule((function() {
-	function filter(k, vs) {
-		return !k.startsWith("ns_");
-	};
+	const filter = EXCLUDE_BY_STARTS_WITH("ns_");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);
