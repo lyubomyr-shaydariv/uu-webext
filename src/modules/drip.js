@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("__s");
+	const filter = EXCLUDE("__s");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail");
+	const filter = EXCLUDE("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "linkedin.com" || url.hostname.endsWith(".linkedin.com") ) {

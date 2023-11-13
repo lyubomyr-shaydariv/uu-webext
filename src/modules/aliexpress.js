@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("af", "aff_request_id", "algo_expid", "algo_pvid", "btsid", "cv", "dp", "expid", "gps-id", "initiative_id", "mall_affr", "scm_id", "sk", "spm", "terminal_id", "ws_ab_test");
+	const filter = EXCLUDE("af", "aff_request_id", "algo_expid", "algo_pvid", "btsid", "cv", "dp", "expid", "gps-id", "initiative_id", "mall_affr", "scm_id", "sk", "spm", "terminal_id", "ws_ab_test");
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?aliexpress\.[^.]+$/.test(url.hostname) ) {
@@ -9,7 +9,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("aff_platform", "aff_trace_key");
+	const filter = EXCLUDE("aff_platform", "aff_trace_key");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("context", "si");
+	const filter = EXCLUDE("context", "si");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "open.spotify.com" ) {

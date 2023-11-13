@@ -31,7 +31,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("twclid");
+	const filter = EXCLUDE("twclid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

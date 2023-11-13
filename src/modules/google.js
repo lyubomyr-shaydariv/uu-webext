@@ -26,7 +26,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
+	const filter = EXCLUDE("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?google\.[^.]+$/.test(url.hostname) ) {

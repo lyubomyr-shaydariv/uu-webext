@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("tctx", "trackId");
+	const filter = EXCLUDE("tctx", "trackId");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "netflix.com" || url.hostname.endsWith(".netflix.com") ) {

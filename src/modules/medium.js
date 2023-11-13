@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("_branch_match_id", "source");
+	const filter = EXCLUDE("_branch_match_id", "source");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "medium.com" ) {

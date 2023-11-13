@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("feature", "kw", "si");
+	const filter = EXCLUDE("feature", "kw", "si");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com") ) {
@@ -9,7 +9,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("si");
+	const filter = EXCLUDE("si");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "youtu.be" ) {

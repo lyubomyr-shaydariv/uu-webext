@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("msclkid");
+	const filter = EXCLUDE("msclkid");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

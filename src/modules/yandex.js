@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("lr", "redircnt");
+	const filter = EXCLUDE("lr", "redircnt");
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?yandex\.[^.]+$/.test(url.hostname) ) {
@@ -9,7 +9,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("yclid", "_openstat");
+	const filter = EXCLUDE("yclid", "_openstat");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

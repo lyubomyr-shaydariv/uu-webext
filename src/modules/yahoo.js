@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("guccounter");
+	const filter = EXCLUDE("guccounter");
 	return {
 		redirect: function(url) {
 			if ( /^(?:[^.]+\.)?yahoo\.[^.]+$/.test(url.hostname) ) {
@@ -9,7 +9,7 @@ addRule((function() {
 	};
 })());
 addRule((function() {
-	const filter = createFilterByConstantKeys("soc_src", "soc_trk");
+	const filter = EXCLUDE("soc_src", "soc_trk");
 	return {
 		redirect: function(url) {
 			cleanSearchAndHashPairs(url, filter);

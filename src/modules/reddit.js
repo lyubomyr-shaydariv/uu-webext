@@ -1,5 +1,5 @@
 addRule((function() {
-	const filter = createFilterByConstantKeys("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source");
+	const filter = EXCLUDE("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source");
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "reddit.com" || url.hostname.endsWith(".reddit.com") ) {

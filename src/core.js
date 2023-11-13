@@ -106,16 +106,21 @@ main:
 		url.hash = parseAndCleanAllHashPairs(url.hash, allKeys);
 	};
 
-	global.createFilterByConstantKeys = function(...keys) {
-		if ( keys.length === 0 ) {
-			return (k, vs) => true;
+})(this);
+
+(function(global) {
+
+	global.EXCLUDE = function(...names) {
+		switch ( names.length ) {
+		case 0:
+			return (name, values) => true;
+		case 1:
+			names = names.slice(0, 1);
+			return (name, values) => name !== names[0];
+		default:
+			names = new Set(names);
+			return (name, values) => !names.has(name);
 		}
-		if ( keys.length === 1 ) {
-			const onlyKey = keys[0];
-			return (k, vs) => k !== onlyKey;
-		}
-		const keySet = new Set(keys);
-		return (k, vs) => !keySet.has(k);
 	};
 
 })(this);
