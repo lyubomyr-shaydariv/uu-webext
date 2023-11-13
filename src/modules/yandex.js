@@ -1,9 +1,8 @@
 addRule((function() {
 	const filter = createFilterByConstantKeys("lr", "redircnt");
-	const domainRx = /^(?:[^.]+\.)?yandex\.[^.]+$/;
 	return {
 		redirect: function(url) {
-			if ( domainRx.test(url.hostname) ) {
+			if ( /^(?:[^.]+\.)?yandex\.[^.]+$/.test(url.hostname) ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

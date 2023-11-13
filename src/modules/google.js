@@ -27,10 +27,9 @@ addRule((function() {
 })());
 addRule((function() {
 	const filter = createFilterByConstantKeys("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
-	const domainRx = /^(?:[^.]+\.)?google\.[^.]+$/;
 	return {
 		redirect: function(url) {
-			if ( domainRx.test(url.hostname) ) {
+			if ( /^(?:[^.]+\.)?google\.[^.]+$/.test(url.hostname) ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}

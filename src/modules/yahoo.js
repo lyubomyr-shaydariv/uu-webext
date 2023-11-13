@@ -1,9 +1,8 @@
 addRule((function() {
 	const filter = createFilterByConstantKeys("guccounter");
-	const domainRx = /^(?:[^.]+\.)?yahoo\.[^.]+$/;
 	return {
 		redirect: function(url) {
-			if ( domainRx.test(url.hostname) ) {
+			if ( /^(?:[^.]+\.)?yahoo\.[^.]+$/.test(url.hostname) ) {
 				cleanSearchAndHashPairs(url, filter);
 			}
 		}
