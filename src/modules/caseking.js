@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_DOMAIN("caseking.de");
 	const filter = EXCLUDE("campaign", "sPartner");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "caseking.de" || url.hostname.endsWith(".caseking.de") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

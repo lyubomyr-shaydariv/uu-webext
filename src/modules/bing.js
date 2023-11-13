@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_DOMAIN("bing.com");
 	const filter = EXCLUDE("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "bing.com" || url.hostname.endsWith(".bing.com") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

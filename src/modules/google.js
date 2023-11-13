@@ -1,8 +1,9 @@
 addRule((function() {
 	const ampPrefix = "/amp/s/";
+	const at = AT_DOMAIN("google.com");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "www.google.com" || url.hostname.endsWith(".google.com") ) {
+			if ( at(url) ) {
 				if ( url.pathname === "/url" ) {
 					return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 				}
@@ -26,10 +27,11 @@ addRule((function() {
 	};
 })());
 addRule((function() {
+	const at = AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/);
 	const filter = EXCLUDE("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
 	return {
 		redirect: function(url) {
-			if ( /^(?:[^.]+\.)?google\.[^.]+$/.test(url.hostname) ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

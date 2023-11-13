@@ -1,7 +1,8 @@
 addRule((function() {
+	const at = AT_HOSTNAME("t.umblr.com");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "t.umblr.com" && url.pathname === "/redirect" ) {
+			if ( at(url) && url.pathname === "/redirect" ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "z");
 			}
 		}

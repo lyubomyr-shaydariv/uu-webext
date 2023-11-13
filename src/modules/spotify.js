@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_HOSTNAME("open.spotify.com");
 	const filter = EXCLUDE("context", "si");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "open.spotify.com" ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

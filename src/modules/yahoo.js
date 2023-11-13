@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yahoo\.[^.]+$/);
 	const filter = EXCLUDE("guccounter");
 	return {
 		redirect: function(url) {
-			if ( /^(?:[^.]+\.)?yahoo\.[^.]+$/.test(url.hostname) ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

@@ -64,6 +64,73 @@
 		}
 	};
 
+	global.AT_DOMAIN = function(...hostnames) {
+		return OR(
+			AT_HOSTNAME(...hostnames),
+			AT_HOSTNAME_UNDER_DOMAIN(...hostnames)
+		);
+	};
+
+	global.AT_HOSTNAME = function(...hostnames) {
+		switch ( hostnames.length ) {
+		case 0:
+			return (url) => true;
+		case 1:
+			hostnames = hostnames.slice(0, 1);
+			return (url) => url.hostname === hostnames[0];
+		default:
+			hostnames = hostnames.slice();
+			return (url) => {
+				for ( const hostname of hostnames ) {
+					if ( url.hostname === hostname ) {
+						return true;
+					}
+				}
+				return false;
+			};
+		}
+	};
+
+	global.AT_HOSTNAME_BY_REGEXP = function(...regexps) {
+		switch ( regexps.length ) {
+		case 0:
+			return (url) => true;
+		case 1:
+			regexps = regexps.slice(0, 1);
+			return (url) => regexps[0].test(url.hostname);
+		default:
+			regexps = regexps.slice();
+			return (url) => {
+				for ( const regexp of regexps ) {
+					if ( regexp.test(url.hostname) ) {
+						return true;
+					}
+				}
+				return false;
+			};
+		}
+	};
+
+	global.AT_HOSTNAME_UNDER_DOMAIN = function(...hostnames) {
+		switch ( hostnames.length ) {
+		case 0:
+			return (url) => true;
+		case 1:
+			hostnames = hostnames.map(hostname => "." + hostname);
+			return (url) => url.hostname.endsWith(hostnames[0]);
+		default:
+			hostnames = hostnames.map(hostname => "." + hostname);
+			return (url) => {
+				for ( const hostname of hostnames ) {
+					if ( url.hostname.endsWith(hostname) ) {
+						return true;
+					}
+				}
+				return false;
+			};
+		}
+	};
+
 	global.EXCLUDE = function(...names) {
 		switch ( names.length ) {
 		case 0:
@@ -101,6 +168,26 @@
 	global.FILTER_ENTRIES = function(url, filter) {
 		cleanSearchParams(url.searchParams, filter);
 		url.hash = parseAndCleanHashPairs(url.hash, filter);
+	};
+
+	global.OR = function(...predicates) {
+		switch ( predicates.length ) {
+		case 0:
+			return (name, values) => true;
+		case 1:
+			predicates = predicates.slice(0, 1);
+			return (name, values) => predicates[0](name, values);
+		default:
+			predicates = predicates.slice();
+			return (name, values) => {
+				for ( const predicate of predicates ) {
+					if ( predicate(name, values) ) {
+						return true;
+					}
+				}
+				return false;
+			};
+		}
 	};
 
 	global.REDIRECT_CONFIRMATION_URL = function(url) {

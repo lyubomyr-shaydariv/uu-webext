@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_DOMAIN("bilibili.com");
 	const filter = EXCLUDE("callback", "spm_id_from");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "bilibili.com" || url.hostname.endsWith(".bilibili.com") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

@@ -1,7 +1,8 @@
 addRule((function() {
+	const at = AT_HOSTNAME("e.customeriomail.com");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "e.customeriomail.com" ) {
+			if ( at(url) ) {
 				const pathnameExec = /^\/e\/c\/([^/]+)\/.*/.exec(url.pathname);
 				if ( pathnameExec ) {
 					const encodedBlob = pathnameExec[1];

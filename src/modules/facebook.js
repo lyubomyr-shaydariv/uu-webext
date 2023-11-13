@@ -1,17 +1,19 @@
 addRule((function() {
+	const at = AT_DOMAIN("facebook.com");
 	return {
 		redirect: function(url) {
-			if ( (url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com")) && url.pathname === "/l.php" ) {
+			if ( at(url) && url.pathname === "/l.php" ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "u");
 			}
 		}
 	};
 })());
 addRule((function() {
+	const at = AT_DOMAIN("facebook.com");
 	const filter = EXCLUDE("hrc", "refsrc");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "facebook.com" || url.hostname.endsWith("facebook.com") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

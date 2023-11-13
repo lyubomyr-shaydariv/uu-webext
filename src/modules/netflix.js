@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_DOMAIN("netflix.com");
 	const filter = EXCLUDE("tctx", "trackId");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "netflix.com" || url.hostname.endsWith(".netflix.com") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

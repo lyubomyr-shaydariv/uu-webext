@@ -1,7 +1,8 @@
 addRule((function() {
+	const at = AT_DOMAIN("twitter.com");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
+			if ( at(url) ) {
 				const rawRefUrl = url.searchParams.get("ref_url");
 				if ( rawRefUrl ) {
 					const refUrl = new URL(rawRefUrl);
@@ -19,13 +20,14 @@ addRule((function() {
 	};
 })());
 addRule((function() {
+	const at = AT_DOMAIN("twitter.com");
 	const filter = AND(
 		EXCLUDE("cxt", "s", "t"),
 		EXCLUDE_BY_STARTS_WITH("ref_")
 	);
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "twitter.com" || url.hostname.endsWith(".twitter.com") ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

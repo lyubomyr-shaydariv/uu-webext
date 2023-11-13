@@ -1,8 +1,9 @@
 addRule((function() {
+	const at = AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yandex\.[^.]+$/);
 	const filter = EXCLUDE("lr", "redircnt");
 	return {
 		redirect: function(url) {
-			if ( /^(?:[^.]+\.)?yandex\.[^.]+$/.test(url.hostname) ) {
+			if ( at(url) ) {
 				FILTER_ENTRIES(url, filter);
 			}
 		}

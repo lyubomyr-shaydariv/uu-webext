@@ -1,7 +1,8 @@
 addRule((function() {
+	const at = AT_HOSTNAME("l.instagram.com");
 	return {
 		redirect: function(url) {
-			if ( url.hostname === "l.instagram.com" ) {
+			if ( at(url)  ) {
 				return REDIRECT_FROM_SEARCH_PARAMS(url, "u");
 			}
 		}
