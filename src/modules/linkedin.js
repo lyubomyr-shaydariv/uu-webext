@@ -12,7 +12,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "linkedin.com" || url.hostname.endsWith(".linkedin.com")) && url.pathname === "/safety/go" ) {
-				return extractQueryPairAsUrl(url.searchParams, "url");
+				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}
 	};

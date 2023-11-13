@@ -2,7 +2,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "l.instagram.com" ) {
-				return extractQueryPairAsUrl(url.searchParams, "u");
+				return REDIRECT_FROM_SEARCH_PARAMS(url, "u");
 			}
 		}
 	};

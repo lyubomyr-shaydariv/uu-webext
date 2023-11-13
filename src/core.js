@@ -20,13 +20,6 @@
 		return new URL(`chrome-extension://${chrome.runtime.id}/warn.html?url=${encodeURIComponent(url)}`);
 	};
 
-	global.extractQueryPairAsUrl = function(query, key) {
-		const value = query.get(key);
-		if ( value ) {
-			return new URL(value);
-		}
-	};
-
 })(this);
 
 (function(global) {
@@ -116,6 +109,13 @@
 	global.FILTER_ENTRIES = function(url, filter) {
 		cleanSearchParams(url.searchParams, filter);
 		url.hash = parseAndCleanHashPairs(url.hash, filter);
+	};
+
+	global.REDIRECT_FROM_SEARCH_PARAMS = function(url, key) {
+		const value = url.searchParams.get(key);
+		if ( value ) {
+			return new URL(value);
+		}
 	};
 
 })(this);

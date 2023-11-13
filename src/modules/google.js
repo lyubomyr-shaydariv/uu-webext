@@ -4,7 +4,7 @@ addRule((function() {
 		redirect: function(url) {
 			if ( url.hostname === "www.google.com" || url.hostname.endsWith(".google.com") ) {
 				if ( url.pathname === "/url" ) {
-					return extractQueryPairAsUrl(url.searchParams, "q");
+					return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 				}
 				if ( url.pathname.startsWith(ampPrefix) ) {
 					const rawAmpUrl = url.pathname.substring(ampPrefix.length);

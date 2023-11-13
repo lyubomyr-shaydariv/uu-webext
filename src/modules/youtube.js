@@ -22,7 +22,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( (url.hostname === "youtube.com" || url.hostname.endsWith(".youtube.com")) && url.pathname === "/redirect" ) {
-				return extractQueryPairAsUrl(url.searchParams, "q");
+				return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 			}
 		}
 	};

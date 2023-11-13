@@ -2,7 +2,7 @@ addRule((function() {
 	return {
 		redirect: function(url) {
 			if ( url.hostname === "www.evernote.com" && url.pathname === "/OutboundRedirect.action" ) {
-				return extractQueryPairAsUrl(url.searchParams, "dest");
+				return REDIRECT_FROM_SEARCH_PARAMS(url, "dest");
 			}
 		}
 	};
