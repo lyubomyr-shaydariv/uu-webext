@@ -1,24 +1,27 @@
-addRule((function() {
-	const at = AT_HOSTNAME("medium.com");
-	const filter = EXCLUDE("_branch_match_id", "source");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_HOSTNAME("medium.com");
+	const filter = rules.EXCLUDE("_branch_match_id", "source");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AND(
-		AT_HOSTNAME("medium.com"),
-		AT_PATHNAME("/r/")
+	});
+}
+{
+	const at = rules.AND(
+		rules.AT_HOSTNAME("medium.com"),
+		rules.AT_PATHNAME("/r/")
 	);
-	return {
-		redirect: function(url) {
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}
-	};
-})());
+	});
+}

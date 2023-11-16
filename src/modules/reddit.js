@@ -1,21 +1,24 @@
-addRule((function() {
-	const at = AT_DOMAIN("reddit.com");
-	const filter = EXCLUDE("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("reddit.com");
+	const filter = rules.EXCLUDE("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AT_HOSTNAME("out.reddit.com");
-	return {
-		redirect: function(url) {
+	});
+}
+{
+	const at = rules.AT_HOSTNAME("out.reddit.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) && /^\/[^/]+$/.test(url.pathname) ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}
-	};
-})());
+	});
+}

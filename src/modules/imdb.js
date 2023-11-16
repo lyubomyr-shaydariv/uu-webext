@@ -1,14 +1,17 @@
-addRule((function() {
-	const at = AT_DOMAIN("imdb.com");
-	const filter = AND(
-		EXCLUDE("ref_"),
-		EXCLUDE_BY_STARTS_WITH("pf_rd_")
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("imdb.com");
+	const filter = rules.AND(
+		rules.EXCLUDE("ref_"),
+		rules.EXCLUDE_BY_STARTS_WITH("pf_rd_")
 	);
-	return {
-		redirect: function(url) {
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
+	});
+}

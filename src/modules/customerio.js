@@ -1,7 +1,10 @@
-addRule((function() {
-	const at = AT_HOSTNAME("e.customeriomail.com");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_HOSTNAME("e.customeriomail.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
 				const pathnameExec = /^\/e\/c\/([^/]+)\/.*/.exec(url.pathname);
 				if ( pathnameExec ) {
@@ -9,10 +12,10 @@ addRule((function() {
 					try {
 						return new URL(JSON.parse(atob(encodedBlob)).href);
 					} catch ( ignored ) {
-						return REDIRECT_CONFIRMATION_URL(url);
+						return rules.REDIRECT_CONFIRMATION_URL(url);
 					}
 				}
 			}
 		}
-	};
-})());
+	});
+}

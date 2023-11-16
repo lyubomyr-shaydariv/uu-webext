@@ -1,35 +1,38 @@
-addRule((function() {
-	const at = AT_DOMAIN("youtube.com");
-	const filter = EXCLUDE("feature", "kw", "si");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("youtube.com");
+	const filter = rules.EXCLUDE("feature", "kw", "si");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AT_DOMAIN("youtu.be");
-	const filter = EXCLUDE("si");
-	return {
-		redirect: function(url) {
+	});
+}
+{
+	const at = rules.AT_DOMAIN("youtu.be");
+	const filter = rules.EXCLUDE("si");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AND(
-		AT_DOMAIN("youtube.com"),
-		AT_PATHNAME("/redirect")
+	});
+}
+{
+	const at = rules.AND(
+		rules.AT_DOMAIN("youtube.com"),
+		rules.AT_PATHNAME("/redirect")
 	);
-	return {
-		redirect: function(url) {
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 			}
 		}
-	};
-})());
+	});
+}

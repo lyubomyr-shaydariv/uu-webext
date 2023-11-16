@@ -1,13 +1,16 @@
-addRule((function() {
-	const at = AND(
-		AT_HOSTNAME("www.evernote.com"),
-		AT_PATHNAME("/OutboundRedirect.action")
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AND(
+		rules.AT_HOSTNAME("www.evernote.com"),
+		rules.AT_PATHNAME("/OutboundRedirect.action")
 	);
-	return {
-		redirect: function(url) {
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "dest");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "dest");
 			}
 		}
-	};
-})());
+	});
+}

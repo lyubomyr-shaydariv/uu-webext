@@ -1,21 +1,24 @@
-addRule((function() {
-	const at = AT_DOMAIN("linkedin.com");
-	const filter = EXCLUDE("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("linkedin.com");
+	const filter = rules.EXCLUDE("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AT_DOMAIN("linkedin.com");
-	return {
-		redirect: function(url) {
+	});
+}
+{
+	const at = rules.AT_DOMAIN("linkedin.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) && url.pathname === "/safety/go" ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}
-	};
-})());
+	});
+}

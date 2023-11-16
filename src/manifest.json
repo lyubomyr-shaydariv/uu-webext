@@ -4,14 +4,15 @@
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
-	"icons" :{
-		"48" : "icon-48x48.png",
-		"128" : "icon-128x128.png"
+	"icons": {
+		"48": "icon-48x48.png",
+		"128": "icon-128x128.png"
 	},
 	"content_security_policy": "object-src 'self'; script-src 'self';",
 	"background": {
 		"scripts": [
-			"core.js",
+			"rules.js",
+			"registry.js",
 			"modules/_.js",
 			"modules/actionmap.js",
 			"modules/adobe.js",
@@ -23,8 +24,8 @@
 			"modules/caseking.js",
 			"modules/changeorg.js",
 			"modules/customerio.js",
-			"modules/drip.js",
 			"modules/dpgmediagroup.js",
+			"modules/drip.js",
 			"modules/duckduckgo.js",
 			"modules/ebay.js",
 			"modules/etsy.js",
@@ -69,7 +70,8 @@
 			"modules/zanox.js",
 			"modules/zeit.js",
 			"main.js"
-		]
+		],
+		"type": "module"
 	},
 	"options_ui": {
 		"page": "options.html"

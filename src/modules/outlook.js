@@ -1,10 +1,13 @@
-addRule((function() {
-	const at = AT_DOMAIN("safelinks.protection.outlook.com");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("safelinks.protection.outlook.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				return REDIRECT_FROM_SEARCH_PARAMS(url, "url");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}
-	};
-})());
+	});
+}

@@ -1,11 +1,14 @@
-addRule((function() {
-	const at = AT_DOMAIN("caseking.de");
-	const filter = EXCLUDE("campaign", "sPartner");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("caseking.de");
+	const filter = rules.EXCLUDE("campaign", "sPartner");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
+	});
+}

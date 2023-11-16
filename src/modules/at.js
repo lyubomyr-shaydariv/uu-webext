@@ -1,11 +1,14 @@
-addRule((function() {
-	const filter = AND(
-		EXCLUDE("at_campaign", "at_medium"),
-		EXCLUDE_BY_STARTS_WITH("at_custom")
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const filter = rules.AND(
+		rules.EXCLUDE("at_campaign", "at_medium"),
+		rules.EXCLUDE_BY_STARTS_WITH("at_custom")
 	);
-	return {
-		redirect: function(url) {
-			FILTER_ENTRIES(url, filter);
+	registry.addRule({
+		redirect: (url) => {
+			rules.FILTER_ENTRIES(url, filter);
 		}
-	};
-})());
+	});
+}

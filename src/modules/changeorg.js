@@ -1,11 +1,14 @@
-addRule((function() {
-	const at = AT_DOMAIN("change.org");
-	const filter = EXCLUDE("guest", "recruited_by_id", "recruiter", "short_display_name", "source_location");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("change.org");
+	const filter = rules.EXCLUDE("guest", "recruited_by_id", "recruiter", "short_display_name", "source_location");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
+	});
+}

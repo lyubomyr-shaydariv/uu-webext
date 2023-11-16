@@ -1,7 +1,10 @@
-addRule((function() {
-	const at = AT_DOMAIN("twitter.com");
-	return {
-		redirect: function(url) {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
+	const at = rules.AT_DOMAIN("twitter.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
 				const rawRefUrl = url.searchParams.get("ref_url");
 				if ( rawRefUrl ) {
@@ -17,27 +20,27 @@ addRule((function() {
 				}
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AT_DOMAIN("twitter.com");
-	const filter = AND(
-		EXCLUDE("cxt", "s", "t"),
-		EXCLUDE_BY_STARTS_WITH("ref_")
+	});
+}
+{
+	const at = rules.AT_DOMAIN("twitter.com");
+	const filter = rules.AND(
+		rules.EXCLUDE("cxt", "s", "t"),
+		rules.EXCLUDE_BY_STARTS_WITH("ref_")
 	);
-	return {
-		redirect: function(url) {
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const filter = EXCLUDE("twclid");
-	return {
-		redirect: function(url) {
-			FILTER_ENTRIES(url, filter);
+	});
+}
+{
+	const filter = rules.EXCLUDE("twclid");
+	registry.addRule({
+		redirect: (url) => {
+			rules.FILTER_ENTRIES(url, filter);
 		}
-	};
-})());
+	});
+}

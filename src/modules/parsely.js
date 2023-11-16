@@ -1,10 +1,12 @@
-addRule((function() {
-	const filter = EXCLUDE("Campaign");
-	return {
-		redirect: function(url) {
-			if ( false ) { // if parse.ly is only supposed to work at target sites, there is currently no way to detect it robustly
-				FILTER_ENTRIES(url, filter);
-			}
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+// isn't it too wide?
+if ( false ) {
+	const filter = rules.EXCLUDE("Campaign");
+	registry.addRule({
+		redirect: (url) => {
+				rules.FILTER_ENTRIES(url, filter);
 		}
-	};
-})());
+	});
+}

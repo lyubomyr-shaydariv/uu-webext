@@ -1,11 +1,14 @@
-addRule((function() {
+import * as registry from '/registry.js';
+import * as rules from '/rules.js';
+
+{
 	const ampPrefix = "/amp/s/";
-	const at = AT_DOMAIN("google.com");
-	return {
-		redirect: function(url) {
+	const at = rules.AT_DOMAIN("google.com");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
 				if ( url.pathname === "/url" ) {
-					return REDIRECT_FROM_SEARCH_PARAMS(url, "q");
+					return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "q");
 				}
 				if ( url.pathname.startsWith(ampPrefix) ) {
 					const rawAmpUrl = url.pathname.substring(ampPrefix.length);
@@ -24,27 +27,27 @@ addRule((function() {
 				}
 			}
 		}
-	};
-})());
-addRule((function() {
-	const at = AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/);
-	const filter = EXCLUDE("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
-	return {
-		redirect: function(url) {
+	});
+}
+{
+	const at = rules.AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/);
+	const filter = rules.EXCLUDE("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
+	registry.addRule({
+		redirect: (url) => {
 			if ( at(url) ) {
-				FILTER_ENTRIES(url, filter);
+				rules.FILTER_ENTRIES(url, filter);
 			}
 		}
-	};
-})());
-addRule((function() {
-	const filter = AND(
-		EXCLUDE("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
-		EXCLUDE_BY_STARTS_WITH("ga_")
+	});
+}
+{
+	const filter = rules.AND(
+		rules.EXCLUDE("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
+		rules.EXCLUDE_BY_STARTS_WITH("ga_")
 	);
-	return {
-		redirect: function(url) {
-			FILTER_ENTRIES(url, filter);
+	registry.addRule({
+		redirect: (url) => {
+			rules.FILTER_ENTRIES(url, filter);
 		}
-	};
-})());
+	});
+}
