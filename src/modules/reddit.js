@@ -13,10 +13,13 @@ import * as rules from '/rules.js';
 	});
 }
 {
-	const at = rules.AT_HOSTNAME("out.reddit.com");
+	const at = rules.AND(
+		rules.AT_HOSTNAME("out.reddit.com"),
+		rules.AT_PATHNAME_BY_REGEXP(/^\/[^/]+$/)
+	);
 	registry.addRule({
 		redirect: (url) => {
-			if ( at(url) && /^\/[^/]+$/.test(url.pathname) ) {
+			if ( at(url) ) {
 				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}

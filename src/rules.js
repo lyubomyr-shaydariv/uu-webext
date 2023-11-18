@@ -133,6 +133,26 @@ const AT_PATHNAME = (...pathnames) => {
 	}
 };
 
+const AT_PATHNAME_BY_REGEXP = (...regexps) => {
+	switch ( regexps.length ) {
+	case 0:
+		return (url) => true;
+	case 1:
+		regexps = regexps.slice(0, 1);
+		return (url) => regexps[0].test(url.pathname);
+	default:
+		regexps = regexps.slice();
+		return (url) => {
+			for ( const regexp of regexps ) {
+				if ( regexp.test(url.pathname) ) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+};
+
 const AT_PATHNAME_BY_STARTS_WITH = (...pathnames) => {
 	switch ( pathnames.length ) {
 	case 0:
@@ -230,6 +250,7 @@ export {
 	AT_HOSTNAME_BY_REGEXP,
 	AT_HOSTNAME_UNDER_DOMAIN,
 	AT_PATHNAME,
+	AT_PATHNAME_BY_REGEXP,
 	AT_PATHNAME_BY_STARTS_WITH,
 	EXCLUDE,
 	EXCLUDE_BY_STARTS_WITH,
