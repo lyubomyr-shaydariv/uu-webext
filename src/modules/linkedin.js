@@ -13,10 +13,13 @@ import * as rules from '/rules.js';
 	});
 }
 {
-	const at = rules.AT_DOMAIN("linkedin.com");
+	const at = rules.AND(
+		rules.AT_DOMAIN("linkedin.com"),
+		rules.AT_PATHNAME("/safety/go")
+	);
 	registry.addRule({
 		redirect: (url) => {
-			if ( at(url) && url.pathname === "/safety/go" ) {
+			if ( at(url) ) {
 				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
 			}
 		}

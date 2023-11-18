@@ -133,6 +133,26 @@ const AT_PATHNAME = (...pathnames) => {
 	}
 };
 
+const AT_PATHNAME_BY_STARTS_WITH = (...pathnames) => {
+	switch ( pathnames.length ) {
+	case 0:
+		return (url) => true;
+	case 1:
+		pathnames = pathnames.slice(0, 1);
+		return (url) => url.pathname.startsWith(pathnames[0]);
+	default:
+		pathnames = pathnames.slice();
+		return (url) => {
+			for ( const pathname of pathnames ) {
+				if ( url.pathname.startsWith(pathname) ) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+};
+
 const EXCLUDE = (...names) => {
 	switch ( names.length ) {
 	case 0:
@@ -210,6 +230,7 @@ export {
 	AT_HOSTNAME_BY_REGEXP,
 	AT_HOSTNAME_UNDER_DOMAIN,
 	AT_PATHNAME,
+	AT_PATHNAME_BY_STARTS_WITH,
 	EXCLUDE,
 	EXCLUDE_BY_STARTS_WITH,
 	FILTER_ENTRIES,

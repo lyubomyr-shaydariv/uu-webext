@@ -2,28 +2,36 @@ import * as registry from '/registry.js';
 import * as rules from '/rules.js';
 
 {
-	const ampPrefix = "/amp/s/";
-	const at = rules.AT_DOMAIN("google.com");
+	const at = rules.AND(
+		rules.AT_DOMAIN("google.com"),
+		rules.AT_PATHNAME("/url/")
+	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				if ( url.pathname === "/url" ) {
-					return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "q");
+				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "q");
+			}
+		}
+	});
+}
+{
+	const ampPrefix = "/amp/s/";
+	const at = rules.AND(
+		rules.AT_DOMAIN("google.com"),
+		rules.AT_PATHNAME_BY_STARTS_WITH(ampPrefix)
+	);
+	registry.addRule({
+		redirect: (url) => {
+			if ( at(url) ) {
+				const rawAmpUrl = url.pathname.substring(ampPrefix.length);
+				if ( rawAmpUrl.startsWith("http://") || rawAmpUrl.startsWith("https://") ) {
+					return new URL(rawAmpUrl);
 				}
-				if ( url.pathname.startsWith(ampPrefix) ) {
-					const rawAmpUrl = url.pathname.substring(ampPrefix.length);
-					// does Google insert schemes to the AMPed pages?
-					if ( rawAmpUrl.startsWith("http://") || rawAmpUrl.startsWith("https://") ) {
-						return new URL(rawAmpUrl);
-					}
-					// assuming that the URL is always open for HTTP possibly redirecting to HTTPS itself
-					const schemedAmpUrl = "http://" + rawAmpUrl;
-					try {
-						return new URL(schemedAmpUrl);
-					} catch ( ex ) {
-						console.error(ex);
-						// pass
-					}
+				try {
+					// assuming that the URL is always open for HTTPS
+					return new URL("https://" + rawAmpUrl);
+				} catch ( ex ) {
+					return rules.REDIRECT_CONFIRMATION_URL(url);
 				}
 			}
 		}
