@@ -297,12 +297,21 @@ const OR = (...predicates) => {
 	}
 };
 
-const PIPE = (...fs) => {
+const PIPE = (options = {}, ...fs) => {
 	return (v) => {
-		for ( const f of fs ) {
-			v = f(v);
+		try {
+			let result = v;
+			for ( const f of fs ) {
+				result = f(result);
+			}
+			return result;
+		} catch ( err ) {
+			console.error(err);
+			if ( !options.onError ) {
+				return REDIRECT_CONFIRMATION_URL(v);
+			}
+			return options.onError(v);
 		}
-		return v;
 	};
 };
 

@@ -21,6 +21,9 @@ import * as __ from '/rules.js';
 		__.AT_PATHNAME_BY_STARTS_WITH(ampPrefix)
 	);
 	const pipeline = __.PIPE(
+		{
+			onError: __.REDIRECT_CONFIRMATION_URL
+		},
 		__.MAP_EXTRACT_PATHNAME(),
 		__.MAP_SUBSTRING(ampPrefix.length),
 		__.MAP_TO_URL()
@@ -28,12 +31,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				try {
-					return pipeline(url);
-				} catch ( err ) {
-					console.error(err);
-					return __.REDIRECT_CONFIRMATION_URL(url);
-				}
+				return pipeline(url);
 			}
 		}
 	});

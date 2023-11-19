@@ -4,6 +4,9 @@ import * as __ from '/rules.js';
 {
 	const at = __.AT_HOSTNAME("e.customeriomail.com");
 	const pipeline = __.PIPE(
+		{
+			onError: __.REDIRECT_CONFIRMATION_URL
+		},
 		__.MAP_EXTRACT_PATHNAME(),
 		__.MAP_PARSE_REGEXP(/^\/e\/c\/(.*)/),
 		__.MAP_ELEMENT_AT(1),
@@ -15,12 +18,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				try {
-					return pipeline(url);
-				} catch ( err ) {
-					console.error(err);
-					return __.REDIRECT_CONFIRMATION_URL(url);
-				}
+				return pipeline(url);
 			}
 		}
 	});

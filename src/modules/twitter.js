@@ -7,6 +7,9 @@ import * as __ from '/rules.js';
 		__.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
 	);
 	const pipeline = __.PIPE(
+		{
+			onError: __.REDIRECT_CONFIRMATION_URL
+		},
 		__.MAP_EXTRACT_SEARCH_PARAMS(),
 		__.MAP_PROPERTY_AT("ref_url"),
 		__.MAP_TO_URL(),
@@ -20,12 +23,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				try {
-					return pipeline(url);
-				} catch ( err ) {
-					console.error(err);
-					return __.REDIRECT_CONFIRMATION_URL(url);
-				}
+				return pipeline(url);
 			}
 		}
 	});

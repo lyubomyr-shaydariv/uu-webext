@@ -7,6 +7,9 @@ import * as __ from '/rules.js';
 		__.AT_PATHNAME("/track/click/")
 	);
 	const pipeline = __.PIPE(
+		{
+			onError: __.REDIRECT_CONFIRMATION_URL
+		},
 		__.MAP_EXTRACT_SEARCH_PARAMS(),
 		__.MAP_PROPERTY_AT("p"),
 		__.MAP_DECODE_BASE64(),
@@ -19,12 +22,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				try {
-					return pipeline(url);
-				} catch ( err ) {
-					console.error(err);
-					return __.REDIRECT_CONFIRMATION_URL(url);
-				}
+				return pipeline(url);
 			}
 		}
 	});
