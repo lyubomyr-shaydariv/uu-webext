@@ -2,10 +2,10 @@ import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
 {
-	const filter = __.EXCLUDE("vero_conv", "vero_id");
+	const excluding = __.EXCLUDING("vero_conv", "vero_id");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

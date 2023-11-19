@@ -20,10 +20,10 @@ import * as __ from '/rules.js';
 	});
 }
 {
-	const filter = __.EXCLUDE("igshid");
+	const excluding = __.EXCLUDING("igshid");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

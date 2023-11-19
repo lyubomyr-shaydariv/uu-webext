@@ -3,11 +3,11 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_HOSTNAME("open.spotify.com");
-	const filter = __.EXCLUDE("context", "si");
+	const excluding = __.EXCLUDING("context", "si");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});

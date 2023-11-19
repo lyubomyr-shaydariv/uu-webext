@@ -193,7 +193,7 @@ const AT_SEARCH_PARAMS_HAS_KEY = (...keys) => {
 	}
 };
 
-const EXCLUDE = (...names) => {
+const EXCLUDING = (...names) => {
 	switch ( names.length ) {
 	case 0:
 		return (name, values) => true;
@@ -206,7 +206,7 @@ const EXCLUDE = (...names) => {
 	}
 };
 
-const EXCLUDE_BY_STARTS_WITH = (...names) => {
+const EXCLUDING_BY_STARTS_WITH = (...names) => {
 	switch ( names.length ) {
 	case 0:
 		return (name, values) => true;
@@ -328,8 +328,8 @@ export {
 	AT_PATHNAME_BY_REGEXP,
 	AT_PATHNAME_BY_STARTS_WITH,
 	AT_SEARCH_PARAMS_HAS_KEY,
-	EXCLUDE,
-	EXCLUDE_BY_STARTS_WITH,
+	EXCLUDING,
+	EXCLUDING_BY_STARTS_WITH,
 	FILTER_ENTRIES,
 	MAP_DECODE_BASE64,
 	MAP_ELEMENT_AT,

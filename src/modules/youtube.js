@@ -3,22 +3,22 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_DOMAIN("youtube.com");
-	const filter = __.EXCLUDE("feature", "kw", "si");
+	const excluding = __.EXCLUDING("feature", "kw", "si");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
 	const at = __.AT_DOMAIN("youtu.be");
-	const filter = __.EXCLUDE("si");
+	const excluding = __.EXCLUDING("si");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});

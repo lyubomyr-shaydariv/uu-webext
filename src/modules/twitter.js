@@ -30,23 +30,23 @@ import * as __ from '/rules.js';
 }
 {
 	const at = __.AT_DOMAIN("twitter.com");
-	const filter = __.AND(
-		__.EXCLUDE("cxt", "s", "t"),
-		__.EXCLUDE_BY_STARTS_WITH("ref_")
+	const excluding = __.AND(
+		__.EXCLUDING("cxt", "s", "t"),
+		__.EXCLUDING_BY_STARTS_WITH("ref_")
 	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
-	const filter = __.EXCLUDE("twclid");
+	const excluding = __.EXCLUDING("twclid");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

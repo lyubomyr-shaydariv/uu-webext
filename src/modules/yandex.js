@@ -3,20 +3,20 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yandex\.[^.]+$/);
-	const filter = __.EXCLUDE("lr", "redircnt");
+	const excluding = __.EXCLUDING("lr", "redircnt");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
-	const filter = __.EXCLUDE("yclid", "_openstat");
+	const excluding = __.EXCLUDING("yclid", "_openstat");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

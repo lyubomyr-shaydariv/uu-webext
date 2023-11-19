@@ -3,20 +3,20 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yahoo\.[^.]+$/);
-	const filter = __.EXCLUDE("guccounter");
+	const excluding = __.EXCLUDING("guccounter");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
-	const filter = __.EXCLUDE("soc_src", "soc_trk");
+	const excluding = __.EXCLUDING("soc_src", "soc_trk");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

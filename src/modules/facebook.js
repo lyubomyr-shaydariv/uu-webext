@@ -24,20 +24,20 @@ import * as __ from '/rules.js';
 }
 {
 	const at = __.AT_DOMAIN("facebook.com");
-	const filter = __.EXCLUDE("hrc", "refsrc");
+	const excluding = __.EXCLUDING("hrc", "refsrc");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
-	const filter = __.EXCLUDE("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
+	const excluding = __.EXCLUDING("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

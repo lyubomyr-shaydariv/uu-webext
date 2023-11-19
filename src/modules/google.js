@@ -46,23 +46,23 @@ import * as __ from '/rules.js';
 }
 {
 	const at = __.AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/);
-	const filter = __.EXCLUDE("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
+	const excluding = __.EXCLUDING("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
 }
 {
-	const filter = __.AND(
-		__.EXCLUDE("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
-		__.EXCLUDE_BY_STARTS_WITH("ga_")
+	const excluding = __.AND(
+		__.EXCLUDING("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
+		__.EXCLUDING_BY_STARTS_WITH("ga_")
 	);
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, excluding);
 		}
 	});
 }

@@ -3,11 +3,11 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_HOSTNAME("medium.com");
-	const filter = __.EXCLUDE("_branch_match_id", "source");
+	const excluding = __.EXCLUDING("_branch_match_id", "source");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});

@@ -3,11 +3,11 @@ import * as __ from '/rules.js';
 
 {
 	const at = __.AT_DOMAIN("bing.com");
-	const filter = __.EXCLUDE("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp");
+	const excluding = __.EXCLUDING("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, excluding);
 			}
 		}
 	});
