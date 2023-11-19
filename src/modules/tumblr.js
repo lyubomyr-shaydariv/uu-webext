@@ -1,15 +1,15 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const at = rules.AND(
-		rules.AT_HOSTNAME("t.umblr.com"),
-		rules.AT_PATHNAME("/redirect")
+	const at = __.AND(
+		__.AT_HOSTNAME("t.umblr.com"),
+		__.AT_PATHNAME("/redirect")
 	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				return rules.REDIRECT_FROM_SEARCH_PARAMS(url, "z");
+				return __.REDIRECT_FROM_SEARCH_PARAMS(url, "z");
 			}
 		}
 	});

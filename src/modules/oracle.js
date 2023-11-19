@@ -1,19 +1,19 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const filter = rules.EXCLUDE("elqTrack", "elqTrackId");
+	const filter = __.EXCLUDE("elqTrack", "elqTrackId");
 	registry.addRule({
 		redirect: (url) => {
-			rules.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, filter);
 		}
 	});
 }
 {
-	const filter = rules.EXCLUDE("assetId", "assetType", "campaignId", "recipientId", "siteId");
+	const filter = __.EXCLUDE("assetId", "assetType", "campaignId", "recipientId", "siteId");
 	registry.addRule({
 		redirect: (url) => {
-			rules.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, filter);
 		}
 	});
 }

@@ -1,13 +1,13 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const at = rules.AT_HOSTNAME("open.spotify.com");
-	const filter = rules.EXCLUDE("context", "si");
+	const at = __.AT_HOSTNAME("open.spotify.com");
+	const filter = __.EXCLUDE("context", "si");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				rules.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, filter);
 			}
 		}
 	});

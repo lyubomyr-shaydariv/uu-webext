@@ -1,11 +1,11 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const filter = rules.EXCLUDE("hmb_campaign", "hmb_medium", "hmb_source");
+	const filter = __.EXCLUDE("hmb_campaign", "hmb_medium", "hmb_source");
 	registry.addRule({
 		redirect: (url) => {
-			rules.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, filter);
 		}
 	});
 }

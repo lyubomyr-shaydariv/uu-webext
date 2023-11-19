@@ -1,11 +1,11 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const filter = rules.EXCLUDE("c_id", "campaign_id", "cmpid", "mbid", "ncid", "rb_clickid");
+	const filter = __.EXCLUDE("c_id", "campaign_id", "cmpid", "mbid", "ncid", "rb_clickid");
 	registry.addRule({
 		redirect: (url) => {
-			rules.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, filter);
 		}
 	});
 }

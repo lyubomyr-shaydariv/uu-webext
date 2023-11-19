@@ -1,21 +1,21 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const at = rules.AND(
-		rules.AT_DOMAIN("twitter.com"),
-		rules.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
+	const at = __.AND(
+		__.AT_DOMAIN("twitter.com"),
+		__.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
 	);
-	const pipeline = rules.PIPE(
-		rules.MAP_EXTRACT_SEARCH_PARAMS(),
-		rules.MAP_PROPERTY_AT("ref_url"),
-		rules.MAP_TO_URL(),
-		rules.MAP_EXTRACT_SEARCH_PARAMS(),
-		rules.MAP_PROPERTY_AT("type"),
-		rules.MAP_PARSE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm),
-		rules.MAP_ELEMENT_AT(1),
-		rules.MAP_REPLACE("3A", ":"),
-		rules.MAP_TO_URL()
+	const pipeline = __.PIPE(
+		__.MAP_EXTRACT_SEARCH_PARAMS(),
+		__.MAP_PROPERTY_AT("ref_url"),
+		__.MAP_TO_URL(),
+		__.MAP_EXTRACT_SEARCH_PARAMS(),
+		__.MAP_PROPERTY_AT("type"),
+		__.MAP_PARSE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm),
+		__.MAP_ELEMENT_AT(1),
+		__.MAP_REPLACE("3A", ":"),
+		__.MAP_TO_URL()
 	);
 	registry.addRule({
 		redirect: (url) => {
@@ -24,31 +24,31 @@ import * as rules from '/rules.js';
 					return pipeline(url);
 				} catch ( err ) {
 					console.error(err);
-					return rules.REDIRECT_CONFIRMATION_URL(url);
+					return __.REDIRECT_CONFIRMATION_URL(url);
 				}
 			}
 		}
 	});
 }
 {
-	const at = rules.AT_DOMAIN("twitter.com");
-	const filter = rules.AND(
-		rules.EXCLUDE("cxt", "s", "t"),
-		rules.EXCLUDE_BY_STARTS_WITH("ref_")
+	const at = __.AT_DOMAIN("twitter.com");
+	const filter = __.AND(
+		__.EXCLUDE("cxt", "s", "t"),
+		__.EXCLUDE_BY_STARTS_WITH("ref_")
 	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				rules.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, filter);
 			}
 		}
 	});
 }
 {
-	const filter = rules.EXCLUDE("twclid");
+	const filter = __.EXCLUDE("twclid");
 	registry.addRule({
 		redirect: (url) => {
-			rules.FILTER_ENTRIES(url, filter);
+			__.FILTER_ENTRIES(url, filter);
 		}
 	});
 }

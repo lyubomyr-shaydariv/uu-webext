@@ -1,13 +1,13 @@
 import * as registry from '/registry.js';
-import * as rules from '/rules.js';
+import * as __ from '/rules.js';
 
 {
-	const at = rules.AT_DOMAIN("etsy.com");
-	const filter = rules.EXCLUDE("click_key", "click_sum", "organic_search_click", "ref");
+	const at = __.AT_DOMAIN("etsy.com");
+	const filter = __.EXCLUDE("click_key", "click_sum", "organic_search_click", "ref");
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				rules.FILTER_ENTRIES(url, filter);
+				__.FILTER_ENTRIES(url, filter);
 			}
 		}
 	});
