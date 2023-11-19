@@ -17,10 +17,18 @@ import * as __ from '/rules.js';
 		__.AT_HOSTNAME("out.reddit.com"),
 		__.AT_PATHNAME_BY_REGEXP(/^\/[^/]+$/)
 	);
+	const pipeline = __.PIPE(
+		{
+			onError: __.REDIRECT_CONFIRMATION_URL
+		},
+		__.MAP_EXTRACT_SEARCH_PARAMS(),
+		__.MAP_PROPERTY_AT("url"),
+		__.MAP_TO_URL()
+	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				return __.REDIRECT_FROM_SEARCH_PARAMS(url, "url");
+				return pipeline(url);
 			}
 		}
 	});

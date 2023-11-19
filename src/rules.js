@@ -319,13 +319,6 @@ const REDIRECT_CONFIRMATION_URL = (url) => {
 	return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
 };
 
-const REDIRECT_FROM_SEARCH_PARAMS = (url, key) => {
-	const value = url.searchParams.get(key);
-	if ( value ) {
-		return new URL(value);
-	}
-};
-
 export {
 	AND,
 	AT_DOMAIN,
@@ -351,6 +344,5 @@ export {
 	MAP_TO_URL,
 	OR,
 	PIPE,
-	REDIRECT_CONFIRMATION_URL,
-	REDIRECT_FROM_SEARCH_PARAMS
+	REDIRECT_CONFIRMATION_URL
 };
