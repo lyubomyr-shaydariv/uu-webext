@@ -11,7 +11,8 @@ import * as rules from '/rules.js';
 					const encodedBlob = pathnameExec[1];
 					try {
 						return new URL(JSON.parse(atob(encodedBlob)).href);
-					} catch ( ignored ) {
+					} catch ( err ) {
+						console.error(err);
 						return rules.REDIRECT_CONFIRMATION_URL(url);
 					}
 				}

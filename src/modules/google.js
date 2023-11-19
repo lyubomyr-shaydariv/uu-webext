@@ -30,7 +30,8 @@ import * as rules from '/rules.js';
 				try {
 					// assuming that the URL is always open for HTTPS
 					return new URL("https://" + rawAmpUrl);
-				} catch ( ex ) {
+				} catch ( err ) {
+					console.error(err);
 					return rules.REDIRECT_CONFIRMATION_URL(url);
 				}
 			}

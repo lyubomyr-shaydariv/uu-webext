@@ -11,7 +11,8 @@ import * as rules from '/rules.js';
 			if ( at(url) ) {
 				try {
 					return new URL(JSON.parse(JSON.parse(atob(url.searchParams.get("p"))).p).url);
-				} catch ( ignored ) {
+				} catch ( err ) {
+					console.error(err);
 					return rules.REDIRECT_CONFIRMATION_URL(url);
 				}
 			}
