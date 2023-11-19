@@ -233,7 +233,7 @@ const OR = (...predicates) => {
 };
 
 const REDIRECT_CONFIRMATION_URL = (url) => {
-	return new URL(`chrome-extension://${chrome.runtime.id}/warn.html?url=${encodeURIComponent(url)}`);
+	return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
 };
 
 const REDIRECT_FROM_SEARCH_PARAMS = (url, key) => {

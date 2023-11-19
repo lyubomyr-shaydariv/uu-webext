@@ -40,7 +40,7 @@ main:
 }
 
 chrome.webRequest.onBeforeRequest.addListener((details) => {
-	if ( details.initiator && details.initiator.startsWith(`chrome-extension://${chrome.runtime.id}`) ) {
+	if ( details.initiator && details.initiator.startsWith(chrome.runtime.getURL("")) ) {
 		return;
 	}
 	const url = new URL(details.url);
