@@ -2,21 +2,29 @@ import * as registry from '/registry.js';
 import * as rules from '/rules.js';
 
 {
-	const at = rules.AT_DOMAIN("twitter.com");
+	const at = rules.AND(
+		rules.AT_DOMAIN("twitter.com"),
+		rules.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
+	);
+	const pipeline = rules.PIPE(
+		rules.MAP_EXTRACT_SEARCH_PARAMS(),
+		rules.MAP_PROPERTY_AT("ref_url"),
+		rules.MAP_TO_URL(),
+		rules.MAP_EXTRACT_SEARCH_PARAMS(),
+		rules.MAP_PROPERTY_AT("type"),
+		rules.MAP_PARSE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm),
+		rules.MAP_ELEMENT_AT(1),
+		rules.MAP_REPLACE("3A", ":"),
+		rules.MAP_TO_URL()
+	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				const rawRefUrl = url.searchParams.get("ref_url");
-				if ( rawRefUrl ) {
-					const refUrl = new URL(rawRefUrl);
-					const rawType = refUrl.searchParams.get("type");
-					if ( rawType ) {
-						const exec = /twitterurl=(https?.*?\/\d+)/gm.exec(rawType);
-						if ( exec ) {
-							const tweetUrl = exec[1].replace("3A", ":");
-							return new URL(tweetUrl);
-						}
-					}
+				try {
+					return pipeline(url);
+				} catch ( err ) {
+					console.error(err);
+					return rules.REDIRECT_CONFIRMATION_URL(url);
 				}
 			}
 		}

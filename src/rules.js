@@ -173,6 +173,26 @@ const AT_PATHNAME_BY_STARTS_WITH = (...pathnames) => {
 	}
 };
 
+const AT_SEARCH_PARAMS_HAS_KEY = (...keys) => {
+	switch ( keys.length ) {
+	case 0:
+		return (url) => true;
+	case 1:
+		keys = keys.slice(0, 1);
+		return (url) => url.searchParams.has(keys[0]);
+	default:
+		keys = keys.slice();
+		return (url) => {
+			for ( const key of keys ) {
+				if ( url.searchParams.has(key) ) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+};
+
 const EXCLUDE = (...names) => {
 	switch ( names.length ) {
 	case 0:
@@ -212,6 +232,51 @@ const FILTER_ENTRIES = (url, filter) => {
 	url.hash = parseAndCleanHashPairs(url.hash, filter);
 };
 
+const MAP_DECODE_BASE64 = () => {
+	return (encoded) => atob(encoded);
+};
+
+const MAP_ELEMENT_AT = (i) => {
+	return (array) => array[i];
+};
+
+const MAP_EXTRACT_PATHNAME = () => {
+	return (url) => url.pathname;
+};
+
+const MAP_EXTRACT_SEARCH_PARAMS = () => {
+	return (url) => url.searchParams;
+};
+
+const MAP_PARSE_JSON = () => {
+	return (json) => JSON.parse(json);
+};
+
+const MAP_PARSE_REGEXP = (regExp) => {
+	return (str) => regExp.exec(str);
+};
+
+const MAP_PROPERTY_AT = (name) => {
+	return (object) => {
+		if ( object instanceof URLSearchParams ) {
+			return object.get(name);
+		}
+		return object[name];
+	}
+};
+
+const MAP_REPLACE = (pattern, replacement) => {
+	return (str) => str.replace(pattern, replacement);
+};
+
+const MAP_SUBSTRING = (indexStart, indexEnd) => {
+	return (str) => str.substring(indexStart, indexEnd);
+};
+
+const MAP_TO_URL = () => {
+	return (url) => new URL(url);
+};
+
 const OR = (...predicates) => {
 	switch ( predicates.length ) {
 	case 0:
@@ -230,6 +295,15 @@ const OR = (...predicates) => {
 			return false;
 		};
 	}
+};
+
+const PIPE = (...fs) => {
+	return (v) => {
+		for ( const f of fs ) {
+			v = f(v);
+		}
+		return v;
+	};
 };
 
 const REDIRECT_CONFIRMATION_URL = (url) => {
@@ -252,10 +326,22 @@ export {
 	AT_PATHNAME,
 	AT_PATHNAME_BY_REGEXP,
 	AT_PATHNAME_BY_STARTS_WITH,
+	AT_SEARCH_PARAMS_HAS_KEY,
 	EXCLUDE,
 	EXCLUDE_BY_STARTS_WITH,
 	FILTER_ENTRIES,
+	MAP_DECODE_BASE64,
+	MAP_ELEMENT_AT,
+	MAP_EXTRACT_PATHNAME,
+	MAP_EXTRACT_SEARCH_PARAMS,
+	MAP_PARSE_JSON,
+	MAP_PARSE_REGEXP,
+	MAP_PROPERTY_AT,
+	MAP_REPLACE,
+	MAP_SUBSTRING,
+	MAP_TO_URL,
 	OR,
+	PIPE,
 	REDIRECT_CONFIRMATION_URL,
 	REDIRECT_FROM_SEARCH_PARAMS
 };

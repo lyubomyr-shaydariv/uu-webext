@@ -20,16 +20,16 @@ import * as rules from '/rules.js';
 		rules.AT_DOMAIN("google.com"),
 		rules.AT_PATHNAME_BY_STARTS_WITH(ampPrefix)
 	);
+	const pipeline = rules.PIPE(
+		rules.MAP_EXTRACT_PATHNAME(),
+		rules.MAP_SUBSTRING(ampPrefix.length),
+		rules.MAP_TO_URL()
+	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				const rawAmpUrl = url.pathname.substring(ampPrefix.length);
-				if ( rawAmpUrl.startsWith("http://") || rawAmpUrl.startsWith("https://") ) {
-					return new URL(rawAmpUrl);
-				}
 				try {
-					// assuming that the URL is always open for HTTPS
-					return new URL("https://" + rawAmpUrl);
+					return pipeline(url);
 				} catch ( err ) {
 					console.error(err);
 					return rules.REDIRECT_CONFIRMATION_URL(url);

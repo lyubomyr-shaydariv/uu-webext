@@ -6,11 +6,21 @@ import * as rules from '/rules.js';
 		rules.AT_HOSTNAME("mandrillapp.com"),
 		rules.AT_PATHNAME("/track/click/")
 	);
+	const pipeline = rules.PIPE(
+		rules.MAP_EXTRACT_SEARCH_PARAMS(),
+		rules.MAP_PROPERTY_AT("p"),
+		rules.MAP_DECODE_BASE64(),
+		rules.MAP_PARSE_JSON(),
+		rules.MAP_PROPERTY_AT("p"),
+		rules.MAP_PARSE_JSON(),
+		rules.MAP_PROPERTY_AT("url"),
+		rules.MAP_TO_URL()
+	);
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
 				try {
-					return new URL(JSON.parse(JSON.parse(atob(url.searchParams.get("p"))).p).url);
+					return pipeline(url);
 				} catch ( err ) {
 					console.error(err);
 					return rules.REDIRECT_CONFIRMATION_URL(url);
