@@ -14,11 +14,11 @@ const cleanSearchParams = (searchParams, filter) => {
 	}
 };
 
-const hashPairsRx = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
+const hashPairsRegExp = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
 
 const parseAndCleanHashPairs = (hash, filter) => {
 	if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
-		hash = hash.replace(hashPairsRx, (match, _, key, value) => filter(key, [value]) ? match : "");
+		hash = hash.replace(hashPairsRegExp, (match, _, key, value) => filter(key, [value]) ? match : "");
 		if ( hash.startsWith("&") ) {
 			hash = `#${hash.substring(1)}`;
 		}
@@ -31,8 +31,8 @@ const AND = (...predicates) => {
 	case 0:
 		return (name, values) => true;
 	case 1:
-		predicates = predicates.slice(0, 1);
-		return (name, values) => predicates[0](name, values);
+		const predicate = predicates[0];
+		return (name, values) => predicate(name, values);
 	default:
 		predicates = predicates.slice();
 		return (name, values) => {
@@ -58,8 +58,8 @@ const AT_HOSTNAME = (...hostnames) => {
 	case 0:
 		return (url) => true;
 	case 1:
-		hostnames = hostnames.slice(0, 1);
-		return (url) => url.hostname === hostnames[0];
+		const hostname = hostnames[0];
+		return (url) => url.hostname === hostname;
 	default:
 		hostnames = hostnames.slice();
 		return (url) => {
@@ -73,18 +73,18 @@ const AT_HOSTNAME = (...hostnames) => {
 	}
 };
 
-const AT_HOSTNAME_BY_REGEXP = (...regexps) => {
-	switch ( regexps.length ) {
+const AT_HOSTNAME_BY_REGEXP = (...regExps) => {
+	switch ( regExps.length ) {
 	case 0:
 		return (url) => true;
 	case 1:
-		regexps = regexps.slice(0, 1);
-		return (url) => regexps[0].test(url.hostname);
+		const regExp = regExps[0];
+		return (url) => regExp.test(url.hostname);
 	default:
-		regexps = regexps.slice();
+		regExps = regExps.slice();
 		return (url) => {
-			for ( const regexp of regexps ) {
-				if ( regexp.test(url.hostname) ) {
+			for ( const regExp of regExps ) {
+				if ( regExp.test(url.hostname) ) {
 					return true;
 				}
 			}
@@ -98,8 +98,8 @@ const AT_HOSTNAME_UNDER_DOMAIN = (...hostnames) => {
 	case 0:
 		return (url) => true;
 	case 1:
-		hostnames = hostnames.map(hostname => "." + hostname);
-		return (url) => url.hostname.endsWith(hostnames[0]);
+		const hostname = "." + hostnames[0];
+		return (url) => url.hostname.endsWith(hostname);
 	default:
 		hostnames = hostnames.map(hostname => "." + hostname);
 		return (url) => {
@@ -118,8 +118,8 @@ const AT_PATHNAME = (...pathnames) => {
 	case 0:
 		return (url) => true;
 	case 1:
-		pathnames = pathnames.slice(0, 1);
-		return (url) => url.pathname === pathnames[0];
+		const pathname = pathnames[0];
+		return (url) => url.pathname === pathname;
 	default:
 		pathnames = pathnames.slice();
 		return (url) => {
@@ -133,18 +133,18 @@ const AT_PATHNAME = (...pathnames) => {
 	}
 };
 
-const AT_PATHNAME_BY_REGEXP = (...regexps) => {
-	switch ( regexps.length ) {
+const AT_PATHNAME_BY_REGEXP = (...regExps) => {
+	switch ( regExps.length ) {
 	case 0:
 		return (url) => true;
 	case 1:
-		regexps = regexps.slice(0, 1);
-		return (url) => regexps[0].test(url.pathname);
+		const regExp = regExps[0];
+		return (url) => regExp.test(url.pathname);
 	default:
-		regexps = regexps.slice();
+		regExps = regExps.slice();
 		return (url) => {
-			for ( const regexp of regexps ) {
-				if ( regexp.test(url.pathname) ) {
+			for ( const regExp of regExps ) {
+				if ( regExp.test(url.pathname) ) {
 					return true;
 				}
 			}
@@ -158,8 +158,8 @@ const AT_PATHNAME_BY_STARTS_WITH = (...pathnames) => {
 	case 0:
 		return (url) => true;
 	case 1:
-		pathnames = pathnames.slice(0, 1);
-		return (url) => url.pathname.startsWith(pathnames[0]);
+		const pathname = pathnames[0];
+		return (url) => url.pathname.startsWith(pathname);
 	default:
 		pathnames = pathnames.slice();
 		return (url) => {
@@ -178,8 +178,8 @@ const AT_SEARCH_PARAMS_HAS_KEY = (...keys) => {
 	case 0:
 		return (url) => true;
 	case 1:
-		keys = keys.slice(0, 1);
-		return (url) => url.searchParams.has(keys[0]);
+		const key = keys[0]
+		return (url) => url.searchParams.has(key);
 	default:
 		keys = keys.slice();
 		return (url) => {
@@ -198,22 +198,21 @@ const EXCLUDE = (...names) => {
 	case 0:
 		return (name, values) => true;
 	case 1:
-		names = names.slice(0, 1);
-		return (name, values) => name !== names[0];
+		const n = names[0];
+		return (name, values) => name !== n;
 	default:
 		names = new Set(names);
 		return (name, values) => !names.has(name);
 	}
 };
 
-// TODO extract the _BY_STARTS_WITH as an operator?
 const EXCLUDE_BY_STARTS_WITH = (...names) => {
 	switch ( names.length ) {
 	case 0:
 		return (name, values) => true;
 	case 1:
-		names = names.slice(0, 1);
-		return (name, values) => !name.startsWith(names[0]);
+		const n = names[0];
+		return (name, values) => !name.startsWith(n);
 	default:
 		names = names.slice();
 		return (name, values) => {
@@ -282,8 +281,8 @@ const OR = (...predicates) => {
 	case 0:
 		return (name, values) => true;
 	case 1:
-		predicates = predicates.slice(0, 1);
-		return (name, values) => predicates[0](name, values);
+		const predicate = predicates[0];
+		return (name, values) => predicate(name, values);
 	default:
 		predicates = predicates.slice();
 		return (name, values) => {
