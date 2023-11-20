@@ -16,17 +16,10 @@ registry.addRule(__.RULE_REDIRECT_AT(
 	)
 ));
 
-{
-	const at = __.AT_DOMAIN("facebook.com");
-	const excluding = __.EXCLUDING("hrc", "refsrc");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("hrc", "refsrc"),
+	__.AT_DOMAIN("facebook.com")
+));
 
 registry.addRule(__.RULE_MUTATE_ENTRIES(
 	__.EXCLUDING("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source")

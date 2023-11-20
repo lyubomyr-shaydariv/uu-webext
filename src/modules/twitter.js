@@ -22,20 +22,13 @@ registry.addRule(__.RULE_REDIRECT_AT(
 	)
 ));
 
-{
-	const at = __.AT_DOMAIN("twitter.com");
-	const excluding = __.AND(
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.AND(
 		__.EXCLUDING("cxt", "s", "t"),
 		__.EXCLUDING_BY_STARTS_WITH("ref_")
-	);
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+	),
+	__.AT_DOMAIN("twitter.com")
+));
 
 registry.addRule(__.RULE_MUTATE_ENTRIES(
 	__.EXCLUDING("twclid")

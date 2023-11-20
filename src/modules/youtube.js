@@ -1,28 +1,15 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AT_DOMAIN("youtube.com");
-	const excluding = __.EXCLUDING("feature", "kw", "si");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
-{
-	const at = __.AT_DOMAIN("youtu.be");
-	const excluding = __.EXCLUDING("si");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("feature", "kw", "si"),
+	__.AT_DOMAIN("youtube.com")
+));
+
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("si"),
+	__.AT_DOMAIN("youtu.be")
+));
 
 registry.addRule(__.RULE_REDIRECT_AT(
 	__.PIPE(

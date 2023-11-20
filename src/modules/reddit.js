@@ -1,17 +1,10 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AT_DOMAIN("reddit.com");
-	const excluding = __.EXCLUDING("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("$3p", "$deep_link", "$original_link", "_branch_match_id", "correlation_id", "ref_campaign", "ref_source"),
+	__.AT_DOMAIN("reddit.com")
+));
 
 registry.addRule(__.RULE_REDIRECT_AT(
 	__.PIPE(

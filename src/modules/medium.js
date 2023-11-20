@@ -1,17 +1,10 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AT_HOSTNAME("medium.com");
-	const excluding = __.EXCLUDING("_branch_match_id", "source");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("_branch_match_id", "source"),
+	__.AT_HOSTNAME("medium.com")
+));
 
 registry.addRule(__.RULE_REDIRECT_AT(
 	__.PIPE(

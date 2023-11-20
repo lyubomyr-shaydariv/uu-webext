@@ -1,14 +1,7 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AT_DOMAIN("bing.com");
-	const excluding = __.EXCLUDING("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp"),
+	__.AT_DOMAIN("bing.com")
+));

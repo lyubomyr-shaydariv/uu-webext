@@ -1,17 +1,10 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AT_DOMAIN("linkedin.com");
-	const excluding = __.EXCLUDING("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail");
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				__.MUTATE_ENTRIES(url, excluding);
-			}
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
+	__.EXCLUDING("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail"),
+	__.AT_DOMAIN("linkedin.com")
+));
 
 registry.addRule(__.RULE_REDIRECT_AT(
 	__.PIPE(

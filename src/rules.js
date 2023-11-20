@@ -326,6 +326,16 @@ const RULE_MUTATE_ENTRIES = (filter) => {
 	};
 };
 
+const RULE_MUTATE_ENTRIES_AT = (filter, predicate) => {
+	return {
+		redirect: (url) => {
+			if ( predicate(url) ) {
+				MUTATE_ENTRIES(url, filter);
+			}
+		}
+	};
+};
+
 const RULE_REDIRECT_AT = (f, predicate) => {
 	return {
 		redirect: (url) => {
@@ -363,5 +373,6 @@ export {
 	PIPE,
 	REDIRECT_CONFIRMATION_URL,
 	RULE_MUTATE_ENTRIES,
+	RULE_MUTATE_ENTRIES_AT,
 	RULE_REDIRECT_AT
 };
