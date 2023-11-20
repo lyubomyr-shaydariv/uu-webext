@@ -1,27 +1,27 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
-	__.EXCLUDING("feature", "kw", "si"),
-	__.AT_DOMAIN("youtube.com")
+registry.addRule(__.RULE.MUTATE_ENTRIES_AT(
+	__.JUST.EXCLUDING("feature", "kw", "si"),
+	__.AT.DOMAIN("youtube.com")
 ));
 
-registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
-	__.EXCLUDING("si"),
-	__.AT_DOMAIN("youtu.be")
+registry.addRule(__.RULE.MUTATE_ENTRIES_AT(
+	__.JUST.EXCLUDING("si"),
+	__.AT.DOMAIN("youtu.be")
 ));
 
-registry.addRule(__.RULE_REDIRECT_AT(
-	__.PIPE(
+registry.addRule(__.RULE.REDIRECT_AT(
+	__.OP.PIPE(
 		{
-			onError: __.REDIRECT_CONFIRMATION_URL
+			onError: __.BLOCK.CONFIRM
 		},
-		__.MAP_EXTRACT_SEARCH_PARAMS(),
-		__.MAP_PROPERTY_AT("q"),
-		__.MAP_TO_URL()
+		__.MAP.EXTRACT_SEARCH_PARAMS(),
+		__.MAP.PROPERTY_AT("q"),
+		__.MAP.TO_URL()
 	),
-	__.AND(
-		__.AT_DOMAIN("youtube.com"),
-		__.AT_PATHNAME("/redirect")
+	__.OP.AND(
+		__.AT.DOMAIN("youtube.com"),
+		__.AT.PATHNAME("/redirect")
 	)
 ));

@@ -1,22 +1,22 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
-	__.EXCLUDING("_branch_match_id", "source"),
-	__.AT_HOSTNAME("medium.com")
+registry.addRule(__.RULE.MUTATE_ENTRIES_AT(
+	__.JUST.EXCLUDING("_branch_match_id", "source"),
+	__.AT.HOSTNAME("medium.com")
 ));
 
-registry.addRule(__.RULE_REDIRECT_AT(
-	__.PIPE(
+registry.addRule(__.RULE.REDIRECT_AT(
+	__.OP.PIPE(
 		{
-			onError: __.REDIRECT_CONFIRMATION_URL
+			onError: __.BLOCK.CONFIRM
 		},
-		__.MAP_EXTRACT_SEARCH_PARAMS(),
-		__.MAP_PROPERTY_AT("url"),
-		__.MAP_TO_URL()
+		__.MAP.EXTRACT_SEARCH_PARAMS(),
+		__.MAP.PROPERTY_AT("url"),
+		__.MAP.TO_URL()
 	),
-	__.AND(
-		__.AT_HOSTNAME("medium.com"),
-		__.AT_PATHNAME("/r/")
+	__.OP.AND(
+		__.AT.HOSTNAME("medium.com"),
+		__.AT.PATHNAME("/r/")
 	)
 ));

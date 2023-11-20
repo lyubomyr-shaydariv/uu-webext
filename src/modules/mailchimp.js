@@ -1,6 +1,6 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE_MUTATE_ENTRIES(
-	__.EXCLUDING("mc_cid", "mc_eid")
+registry.addRule(__.RULE.MUTATE_ENTRIES(
+	__.JUST.EXCLUDING("mc_cid", "mc_eid")
 ));

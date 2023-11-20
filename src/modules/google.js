@@ -1,44 +1,44 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE_REDIRECT_AT(
-	__.PIPE(
+registry.addRule(__.RULE.REDIRECT_AT(
+	__.OP.PIPE(
 		{
-			onError: __.REDIRECT_CONFIRMATION_URL
+			onError: __.BLOCK.CONFIRM
 		},
-		__.MAP_EXTRACT_SEARCH_PARAMS(),
-		__.MAP_PROPERTY_AT("q"),
-		__.MAP_TO_URL()
+		__.MAP.EXTRACT_SEARCH_PARAMS(),
+		__.MAP.PROPERTY_AT("q"),
+		__.MAP.TO_URL()
 	),
-	__.AND(
-		__.AT_DOMAIN("google.com"),
-		__.AT_PATHNAME("/url/")
+	__.OP.AND(
+		__.AT.DOMAIN("google.com"),
+		__.AT.PATHNAME("/url/")
 	)
 ));
 
-registry.addRule(__.RULE_REDIRECT_AT(
-	__.PIPE(
+registry.addRule(__.RULE.REDIRECT_AT(
+	__.OP.PIPE(
 		{
-			onError: __.REDIRECT_CONFIRMATION_URL
+			onError: __.BLOCK.CONFIRM
 		},
-		__.MAP_EXTRACT_PATHNAME(),
-		__.MAP_SUBSTRING(7), // "/amp/s/".length
-		__.MAP_TO_URL()
+		__.MAP.EXTRACT_PATHNAME(),
+		__.MAP.SUBSTRING(7), // "/amp/s/".length
+		__.MAP.TO_URL()
 	),
-	__.AND(
-		__.AT_DOMAIN("google.com"),
-		__.AT_PATHNAME_BY_STARTS_WITH("/amp/s/")
+	__.OP.AND(
+		__.AT.DOMAIN("google.com"),
+		__.AT.PATHNAME_BY_STARTS_WITH("/amp/s/")
 	)
 ));
 
-registry.addRule(__.RULE_MUTATE_ENTRIES_AT(
-	__.EXCLUDING("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved"),
-	__.AT_HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/)
+registry.addRule(__.RULE.MUTATE_ENTRIES_AT(
+	__.JUST.EXCLUDING("ei", "gs_gbg", "gs_lcp", "gs_mss", "gs_rn", "gws_rd", "sei", "ved"),
+	__.AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?google\.[^.]+$/)
 ));
 
-registry.addRule(__.RULE_MUTATE_ENTRIES(
-	__.AND(
-		__.EXCLUDING("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
-		__.EXCLUDING_BY_STARTS_WITH("ga_")
+registry.addRule(__.RULE.MUTATE_ENTRIES(
+	__.OP.AND(
+		__.JUST.EXCLUDING("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
+		__.JUST.EXCLUDING_BY_STARTS_WITH("ga_")
 	)
 ));

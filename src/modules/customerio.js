@@ -1,18 +1,18 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE_REDIRECT_AT(
-	__.PIPE(
+registry.addRule(__.RULE.REDIRECT_AT(
+	__.OP.PIPE(
 		{
-			onError: __.REDIRECT_CONFIRMATION_URL
+			onError: __.BLOCK.CONFIRM
 		},
-		__.MAP_EXTRACT_PATHNAME(),
-		__.MAP_PARSE_REGEXP(/^\/e\/c\/(.*)/),
-		__.MAP_ELEMENT_AT(1),
-		__.MAP_DECODE_BASE64(),
-		__.MAP_PARSE_JSON(),
-		__.MAP_PROPERTY_AT("href"),
-		__.MAP_TO_URL()
+		__.MAP.EXTRACT_PATHNAME(),
+		__.MAP.PARSE_REGEXP(/^\/e\/c\/(.*)/),
+		__.MAP.ELEMENT_AT(1),
+		__.MAP.DECODE_BASE64(),
+		__.MAP.PARSE_JSON(),
+		__.MAP.PROPERTY_AT("href"),
+		__.MAP.TO_URL()
 	),
-	__.AT_HOSTNAME("e.customeriomail.com")
+	__.AT.HOSTNAME("e.customeriomail.com")
 ));
