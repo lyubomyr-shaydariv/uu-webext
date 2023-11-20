@@ -25,6 +25,34 @@ main:
 
 const EXTENSION_URL_PREFIX = chrome.runtime.getURL("");
 
+const onCopyUntrackedUrl = (url) => {
+	const redirectUrl = redirect(url);
+	if ( redirectUrl ) {
+		navigator.clipboard.writeText(redirectUrl)
+			.then(
+				() => {
+				},
+				() => {
+					console.error(`Cannot copy ${redirectUrl} to the clipboard`);
+				}
+			);
+	}
+};
+
+chrome.contextMenus.create({
+	id: "copy-untracked-url",
+	contexts: ["link"],
+	title: "Copy untracked URL"
+});
+
+chrome.contextMenus.onClicked.addListener((e) => {
+	switch ( e.menuItemId ) {
+	case "copy-untracked-url":
+		onCopyUntrackedUrl(e.linkUrl);
+		break;
+	}
+});
+
 chrome.webRequest.onBeforeRequest.addListener((details) => {
 	if ( details.initiator && details.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
 		return;
