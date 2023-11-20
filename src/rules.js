@@ -318,6 +318,16 @@ const REDIRECT_CONFIRMATION_URL = (url) => {
 	return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
 };
 
+const RULE_REDIRECT_AT = (f, predicate) => {
+	return {
+		redirect: (url) => {
+			if ( predicate(url) ) {
+				return f(url);
+			}
+		}
+	};
+};
+
 export {
 	AND,
 	AT_DOMAIN,
@@ -343,5 +353,6 @@ export {
 	MUTATE_ENTRIES,
 	OR,
 	PIPE,
-	REDIRECT_CONFIRMATION_URL
+	REDIRECT_CONFIRMATION_URL,
+	RULE_REDIRECT_AT
 };

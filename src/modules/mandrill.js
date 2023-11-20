@@ -1,12 +1,8 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AND(
-		__.AT_HOSTNAME("mandrillapp.com"),
-		__.AT_PATHNAME("/track/click/")
-	);
-	const pipeline = __.PIPE(
+registry.addRule(__.RULE_REDIRECT_AT(
+	__.PIPE(
 		{
 			onError: __.REDIRECT_CONFIRMATION_URL
 		},
@@ -18,12 +14,9 @@ import * as __ from '/rules.js';
 		__.MAP_PARSE_JSON(),
 		__.MAP_PROPERTY_AT("url"),
 		__.MAP_TO_URL()
-	);
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				return pipeline(url);
-			}
-		}
-	});
-}
+	),
+	__.AND(
+		__.AT_HOSTNAME("mandrillapp.com"),
+		__.AT_PATHNAME("/track/click/")
+	)
+));

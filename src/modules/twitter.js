@@ -1,12 +1,8 @@
 import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-{
-	const at = __.AND(
-		__.AT_DOMAIN("twitter.com"),
-		__.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
-	);
-	const pipeline = __.PIPE(
+registry.addRule(__.RULE_REDIRECT_AT(
+	__.PIPE(
 		{
 			onError: __.REDIRECT_CONFIRMATION_URL
 		},
@@ -19,15 +15,13 @@ import * as __ from '/rules.js';
 		__.MAP_ELEMENT_AT(1),
 		__.MAP_REPLACE("3A", ":"),
 		__.MAP_TO_URL()
-	);
-	registry.addRule({
-		redirect: (url) => {
-			if ( at(url) ) {
-				return pipeline(url);
-			}
-		}
-	});
-}
+	),
+	__.AND(
+		__.AT_DOMAIN("twitter.com"),
+		__.AT_SEARCH_PARAMS_HAS_KEY("ref_url")
+	)
+));
+
 {
 	const at = __.AT_DOMAIN("twitter.com");
 	const excluding = __.AND(
