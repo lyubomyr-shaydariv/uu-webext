@@ -12,11 +12,7 @@ import * as __ from '/rules.js';
 		}
 	});
 }
-{
-	const excluding = __.EXCLUDING("aff_platform", "aff_trace_key");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("aff_platform", "aff_trace_key")
+));

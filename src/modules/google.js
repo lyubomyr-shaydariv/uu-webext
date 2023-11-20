@@ -42,14 +42,10 @@ registry.addRule(__.RULE_REDIRECT_AT(
 		}
 	});
 }
-{
-	const excluding = __.AND(
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.AND(
 		__.EXCLUDING("_ga", "dclid", "gclid", "gclsrc", "gs_l"),
 		__.EXCLUDING_BY_STARTS_WITH("ga_")
-	);
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+	)
+));

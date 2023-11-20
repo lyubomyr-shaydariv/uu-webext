@@ -12,11 +12,7 @@ import * as __ from '/rules.js';
 		}
 	});
 }
-{
-	const excluding = __.EXCLUDING("yclid", "_openstat");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("yclid", "_openstat")
+));

@@ -12,11 +12,7 @@ import * as __ from '/rules.js';
 		}
 	});
 }
-{
-	const excluding = __.EXCLUDING("trk", "trkCampaign");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("trk", "trkCampaign")
+));

@@ -27,11 +27,7 @@ registry.addRule(__.RULE_REDIRECT_AT(
 		}
 	});
 }
-{
-	const excluding = __.EXCLUDING("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source")
+));

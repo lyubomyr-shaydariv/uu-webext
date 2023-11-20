@@ -3,10 +3,7 @@ import * as __ from '/rules.js';
 
 // isn't it too wide?
 if ( false ) {
-	const excluding = __.EXCLUDING("Campaign");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
+	registry.addRule(__.RULE_MUTATE_ENTRIES(
+		__.EXCLUDING("Campaign")
+	));
 }

@@ -13,11 +13,6 @@ registry.addRule(__.RULE_REDIRECT_AT(
 	__.AT_HOSTNAME("l.instagram.com")
 ));
 
-{
-	const excluding = __.EXCLUDING("igshid");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("igshid")
+));

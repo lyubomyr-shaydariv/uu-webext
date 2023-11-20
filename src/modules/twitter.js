@@ -36,11 +36,7 @@ registry.addRule(__.RULE_REDIRECT_AT(
 		}
 	});
 }
-{
-	const excluding = __.EXCLUDING("twclid");
-	registry.addRule({
-		redirect: (url) => {
-			__.MUTATE_ENTRIES(url, excluding);
-		}
-	});
-}
+
+registry.addRule(__.RULE_MUTATE_ENTRIES(
+	__.EXCLUDING("twclid")
+));
