@@ -5,7 +5,7 @@ import * as __ from '/rules.js';
 	const excluding = __.EXCLUDING("oly_anon_id", "oly_enc_id");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, excluding);
+			__.MUTATE_ENTRIES(url, excluding);
 		}
 	});
 }

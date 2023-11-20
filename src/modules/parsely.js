@@ -6,7 +6,7 @@ if ( false ) {
 	const excluding = __.EXCLUDING("Campaign");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, excluding);
+			__.MUTATE_ENTRIES(url, excluding);
 		}
 	});
 }

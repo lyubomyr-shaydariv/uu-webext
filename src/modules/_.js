@@ -5,7 +5,7 @@ import * as __ from '/rules.js';
 	const excluding = __.EXCLUDING("c_id", "campaign_id", "cmpid", "mbid", "ncid", "rb_clickid");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, excluding);
+			__.MUTATE_ENTRIES(url, excluding);
 		}
 	});
 }

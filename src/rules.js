@@ -226,11 +226,6 @@ const EXCLUDING_BY_STARTS_WITH = (...names) => {
 	}
 };
 
-const FILTER_ENTRIES = (url, filter) => {
-	cleanSearchParams(url.searchParams, filter);
-	url.hash = parseAndCleanHashPairs(url.hash, filter);
-};
-
 const MAP_DECODE_BASE64 = () => {
 	return (encoded) => atob(encoded);
 };
@@ -274,6 +269,11 @@ const MAP_SUBSTRING = (indexStart, indexEnd) => {
 
 const MAP_TO_URL = () => {
 	return (url) => new URL(url);
+};
+
+const MUTATE_ENTRIES = (url, filter) => {
+	cleanSearchParams(url.searchParams, filter);
+	url.hash = parseAndCleanHashPairs(url.hash, filter);
 };
 
 const OR = (...predicates) => {
@@ -330,7 +330,6 @@ export {
 	AT_SEARCH_PARAMS_HAS_KEY,
 	EXCLUDING,
 	EXCLUDING_BY_STARTS_WITH,
-	FILTER_ENTRIES,
 	MAP_DECODE_BASE64,
 	MAP_ELEMENT_AT,
 	MAP_EXTRACT_PATHNAME,
@@ -341,6 +340,7 @@ export {
 	MAP_REPLACE,
 	MAP_SUBSTRING,
 	MAP_TO_URL,
+	MUTATE_ENTRIES,
 	OR,
 	PIPE,
 	REDIRECT_CONFIRMATION_URL

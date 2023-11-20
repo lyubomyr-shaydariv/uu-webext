@@ -5,7 +5,7 @@ import * as __ from '/rules.js';
 	const excluding = __.EXCLUDING_BY_STARTS_WITH("ns_");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, excluding);
+			__.MUTATE_ENTRIES(url, excluding);
 		}
 	});
 }

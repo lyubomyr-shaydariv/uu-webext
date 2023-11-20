@@ -7,7 +7,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, excluding);
+				__.MUTATE_ENTRIES(url, excluding);
 			}
 		}
 	});
@@ -18,7 +18,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, excluding);
+				__.MUTATE_ENTRIES(url, excluding);
 			}
 		}
 	});

@@ -28,7 +28,7 @@ import * as __ from '/rules.js';
 	registry.addRule({
 		redirect: (url) => {
 			if ( at(url) ) {
-				__.FILTER_ENTRIES(url, excluding);
+				__.MUTATE_ENTRIES(url, excluding);
 			}
 		}
 	});
@@ -37,7 +37,7 @@ import * as __ from '/rules.js';
 	const excluding = __.EXCLUDING("fbclid", "fb_action_ids", "fb_action_types", "fb_ref", "fb_source");
 	registry.addRule({
 		redirect: (url) => {
-			__.FILTER_ENTRIES(url, excluding);
+			__.MUTATE_ENTRIES(url, excluding);
 		}
 	});
 }
