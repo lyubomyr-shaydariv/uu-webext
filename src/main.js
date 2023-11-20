@@ -2,22 +2,6 @@ import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
 
-const filter = {
-	urls: chrome.runtime.getManifest()
-		.permissions
-		.filter(permission => {
-			try {
-				new URL(permission);
-				return true;
-			} catch ( err ) {
-				return false || permission === "<all_urls>";
-			}
-		}),
-	types: [
-		"main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"
-	]
-};
-
 const redirect = (url) => {
 	let redirectUrl = new URL(url);
 main:
@@ -39,8 +23,10 @@ main:
 	}
 }
 
+const EXTENSION_URL_PREFIX = chrome.runtime.getURL("");
+
 chrome.webRequest.onBeforeRequest.addListener((details) => {
-	if ( details.initiator && details.initiator.startsWith(chrome.runtime.getURL("")) ) {
+	if ( details.initiator && details.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
 		return;
 	}
 	const url = new URL(details.url);
@@ -50,4 +36,7 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
 			redirectUrl: redirectUrl.toString()
 		};
 	}
-}, filter, ["blocking"]);
+},
+	{ urls: ["<all_urls>"], types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"] },
+	["blocking"]
+);
