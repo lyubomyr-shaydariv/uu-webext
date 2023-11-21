@@ -1,7 +1,7 @@
-import * as __ from '/rules.js';
+import { JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("vero_conv", "vero_id")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("vero_conv", "vero_id")
 	)
 ];

@@ -1,11 +1,11 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("guccounter"),
-		__.AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yahoo\.[^.]+$/)
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("guccounter"),
+		AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yahoo\.[^.]+$/)
 	),
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("soc_src", "soc_trk")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("soc_src", "soc_trk")
 	)
 ];

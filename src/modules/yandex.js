@@ -1,11 +1,11 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("lr", "redircnt"),
-		__.AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yandex\.[^.]+$/)
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("lr", "redircnt"),
+		AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)?yandex\.[^.]+$/)
 	),
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("yclid", "_openstat")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("yclid", "_openstat")
 	)
 ];

@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("click_key", "click_sum", "organic_search_click", "ref"),
-		__.AT.DOMAIN("etsy.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("click_key", "click_sum", "organic_search_click", "ref"),
+		AT.DOMAIN("etsy.com")
 	)
 ];

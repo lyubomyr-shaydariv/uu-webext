@@ -1,22 +1,20 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, JUST, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail"),
-		__.AT.DOMAIN("linkedin.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("eBP", "lgCta", "lgTemp", "lipi", "midSig", "midToken", "recommendedFlavor", "refId", "trackingId", "trk", "trkEmail"),
+		AT.DOMAIN("linkedin.com")
 	),
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{
-				onError: __.BLOCK.CONFIRM
-			},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("url"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("url"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.DOMAIN("linkedin.com"),
-			__.AT.PATHNAME("/safety/go")
+		OP.AND(
+			AT.DOMAIN("linkedin.com"),
+			AT.PATHNAME("/safety/go")
 		)
 	)
 ];

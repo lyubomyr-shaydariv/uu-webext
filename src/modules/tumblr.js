@@ -1,18 +1,16 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{
-				onError: __.BLOCK.CONFIRM
-			},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("z"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("z"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.HOSTNAME("t.umblr.com"),
-			__.AT.PATHNAME("/redirect")
+		OP.AND(
+			AT.HOSTNAME("t.umblr.com"),
+			AT.PATHNAME("/redirect")
 		)
 	)
 ];

@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("tctx", "trackId"),
-		__.AT.DOMAIN("netflix.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("tctx", "trackId"),
+		AT.DOMAIN("netflix.com")
 	)
 ];

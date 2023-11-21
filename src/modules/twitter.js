@@ -1,34 +1,32 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, JUST, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{
-				onError: __.BLOCK.CONFIRM
-			},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("ref_url"),
-			__.MAP.TO_URL(),
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("type"),
-			__.MAP.PARSE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm),
-			__.MAP.ELEMENT_AT(1),
-			__.MAP.REPLACE("3A", ":"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("ref_url"),
+			MAP.TO_URL(),
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("type"),
+			MAP.PARSE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm),
+			MAP.ELEMENT_AT(1),
+			MAP.REPLACE("3A", ":"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.DOMAIN("twitter.com"),
-			__.AT.SEARCH_PARAMS_HAS_KEY("ref_url")
+		OP.AND(
+			AT.DOMAIN("twitter.com"),
+			AT.SEARCH_PARAMS_HAS_KEY("ref_url")
 		)
 	),
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.OP.AND(
-			__.JUST.EXCLUDING("cxt", "s", "t"),
-			__.JUST.EXCLUDING_BY_STARTS_WITH("ref_")
+	RULE.MUTATE_ENTRIES_AT(
+		OP.AND(
+			JUST.EXCLUDING("cxt", "s", "t"),
+			JUST.EXCLUDING_BY_STARTS_WITH("ref_")
 		),
-		__.AT.DOMAIN("twitter.com")
+		AT.DOMAIN("twitter.com")
 	),
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("twclid")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("twclid")
 	)
 ];

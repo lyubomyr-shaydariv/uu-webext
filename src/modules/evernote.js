@@ -1,18 +1,16 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{
-				onError: __.BLOCK.CONFIRM
-			},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("dest"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("dest"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.HOSTNAME("www.evernote.com"),
-			__.AT.PATHNAME("/OutboundRedirect.action")
+		OP.AND(
+			AT.HOSTNAME("www.evernote.com"),
+			AT.PATHNAME("/OutboundRedirect.action")
 		)
 	)
 ];

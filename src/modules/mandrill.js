@@ -1,21 +1,21 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{onError: __.BLOCK.CONFIRM},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("p"),
-			__.MAP.DECODE_BASE64(),
-			__.MAP.PARSE_JSON(),
-			__.MAP.PROPERTY_AT("p"),
-			__.MAP.PARSE_JSON(),
-			__.MAP.PROPERTY_AT("url"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("p"),
+			MAP.DECODE_BASE64(),
+			MAP.PARSE_JSON(),
+			MAP.PROPERTY_AT("p"),
+			MAP.PARSE_JSON(),
+			MAP.PROPERTY_AT("url"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.HOSTNAME("mandrillapp.com"),
-			__.AT.PATHNAME("/track/click/")
+		OP.AND(
+			AT.HOSTNAME("mandrillapp.com"),
+			AT.PATHNAME("/track/click/")
 		)
 	)
 ];

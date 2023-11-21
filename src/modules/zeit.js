@@ -1,7 +1,7 @@
-import * as __ from '/rules.js';
+import { JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("wt_mc", "wt_zmc")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("wt_mc", "wt_zmc")
 	)
 ];

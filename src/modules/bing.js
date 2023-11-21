@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp"),
-		__.AT.DOMAIN("bing.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("cvid", "form", "pq", "qs", "qp", "sc", "sk", "sp"),
+		AT.DOMAIN("bing.com")
 	)
 ];

@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("callback", "spm_id_from"),
-		__.AT.DOMAIN("bilibili.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("callback", "spm_id_from"),
+		AT.DOMAIN("bilibili.com")
 	)
 ];

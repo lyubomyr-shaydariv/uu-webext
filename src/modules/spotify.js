@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("context", "si"),
-		__.AT.HOSTNAME("open.spotify.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("context", "si"),
+		AT.HOSTNAME("open.spotify.com")
 	)
 ];

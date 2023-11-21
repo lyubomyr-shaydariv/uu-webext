@@ -1,22 +1,20 @@
-import * as __ from '/rules.js';
+import { AT, BLOCK, JUST, MAP, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("_branch_match_id", "source"),
-		__.AT.HOSTNAME("medium.com")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("_branch_match_id", "source"),
+		AT.HOSTNAME("medium.com")
 	),
-	__.RULE.REDIRECT_AT(
-		__.OP.PIPE(
-			{
-				onError: __.BLOCK.CONFIRM
-			},
-			__.MAP.EXTRACT_SEARCH_PARAMS(),
-			__.MAP.PROPERTY_AT("url"),
-			__.MAP.TO_URL()
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			{onError: BLOCK.CONFIRM},
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT("url"),
+			MAP.TO_URL()
 		),
-		__.OP.AND(
-			__.AT.HOSTNAME("medium.com"),
-			__.AT.PATHNAME("/r/")
+		OP.AND(
+			AT.HOSTNAME("medium.com"),
+			AT.PATHNAME("/r/")
 		)
 	)
 ];

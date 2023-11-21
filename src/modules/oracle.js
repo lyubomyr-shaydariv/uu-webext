@@ -1,10 +1,10 @@
-import * as __ from '/rules.js';
+import { JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("elqTrack", "elqTrackId")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("elqTrack", "elqTrackId")
 	),
-	__.RULE.MUTATE_ENTRIES(
-		__.JUST.EXCLUDING("assetId", "assetType", "campaignId", "recipientId", "siteId")
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("assetId", "assetType", "campaignId", "recipientId", "siteId")
 	)
 ];

@@ -1,9 +1,11 @@
-import * as __ from '/rules.js';
+import { JUST, RULE } from '/rules.js';
 
-// isn't it too wide?
-__.RULE.MUTATE_ENTRIES(
-	__.JUST.EXCLUDING("Campaign")
-);
+if ( false ) {
+	// isn't it too wide?
+	RULE.MUTATE_ENTRIES(
+		JUST.EXCLUDING("Campaign")
+	);
+}
 
 export default [
 ];

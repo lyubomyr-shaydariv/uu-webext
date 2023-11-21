@@ -1,10 +1,10 @@
-import * as __ from '/rules.js';
+import { JUST, OP, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES(
-		__.OP.AND(
-			__.JUST.EXCLUDING("at_campaign", "at_medium"),
-			__.JUST.EXCLUDING_BY_STARTS_WITH("at_custom")
+	RULE.MUTATE_ENTRIES(
+		OP.AND(
+			JUST.EXCLUDING("at_campaign", "at_medium"),
+			JUST.EXCLUDING_BY_STARTS_WITH("at_custom")
 		)
 	)
 ];

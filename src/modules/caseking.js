@@ -1,8 +1,8 @@
-import * as __ from '/rules.js';
+import { AT, JUST, RULE } from '/rules.js';
 
 export default [
-	__.RULE.MUTATE_ENTRIES_AT(
-		__.JUST.EXCLUDING("campaign", "sPartner"),
-		__.AT.DOMAIN("caseking.de")
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING("campaign", "sPartner"),
+		AT.DOMAIN("caseking.de")
 	)
 ];
