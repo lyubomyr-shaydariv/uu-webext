@@ -1,6 +1,7 @@
-import * as registry from '/registry.js';
 import * as __ from '/rules.js';
 
-registry.addRule(__.RULE.MUTATE_ENTRIES(
-	__.JUST.EXCLUDING("vero_conv", "vero_id")
-));
+export default [
+	__.RULE.MUTATE_ENTRIES(
+		__.JUST.EXCLUDING("vero_conv", "vero_id")
+	)
+];
