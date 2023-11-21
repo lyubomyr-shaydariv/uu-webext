@@ -26,10 +26,6 @@ Promise.all(browser.runtime
 		console.info("Rules loaded", allRules.length);
 	});
 
-// TODO remove
-const addRule = (rule) => {
-};
-
 const getRules = function* () {
 	for ( const rule of rules ) {
 		yield rule;
@@ -37,6 +33,5 @@ const getRules = function* () {
 };
 
 export {
-	addRule,
 	getRules
 };
