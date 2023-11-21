@@ -25,17 +25,16 @@ main:
 
 const EXTENSION_URL_PREFIX = chrome.runtime.getURL("");
 
-const onCopyUntrackedUrl = (url) => {
+const onCopyUntrackedUrl = async (url) => {
 	const redirectUrl = redirect(url);
-	if ( redirectUrl ) {
-		navigator.clipboard.writeText(redirectUrl)
-			.then(
-				() => {
-				},
-				() => {
-					console.error(`Cannot copy ${redirectUrl} to the clipboard`);
-				}
-			);
+	if ( !redirectUrl ) {
+		return;
+	}
+	try {
+		await navigator.clipboard.writeText(redirectUrl);
+		console.info(`Copied ${redirectUrl} to the clipboard`);
+	} catch ( err ) {
+		console.error(`Cannot copy ${redirectUrl} to the clipboard`, err);
 	}
 };
 
@@ -59,12 +58,13 @@ chrome.webRequest.onBeforeRequest.addListener((details) => {
 	}
 	const url = new URL(details.url);
 	const redirectUrl = redirect(url);
-	if ( redirectUrl ) {
-		return {
-			redirectUrl: redirectUrl.toString()
-		};
+	if ( !redirectUrl ) {
+		return;
 	}
+	return {
+		redirectUrl: redirectUrl.toString()
+	};
 },
-	{ urls: ["<all_urls>"], types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"] },
+	{urls: ["<all_urls>"], types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]},
 	["blocking"]
 );
