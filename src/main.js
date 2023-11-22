@@ -8,7 +8,7 @@ main:
 	for ( let i = 0; i < MAX_LOOPS; i++ ) {
 		const thisLoopRedirectUrl = redirectUrl.toString();
 		for ( const rule of registry.getRules() ) {
-			const maybeRedirectUrl = rule.redirect(redirectUrl);
+			const maybeRedirectUrl = rule(redirectUrl);
 			if ( maybeRedirectUrl ) {
 				redirectUrl = maybeRedirectUrl;
 			}

@@ -313,27 +313,21 @@ const OP = {
 
 const RULE = {
 	MUTATE_ENTRIES: (filter) => {
-		return {
-			redirect: (url) => {
+		return (url) => {
+			MUTATE.ENTRIES(url, filter);
+		};
+	},
+	MUTATE_ENTRIES_AT: (filter, predicate) => {
+		return (url) => {
+			if ( predicate(url) ) {
 				MUTATE.ENTRIES(url, filter);
 			}
 		};
 	},
-	MUTATE_ENTRIES_AT: (filter, predicate) => {
-		return {
-			redirect: (url) => {
-				if ( predicate(url) ) {
-					MUTATE.ENTRIES(url, filter);
-				}
-			}
-		};
-	},
 	REDIRECT_AT: (f, predicate) => {
-		return {
-			redirect: (url) => {
-				if ( predicate(url) ) {
-					return f(url);
-				}
+		return (url) => {
+			if ( predicate(url) ) {
+				return f(url);
 			}
 		};
 	}
