@@ -81,5 +81,8 @@
 		"contextMenus",
 		"webRequest",
 		"webRequestBlocking"
+	],
+	"web_accessible_resources": [
+		"warn.html"
 	]
 }
