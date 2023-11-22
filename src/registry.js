@@ -17,6 +17,9 @@ Promise.all(browser.runtime
 			}
 			rules.push(...moduleRules)
 			console.info("Module loaded", module, moduleRules.length);
+			for ( const moduleRule of moduleRules ) {
+				console.log("Rule", moduleRule.toExpression());
+			}
 			return moduleRules;
 		})
 	)
