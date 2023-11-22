@@ -249,9 +249,11 @@ const MAP = {
 };
 
 const MUTATE = {
-	ENTRIES: (url, filter) => {
-		cleanSearchParams(url.searchParams, filter);
-		url.hash = parseAndCleanHashPairs(url.hash, filter);
+	ENTRIES: (filter) => {
+		return (url) => {
+			cleanSearchParams(url.searchParams, filter);
+			url.hash = parseAndCleanHashPairs(url.hash, filter);
+		};
 	}
 };
 
@@ -315,14 +317,16 @@ const OP = {
 
 const RULE = {
 	MUTATE_ENTRIES: (filter) => {
+		const mutator = MUTATE.ENTRIES(filter);
 		return (url) => {
-			MUTATE.ENTRIES(url, filter);
+			mutator(url);
 		};
 	},
 	MUTATE_ENTRIES_AT: (filter, predicate) => {
+		const mutator = MUTATE.ENTRIES(filter);
 		return (url) => {
 			if ( predicate(url) ) {
-				MUTATE.ENTRIES(url, filter);
+				mutator(filter);
 			}
 		};
 	},
