@@ -3,7 +3,7 @@ import { AT, BLOCK, MAP, OP, RULE } from '/rules.js';
 export default [
 	RULE.REDIRECT_AT(
 		OP.PIPE(
-			{onError: BLOCK.CONFIRM},
+			{onError: BLOCK.CONFIRM()},
 			MAP.EXTRACT_PATHNAME(),
 			MAP.PARSE_REGEXP(/^\/e\/c\/(.*)/),
 			MAP.ELEMENT_AT(1),

@@ -169,8 +169,10 @@ const AT = {
 };
 
 const BLOCK = {
-	CONFIRM: (url) => {
-		return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
+	CONFIRM: () => {
+		return (url) => {
+			return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
+		};
 	}
 };
 
