@@ -52,12 +52,11 @@ chrome.contextMenus.onClicked.addListener((e) => {
 	}
 });
 
-chrome.webRequest.onBeforeRequest.addListener((details) => {
-	if ( details.initiator && details.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
+chrome.webRequest.onBeforeRequest.addListener((e) => {
+	if ( e.initiator && e.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
 		return;
 	}
-	const url = new URL(details.url);
-	const redirectUrl = redirect(url);
+	const redirectUrl = redirect(new URL(e.url));
 	if ( !redirectUrl ) {
 		return;
 	}
