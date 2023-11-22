@@ -1,6 +1,6 @@
 {
 	"name": "uU (untrack URLs)",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
