@@ -1,19 +1,5 @@
 {
-	"name": "uU (untrack URLs)",
-	"short_name": "uU",
-	"version": "0.0.4",
-	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
-	"developer": {
-		"name": "Lyubomyr Shaydariv",
-		"url": "https://github.com/lyubomyr-shaydariv/"
-	},
-	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
-	"icons": {
-		"48": "icon-48x48.png",
-		"128": "icon-128x128.png"
-	},
-	"content_security_policy": "object-src 'self'; script-src 'self';",
 	"background": {
 		"scripts": [
 			"rules.js",
@@ -78,6 +64,18 @@
 		],
 		"type": "module"
 	},
+	"content_security_policy": "object-src 'self'; script-src 'self';",
+	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
+	"developer": {
+		"name": "Lyubomyr Shaydariv",
+		"url": "https://github.com/lyubomyr-shaydariv/"
+	},
+	"icons": {
+		"48": "icon-48x48.png",
+		"128": "icon-128x128.png"
+	},
+	"manifest_version": 2,
+	"name": "uU (untrack URLs)",
 	"options_ui": {
 		"page": "options.html"
 	},
@@ -87,6 +85,8 @@
 		"webRequest",
 		"webRequestBlocking"
 	],
+	"short_name": "uU",
+	"version": "0.0.4",
 	"web_accessible_resources": [
 		"warn.html"
 	]
