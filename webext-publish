@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+BASE_DIR="$(readlink --canonicalize-existing -- "$0")"
+BASE_DIR="$(dirname -- "$BASE_DIR")"
+declare -r BASE_DIR
+
+npx web-ext sign --api-key="$AMO_JWT_ISSUER" --api-secret="$AMO_JWT_SECRET" --source-dir="$BASE_DIR/src" --artifacts-dir="$BASE_DIR/out"
