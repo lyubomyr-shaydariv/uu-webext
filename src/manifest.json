@@ -205,6 +205,7 @@
 	"permissions": [
 		"<all_urls>",
 		"bookmarks",
+		"contextMenus",
 		"webRequest",
 		"webRequestBlocking"
 	],
