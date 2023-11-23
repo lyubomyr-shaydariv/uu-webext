@@ -195,7 +195,7 @@
 		"128": "icon-128x128.png"
 	},
 	"manifest_version": 2,
-	"name": "uU (untrack URLs)",
+	"name": "μuU (untrack URLs)",
 	"options_ui": {
 		"page": "options.html"
 	},
@@ -205,6 +205,6 @@
 		"webRequest",
 		"webRequestBlocking"
 	],
-	"short_name": "uU",
+	"short_name": "μuU",
 	"version": "0.0.36"
 }
