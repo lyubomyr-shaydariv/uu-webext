@@ -4,6 +4,10 @@
 	"version": "0.0.4",
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
+	"developer": {
+		"name": "Lyubomyr Shaydariv",
+		"url": "https://github.com/lyubomyr-shaydariv/"
+	},
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
 	"icons": {
 		"48": "icon-48x48.png",
