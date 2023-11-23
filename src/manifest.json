@@ -82,6 +82,7 @@
 	},
 	"permissions": [
 		"<all_urls>",
+		"contextMenus",
 		"webRequest",
 		"webRequestBlocking"
 	],
