@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
+
+# NOTE: org.mozilla.focus and org.mozilla.firefox are unsupported
+readonly FIREFOX_PACKAGE='org.mozilla.fenix'
+
+web-ext run --target firefox-android --source-dir="$BASE_DIR/src" --android-device="$ANDROID_DEVICE" --firefox-apk "$FIREFOX_PACKAGE"
