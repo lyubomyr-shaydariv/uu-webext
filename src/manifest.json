@@ -1,5 +1,6 @@
 {
 	"name": "uU (untrack URLs)",
+	"short_name": "uU",
 	"version": "0.0.4",
 	"manifest_version": 2,
 	"author": "Lyubomyr Shaydariv",
