@@ -1,7 +1,0 @@
-#!/bin/bash
-
-set -TEeuo pipefail
-
-readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
-
-web-ext sign --api-key="$AMO_JWT_ISSUER" --api-secret="$AMO_JWT_SECRET" --source-dir="$BASE_DIR/src" --artifacts-dir="$BASE_DIR/out"
