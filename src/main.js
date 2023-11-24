@@ -18,7 +18,7 @@ main:
 		}
 	}
 	if ( redirectUrl.toString() !== url.toString() ) {
-		console.info("REDIRECT", `${url} => ${redirectUrl}`);
+		console.info(`Redirected from ${url} to ${redirectUrl}`);
 		return redirectUrl;
 	}
 }

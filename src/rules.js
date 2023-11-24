@@ -62,8 +62,7 @@ const xs = (o, delimiter = ",", empty = "@") => {
 			.map(e => xs(e, delimiter))
 			.join(delimiter);
 	}
-	console.error('Unsupported', o.constructor, o);
-	return o.toString();
+	throw new Error(`Unsupported expression type: ${o} of ${o.constructor}`);
 };
 
 const AT = {
@@ -474,7 +473,7 @@ const OP = {
 				}
 				return result;
 			} catch ( err ) {
-				console.error(err);
+				console.error(`Error in pipeline`, err);
 				if ( !options.onError ) {
 					return REDIRECT_CONFIRMATION_URL(v);
 				}
