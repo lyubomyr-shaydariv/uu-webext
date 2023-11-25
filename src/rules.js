@@ -498,7 +498,7 @@ const RULE = {
 		const mutator = MUTATE.ENTRIES(filter);
 		const f = (url) => {
 			if ( predicate(url) ) {
-				mutator(filter);
+				mutator(url);
 			}
 		};
 		f.toExpression = () => `MUTATE ENTRIES ${filter.toExpression()} AT ${predicate.toExpression()}`;
