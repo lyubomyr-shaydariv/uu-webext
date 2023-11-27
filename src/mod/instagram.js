@@ -11,6 +11,6 @@ export default [
 		AT.HOSTNAME("l.instagram.com")
 	),
 	RULE.MUTATE_ENTRIES(
-		JUST.EXCLUDING("igshid")
+		JUST.EXCLUDING("igshid", "ig_rid")
 	)
 ];
