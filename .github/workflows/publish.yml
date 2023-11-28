@@ -1,0 +1,20 @@
+name: public-amo
+on:
+  push:
+    tags:
+      - v*.*.*.fx
+jobs:
+  publish:
+    name: publish-amo
+    runs-on: ubuntu-latest
+    environment: amo
+    steps:
+      - name: 'git checkout'
+        uses: actions/checkout@v3
+      - name: 'web-ext sign'
+        uses: kewisch/action-web-ext@v1.0
+        with:
+          cmd: sign
+          source: src
+          apiKey: ${{ secrets.AMO_JWT_ISSUER }}
+          apiSecret: ${{ secrets.AMO_JWT_SECRET }}
