@@ -60,3 +60,8 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * ... and some other common stuff for URLs
 
 _* uU is a shortcut for "untrack URLs"._
+
+The extension is currently published at:
+
+* uU - [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/uu/)
+* μuU - [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/%CE%BCuu/)
