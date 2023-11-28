@@ -187,6 +187,11 @@
 		],
 		"type": "module"
 	},
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "a3d2f54b-f244-45fe-ab90-9c4c1be294b0"
+		}
+	},
 	"content_security_policy": "object-src 'self'; script-src 'self';",
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
 	"developer": {
