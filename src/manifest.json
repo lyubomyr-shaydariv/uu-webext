@@ -2,6 +2,7 @@
 	"author": "Lyubomyr Shaydariv",
 	"background": {
 		"scripts": [
+			"lib/urlpattern-polyfill-10.0.0/urlpattern.js",
 			"literals.js",
 			"main.js",
 			"mod/_.js",
