@@ -1,5 +1,11 @@
+/* global URLPattern */
 import {AllLiteral, PrefixLiteral, groupLiterals} from './literals.js';
 import {areStrictlyEqual} from '/util.js';
+
+if ( globalThis.URLPattern === undefined ) {
+	const module = await import('/lib/urlpattern-polyfill-10.0.0/urlpattern.js');
+	globalThis.URLPattern = module.URLPattern;
+}
 
 const literalize = (...es) => {
 	const literals = [];
@@ -639,6 +645,36 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	};
 };
 
+const __AT_URL_PATTERN = (ctx, ...urlPatterns) => {
+	if ( !urlPatterns.every((e) => typeof e === 'string' || e instanceof String) ) {
+		throw new Error(`cannot build a URL pattern from ${urlPatterns.join(' ')}`);
+	}
+	ctx.source += ` URL PATTERN ${literalize(...urlPatterns)}`;
+	urlPatterns = urlPatterns.map((e) => new URLPattern(e));
+	switch ( urlPatterns.length ) {
+	case 0:
+		ctx.at = (/* url */) => false;
+		break;
+	case 1: {
+		const [urlPattern] = urlPatterns;
+		ctx.at = (url) => urlPattern.test(url.href);
+		break;
+	}
+	default:
+		ctx.at = (url) => {
+			for ( const urlPattern of urlPatterns ) {
+				if ( urlPattern.test(url.href) ) {
+					return true;
+				}
+			}
+			return false;
+		};
+	}
+	return {
+		FROM: () => FROM(ctx)
+	};
+};
+
 // TODO consider associating tries in the global domain/hostname tries
 const AT = (ctx) => {
 	ctx.source += 'AT';
@@ -669,7 +705,8 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys)
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		URL_PATTERN: (...urlPatterns) => __AT_URL_PATTERN(ctx, ...urlPatterns)
 	};
 };
 
