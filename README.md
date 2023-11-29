@@ -255,4 +255,6 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all tracking parameters mentioned at [privacytests.org](https://privacytests.org/) (last updated 2026-07-19);
 * and some rules available online.
 
+The [URL Pattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API) is currently backed by [urlpattern-polyfill](https://github.com/kenchris/urlpattern-polyfill) by Kenneth Rohde Christiansen.
+
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
