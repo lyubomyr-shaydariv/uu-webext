@@ -2,6 +2,6 @@ import { JUST, RULE } from '/rules.js';
 
 export default [
 	RULE.MUTATE_ENTRIES(
-		JUST.EXCLUDING("zanpid")
+		JUST.EXCLUDING('zanpid')
 	)
 ];

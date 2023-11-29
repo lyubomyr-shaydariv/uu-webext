@@ -9,9 +9,9 @@ export default [
 			MAP.ELEMENT_AT(1),
 			MAP.DECODE_BASE64(),
 			MAP.PARSE_JSON(),
-			MAP.PROPERTY_AT("href"),
+			MAP.PROPERTY_AT('href'),
 			MAP.TO_URL()
 		),
-		AT.HOSTNAME("e.customeriomail.com")
+		AT.HOSTNAME('e.customeriomail.com')
 	)
 ];

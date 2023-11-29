@@ -5,12 +5,12 @@ export default [
 		OP.PIPE(
 			{onError: BLOCK.CONFIRM()},
 			MAP.EXTRACT_SEARCH_PARAMS(),
-			MAP.PROPERTY_AT("u"),
+			MAP.PROPERTY_AT('u'),
 			MAP.TO_URL()
 		),
-		AT.HOSTNAME("l.instagram.com")
+		AT.HOSTNAME('l.instagram.com')
 	),
 	RULE.MUTATE_ENTRIES(
-		JUST.EXCLUDING("igshid", "ig_rid")
+		JUST.EXCLUDING('igshid', 'ig_rid')
 	)
 ];

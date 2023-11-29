@@ -23,7 +23,7 @@ main:
 	}
 }
 
-const EXTENSION_URL_PREFIX = chrome.runtime.getURL("");
+const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
 
 chrome.webRequest.onBeforeRequest.addListener((e) => {
 	if ( e.initiator && e.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
@@ -37,6 +37,6 @@ chrome.webRequest.onBeforeRequest.addListener((e) => {
 		redirectUrl: redirectUrl.toString()
 	};
 },
-	{urls: ["<all_urls>"], types: ["main_frame", "sub_frame", "stylesheet", "script", "image", "font", "object", "xmlhttprequest", "ping", "csp_report", "media", "websocket", "other"]},
-	["blocking"]
+	{urls: ['<all_urls>'], types: ['main_frame', 'sub_frame', 'stylesheet', 'script', 'image', 'font', 'object', 'xmlhttprequest', 'ping', 'csp_report', 'media', 'websocket', 'other']},
+	['blocking']
 );

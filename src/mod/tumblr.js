@@ -5,12 +5,12 @@ export default [
 		OP.PIPE(
 			{onError: BLOCK.CONFIRM()},
 			MAP.EXTRACT_SEARCH_PARAMS(),
-			MAP.PROPERTY_AT("z"),
+			MAP.PROPERTY_AT('z'),
 			MAP.TO_URL()
 		),
 		OP.AND(
-			AT.HOSTNAME("t.umblr.com"),
-			AT.PATHNAME("/redirect")
+			AT.HOSTNAME('t.umblr.com'),
+			AT.PATHNAME('/redirect')
 		)
 	)
 ];

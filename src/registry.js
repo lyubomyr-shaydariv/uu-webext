@@ -1,4 +1,4 @@
-const EXTENSION_URL_PREFIX = chrome.runtime.getURL("");
+const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
 
 const rules = [];
 
@@ -7,7 +7,7 @@ Promise.all(browser.runtime
 	.background
 	.scripts
 	.map((script) => script.startsWith(EXTENSION_URL_PREFIX) ? script.substring(EXTENSION_URL_PREFIX.length) : script)
-	.filter((script) => script.startsWith("mod/"))
+	.filter((script) => script.startsWith('mod/'))
 	.map((module) => import(`./${module}`)
 		.then((loadedModule) => {
 			const {default: moduleRules} = loadedModule;

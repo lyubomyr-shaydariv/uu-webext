@@ -17,16 +17,16 @@ const cleanSearchParams = (searchParams, filter) => {
 const hashPairsRegExp = /([#&]([^=&]+)(?:=([^#&]*))?)/g;
 
 const parseAndCleanHashPairs = (hash, filter) => {
-	if ( hash && filter && hash !== "#" && hash.indexOf("=") !== -1 ) {
-		hash = hash.replace(hashPairsRegExp, (match, _, key, value) => filter(key, [value]) ? match : "");
-		if ( hash.startsWith("&") ) {
+	if ( hash && filter && hash !== '#' && hash.indexOf('=') !== -1 ) {
+		hash = hash.replace(hashPairsRegExp, (match, _, key, value) => filter(key, [value]) ? match : '');
+		if ( hash.startsWith('&') ) {
 			hash = `#${hash.substring(1)}`;
 		}
 	}
 	return hash;
 };
 
-const xs = (o, delimiter = ",", empty = "@") => {
+const xs = (o, delimiter = ',', empty = '@') => {
 	if ( o === void(0) ) {
 		return empty;
 	}
@@ -275,7 +275,7 @@ const AT = {
 const BLOCK = {
 	CONFIRM: () => {
 		const f = (url) => {
-			return new URL(`${chrome.runtime.getURL("/warn.html")}?url=${encodeURIComponent(url)}`);
+			return new URL(`${chrome.runtime.getURL('/warn.html')}?url=${encodeURIComponent(url)}`);
 		};
 		f.toExpression = () => `CONFIRM`;
 		return f;
@@ -418,7 +418,7 @@ const OP = {
 			case 1: {
 				const predicate = predicates[0];
 				const f = (name, values) => predicate(name, values);
-				f.toExpression = () => `${xs(predicate, " AND ")}`;
+				f.toExpression = () => `${xs(predicate, ' AND ')}`;
 				return f;
 			}
 			default: {
@@ -431,7 +431,7 @@ const OP = {
 					}
 					return true;
 				};
-				f.toExpression = () => `${xs(predicates, " AND ")}`;
+				f.toExpression = () => `${xs(predicates, ' AND ')}`;
 				return f;
 			}
 		}
@@ -446,7 +446,7 @@ const OP = {
 			case 1: {
 				const predicate = predicates[0];
 				const f = (name, values) => predicate(name, values);
-				f.toExpression = () => `${xs(predicate, " OR ")}`;
+				f.toExpression = () => `${xs(predicate, ' OR ')}`;
 				return f;
 			}
 			default: {
@@ -459,7 +459,7 @@ const OP = {
 					}
 					return false;
 				};
-				f.toExpression = () => `${xs(predicates, " OR ")}`;
+				f.toExpression = () => `${xs(predicates, ' OR ')}`;
 				return f;
 			}
 		}
@@ -480,7 +480,7 @@ const OP = {
 				return options.onError(v);
 			}
 		};
-		f.toExpression = () => `${xs(options)} ${xs(fs, "|")}`;
+		f.toExpression = () => `${xs(options)} ${xs(fs, '|')}`;
 		return f;
 	}
 };
