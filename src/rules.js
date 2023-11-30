@@ -1,3 +1,5 @@
+/*global chrome*/
+
 const cleanSearchParams = (searchParams, filter) => {
 	if ( !searchParams || !filter ) {
 		return;
@@ -81,6 +83,7 @@ const AT = {
 	HOSTNAME: (...hostnames) => {
 		switch ( hostnames.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `HOSTNAME ${xs()}`;
 				return f;
@@ -109,6 +112,7 @@ const AT = {
 	HOSTNAME_BY_REGEXP: (...regExps) => {
 		switch ( regExps.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `HOSTNAME BY REGEXP ${xs()}`;
 				return f;
@@ -137,6 +141,7 @@ const AT = {
 	HOSTNAME_UNDER_DOMAIN: (...hostnames) => {
 		switch ( hostnames.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `HOSTNAME UNDER DOMAIN ${xs()}`;
 				return f;
@@ -165,6 +170,7 @@ const AT = {
 	PATHNAME: (...pathnames) => {
 		switch ( pathnames.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `PATHNAME ${xs()}`;
 				return f;
@@ -193,6 +199,7 @@ const AT = {
 	PATHNAME_BY_REGEXP: (...regExps) => {
 		switch ( regExps.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `PATHNAME BY REGEXP ${xs()}`;
 				return f;
@@ -221,6 +228,7 @@ const AT = {
 	PATHNAME_BY_STARTS_WITH: (...pathnames) => {
 		switch ( pathnames.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `PATHNAME BY STARTS WITH ${xs()}`;
 				return f;
@@ -249,12 +257,13 @@ const AT = {
 	SEARCH_PARAMS_HAS_KEY: (...keys) => {
 		switch ( keys.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (url) => true;
 				f.toExpression = () => `SEARCH PARAMS HAS KEY ${xs()}`;
 				return f;
 			}
 			case 1: {
-				const key = keys[0]
+				const key = keys[0];
 				const f = (url) => url.searchParams.has(key);
 				f.toExpression = () => `SEARCH PARAMS HAS KEY ${xs(key)}`;
 				return f;
@@ -280,18 +289,21 @@ const JUST = {
 	EXCLUDING: (...names) => {
 		switch ( names.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => true;
 				f.toExpression = () => `EXCLUDING ${xs()}`;
 				return f;
 			}
 			case 1: {
 				const n = names[0];
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => name !== n;
 				f.toExpression = () => `EXCLUDING ${xs(n)}`;
 				return f;
 			}
 			default: {
 				names = new Set(names);
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => !names.has(name);
 				f.toExpression = () => `EXCLUDING ${xs(names)}`;
 				return f;
@@ -301,18 +313,21 @@ const JUST = {
 	EXCLUDING_BY_STARTS_WITH: (...names) => {
 		switch ( names.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => true;
 				f.toExpression = () => `EXCLUDING BY STARTS WITH ${xs()}`;
 				return f;
 			}
 			case 1: {
 				const n = names[0];
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => !name.startsWith(n);
 				f.toExpression = () => `EXCLUDING BY STARTS WITH ${xs(n)}`;
 				return f;
 			}
 			default: {
 				names = names.slice();
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => {
 					for ( const n of names ) {
 						if ( name.startsWith(n) ) {
@@ -331,7 +346,7 @@ const JUST = {
 const MAP = {
 	DECODE_BASE64: () => {
 		const f = (encoded) => atob(encoded);
-		f.toExpression = () => `DECODE_BASE64`;
+		f.toExpression = () => 'DECODE_BASE64';
 		return f;
 	},
 	ELEMENT_AT: (i) => {
@@ -341,17 +356,17 @@ const MAP = {
 	},
 	EXTRACT_PATHNAME: () => {
 		const f = (url) => url.pathname;
-		f.toExpression = () => `EXTRACT_PATHNAME`;
+		f.toExpression = () => 'EXTRACT_PATHNAME';
 		return f;
 	},
 	EXTRACT_SEARCH_PARAMS: () => {
 		const f = (url) => url.searchParams;
-		f.toExpression = () => `EXTRACT_SEARCH_PARAMS`;
+		f.toExpression = () => 'EXTRACT_SEARCH_PARAMS';
 		return f;
 	},
 	PARSE_JSON: () => {
 		const f = (json) => JSON.parse(json);
-		f.toExpression = () => `PARSE_JSON`;
+		f.toExpression = () => 'PARSE_JSON';
 		return f;
 	},
 	PARSE_REGEXP: (regExp) => {
@@ -385,7 +400,7 @@ const MAP = {
 	},
 	TO_URL: () => {
 		const f = (url) => new URL(url);
-		f.toExpression = () => `TO_URL`;
+		f.toExpression = () => 'TO_URL';
 		return f;
 	}
 };
@@ -405,6 +420,7 @@ const OP = {
 	AND: (...predicates) => {
 		switch ( predicates.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => true;
 				f.toExpression = () => `${xs()}`;
 				return f;
@@ -433,6 +449,7 @@ const OP = {
 	OR: (...predicates) => {
 		switch ( predicates.length ) {
 			case 0: {
+				// eslint-disable-next-line no-unused-vars
 				const f = (name, values) => true;
 				f.toExpression = () => `${xs()}`;
 				return f;
@@ -467,7 +484,7 @@ const OP = {
 				}
 				return result;
 			} catch ( err ) {
-				console.error(`Error in pipeline`, err);
+				console.error('Error in pipeline', err);
 				return confirmRedirection(v);
 			}
 		};

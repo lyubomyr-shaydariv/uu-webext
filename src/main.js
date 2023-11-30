@@ -1,3 +1,5 @@
+/*global chrome*/
+
 import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
@@ -21,7 +23,7 @@ main:
 		console.info(`Redirected from ${url} to ${redirectUrl}`);
 		return redirectUrl;
 	}
-}
+};
 
 const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
 

@@ -1,3 +1,5 @@
+/*global browser, chrome*/
+
 const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
 
 const rules = [];
@@ -23,7 +25,7 @@ Promise.all(browser.runtime
 			for ( const moduleRule of moduleRules ) {
 				console.log(`Rule: ${moduleRule.toExpression()}`);
 			}
-			rules.push(...moduleRules)
+			rules.push(...moduleRules);
 			console.info(`Module ${module} registered declaring ${moduleRules.length} rule(s)`);
 			return moduleRules;
 		})
