@@ -26,6 +26,10 @@ const parseAndCleanHashPairs = (hash, filter) => {
 	return hash;
 };
 
+const confirmRedirection = (url) => {
+	return new URL(`${chrome.runtime.getURL('/warn.html')}?url=${encodeURIComponent(url)}`);
+};
+
 const xs = (o, delimiter = ',', empty = '@') => {
 	if ( o === void(0) ) {
 		return empty;
@@ -272,16 +276,6 @@ const AT = {
 	}
 };
 
-const BLOCK = {
-	CONFIRM: () => {
-		const f = (url) => {
-			return new URL(`${chrome.runtime.getURL('/warn.html')}?url=${encodeURIComponent(url)}`);
-		};
-		f.toExpression = () => `CONFIRM`;
-		return f;
-	}
-};
-
 const JUST = {
 	EXCLUDING: (...names) => {
 		switch ( names.length ) {
@@ -464,7 +458,7 @@ const OP = {
 			}
 		}
 	},
-	PIPE: (options = {}, ...fs) => {
+	PIPE: (...fs) => {
 		const f = (v) => {
 			try {
 				let result = v;
@@ -474,13 +468,10 @@ const OP = {
 				return result;
 			} catch ( err ) {
 				console.error(`Error in pipeline`, err);
-				if ( !options.onError ) {
-					return REDIRECT_CONFIRMATION_URL(v);
-				}
-				return options.onError(v);
+				return confirmRedirection(v);
 			}
 		};
-		f.toExpression = () => `${xs(options)} ${xs(fs, '|')}`;
+		f.toExpression = () => `${xs(fs, '|')}`;
 		return f;
 	}
 };
@@ -517,7 +508,6 @@ const RULE = {
 
 export {
 	AT,
-	BLOCK,
 	JUST,
 	MAP,
 	MUTATE,
