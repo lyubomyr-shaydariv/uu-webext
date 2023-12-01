@@ -8,16 +8,14 @@ const redirect = (url) => {
 	let redirectUrl = new URL(url);
 main:
 	for ( let i = 0; i < MAX_LOOPS; i++ ) {
-		const thisLoopRedirectUrl = redirectUrl.toString();
 		for ( const rule of registry.getRules() ) {
-			const maybeRedirectUrl = rule(redirectUrl);
-			if ( maybeRedirectUrl ) {
-				redirectUrl = maybeRedirectUrl;
+			const newRedirectUrl = rule(redirectUrl);
+			if ( newRedirectUrl ) {
+				redirectUrl = newRedirectUrl;
+				continue main;
 			}
 		}
-		if ( thisLoopRedirectUrl === redirectUrl.toString() ) {
-			break main;
-		}
+		break main;
 	}
 	if ( redirectUrl.toString() !== url.toString() ) {
 		console.info(`Redirected from ${url} to ${redirectUrl}`);
