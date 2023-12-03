@@ -1,6 +1,11 @@
 import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
 import { areStrictlyEqual } from '/util.js';
 
+if ( typeof(globalThis.browser) === 'undefined' ) {
+	const polyfill = await import('/lib/webextension-polyfill-0.10.0/browser-polyfill.min.js');
+	globalThis.browser = polyfill;
+}
+
 const literalize = (...es) => {
 	const literals = new Array();
 	for ( const e of es ) {

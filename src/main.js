@@ -1,5 +1,10 @@
 /*global browser*/
 
+if ( !('browser' in globalThis) ) {
+	const polyfill = import('/lib/webextension-polyfill-0.10.0/browser-polyfill.min.js');
+	globalThis.browser = polyfill;
+}
+
 import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;

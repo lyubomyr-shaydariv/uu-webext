@@ -1,5 +1,10 @@
 /*global browser*/
 
+if ( !('browser' in globalThis) ) {
+	const polyfill = import('/lib/webextension-polyfill-0.10.0/browser-polyfill.min.js');
+	globalThis.browser = polyfill;
+}
+
 const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
 const rules = await Promise.all(browser.runtime

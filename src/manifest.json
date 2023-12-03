@@ -4,12 +4,7 @@
 		"service_worker": "main.js",
 		"type": "module"
 	},
-	"content_security_policy": "object-src 'self'; script-src 'self';",
 	"description": "Removes tracking parameters and bypasses tracking redirections at some sites",
-	"developer": {
-		"name": "Lyubomyr Shaydariv",
-		"url": "https://github.com/lyubomyr-shaydariv/"
-	},
 	"icons": {
 		"48": "icon-48x48.png",
 		"128": "icon-128x128.png"
@@ -20,10 +15,18 @@
 		"page": "options.html"
 	},
 	"permissions": [
-		"<all_urls>",
-		"webRequest",
-		"webRequestBlocking"
+		"webRequest"
 	],
 	"short_name": "uU",
-	"version": "0.0.35"
+	"version": "0.0.35",
+	"web_accessible_resources": [{
+		"resources": [
+			"warn.html",
+			"commons.css",
+			"warn.js"
+		],
+		"matches": [
+			"*://*/*"
+		]
+	}]
 }
