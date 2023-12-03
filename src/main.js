@@ -1,4 +1,4 @@
-/*global chrome*/
+/*global browser*/
 
 import * as registry from '/registry.js';
 
@@ -30,9 +30,9 @@ main:
 	}
 };
 
-const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
+const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
-chrome.webRequest.onBeforeRequest.addListener((e) => {
+browser.webRequest.onBeforeRequest.addListener((e) => {
 	if ( e.initiator && e.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
 		return;
 	}

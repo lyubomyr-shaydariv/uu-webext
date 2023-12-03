@@ -1,6 +1,6 @@
-/*global browser, chrome*/
+/*global browser*/
 
-const EXTENSION_URL_PREFIX = chrome.runtime.getURL('');
+const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
 const rules = [];
 

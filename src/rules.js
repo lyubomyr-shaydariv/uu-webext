@@ -1,4 +1,4 @@
-/*global chrome*/
+/*global browser*/
 
 const cleanSearchParams = (searchParams, filter) => {
 	if ( !searchParams || !filter ) {
@@ -29,7 +29,7 @@ const parseAndCleanHashPairs = (hash, filter) => {
 };
 
 const confirmRedirection = (url) => {
-	return new URL(`${chrome.runtime.getURL('/warn.html')}?url=${encodeURIComponent(url)}`);
+	return new URL(`${browser.runtime.getURL('/warn.html')}?url=${encodeURIComponent(url)}`);
 };
 
 const xs = (o, delimiter = ',', empty = '@') => {
