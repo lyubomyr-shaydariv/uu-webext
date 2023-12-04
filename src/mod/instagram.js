@@ -11,5 +11,9 @@ export default [
 	),
 	RULE.MUTATE_ENTRIES(
 		JUST.EXCLUDING('igshid', 'ig_rid')
+	),
+	RULE.MUTATE_ENTRIES_AT(
+		JUST.EXCLUDING('e', 'g'),
+		AT.HOSTNAME('www.instagram.com')
 	)
 ];
