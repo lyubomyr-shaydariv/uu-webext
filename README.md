@@ -44,6 +44,7 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * STM (URLs)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
+* ![takeads](favicons/tatrck.com.png) Takeads (URLs)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs)
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)
