@@ -33,7 +33,7 @@ export default [
 	),
 	RULE.MUTATE_ENTRIES(
 		OP.AND(
-			JUST.EXCLUDING('_ga', 'dclid', 'gclid', 'gclsrc', 'gs_l'),
+			JUST.EXCLUDING('_ga', 'dclid', 'gclid', 'gclsrc', 'gs_l', 'srsltid'),
 			JUST.EXCLUDING_BY_STARTS_WITH('ga_')
 		)
 	)
