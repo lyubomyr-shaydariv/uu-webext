@@ -2,7 +2,7 @@ import { AT, JUST, MAP, OP, RULE } from '/rules.js';
 
 export default [
 	RULE.MUTATE_ENTRIES_AT(
-		JUST.EXCLUDING('app', 'embeds_referring_euri', 'feature', 'kw', 'si', 'source_ve_path'),
+		JUST.EXCLUDING('app', 'embeds_referring_euri', 'feature', 'kw', 'pp', 'si', 'source_ve_path'),
 		AT.DOMAIN('youtube.com')
 	),
 	RULE.MUTATE_ENTRIES_AT(
