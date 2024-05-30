@@ -7,12 +7,13 @@ readonly BASE_DIR="$(dirname -- $(readlink -e -- "$0"))"
 for FAVICON_FILE; do
 	DOMAIN="${FAVICON_FILE%.*}"
 	printf '%s\n' "$DOMAIN"
-	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" > "$FAVICON_FILE"
+	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" \
+		> "$FAVICON_FILE"
 	MIME_TYPE="$(file --brief --mime-type "$FAVICON_FILE")"
 	TARGET_FILE=
 	case "$MIME_TYPE" in
 	'image/jpeg')
-		echo "$DOMAIN provided a JPEG favicon" >&2
+		echo "$0: warn: $DOMAIN provided a JPEG favicon" >&2
 		mogrify -strip "$FAVICON_FILE"
 		TARGET_FILE="$BASE_DIR/$DOMAIN.jpg"
 		;;
@@ -25,7 +26,7 @@ for FAVICON_FILE; do
 		continue
 		;;
 	esac
-	if [[ ! "$FAVICON_FILE" -ef "$TARGET_FILE"  ]]; then
+	if [[ ! "$FAVICON_FILE" -ef "$TARGET_FILE" ]]; then
 		mv "$FAVICON_FILE" "$TARGET_FILE"
 	fi
 done
