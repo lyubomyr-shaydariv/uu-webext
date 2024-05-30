@@ -1,6 +1,8 @@
-## uU ![uU](icon-32x32.png)
+## ![uU](icon-32x32.png)
 
-uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
+**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
+
+### Untracked services
 
 * Action Map (URLs)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
@@ -60,9 +62,12 @@ uU is a browser extension that sanitizes **tracked URLs** and bypasses **tracked
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
 
-_* uU is a shortcut for "untrack URLs"._
+### Why Firefox only
 
-The extension is currently published at:
+Currently **uU** and **μuU** are designed for use in Mozilla Firefox only just because it does not restrict `manifest.json` to the very limited v3 that is forced in Google Chrome.
+I haven't check the extension browsers other than Mozilla Firefox.
+
+**uU** and **μuU** are currently published at:
 
 * uU - [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/uu/)
 * μuU - [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/%CE%BCuu/)
