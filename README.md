@@ -85,3 +85,10 @@ The **uU** and **μuU** untracking rules are built on top of:
 * and some rules available online.
 
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
+
+## Support
+
+<a href="https://www.buymeacoffee.com/lyubomyr.shaydariv"><img height="36" src="https://img.buymeacoffee.com/button-api/?text=Buy me a little happiness&emoji=☘️&slug=lyubomyr.shaydariv&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=442200&coffee_colour=FFFFFF"/></a>
+<a href="https://ko-fi.com/lyubomyrshaydariv"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" border="0" alt="Buy me a little happiness at ko-fi.com"/></a>
+
+Thank you!
