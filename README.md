@@ -17,6 +17,7 @@
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs)
+* ![apple](favicons/apple.com.png) Apple (URLs)
 * AT (URLs)
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
