@@ -121,6 +121,56 @@ const predicates = {
 				};
 			}
 		}
+	},
+	eqNone: (...ls) => {
+		switch ( ls.length ) {
+			case 0:
+				// eslint-disable-next-line no-unused-vars
+				return (r) => true;
+			case 1: {
+				if ( typeof(ls[0]) === 'string' || ls[0] instanceof String ) {
+					return (r) => ls[0] !== r;
+				}
+				if ( ls[0] instanceof RegExp ) {
+					return (r) => !ls[0].test(r);
+				}
+				return (r) => ls[0] != r;
+			}
+			default: {
+				const lStrings = new Set();
+				const lRegExpsMap = new Map();
+				const lOthers = [];
+				for ( const l of ls ) {
+					if ( typeof(l) === 'string' || l instanceof String ) {
+						lStrings.add(l);
+						continue;
+					}
+					if ( l instanceof RegExp ) {
+						lRegExpsMap.set(l.source, l);
+						continue;
+					}
+					lOthers.push(l);
+				}
+				const lRegExps = Array.from(lRegExpsMap.values());
+// TODO optimize empty/one-element sets
+				return (r) => {
+					if ( lStrings.has(r) ) {
+						return false;
+					}
+					for ( const l of lRegExps ) {
+						if ( l.test(r) ) {
+							return false;
+						}
+					}
+					for ( const l of lOthers ) {
+						if ( l == r ) {
+							return false;
+						}
+					}
+					return true;
+				};
+			}
+		}
 	}
 };
 
@@ -236,28 +286,10 @@ const AT = {
 
 const JUST = {
 	EXCLUDING: (...names) => {
-		switch ( names.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => true;
-				f.toExpression = () => `EXCLUDING ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const n = names[0];
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => name !== n;
-				f.toExpression = () => `EXCLUDING ${xs(n)}`;
-				return f;
-			}
-			default: {
-				names = new Set(names);
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => !names.has(name);
-				f.toExpression = () => `EXCLUDING ${xs(names)}`;
-				return f;
-			}
-		}
+		const p = predicates.eqNone(...names);
+		const f = (name, values) => p(name);
+		f.toExpression = () => `EXCLUDING ${xs(names)}`;
+		return f;
 	},
 	EXCLUDING_BY_STARTS_WITH: (...names) => {
 		switch ( names.length ) {
