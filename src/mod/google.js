@@ -25,7 +25,7 @@ export default [
 	),
 	RULE.MUTATE_ENTRIES_AT(
 		JUST.EXCLUDING('ei', 'gs_gbg', 'gs_lcp', 'gs_mss', 'gs_rn', 'gws_rd', 'sei', 'ved'),
-		AT.HOSTNAME_BY_REGEXP(/^(?:[^.]+\.)*google(?:\.[^.]+)+$/)
+		AT.HOSTNAME(/^(?:[^.]+\.)*google(?:\.[^.]+)+$/)
 	),
 	RULE.MUTATE_ENTRIES_AT(
 		JUST.EXCLUDING('rd', 'ref_topic', 'sjid', 'visit_id'),

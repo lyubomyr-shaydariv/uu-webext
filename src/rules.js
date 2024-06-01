@@ -100,7 +100,7 @@ const AT = {
 			}
 			case 1: {
 				const hostname = hostnames[0];
-				const f = (url) => url.hostname === hostname;
+				const f = (url) => matches(hostname, url.hostname);
 				f.toExpression = () => `HOSTNAME ${xs(hostname)}`;
 				return f;
 			}
@@ -108,42 +108,13 @@ const AT = {
 				hostnames = hostnames.slice();
 				const f = (url) => {
 					for ( const hostname of hostnames ) {
-						if ( url.hostname === hostname ) {
+						if ( matches(hostname, url.hostname) ) {
 							return true;
 						}
 					}
 					return false;
 				};
 				f.toExpression = () => `HOSTNAME ${xs(hostnames)}`;
-				return f;
-			}
-		}
-	},
-	HOSTNAME_BY_REGEXP: (...regExps) => {
-		switch ( regExps.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (url) => true;
-				f.toExpression = () => `HOSTNAME BY REGEXP ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const regExp = regExps[0];
-				const f = (url) => regExp.test(url.hostname);
-				f.toExpression = () => `HOSTNAME BY REGEXP ${xs(regExp)}`;
-				return f;
-			}
-			default: {
-				regExps = regExps.slice();
-				const f = (url) => {
-					for ( const regExp of regExps ) {
-						if ( regExp.test(url.hostname) ) {
-							return true;
-						}
-					}
-					return false;
-				};
-				f.toExpression = () => `HOSTNAME BY REGEXP ${xs(regExps)}`;
 				return f;
 			}
 		}
