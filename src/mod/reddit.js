@@ -13,7 +13,7 @@ export default [
 		),
 		OP.AND(
 			AT.HOSTNAME('out.reddit.com'),
-			AT.PATHNAME_BY_REGEXP(/^\/[^/]+$/)
+			AT.PATHNAME(/^\/[^/]+$/)
 		)
 	)
 ];

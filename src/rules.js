@@ -158,7 +158,7 @@ const AT = {
 			}
 			case 1: {
 				const pathname = pathnames[0];
-				const f = (url) => url.pathname === pathname;
+				const f = (url) => matches(pathname, url.pathname);
 				f.toExpression = () => `PATHNAME ${xs(pathname)}`;
 				return f;
 			}
@@ -166,42 +166,13 @@ const AT = {
 				pathnames = pathnames.slice();
 				const f = (url) => {
 					for ( const pathname of pathnames ) {
-						if ( url.pathname === pathname ) {
+						if ( matches(pathname, url.pathname) ) {
 							return true;
 						}
 					}
 					return false;
 				};
 				f.toExpression = () => `PATHNAME ${xs(pathnames)}`;
-				return f;
-			}
-		}
-	},
-	PATHNAME_BY_REGEXP: (...regExps) => {
-		switch ( regExps.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (url) => true;
-				f.toExpression = () => `PATHNAME BY REGEXP ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const regExp = regExps[0];
-				const f = (url) => regExp.test(url.pathname);
-				f.toExpression = () => `PATHNAME BY REGEXP ${xs(regExp)}`;
-				return f;
-			}
-			default: {
-				regExps = regExps.slice();
-				const f = (url) => {
-					for ( const regExp of regExps ) {
-						if ( regExp.test(url.pathname) ) {
-							return true;
-						}
-					}
-					return false;
-				};
-				f.toExpression = () => `PATHNAME BY REGEXP ${xs(regExps)}`;
 				return f;
 			}
 		}
