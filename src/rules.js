@@ -71,14 +71,57 @@ const xs = (o, delimiter = ',', empty = '@') => {
 	throw new Error(`Unsupported expression type: ${o} of ${o.constructor}`);
 };
 
-const matches = (l, r) => {
-	if ( typeof(l) === 'string' || l instanceof String ) {
-		return l === r;
+const predicates = {
+	eqAny: (...ls) => {
+		switch ( ls.length ) {
+			case 0:
+				// eslint-disable-next-line no-unused-vars
+				return (r) => true;
+			case 1: {
+				if ( typeof(ls[0]) === 'string' || ls[0] instanceof String ) {
+					return (r) => ls[0] === r;
+				}
+				if ( ls[0] instanceof RegExp ) {
+					return (r) => ls[0].test(r);
+				}
+				return (r) => ls[0] == r;
+			}
+			default: {
+				const lStrings = new Set();
+				const lRegExpsMap = new Map();
+				const lOthers = [];
+				for ( const l of ls ) {
+					if ( typeof(l) === 'string' || l instanceof String ) {
+						lStrings.add(l);
+						continue;
+					}
+					if ( l instanceof RegExp ) {
+						lRegExpsMap.set(l.source, l);
+						continue;
+					}
+					lOthers.push(l);
+				}
+				const lRegExps = Array.from(lRegExpsMap.values());
+// TODO optimize empty/one-element sets
+				return (r) => {
+					if ( lStrings.has(r) ) {
+						return true;
+					}
+					for ( const l of lRegExps ) {
+						if ( l.test(r) ) {
+							return true;
+						}
+					}
+					for ( const l of lOthers ) {
+						if ( l == r ) {
+							return true;
+						}
+					}
+					return false;
+				};
+			}
+		}
 	}
-	if ( l instanceof RegExp ) {
-		return l.test(r);
-	}
-	return l == r;
 };
 
 const AT = {
@@ -91,33 +134,10 @@ const AT = {
 		return f;
 	},
 	HOSTNAME: (...hostnames) => {
-		switch ( hostnames.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (url) => true;
-				f.toExpression = () => `HOSTNAME ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const hostname = hostnames[0];
-				const f = (url) => matches(hostname, url.hostname);
-				f.toExpression = () => `HOSTNAME ${xs(hostname)}`;
-				return f;
-			}
-			default: {
-				hostnames = hostnames.slice();
-				const f = (url) => {
-					for ( const hostname of hostnames ) {
-						if ( matches(hostname, url.hostname) ) {
-							return true;
-						}
-					}
-					return false;
-				};
-				f.toExpression = () => `HOSTNAME ${xs(hostnames)}`;
-				return f;
-			}
-		}
+		const p = predicates.eqAny(...hostnames);
+		const f = (url) => p(url.hostname);
+		f.toExpression = () => `HOSTNAME ${xs(hostnames)}`;
+		return f;
 	},
 	HOSTNAME_UNDER_DOMAIN: (...hostnames) => {
 		switch ( hostnames.length ) {
@@ -149,33 +169,10 @@ const AT = {
 		}
 	},
 	PATHNAME: (...pathnames) => {
-		switch ( pathnames.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (url) => true;
-				f.toExpression = () => `PATHNAME ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const pathname = pathnames[0];
-				const f = (url) => matches(pathname, url.pathname);
-				f.toExpression = () => `PATHNAME ${xs(pathname)}`;
-				return f;
-			}
-			default: {
-				pathnames = pathnames.slice();
-				const f = (url) => {
-					for ( const pathname of pathnames ) {
-						if ( matches(pathname, url.pathname) ) {
-							return true;
-						}
-					}
-					return false;
-				};
-				f.toExpression = () => `PATHNAME ${xs(pathnames)}`;
-				return f;
-			}
-		}
+		const p = predicates.eqAny(...pathnames);
+		const f = (url) => p(url.pathname);
+		f.toExpression = () => `PATHNAME ${xs(pathnames)}`;
+		return f;
 	},
 	PATHNAME_BY_STARTS_WITH: (...pathnames) => {
 		switch ( pathnames.length ) {
