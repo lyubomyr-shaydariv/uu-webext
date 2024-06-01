@@ -71,6 +71,16 @@ const xs = (o, delimiter = ',', empty = '@') => {
 	throw new Error(`Unsupported expression type: ${o} of ${o.constructor}`);
 };
 
+const matches = (l, r) => {
+	if ( typeof(l) === 'string' || l instanceof String ) {
+		return l === r;
+	}
+	if ( l instanceof RegExp ) {
+		return l.test(r);
+	}
+	return l == r;
+};
+
 const AT = {
 	DOMAIN: (...hostnames) => {
 		const f = OP.OR(
