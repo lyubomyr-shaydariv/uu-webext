@@ -3,7 +3,7 @@ import { AT, JUST, MAP, OP, RULE } from '/rules.js';
 export default [
 	RULE.MUTATE_ENTRIES_AT(
 		JUST.EXCLUDING('_branch_match_id', 'source'),
-		AT.HOSTNAME('medium.com')
+		AT.DOMAIN('medium.com')
 	),
 	RULE.REDIRECT_AT(
 		OP.PIPE(
