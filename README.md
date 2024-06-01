@@ -53,6 +53,7 @@
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * SC (URLs)
 * STM (URLs)
+* ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)

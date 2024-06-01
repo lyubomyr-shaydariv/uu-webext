@@ -44,6 +44,7 @@
 			"mod/parsely.js",
 			"mod/reddit.js",
 			"mod/sc.js",
+			"mod/snapchat.js",
 			"mod/sourceforge.js",
 			"mod/spotify.js",
 			"mod/stm.js",
