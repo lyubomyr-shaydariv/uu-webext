@@ -54,6 +54,7 @@
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
 * ![parsely](favicons/parse.ly.png) Parse.ly (TODO URLs)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
+* ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * SC (URLs)
 * STM (URLs)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
