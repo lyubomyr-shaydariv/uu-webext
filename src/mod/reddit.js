@@ -2,7 +2,7 @@ import { AT, JUST, MAP, OP, RULE } from '/rules.js';
 
 export default [
 	RULE.MUTATE_ENTRIES_AT(
-		JUST.EXCLUDING('$3p', '$deep_link', '$original_link', '_branch_match_id', 'correlation_id', 'ref_campaign', 'ref_source'),
+		JUST.EXCLUDING('$3p', '$deep_link', '$original_link', '_branch_match_id', 'correlation_id', 'rdt', 'ref_campaign', 'ref_source'),
 		AT.DOMAIN('reddit.com')
 	),
 	RULE.REDIRECT_AT(
@@ -15,5 +15,13 @@ export default [
 			AT.HOSTNAME('out.reddit.com'),
 			AT.PATHNAME(/^\/[^/]+$/)
 		)
+	),
+	RULE.REDIRECT_AT(
+		OP.PIPE(
+			MAP.EXTRACT_SEARCH_PARAMS(),
+			MAP.PROPERTY_AT('url'),
+			MAP.TO_URL()
+		),
+		AT.HOSTNAME('click.redditmail.com')
 	)
 ];
