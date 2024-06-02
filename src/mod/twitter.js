@@ -19,10 +19,7 @@ export default [
 		)
 	),
 	RULE.MUTATE_ENTRIES_AT(
-		OP.AND(
-			JUST.EXCLUDING('cxt', 's', 't'),
-			JUST.EXCLUDING_BY_STARTS_WITH('ref_')
-		),
+		JUST.EXCLUDING('cxt', /^ref_.*/, 's', 't'),
 		AT.DOMAIN('twitter.com')
 	),
 	RULE.MUTATE_ENTRIES(

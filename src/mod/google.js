@@ -32,9 +32,6 @@ export default [
 		AT.DOMAIN('support.google.com')
 	),
 	RULE.MUTATE_ENTRIES(
-		OP.AND(
-			JUST.EXCLUDING('_ga', 'dclid', 'gclid', 'gclsrc', 'gs_l', 'srsltid'),
-			JUST.EXCLUDING_BY_STARTS_WITH('ga_')
-		)
+		JUST.EXCLUDING('_ga', 'dclid', /^ga_.*/, 'gclid', 'gclsrc', 'gs_l', 'srsltid')
 	)
 ];

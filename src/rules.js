@@ -291,37 +291,6 @@ const JUST = {
 		const f = (name, values) => p(name);
 		f.toExpression = () => `EXCLUDING ${xs(names)}`;
 		return f;
-	},
-	EXCLUDING_BY_STARTS_WITH: (...names) => {
-		switch ( names.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => true;
-				f.toExpression = () => `EXCLUDING BY STARTS WITH ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const n = names[0];
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => !name.startsWith(n);
-				f.toExpression = () => `EXCLUDING BY STARTS WITH ${xs(n)}`;
-				return f;
-			}
-			default: {
-				names = names.slice();
-				// eslint-disable-next-line no-unused-vars
-				const f = (name, values) => {
-					for ( const n of names ) {
-						if ( name.startsWith(n) ) {
-							return false;
-						}
-					}
-					return true;
-				};
-				f.toExpression = () => `EXCLUDING BY STARTS WITH ${xs(names)}`;
-				return f;
-			}
-		}
 	}
 };
 
