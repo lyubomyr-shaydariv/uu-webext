@@ -24,6 +24,7 @@
 			"mod/etsy.js",
 			"mod/evernote.js",
 			"mod/facebook.js",
+			"mod/github.js",
 			"mod/google.js",
 			"mod/hubspot.js",
 			"mod/humblebundle.js",

@@ -32,6 +32,7 @@
 * ![etsy](favicons/etsy.com.png) Etsy (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
+* ![github](favicons/github.com.png) GitHub (URLs)
 * ![google](favicons/google.com.png) Google (URLs, redirects including AMP; **NOTE:** [Google Docs HTML-exported pages](https://fosstodon.org/@Joe_0237/111145684757912952) are only supported/intercepted when open in the browser: _Today I found out that google docs infects html exports with spyware, no scripts, but links in your document are replaced with invisible google tracking redirects. I was using their software because a friend wanted me to work with him on a google doc, he is a pretty big fan of their software, but we were both somehow absolutely shocked that they would go that far._)
 * ![hubspot](favicons/hubspot.com.png) HubSpot (URLs)
 * ![humblebundle](favicons/humblebundle.com.png) Humble Bundle (URLs)
