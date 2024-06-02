@@ -287,6 +287,7 @@ const AT = {
 const JUST = {
 	EXCLUDING: (...names) => {
 		const p = predicates.eqNone(...names);
+		// eslint-disable-next-line no-unused-vars
 		const f = (name, values) => p(name);
 		f.toExpression = () => `EXCLUDING ${xs(names)}`;
 		return f;
