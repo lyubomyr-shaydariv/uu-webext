@@ -20,7 +20,7 @@ export default [
 		),
 		OP.AND(
 			AT.DOMAIN('google.com'),
-			AT.PATHNAME_BY_STARTS_WITH('/amp/s/')
+			AT.PATHNAME(/^\/amp\/s\//)
 		)
 	),
 	RULE.MUTATE_ENTRIES_AT(

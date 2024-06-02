@@ -224,35 +224,6 @@ const AT = {
 		f.toExpression = () => `PATHNAME ${xs(pathnames)}`;
 		return f;
 	},
-	PATHNAME_BY_STARTS_WITH: (...pathnames) => {
-		switch ( pathnames.length ) {
-			case 0: {
-				// eslint-disable-next-line no-unused-vars
-				const f = (url) => true;
-				f.toExpression = () => `PATHNAME BY STARTS WITH ${xs()}`;
-				return f;
-			}
-			case 1: {
-				const pathname = pathnames[0];
-				const f = (url) => url.pathname.startsWith(pathname);
-				f.toExpression = () => `PATHNAME BY STARTS WITH ${xs(pathname)}`;
-				return f;
-			}
-			default: {
-				pathnames = pathnames.slice();
-				const f = (url) => {
-					for ( const pathname of pathnames ) {
-						if ( url.pathname.startsWith(pathname) ) {
-							return true;
-						}
-					}
-					return false;
-				};
-				f.toExpression = () => `PATHNAME BY STARTS WITH ${xs(pathnames)}`;
-				return f;
-			}
-		}
-	},
 	SEARCH_PARAMS_HAS_KEY: (...keys) => {
 		switch ( keys.length ) {
 			case 0: {
