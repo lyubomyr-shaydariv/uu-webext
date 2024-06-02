@@ -23,7 +23,7 @@ Promise.all(browser.runtime
 			}
 			console.info(`Registering module ${module} declaring ${moduleRules.length} rule(s)`);
 			for ( const moduleRule of moduleRules ) {
-				console.log(`Rule: ${moduleRule.toExpression()}`);
+				console.debug(`Rule: ${moduleRule.toExpression()}`);
 			}
 			rules.push(...moduleRules);
 			console.info(`Module ${module} registered declaring ${moduleRules.length} rule(s)`);
@@ -33,7 +33,7 @@ Promise.all(browser.runtime
 )
 	.then((allRules) => {
 		allRules = allRules.flat();
-		console.info(`Rules loaded: ${allRules.length}`);
+		console.log(`Rules loaded: ${allRules.length}`);
 	});
 
 const getRules = function* () {
