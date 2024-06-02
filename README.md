@@ -61,6 +61,7 @@
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)
+* ![taobao](favicons/taobao.com.png) Taobao (redirects)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs)
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)

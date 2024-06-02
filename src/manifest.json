@@ -53,6 +53,7 @@
 			"mod/spotify.js",
 			"mod/stm.js",
 			"mod/takeads.js",
+			"mod/taobao.js",
 			"mod/tiktok.js",
 			"mod/tumblr.js",
 			"mod/twitch.js",
