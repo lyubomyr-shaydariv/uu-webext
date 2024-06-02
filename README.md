@@ -48,6 +48,7 @@
 * ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * NS (URLs)
+* ![nytimes](favicons/nytimes.com.png) New York Times (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
