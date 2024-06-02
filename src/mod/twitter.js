@@ -14,13 +14,13 @@ export default [
 			MAP.TO_URL()
 		),
 		OP.AND(
-			AT.DOMAIN('twitter.com'),
+			AT.DOMAIN('twitter.com', 'x.com'),
 			AT.SEARCH_PARAMS_HAS_KEY('ref_url')
 		)
 	),
 	RULE.MUTATE_ENTRIES_AT(
 		JUST.EXCLUDING('cxt', /^ref_.*/, 's', 't'),
-		AT.DOMAIN('twitter.com')
+		AT.DOMAIN('twitter.com', 'x.com')
 	),
 	RULE.MUTATE_ENTRIES(
 		JUST.EXCLUDING('twclid')
