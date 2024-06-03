@@ -1,4 +1,4 @@
-import { JUST, OP, RULE } from '/rules.js';
+import { JUST, RULE } from '/rules.js';
 
 export default [
 	RULE.MUTATE_ENTRIES(
