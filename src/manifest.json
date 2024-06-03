@@ -41,6 +41,7 @@
 			"mod/mandrill.js",
 			"mod/matomo.js",
 			"mod/medium.js",
+			"mod/messenger.js",
 			"mod/microsoft.js",
 			"mod/netflix.js",
 			"mod/ns.js",

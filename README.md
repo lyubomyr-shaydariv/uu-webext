@@ -49,6 +49,7 @@
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
+* ![messenger](favicons/messenger.com.png) Messenger (redirects)
 * ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * NS (URLs)
