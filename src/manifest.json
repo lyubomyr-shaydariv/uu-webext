@@ -36,6 +36,7 @@
 			"mod/magento.js",
 			"mod/mailchimp.js",
 			"mod/mailerlite.js",
+			"mod/mailpanion.js",
 			"mod/mandrill.js",
 			"mod/matomo.js",
 			"mod/medium.js",
