@@ -37,6 +37,7 @@
 			"mod/mailchimp.js",
 			"mod/mailerlite.js",
 			"mod/mailpanion.js",
+			"mod/mailtrack.js",
 			"mod/mandrill.js",
 			"mod/matomo.js",
 			"mod/medium.js",

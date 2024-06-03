@@ -45,6 +45,7 @@
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
 * ![mailerlite](favicons/mailerlite.com.png) MailerLite (URLs)
 * ![mailpanion](favicons/mailpanion.com.png) Mailpanion (redirects)
+* ![mailtrack](favicons/mailtrack.io.png) Mailtrack.io (redirects)
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
