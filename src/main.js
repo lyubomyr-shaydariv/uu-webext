@@ -3,7 +3,7 @@
 import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
-const ALL_RULES = Array.from(registry.getRules());
+const ALL_RULES = Array.from(registry.__getRules());
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
@@ -18,6 +18,21 @@ main:
 			}
 		}
 		break main;
+	}
+	for ( let i = 0; i < MAX_LOOPS; i++ ) {
+		let isModified = false;
+		for ( const rule of registry.getRules() ) {
+			const ruleResult = rule(redirectUrl);
+			if ( ruleResult === true ) {
+				isModified = true;
+			} else if ( ruleResult instanceof URL ) {
+				isModified = true;
+				redirectUrl = ruleResult;
+			}
+		}
+		if ( !isModified ) {
+			break;
+		}
 	}
 	const timeElapsed = Date.now() - beginTimestamp;
 	if ( timeElapsed >= 10 ) {
