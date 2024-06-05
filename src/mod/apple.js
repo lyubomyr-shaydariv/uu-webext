@@ -1,0 +1,8 @@
+import { RULE } from '/rule.js';
+
+export default [
+	RULE()
+		.AT().DOMAIN('apple.com')
+		.FROM().QUERY_ENTRIES()
+		.DO().REMOVE('app', /ign-itsc[a-z]+/)
+];
