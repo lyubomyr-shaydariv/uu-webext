@@ -96,7 +96,7 @@
 		"webRequestBlocking"
 	],
 	"short_name": "uU",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"web_accessible_resources": [
 		"warn.html"
 	]
