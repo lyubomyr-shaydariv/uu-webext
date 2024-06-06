@@ -23,11 +23,13 @@ Promise.all(browser.runtime
 			}
 			console.info(`Registering module ${module} declaring ${moduleRules.length} rule(s)`);
 			for ( const moduleRule of moduleRules ) {
-				console.debug(`Rule: ${moduleRule.toExpression()}`);
+				console.debug(`\tRule: ${moduleRule.toExpression()}`);
 			}
 			rules.push(...moduleRules);
-			console.info(`Module ${module} registered declaring ${moduleRules.length} rule(s)`);
 			return moduleRules;
+		})
+		.catch((err) => {
+			console.error('error loading module', err);
 		})
 	)
 )
