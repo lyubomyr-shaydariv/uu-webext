@@ -174,7 +174,8 @@
 			"mod/zanox.js",
 			"mod/zillow.js",
 			"mod/zoopla.js",
-			"main.js"
+			"main.js",
+			"TEST.js"
 		],
 		"type": "module"
 	},
