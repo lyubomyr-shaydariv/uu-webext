@@ -181,7 +181,8 @@
 			"mod/zoopla.js",
 			"registry.js",
 			"rules.js",
-			"util.js"
+			"util.js",
+			"TEST.js"
 		],
 		"type": "module"
 	},
