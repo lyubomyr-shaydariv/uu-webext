@@ -271,6 +271,11 @@ const MAP = {
 		f.toExpression = () => 'DECODE_BASE64';
 		return f;
 	},
+	DECODE_URI_COMPONENT: () => {
+		const f = (encoded) => decodeURIComponent(encoded);
+		f.toExpression = () => 'DECODE_URI_COMPONENT';
+		return f;
+	},
 	ELEMENT_AT: (i) => {
 		const f = (array) => array[i];
 		f.toExpression = () => `ELEMENT_AT ${i}`;
