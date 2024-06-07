@@ -1,4 +1,4 @@
-import { RULE } from '/rule.js';
+import { RULE } from '/rules.js';
 
 // this might be too broad
 RULE()

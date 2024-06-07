@@ -3,25 +3,14 @@
 import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
-const ALL_RULES = Array.from(registry.__getRules());
+const ALL_RULES = Array.from(registry.getRules());
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
 	let redirectUrl = new URL(url); // clone the url
-main:
-	for ( let i = 0; i < MAX_LOOPS; i++ ) {
-		for ( const rule of ALL_RULES ) {
-			const newRedirectUrl = rule(redirectUrl);
-			if ( newRedirectUrl ) {
-				redirectUrl = newRedirectUrl;
-				continue main;
-			}
-		}
-		break main;
-	}
 	for ( let i = 0; i < MAX_LOOPS; i++ ) {
 		let isModified = false;
-		for ( const rule of registry.getRules() ) {
+		for ( const rule of ALL_RULES ) {
 			const ruleResult = rule(redirectUrl);
 			if ( ruleResult === true ) {
 				isModified = true;

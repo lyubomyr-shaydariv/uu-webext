@@ -1,4 +1,4 @@
-import { RULE } from '/rule.js';
+import { RULE } from '/rules.js';
 
 export default [
 	RULE()
