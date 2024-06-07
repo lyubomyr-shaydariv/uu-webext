@@ -3,13 +3,14 @@
 import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
+const ALL_RULES = Array.from(registry.getRules());
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
-	let redirectUrl = new URL(url);
+	let redirectUrl = new URL(url); // clone the url
 main:
 	for ( let i = 0; i < MAX_LOOPS; i++ ) {
-		for ( const rule of registry.getRules() ) {
+		for ( const rule of ALL_RULES ) {
 			const newRedirectUrl = rule(redirectUrl);
 			if ( newRedirectUrl ) {
 				redirectUrl = newRedirectUrl;
@@ -20,12 +21,12 @@ main:
 	}
 	const timeElapsed = Date.now() - beginTimestamp;
 	if ( timeElapsed >= 10 ) {
-		console.warn(`SLOWDOWN! Processing ${url} took ${timeElapsed} ms`);
+		console.warn(`SLOWDOWN! Processing ${url.href} took ${timeElapsed} ms`);
 	} else if ( timeElapsed >= 5 ) {
-		console.warn(`Slowdown! Processing ${url} took ${timeElapsed} ms`);
+		console.warn(`Slowdown! Processing ${url.href} took ${timeElapsed} ms`);
 	}
-	if ( redirectUrl.toString() !== url.toString() ) {
-		console.info(`Redirected from ${url} to ${redirectUrl}`);
+	if ( redirectUrl.href !== url.href ) {
+		console.info(`Redirected from ${url.href} to ${redirectUrl.href}`);
 		return redirectUrl;
 	}
 };
