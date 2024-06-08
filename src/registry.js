@@ -2,9 +2,7 @@
 
 const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
-const rules = [];
-
-Promise.all(browser.runtime
+const rules = await Promise.all(browser.runtime
 	.getManifest()
 	.background
 	.scripts
@@ -25,7 +23,6 @@ Promise.all(browser.runtime
 			for ( const moduleRule of moduleRules ) {
 				console.debug(`\tRule: ${moduleRule.toExpression()}`);
 			}
-			rules.push(...moduleRules);
 			return moduleRules;
 		})
 		.catch((err) => {
@@ -36,6 +33,7 @@ Promise.all(browser.runtime
 	.then((allRules) => {
 		allRules = allRules.flat();
 		console.log(`Rules loaded: ${allRules.length}`);
+		return allRules;
 	});
 
 const getRules = function* () {
