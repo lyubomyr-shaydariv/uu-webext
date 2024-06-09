@@ -59,6 +59,7 @@
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * ![newyorker](favicons/newyorker.com.png) New Yorker (URLs)
 * NS (URLs)
+* ![nypost](favicons/nypost.com.png) New York Post (URLs)
 * ![nytimes](favicons/nytimes.com.png) New York Times (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
