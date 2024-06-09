@@ -21,6 +21,7 @@
 * ![apple](favicons/apple.com.png) Apple (URLs)
 * AT (URLs)
 * ![bbc](favicons/bbc.com.png) BBC (URLs)
+* ![bestbuy](favicons/bestbuy.com.png) BestBuy (URLs)
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
