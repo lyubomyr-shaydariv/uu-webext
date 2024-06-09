@@ -15,6 +15,7 @@
 
 * Action Map (URLs)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
+* ![aliexpress](favicons/airbnb.com.png) Airbnb (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs)
 * ![apple](favicons/apple.com.png) Apple (URLs)
