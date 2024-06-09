@@ -46,6 +46,7 @@
 			"mod/medium.js",
 			"mod/messenger.js",
 			"mod/microsoft.js",
+			"mod/msn.js",
 			"mod/netflix.js",
 			"mod/ns.js",
 			"mod/nytimes.js",
