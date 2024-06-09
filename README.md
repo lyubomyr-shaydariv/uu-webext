@@ -27,6 +27,7 @@
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![changeorg](favicons/cnet.com.png) CNET (URLs)
 * ![customer.io](favicons/customer.io.png) Customer.io (redirects)
+* ![disqus](favicons/disq.us.png) Disqus (URLs, redirects)
 * ![drip](favicons/drip.com.png) Drip (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
 * ![duckduckgo](favicons/duckduckgo.com.png) DuckDuckGo (redirects)
