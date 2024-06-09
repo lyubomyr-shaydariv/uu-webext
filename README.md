@@ -57,6 +57,7 @@
 * ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
 * ![msn](favicons/msn.com.png) MSN (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
+* ![newyorker](favicons/newyorker.com.png) New Yorker (URLs)
 * NS (URLs)
 * ![nytimes](favicons/nytimes.com.png) New York Times (URLs)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
