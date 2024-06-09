@@ -188,10 +188,20 @@ const __F__REPLACE_STRING = (ctx, pattern, replacement) => {
 const __F__SUBSTRING = (ctx, from, to) => {
 	if ( to === undefined ) {
 		ctx.source += ` SUBSTRING ${from}`;
-		ctx.__apply_functions.push((arg) => arg.substring(from));
+		ctx.__apply_functions.push((arg) => {
+			if ( arg === null) {
+				return null;
+			}
+			return arg.substring(from);
+		});
 	} else {
 		ctx.source += ` SUBSTRING ${from} ${to}`;
-		ctx.__apply_functions.push((arg) => arg.substring(from, to));
+		ctx.__apply_functions.push((arg) => {
+			if ( arg === null) {
+				return null;
+			}
+			return arg.substring(from, to);
+		});
 	}
 	return APPLY(ctx);
 };
