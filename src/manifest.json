@@ -20,6 +20,7 @@
 			"mod/cnet.js",
 			"mod/customerio.js",
 			"mod/disqus.js",
+			"mod/doubleclick.js",
 			"mod/dpgmediagroup.js",
 			"mod/drip.js",
 			"mod/duckduckgo.js",
