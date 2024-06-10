@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('_ga', 'dclid', /^ga_.*/, 'gclid', 'gclsrc', 'gs_l', 'srsltid'),
+		.DO().REMOVE('_ga', 'dclid', 'gad_source', /^ga_.*/, 'gclid', 'gclsrc', 'gs_l', 'srsltid'),
 	RULE()
 		.AT().DOMAIN('support.google.com')
 		.FROM().QUERY_ENTRIES()
