@@ -92,8 +92,8 @@
 
 ### Why Firefox only
 
-Currently **uU** and **μuU** are designed for use in Mozilla Firefox only just because it does not restrict `manifest.json` to the very limited v3 that is forced in Google Chrome.
-I haven't check the extension browsers other than Mozilla Firefox.
+Currently **uU** and **μuU** are designed for use in Mozilla Firefox only just because Mozilla Firefox does not restrict `manifest.json` to the very limited v3 that is forced in Google Chrome.
+I didn't check how the extension works in browsers other than Mozilla Firefox.
 
 **uU** and **μuU** are currently published at:
 
