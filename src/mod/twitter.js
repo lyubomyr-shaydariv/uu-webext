@@ -17,7 +17,6 @@ export default [
 	RULE()
 		.AT().QUERY_ENTRIES_HAVING('type')
 		.FROM().QUERY_ENTRIES()
-		.APPLY().GET_PROPERTY('type').EXECUTE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm)
-		.GET_PROPERTY(1).REPLACE_STRING('3A', ':').TO_URL()
+		.APPLY().GET_PROPERTY('type').EXECUTE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm).GET_PROPERTY(1).REPLACE_STRING('3A', ':').TO_URL()
 		.DO().REDIRECT()
 ];

@@ -30,7 +30,7 @@ const redirect = (url) => {
 		console.warn(`Slowdown! Processing ${url.href} took ${timeElapsed} ms`);
 	}
 	if ( redirectUrl.href !== url.href ) {
-		console.info(`Redirected from ${url.href} to ${redirectUrl.href}`);
+		console.log(`Redirected from ${url.href} to ${redirectUrl.href}`);
 		return redirectUrl;
 	}
 };
