@@ -40,6 +40,7 @@
 * ![ebay](favicons/ebay.com.png) eBay (URLs)
 * ![ebsta](favicons/ebsta.com.png) Ebsta (redirects)
 * ![epicgames](favicons/epicgames.com.png) Epic Games (redirects)
+* ![epsilon](favicons/epsilon.com.png) Epsilon (dotomi.com) (redirects)
 * ![etsy](favicons/etsy.com.png) Etsy (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
