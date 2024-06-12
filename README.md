@@ -56,6 +56,7 @@
 * ![medium](favicons/medium.com.png) Medium (redirects)
 * ![messenger](favicons/messenger.com.png) Messenger (redirects)
 * ![microsoft](favicons/www.microsoft.com.png) Microsoft (URLs)
+* ![microsoft-365](favicons/www.office.com.png) Microsoft 365 (former Microsoft Office) (redirects)
 * ![mozilla](favicons/mozilla.org.png) Mozilla (redirects)
 * ![msn](favicons/msn.com.png) MSN (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
