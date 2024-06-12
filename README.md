@@ -76,6 +76,7 @@
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
+* ![steam](favicons/store.steampowered.com.png) Steam (redirects)
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)
 * ![taobao](favicons/taobao.com.png) Taobao (redirects)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs and redirects)
