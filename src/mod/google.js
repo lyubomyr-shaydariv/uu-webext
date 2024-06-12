@@ -19,8 +19,18 @@ export default [
 		.APPLY().GET_PROPERTY('q').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
+		.AT().DOMAIN('google.com').PATHNAME('/sorry/index')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('continue').TO_URL()
+		.DO().REDIRECT(),
+	RULE()
 		.AT().DOMAIN('google.com').PATHNAME(/^\/amp\/s\//)
 		.FROM().PATHNAME()
 		.APPLY().SUBSTRING(7).TO_URL()
+		.DO().REDIRECT(),
+	RULE()
+		.AT().DOMAIN('googleadservices.com').PATHNAME('/pagead/aclk')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('adurl').TO_URL()
 		.DO().REDIRECT()
 ];
