@@ -6,6 +6,7 @@
 			"registry.js",
 			"mod/_.js",
 			"mod/actionmap.js",
+			"mod/adjust.js",
 			"mod/adobe.js",
 			"mod/airbnb.js",
 			"mod/aliexpress.js",

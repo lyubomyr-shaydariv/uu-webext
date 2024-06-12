@@ -14,6 +14,7 @@
 ### Untracked services
 
 * Action Map (URLs)
+* ![adjust](favicons/adjust.com.png) Adjust (redirects)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![aliexpress](favicons/airbnb.com.png) Airbnb (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
