@@ -54,6 +54,7 @@
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
 * `itm_...` (URLs)
 * ![javlibrary](favicons/javlibrary.com.png) JavLibrary (redirects)
+* ![klarna](favicons/klarna.com.png) Klarna (redirects)
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
 * ![magento](favicons/magento.com.png) Magento (URLs)
