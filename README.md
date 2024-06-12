@@ -66,7 +66,6 @@
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
-* ![parsely](favicons/parse.ly.png) Parse.ly (TODO URLs)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * SC (URLs)
