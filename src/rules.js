@@ -378,17 +378,14 @@ const AT = (ctx) => {
 			if ( ctx.__at_predicate_list.length === 0 ) {
 				return true;
 			}
+outer:
 			for ( const predicates of ctx.__at_predicate_list ) {
-				let isMatch = true;
-				for ( const predicate of predicates  ) {
+				for ( const predicate of predicates ) {
 					if ( !predicate(url) ) {
-						isMatch = false;
-						break;
+						continue outer;
 					}
 				}
-				if ( isMatch === true ) {
-					return true;
-				}
+				return true;
 			}
 			return false;
 		};
