@@ -48,6 +48,7 @@
 			"mod/javlibrary.js",
 			"mod/klarna.js",
 			"mod/kraken.js",
+			"mod/lever.js",
 			"mod/linkedin.js",
 			"mod/mailchimp.js",
 			"mod/mailerlite.js",

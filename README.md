@@ -56,6 +56,7 @@
 * ![javlibrary](favicons/javlibrary.com.png) JavLibrary (redirects)
 * ![klarna](favicons/klarna.com.png) Klarna (redirects)
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
+* ![lever](favicons/lever.co.png) Lever (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
 * ![magento](favicons/magento.com.png) Magento (URLs)
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
