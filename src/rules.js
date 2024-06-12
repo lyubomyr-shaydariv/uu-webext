@@ -271,6 +271,18 @@ const __FROM__PATHNAME = (ctx) => {
 	};
 };
 
+const __FROM__QUERY = (ctx) => {
+	ctx.getValue = (url) => {
+		const query = new String(url.search); // now it's an object, so the `get` function cab be mixed in
+		query.get = (/*index*/) => query;
+		return query;
+	};
+	return {
+		DO: () => DO(ctx),
+		APPLY: () => APPLY(ctx)
+	};
+};
+
 const DEFAULT_PAIR_DELIMITER = '&';
 const DEFAULT_ENTRY_DELIMITER = '=';
 
@@ -307,6 +319,7 @@ const FROM = (ctx) => {
 	ctx.source += ' FROM';
 	return {
 		PATHNAME: () => __FROM__PATHNAME(ctx),
+		QUERY: () => __FROM__QUERY(ctx),
 		QUERY_ENTRIES: () => __FROM__QUERY_ENTRIES(ctx)
 	};
 };
