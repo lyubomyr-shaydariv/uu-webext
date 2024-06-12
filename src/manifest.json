@@ -37,6 +37,7 @@
 			"mod/imdb.js",
 			"mod/instagram.js",
 			"mod/itm.js",
+			"mod/kraken.js",
 			"mod/linkedin.js",
 			"mod/mailchimp.js",
 			"mod/mailerlite.js",

@@ -45,6 +45,7 @@
 * ![imdb](favicons/imdb.com.png) IMDb (URLs and redirects)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
 * `itm_...` (URLs)
+* ![kraken](favicons/kraken.com.png) Kraken (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
 * ![magento](favicons/magento.com.png) Magento (URLs)
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
