@@ -86,6 +86,7 @@
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)
 * ![taobao](favicons/taobao.com.png) Taobao (redirects)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs and redirects)
+* ![toyhouse](favicons/toyhou.se.png) Toyhouse (redirects)
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)
 * Urchin Tracking Module (URLs)
