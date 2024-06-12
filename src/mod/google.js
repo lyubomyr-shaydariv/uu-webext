@@ -32,5 +32,10 @@ export default [
 		.AT().DOMAIN('googleadservices.com').PATHNAME('/pagead/aclk')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('adurl').TO_URL()
+		.DO().REDIRECT(),
+	RULE()
+		.AT().DOMAIN('clickserve.dartsearch.net').PATHNAME('/link/click')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('ds_dest_url').TO_URL()
 		.DO().REDIRECT()
 ];
