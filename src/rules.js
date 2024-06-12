@@ -103,15 +103,21 @@ const __DO__REMOVE = (ctx, ...keys) => {
 			if ( !ctx.at(url) ) {
 				return false;
 			}
-			let isModified = false;
 			const keysCtx = ctx.createKeysContext(url);
-			for ( const key of keysCtx.getEntryKeys() ) {
-				if ( matches(key) ) {
-					keysCtx.removeKey(key);
-					isModified = true;
+			let keysToRemove = null;
+			for ( const entryKey of keysCtx.getEntryKeys() ) {
+				if ( matches(entryKey) ) {
+					if ( keysToRemove === null ) {
+						keysToRemove = [];
+					}
+					keysToRemove.push(entryKey);
 				}
 			}
-			return isModified;
+			if ( keysToRemove === null ) {
+				return false;
+			}
+			keysCtx.removeKeys(...keysToRemove);
+			return true;
 		},
 		{
 			name: {
@@ -277,7 +283,11 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 			const searchParams = url.searchParams;
 			return {
 				getEntryKeys: () => searchParams.keys(),
-				removeKey: (key) => searchParams.delete(key)
+				removeKeys: (...keys) => {
+					for ( const key of keys ) {
+						searchParams.delete(key);
+					}
+				}
 			};
 		};
 	} else {
