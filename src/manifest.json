@@ -61,6 +61,7 @@
 			"mod/reddit.js",
 			"mod/reuters.js",
 			"mod/sc.js",
+			"mod/slack.js",
 			"mod/snapchat.js",
 			"mod/sourceforge.js",
 			"mod/spotify.js",

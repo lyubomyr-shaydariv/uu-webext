@@ -71,6 +71,7 @@
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * SC (URLs)
 * STM (URLs)
+* ![slack](favicons/slack.com.png) Slack (redirects)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
