@@ -54,10 +54,10 @@ const createUrlMatchesByTrie = (getSegmentsFromElement, getSegmentsFromUrl, ...e
 	return (url) => {
 		const segments = getSegmentsFromUrl(url);
 		let node = trie;
-		for ( let i = segments.length - 1; i > 0; i-- ) {
+		for ( let i = segments.length - 1; i >= 0 && typeof(node) !== 'undefined'; i-- ) {
 			const segment = segments[i];
-			if ( !(segment in node) ) {
-				return i <= 0;
+			if ( !(segment in node) && Object.keys(node).length > 0 ) {
+				return false;
 			}
 			node = node[segment];
 		}
