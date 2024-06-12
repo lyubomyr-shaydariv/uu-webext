@@ -81,6 +81,7 @@
 * STM (URLs)
 * ![slack](favicons/slack.com.png) Slack (redirects)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
+* ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![steam](favicons/store.steampowered.com.png) Steam (redirects)

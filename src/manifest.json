@@ -71,6 +71,7 @@
 			"mod/sc.js",
 			"mod/slack.js",
 			"mod/snapchat.js",
+			"mod/soundcloud.js",
 			"mod/sourceforge.js",
 			"mod/spotify.js",
 			"mod/steam.js",
