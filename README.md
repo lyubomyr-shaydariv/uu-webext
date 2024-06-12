@@ -84,6 +84,7 @@
 * ![vero](favicons/www.getvero.com.png) Vero (URLs)
 * ![vk](favicons/vk.com.png) VK (redirects)
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
+* ![workable](favicons/workable.com.png) Workable (redirects)
 * ![twitter](favicons/twitter.com.png) X (ex-Twitter) (redirects)
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
