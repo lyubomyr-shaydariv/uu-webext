@@ -10,7 +10,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('hrc', 'refsrc'),
 	RULE()
-		.AT().DOMAIN('facebook.com').PATHNAME('/l.php')
+		.AT().DOMAIN('facebook.com').PATHNAME('/l.php', '/flx/warn/')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('u').TO_URL()
 		.DO().REDIRECT()
