@@ -34,6 +34,7 @@
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
 * ![duckduckgo](favicons/duckduckgo.com.png) DuckDuckGo (redirects)
 * ![ebay](favicons/ebay.com.png) eBay (URLs)
+* ![epicgames](favicons/epicgames.com.png) Epic Games (redirects)
 * ![etsy](favicons/etsy.com.png) Etsy (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
