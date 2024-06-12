@@ -15,6 +15,11 @@ export default [
 		.APPLY().GET_PROPERTY('ref_url').FROM_URI_COMPONENT().TO_URL()
 		.DO().REDIRECT(),
 	RULE()
+		.AT().DOMAIN('twitter.com', 'x.com').PATHNAME('/i/redirect')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('url').TO_URL()
+		.DO().REDIRECT(),
+	RULE()
 		.AT().QUERY_ENTRIES_HAVING('type')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('type').EXECUTE_REGEXP(/twitterurl=(https?.*?\/\d+)/gm).GET_PROPERTY(1).REPLACE_STRING('3A', ':').TO_URL()
