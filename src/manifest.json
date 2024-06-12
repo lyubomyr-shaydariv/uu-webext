@@ -21,6 +21,7 @@
 			"mod/changeorg.js",
 			"mod/cnet.js",
 			"mod/customerio.js",
+			"mod/digidip.js",
 			"mod/disqus.js",
 			"mod/doubleclick.js",
 			"mod/dpgmediagroup.js",
