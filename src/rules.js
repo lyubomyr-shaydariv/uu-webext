@@ -260,6 +260,7 @@ const APPLY = (ctx) => {
 const PATH_DELIMITER_REGEXP = /\//;
 
 const __FROM__PATHNAME = (ctx) => {
+	ctx.source += ' PATHNAME';
 	ctx.getValue = (url) => {
 		const pathname = new String(url.pathname); // now it's an object, so the `get` function cab be mixed in
 		pathname.get = (index) => pathname.substring(1).split(PATH_DELIMITER_REGEXP)[index];
@@ -272,6 +273,7 @@ const __FROM__PATHNAME = (ctx) => {
 };
 
 const __FROM__QUERY = (ctx) => {
+	ctx.source += ' QUERY';
 	ctx.getValue = (url) => {
 		const query = new String(url.search); // now it's an object, so the `get` function cab be mixed in
 		query.get = (/*index*/) => query;
