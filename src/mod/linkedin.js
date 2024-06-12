@@ -10,7 +10,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('u'),
 	RULE()
-		.AT().DOMAIN('linkedin.com').PATHNAME('/safety/go')
+		.AT().DOMAIN('linkedin.com').PATHNAME('/redir/redirect', '/safety/go')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('url').TO_URL()
 		.DO().REDIRECT()
