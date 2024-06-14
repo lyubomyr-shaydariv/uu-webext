@@ -10,6 +10,7 @@
 | Sharing links | Yes, via the context menu | Currently **uU** does not untrack URLs on the page (in the DOM). The "Copy Untracked Link" from the context menu copies an untracked link similarly "Copy Link Without Site Tracking" that is implemented by Mozilla Firefox itself. |
 | On-page links | No | To be discussed. |
 | Warned page redirects | Yes | In principle, this is greatly supported by [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) and the feature of **uU** is a subject for potential removal. To be discussed. |
+| Randomized tracking parameters poisoning | No | To be discussed. |
 
 ### Untracked services
 
