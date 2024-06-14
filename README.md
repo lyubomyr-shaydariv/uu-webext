@@ -130,6 +130,7 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all rules from [untrack](https://github.com/klanchman/untrack) by Kyle Lanchman (last updated 2023-11-10);
 * all rules from [Mozilla Firefox](https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/antitracking/data/StripOnShare.json) by Mozilla Foundation and its contributors (last updated 2023-11-27);
 * all rules from [Intercept Redirect](https://github.com/bjornstar/intercept-redirect) by Bjorn Stromberg (last updated 2024-06-12);
+* no rules from [Butter](https://chromewebstore.google.com/detail/butter/jllpdjjoodaanpjhanfppkaemlplcmom) by Doctor Popular (last updated 2024-06-14);
 * and some rules available online.
 
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
