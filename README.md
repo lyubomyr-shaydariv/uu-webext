@@ -19,7 +19,7 @@
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![airbnb](favicons/airbnb.com.png) Airbnb (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
-* ![amazon](favicons/amazon.com.png) Amazon (URLs)
+* ![amazon](favicons/amazon.com.png) Amazon (URLs, redirects)
 * ![apple](favicons/apple.com.png) Apple (URLs)
 * AT (URLs)
 * ![bbc](favicons/bbc.com.png) BBC (URLs)
