@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('c_id', 'campaign_id', 'cmpid', 'mbid', 'ncid', 'nr_email_referer', 'rb_clickid', 's_cid', 'ymid')
+		.DO().REMOVE('c_id', 'campaign_id', 'cmpid', 'hc_location', 'mbid', 'ncid', 'nr_email_referer', 'rb_clickid', 's_cid', 'ymid')
 ];
