@@ -79,6 +79,7 @@
 			"mod/reuters.js",
 			"mod/sc.js",
 			"mod/simplereach.js",
+			"mod/skimlinks.js",
 			"mod/slack.js",
 			"mod/snapchat.js",
 			"mod/soundcloud.js",

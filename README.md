@@ -89,6 +89,7 @@
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * SC (URLs)
 * Simple Share (URLs)
+* ![skimlinks](favicons/skimlinks.com.png) Skimlinks (redirects)
 * ![slack](favicons/slack.com.png) Slack (redirects)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
 * ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
