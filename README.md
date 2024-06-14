@@ -110,6 +110,9 @@
 * ![zeit](favicons/zeit.de.png) Zeit (URLs)
 * ... and some other common stuff for URLs
 
+#### Candidates
+* Parse.ly `Campaign` seems to be too board to be unsafely removed from all URLs.
+
 ### Why Firefox only
 
 Currently **uU** and **μuU** are designed for use in Mozilla Firefox only just because Mozilla Firefox does not restrict `manifest.json` to the very limited v3 that is forced in Google Chrome.
