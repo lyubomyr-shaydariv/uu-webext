@@ -84,6 +84,7 @@
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * SC (URLs)
+* Simple Share (URLs)
 * ![slack](favicons/slack.com.png) Slack (redirects)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
 * ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
