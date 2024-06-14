@@ -4,11 +4,39 @@ set -TEeuo pipefail
 
 readonly BASE_DIR="$(dirname -- $(readlink -e -- "$0"))"
 
+readonly PROVIDER="${PROVIDER:-google}"
+
+case "$PROVIDER" in
+'duckduckgo')
+	download_favicon() {
+		local -r DOMAIN="${1?no domain}"
+		local -r FAVICON_FILE="${2?no favicon file}"
+		curl --location --silent "https://external-content.duckduckgo.com/ip3/$DOMAIN.ico" \
+			> "$FAVICON_FILE"~
+		convert "$FAVICON_FILE"~ -resize 16x16 "$FAVICON_FILE"
+		rm "$FAVICON_FILE"~
+	}
+	;;
+'google')
+	download_favicon() {
+		local -r DOMAIN="${1?no domain}"
+		local -r FAVICON_FILE="${2?no favicon file}"
+		curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" \
+			> "$FAVICON_FILE"
+	}
+	;;
+*)
+	echo "$0: fatal: unrecognized provider: $PROVIDER" >&2
+	exit 1
+	;;
+esac
+
+echo "$0: favicon provider: $PROVIDER" >&2
+
 for FAVICON_FILE; do
 	DOMAIN="${FAVICON_FILE%.*}"
 	printf '%s\n' "$DOMAIN"
-	curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" \
-		> "$FAVICON_FILE"
+	download_favicon "$DOMAIN" "$FAVICON_FILE"
 	MIME_TYPE="$(file --brief --mime-type "$FAVICON_FILE")"
 	TARGET_FILE=
 	case "$MIME_TYPE" in
