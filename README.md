@@ -78,6 +78,7 @@
 * NS (URLs)
 * ![nypost](favicons/nypost.com.png) New York Post (URLs)
 * ![nytimes](favicons/nytimes.com.png) New York Times (URLs)
+* ojrq.net (redirects)
 * ![omeda](favicons/omeda.com.png) Omeda (URLs)
 * ![onlyfans](favicons/onlyfans.com.png) OnlyFans (redirects)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
