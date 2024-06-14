@@ -30,6 +30,7 @@
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![cision](favicons/c212.net.png) Cision (redirects)
 * ![cnet](favicons/cnet.com.png) CNET (URLs)
+* ![commissionfactory](favicons/commissionfactory.com.png) Commision Factory (redirects)
 * ![curseforge](favicons/curseforge.com.png) CurseForge (redirects)
 * ![customer.io](favicons/customer.io.png) Customer.io (redirects)
 * ![digidip](favicons/digidip.net.png) digidip (redirects)

@@ -21,6 +21,7 @@
 			"mod/changeorg.js",
 			"mod/cision.js",
 			"mod/cnet.js",
+			"mod/commissionfactory.js",
 			"mod/curseforge.js",
 			"mod/customerio.js",
 			"mod/digidip.js",
