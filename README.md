@@ -103,6 +103,7 @@
 * ![tumblr](favicons/tumblr.com.png) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.png) Twitch (URLs)
 * Urchin Tracking Module (URLs)
+* ValueClick (redirects)
 * ![vero](favicons/www.getvero.com.png) Vero (URLs)
 * ![vk](favicons/vk.com.png) VK (redirects)
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)

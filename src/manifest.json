@@ -94,6 +94,7 @@
 			"mod/twitch.js",
 			"mod/twitter.js",
 			"mod/utm.js",
+			"mod/valueclick.js",
 			"mod/vero.js",
 			"mod/vk.js",
 			"mod/wickedreports.js",
