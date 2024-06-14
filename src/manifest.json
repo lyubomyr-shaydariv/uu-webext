@@ -57,6 +57,7 @@
 			"mod/mailpanion.js",
 			"mod/mailtrack.js",
 			"mod/mandrill.js",
+			"mod/marin.js",
 			"mod/matomo.js",
 			"mod/medium.js",
 			"mod/messenger.js",

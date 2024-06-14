@@ -67,6 +67,7 @@
 * ![mailpanion](favicons/mailpanion.com.png) Mailpanion (redirects)
 * ![mailtrack](favicons/mailtrack.io.png) Mailtrack.io (redirects)
 * ![mandrill](favicons/mandrillapp.com.png) Mandrill (URLs)
+* ![marin](favicons/marinsoftware.com.png) Marin (URLs)
 * ![matomo](favicons/matomo.org.png) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.png) Medium (redirects)
 * ![messenger](favicons/messenger.com.png) Messenger (redirects)
