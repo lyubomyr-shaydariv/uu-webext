@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('soc_src', 'soc_trk'),
+		.DO().REMOVE('guce_referrer', 'guce_referrer_sig', 'soc_src', 'soc_trk'),
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?yahoo\.[^.]+$/)
 		.FROM().QUERY_ENTRIES()
