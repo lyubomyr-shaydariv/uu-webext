@@ -85,6 +85,7 @@
 			"mod/rakutenadvertising.js",
 			"mod/reddit.js",
 			"mod/reuters.js",
+			"mod/salesforce.js",
 			"mod/sc.js",
 			"mod/simplereach.js",
 			"mod/skimlinks.js",

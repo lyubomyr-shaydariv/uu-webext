@@ -83,6 +83,7 @@
 * ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
+* ![salesforce](favicons/salesforce.com.png) Salesforce (URLs)
 * SC (URLs)
 * Simple Share (URLs)
 * ![skimlinks](favicons/skimlinks.com.png) Skimlinks (redirects)
