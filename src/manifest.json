@@ -41,6 +41,7 @@
 			"mod/facebook.js",
 			"mod/github.js",
 			"mod/google.js",
+			"mod/hive.js",
 			"mod/hrefli.js",
 			"mod/hubspot.js",
 			"mod/humblebundle.js",
