@@ -15,6 +15,7 @@
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
 * ![blackbaud](favicons/blackbaud.com.png) Blackbaud (URLs)
+* ![blueshift](favicons/blueshift.com.png) Blueshift (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![cision](favicons/c212.net.png) Cision (redirects)
