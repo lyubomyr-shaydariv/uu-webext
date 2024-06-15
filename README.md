@@ -3,6 +3,7 @@
 **uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
 
 * Action Map (URLs)
+* ![activecampaign](favicons/activecampaign.com.png) ActiveCampaign (URLs)
 * ![adjust](favicons/adjust.com.png) Adjust (redirects)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![airbnb](favicons/airbnb.com.png) Airbnb (URLs)

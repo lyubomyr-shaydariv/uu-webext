@@ -5,6 +5,7 @@
 			"rules.js",
 			"registry.js",
 			"mod/_.js",
+			"mod/activecampaign.js",
 			"mod/actionmap.js",
 			"mod/adjust.js",
 			"mod/adobe.js",
