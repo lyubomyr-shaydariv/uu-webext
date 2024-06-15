@@ -1,18 +1,6 @@
 ## ![uU](icon-32x32.png)
 
-**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible).
-
-### Scopes ###
-
-| Scope | Is supported? | Notes |
-| ----- | ------------- | ----- |
-| Navigation and HTTP requests in general | Yes | This allows untrackin URLs for every HTTP request the browser sends utilizing the [webRequest API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest). This also why **uU** requires global permissions to modify HTTP requests for all sites. |
-| Sharing links | Yes, via the context menu | Currently **uU** does not untrack URLs on the page (in the DOM). The "Copy Untracked Link" from the context menu copies an untracked link similarly "Copy Link Without Site Tracking" that is implemented by Mozilla Firefox itself. |
-| On-page links | No | To be discussed. |
-| Warned page redirects | Yes | In principle, this is greatly supported by [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) and the feature of **uU** is a subject for potential removal. To be discussed. |
-| Randomized tracking parameters poisoning | No | To be discussed. |
-
-### Untracked services
+**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
 
 * Action Map (URLs)
 * ![adjust](favicons/adjust.com.png) Adjust (redirects)
@@ -123,8 +111,18 @@
 #### Candidates
 * Parse.ly `Campaign` seems to be too board to be unsafely removed from all URLs.
 
-##### Rejected
+#### Rejected
 * Unknown source `var` is a too broad generic query parameter.
+
+### Scopes ###
+
+| Scope | Is supported? | Notes |
+| ----- | ------------- | ----- |
+| Navigation and HTTP requests in general | Yes | This allows untracking URLs for every HTTP request the browser sends utilizing the [webRequest API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest). This also why **uU** requires global permissions to modify HTTP requests for all sites. |
+| Sharing links | Yes, via the context menu | Currently **uU** does not untrack URLs on the page (in the DOM). The "Copy Untracked Link" from the context menu copies an untracked link similarly "Copy Link Without Site Tracking" that is implemented by Mozilla Firefox itself. |
+| On-page links | No | To be discussed. |
+| Warned page redirects | Yes | In principle, this is greatly supported by [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) and the feature of **uU** is a subject for potential removal. To be discussed. |
+| Randomized tracking parameters poisoning | No | To be discussed. |
 
 ### Why Firefox only
 
