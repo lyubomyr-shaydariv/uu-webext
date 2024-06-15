@@ -24,6 +24,7 @@
 * ![customer.io](favicons/customer.io.png) Customer.io (redirects)
 * ![digidip](favicons/digidip.net.png) digidip (redirects)
 * ![disqus](favicons/disq.us.png) Disqus (URLs, redirects)
+* ![dotdigital](favicons/dotdigital.com.png) Dotdigital (URLs)
 * ![doubleclick](favicons/doubleclick.com.png) DoubleClick (redirects)
 * ![drip](favicons/drip.com.png) Drip (URLs)
 * ![dpgmediagroup](favicons/dpgmediagroup.com.png) DPM Media Group (URLs)
