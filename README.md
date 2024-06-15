@@ -14,6 +14,7 @@
 * ![bestbuy](favicons/bestbuy.com.png) BestBuy (URLs)
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
+* ![blackbaud](favicons/blackbaud.com.png) Blackbaud (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![cision](favicons/c212.net.png) Cision (redirects)
