@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('fbclid', 'fb_action_ids', 'fb_action_types', 'fb_ref', 'fb_source'),
+		.DO().REMOVE('fbclid', 'fb_action_ids', 'fb_action_types', 'fb_comment_id', 'fb_ref', 'fb_source'),
 	RULE()
 		.AT().DOMAIN('facebook.com')
 		.FROM().QUERY_ENTRIES()
