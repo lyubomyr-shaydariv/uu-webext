@@ -1,0 +1,9 @@
+import { RULE } from '/rules.js';
+
+export default [
+	RULE()
+		.AT().HOSTNAME('click.icptrack.com').PATHNAME('/icp/relay.php')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('destination').TO_URL()
+		.DO().REDIRECT()
+];
