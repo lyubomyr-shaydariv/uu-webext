@@ -45,6 +45,7 @@
 * icptrack (redirects)
 * ![imdb](favicons/imdb.com.png) IMDb (URLs and redirects)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
+* ![instapage](favicons/instapage.com.png) Instapage (redirects)
 * `itm_...` (URLs)
 * ![javlibrary](favicons/javlibrary.com.png) JavLibrary (redirects)
 * ![klarna](favicons/klarna.com.png) Klarna (redirects)
