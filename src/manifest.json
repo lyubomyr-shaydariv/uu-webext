@@ -50,6 +50,7 @@
 			"mod/itm.js",
 			"mod/javlibrary.js",
 			"mod/klarna.js",
+			"mod/klaviyo.js",
 			"mod/kraken.js",
 			"mod/lever.js",
 			"mod/linkedin.js",

@@ -47,6 +47,7 @@
 * `itm_...` (URLs)
 * ![javlibrary](favicons/javlibrary.com.png) JavLibrary (redirects)
 * ![klarna](favicons/klarna.com.png) Klarna (redirects)
+* ![klaviyo](favicons/klaviyo.com.png) Klaviyo (URLs)
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
 * ![lever](favicons/lever.co.png) Lever (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
