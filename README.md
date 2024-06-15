@@ -25,6 +25,7 @@
 * ![connexity](favicons/connexity.com.png) Connexity (redirects)
 * ![curseforge](favicons/curseforge.com.png) CurseForge (redirects)
 * ![customer.io](favicons/customer.io.png) Customer.io (redirects)
+* ![dialoginsight](favicons/dialoginsight.com.png) Dialog Insight (URLs)
 * ![digidip](favicons/digidip.net.png) digidip (redirects)
 * ![disqus](favicons/disq.us.png) Disqus (URLs, redirects)
 * ![dotdigital](favicons/dotdigital.com.png) Dotdigital (URLs)
