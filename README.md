@@ -7,6 +7,7 @@
 * ![adjust](favicons/adjust.com.png) Adjust (redirects)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![airbnb](favicons/airbnb.com.png) Airbnb (URLs)
+* ![alibaba](favicons/alibaba.com.png) Alibaba (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs, redirects)
 * ![apple](favicons/apple.com.png) Apple (URLs)
