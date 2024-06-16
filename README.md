@@ -168,6 +168,7 @@ The **uU** and **μuU** untracking rules are built on top of:
 * no rules from [Fuck UTM](https://chromewebstore.google.com/detail/fuck-utm/jjaagodohagklnhkkjlbojpbecdgfbcc) by Smitha Milli (last updated 2024-06-14) (NOTE: I also considered poisoning tracking parameters in mind);
 * all rules from [UTM Eraser](https://chromewebstore.google.com/detail/utm-eraser/cepijkcnhhbjgiofhdhbomcgdmfjbbhb) by Nick (last updated 2024-06-14);
 * all rules from [Brave](https://raw.githubusercontent.com/brave/brave-core/master/components/query_filter/utils.cc) by the Brave authors (last updated 2024-06-15);
+* most rules from [avoison](https://github.com/dryack/avoision) by dryack (last updated 2024-06-16);
 * and some rules available online.
 
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
