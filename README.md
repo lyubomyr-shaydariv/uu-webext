@@ -22,6 +22,7 @@
 * ![cision](favicons/c212.net.png) Cision (redirects)
 * ![cnet](favicons/cnet.com.png) CNET (URLs)
 * ![commissionfactory](favicons/commissionfactory.com.png) Commision Factory (redirects)
+* ![comScore](favicons/comscore.com.png) comScore (redirects)
 * ![connexity](favicons/connexity.com.png) Connexity (redirects)
 * ![curseforge](favicons/curseforge.com.png) CurseForge (redirects)
 * ![customer.io](favicons/customer.io.png) Customer.io (redirects)

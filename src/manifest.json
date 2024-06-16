@@ -25,6 +25,7 @@
 			"mod/cision.js",
 			"mod/cnet.js",
 			"mod/commissionfactory.js",
+			"mod/comscore.js",
 			"mod/connexity.js",
 			"mod/curseforge.js",
 			"mod/customerio.js",
