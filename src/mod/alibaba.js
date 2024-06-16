@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('spm')
+		.DO().REMOVE('spm', 'spmA', 'spmB', 'spmC', 'spmD', 'spmE')
 ];
