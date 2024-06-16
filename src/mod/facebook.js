@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('facebook.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('hrc', 'refsrc'),
+		.DO().REMOVE('fref', 'hrc', 'refsrc'),
 	RULE()
 		.AT().DOMAIN('facebook.com').PATHNAME('/l.php', '/flx/warn/')
 		.FROM().QUERY_ENTRIES()
