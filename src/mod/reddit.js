@@ -11,6 +11,11 @@ export default [
 		.APPLY().GET_PROPERTY('url').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
+		.AT().DOMAIN('redd.it')
+		.FROM().PATHNAME()
+		.APPLY().GET_PROPERTY(0).REPLACE_STRING(/(.*)/, 'https://www.reddit.com/tb/$1').TO_URL()
+		.DO().REDIRECT(),
+	RULE()
 		.AT().HOSTNAME('click.redditmail.com')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('url').TO_URL()
