@@ -33,6 +33,7 @@
 			"mod/connexity.js",
 			"mod/curseforge.js",
 			"mod/customerio.js",
+			"mod/customerexperienceanalytics.js",
 			"mod/dialoginsight.js",
 			"mod/digidip.js",
 			"mod/disqus.js",
