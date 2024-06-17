@@ -56,6 +56,7 @@
 * ![hubspot](favicons/hubspot.com.png) HubSpot (URLs)
 * ![humblebundle](favicons/humblebundle.com.png) Humble Bundle (URLs)
 * jdoqocy (redirects)
+* ![iacr](favicons/iacr.org.png) IACR (URLs)
 * ![ibm](favicons/ibm.com.png) IBM (URLs)
 * icptrack (redirects)
 * ![imdb](favicons/imdb.com.png) IMDb (URLs and redirects)
