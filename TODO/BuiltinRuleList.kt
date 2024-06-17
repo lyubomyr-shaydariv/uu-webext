@@ -71,17 +71,11 @@ val BuiltinRuleList =
                             .trimIndent()
                 ),
                 Rule(
-                    id = "19d74b86-5ac0-4218-8ec8-ee89e4d237f1",
-                    name = "Common analytics",
-                    description = "Remove tracking for common analytics",
-                    script = """return $.removeQueryParameters(url, '[isu]tm_.*|ref');"""
-                ),
-                Rule(
                     id = "87af5849-1e81-42bd-984e-e30a1ec08db4",
                     name = "Common ads",
                     description = "Remove tracking for common ads",
                     script =
-                        """return $.removeQueryParameters(url, '(fb|g|tt|wicked|y)cl(id|source|src)|[gw]braid');"""
+                        """return $.removeQueryParameters(url, '(fb|g|tt|wicked|y)cl(id|source|src)');"""
                 ),
                 Rule(
                     id = "3805dd66-b341-4da3-b5ba-f3acc69ed189",
@@ -164,18 +158,6 @@ val BuiltinRuleList =
                         """
                             if ($.matches(url, '.+\\.(douyin|iesdouyin)\\.com')) {
                                 return $.setEncodedQuery(url, null);
-                            }
-                        """
-                            .trimIndent()
-                ),
-                Rule(
-                    id = "926090a8-a98a-4168-b6a1-b6b801c76955",
-                    name = "Google Search",
-                    description = "Remove tracking for Google Search",
-                    script =
-                        """
-                            if ($.matches(url, 'www\\.google\\.com', '/search')) {
-                                return $.retainQueryParameters(url, 'q|tbm');
                             }
                         """
                             .trimIndent()
