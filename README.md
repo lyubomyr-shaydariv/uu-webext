@@ -82,6 +82,7 @@
 * ![microsoft-365](favicons/www.office.com.png) Microsoft 365 (former Microsoft Office) (redirects)
 * ![mozilla](favicons/mozilla.org.png) Mozilla (redirects)
 * ![msn](favicons/msn.com.png) MSN (URLs)
+* ![narvar](favicons/narvar.com.png) Narvar (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * ![newyorker](favicons/newyorker.com.png) New Yorker (URLs)
 * NS (URLs)
