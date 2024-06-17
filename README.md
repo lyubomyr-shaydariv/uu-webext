@@ -19,6 +19,7 @@
 * ![blackbaud](favicons/blackbaud.com.png) Blackbaud (URLs)
 * ![blueshift](favicons/blueshift.com.png) Blueshift (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
+* ![cell](favicons/cell.com.png) Cell Press (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![cision](favicons/c212.net.png) Cision (redirects)
 * ![cnet](favicons/cnet.com.png) CNET (URLs)

@@ -22,6 +22,7 @@
 			"mod/blackbaud.js",
 			"mod/blueshift.js",
 			"mod/caseking.js",
+			"mod/cell.js",
 			"mod/changeorg.js",
 			"mod/cision.js",
 			"mod/cnet.js",
