@@ -18,6 +18,7 @@
 * ![bilibili](favicons/bilibili.com.png) Bilibili (URLs)
 * ![bing](favicons/bing.com.png) Bing (URLs)
 * ![blackbaud](favicons/blackbaud.com.png) Blackbaud (URLs)
+* ![bloomberg](favicons/bloomberg.com.png) Bloomberg (URLs)
 * ![blueshift](favicons/blueshift.com.png) Blueshift (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![cell](favicons/cell.com.png) Cell Press (URLs)
