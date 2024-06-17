@@ -281,10 +281,10 @@ const DO = (ctx) => {
 // APPLY - functions
 //--------------------------------------------------------------------------------------------------
 
-// `APPEND ORIGINAL QUERY ENTRY KEYS` is very limited:
+// `APPEND ORIGINAL QUERY ENTRIES` is very limited:
 // - query parameters cannot be transformed
 const __F__APPEND_ORIGINAL_QUERY_ENTRY_KEYS = (ctx, ...keys) => {
-	ctx.source += ` APPEND ORIGINAL QUERY ENTRY KEYS ${literalize(...keys)}`;
+	ctx.source += ' APPEND ORIGINAL QUERY ENTRIES';
 	const uniqueKeys = new Set(...keys);
 	ctx.__apply_functions.push((arg) => {
 		if ( arg === undefined || arg === null ) {
@@ -511,7 +511,7 @@ const __FROM__QUERY_ENTRY_KEYS = (ctx, pairDelimiter, entryDelimiter) => {
 	pairDelimiter ||= DEFAULT_PAIR_DELIMITER;
 	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER;
 	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {
-		ctx.source += ' QUERY ENTRY KEYS';
+		ctx.source += ' QUERY ENTRIES';
 		ctx.createKeysContext = (url) => {
 			const {searchParams} = url;
 			return {
@@ -524,7 +524,7 @@ const __FROM__QUERY_ENTRY_KEYS = (ctx, pairDelimiter, entryDelimiter) => {
 			};
 		};
 	} else {
-		ctx.source += ` QUERY ENTRY KEYS BY ${literalize(pairDelimiter)} AND ${literalize(entryDelimiter)}`;
+		ctx.source += ` QUERY ENTRIES BY ${literalize(pairDelimiter)} AND ${literalize(entryDelimiter)}`;
 		ctx.createKeysContext = (url) => {
 			// TODO
 			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`);
@@ -603,7 +603,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 };
 
 const __AT__QUERY_ENTRY_KEYS = (ctx, ...literals) => {
-	ctx.source += ` QUERY ENTRY KEYS ${literalize(...literals)}`;
+	ctx.source += ` QUERY ENTRIES ${literalize(...literals)}`;
 	const literalGroups = groupLiterals(...literals);
 	const stringLiterals = literalGroups.get(String);
 	const prefixLiterals = literalGroups.get(PrefixLiteral);
