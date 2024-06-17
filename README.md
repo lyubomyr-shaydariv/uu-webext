@@ -102,6 +102,7 @@
 * ![skimlinks](favicons/skimlinks.com.png) Skimlinks (redirects)
 * ![slack](favicons/slack.com.png) Slack (redirects)
 * ![snapchat](favicons/snapchat.com.png) Snapchat (URLs)
+* ![songkick](favicons/songkick.com.png) Songkick (URLs)
 * ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)

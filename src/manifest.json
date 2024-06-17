@@ -104,6 +104,7 @@
 			"mod/skimlinks.js",
 			"mod/slack.js",
 			"mod/snapchat.js",
+			"mod/songkick.js",
 			"mod/soundcloud.js",
 			"mod/sourceforge.js",
 			"mod/spotify.js",
