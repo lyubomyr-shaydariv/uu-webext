@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('nytimes.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('smid')
+		.DO().REMOVE('smid', 'ugrp')
 ];
