@@ -85,6 +85,7 @@
 * ![onlyfans](favicons/onlyfans.com.png) OnlyFans (redirects)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
+* ![postmark](favicons/postmarkapp.com.png) Postmark (redirects)
 * ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
