@@ -12,6 +12,7 @@
 * ![amazon](favicons/amazon.com.png) Amazon (URLs, redirects)
 * ![apple](favicons/apple.com.png) Apple (URLs)
 * AT (URLs)
+* ![backerkit](favicons/backerkit.com.png) BackerKit (URLs)
 * ![bandcamp](favicons/bandcamp.com.png) Bandcamp (URLs)
 * ![bbc](favicons/bbc.com.png) BBC (URLs)
 * ![bestbuy](favicons/bestbuy.com.png) BestBuy (URLs)

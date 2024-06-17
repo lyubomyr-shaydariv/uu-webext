@@ -15,6 +15,7 @@
 			"mod/amazon.js",
 			"mod/apple.js",
 			"mod/at.js",
+			"mod/backerkit.js",
 			"mod/bandcamp.js",
 			"mod/bbc.js",
 			"mod/bestbuy.js",
