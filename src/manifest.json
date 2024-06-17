@@ -50,6 +50,7 @@
 			"mod/evernote.js",
 			"mod/facebook.js",
 			"mod/github.js",
+			"mod/geniuslink.js",
 			"mod/gmx.js",
 			"mod/google.js",
 			"mod/hive.js",
