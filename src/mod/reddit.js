@@ -11,7 +11,7 @@ export default [
 		.APPLY().GET_PROPERTY('url').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
-		.AT().DOMAIN('redd.it')
+		.AT().HOSTNAME('redd.it')
 		.FROM().PATHNAME()
 		.APPLY().GET_PROPERTY(0).REPLACE_STRING(/(.*)/, 'https://www.reddit.com/tb/$1').TO_URL()
 		.DO().REDIRECT(),
