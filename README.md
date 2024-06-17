@@ -66,6 +66,7 @@
 * ![instapage](favicons/instapage.com.png) Instapage (redirects)
 * `itm_...` (URLs)
 * ![javlibrary](favicons/javlibrary.com.png) JavLibrary (redirects)
+* ![kickstarter](favicons/kickstarter.com.png) Kickstarter (URLs)
 * ![klarna](favicons/klarna.com.png) Klarna (redirects)
 * ![klaviyo](favicons/klaviyo.com.png) Klaviyo (URLs)
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
