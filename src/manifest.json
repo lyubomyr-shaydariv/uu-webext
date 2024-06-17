@@ -122,13 +122,13 @@
 			"mod/vero.js",
 			"mod/vk.js",
 			"mod/washingtonpost.js",
+			"mod/webtrekk.js",
 			"mod/wickedreports.js",
 			"mod/workable.js",
 			"mod/yahoo.js",
 			"mod/yandex.js",
 			"mod/youtube.js",
 			"mod/zanox.js",
-			"mod/zeit.js",
 			"main.js"
 		],
 		"type": "module"
