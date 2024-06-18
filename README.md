@@ -52,6 +52,7 @@
 * ![eventbrite](favicons/eventbrite.com.png) Eventbrite (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
+* ![fever](favicons/feverup.com.png) Fever (URLs)
 * ![geniuslink](favicons/geniuslink.com.png) Geniuslink (URLs)
 * ![github](favicons/github.com.png) GitHub (URLs)
 * ![gmx](favicons/gmx.com.png) GMX (redirects)

@@ -55,6 +55,7 @@
 			"mod/eventbrite.js",
 			"mod/evernote.js",
 			"mod/facebook.js",
+			"mod/feverup.js",
 			"mod/github.js",
 			"mod/geniuslink.js",
 			"mod/gmx.js",
