@@ -16,12 +16,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('google.com').PATHNAME('/url/')
 		.FROM().QUERY_ENTRIES()
-		.APPLY().GET_PROPERTY('q').TO_URL()
-		.DO().REDIRECT(),
-	RULE()
-		.AT().DOMAIN('google.com').PATHNAME('/url/')
-		.FROM().QUERY_ENTRIES()
-		.APPLY().GET_PROPERTY('url').TO_URL()
+		.APPLY().GET_PROPERTY('q', 'url').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
 		.AT().DOMAIN('google.com').PATHNAME('/sorry/index')
