@@ -1,3 +1,19 @@
+const literalize = (...es) => {
+	const literals = new Array();
+	for ( const e of es ) {
+		if ( typeof(e) === 'string' || e instanceof String ) {
+			literals.push(JSON.stringify(e)); // TODO escape string
+		} else if ( e instanceof RegExp ) {
+			literals.push(e);
+		} else if ( typeof(e) === 'number' || e instanceof Number ) {
+			literals.push(e);
+		} else {
+			throw new Error(`cannot literalize ${e}`);
+		}
+	}
+	return literals.join(' ');
+};
+
 const createMatches = (...keys) => {
 	let strings = null;
 	let regExps = null;
@@ -96,7 +112,7 @@ const __DO__REDIRECT = (ctx) => {
 
 // TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
 const __DO__REMOVE = (ctx, ...keys) => {
-	ctx.source += ` REMOVE ${keys.join(' ')}`;
+	ctx.source += ` REMOVE ${literalize(...keys)}`;
 	const matches = createMatches(...keys);
 	return Object.defineProperties(
 		(url) => {
@@ -167,7 +183,7 @@ const __F__FROM_URI_COMPONENT = (ctx) => {
 };
 
 const __F__GET_PROPERTY = (ctx, ...keys) => {
-	ctx.source += ` GET PROPERTY ${keys.join(' ')}`;
+	ctx.source += ` GET PROPERTY ${literalize(...keys)}`;
 	switch ( keys.length ) {
 		case 0:
 			// do nothing
@@ -375,7 +391,7 @@ const __AT__ANYWHERE = (ctx) => {
 };
 
 const __AT__DOMAIN = (ctx, ...domains) => {
-	ctx.source += ` DOMAIN ${domains.join(' ')}`;
+	ctx.source += ` DOMAIN ${literalize(...domains)}`;
 	const p = createUrlMatchesByTrie((element) => element.split('.'), (url) => url.hostname.split('.'), ...domains);
 	ctx.__at_predicates.push((url) => p(url));
 	return {
@@ -388,7 +404,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 };
 
 const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
-	ctx.source += ` EXCEPT ${domains.join(' ')}`;
+	ctx.source += ` EXCEPT ${literalize(...domains)}`;
 	const p = createUrlMatchesByTrie((element) => element.split('.'), (url) => url.hostname.split('.'), ...domains);
 	ctx.__at_predicates.push((url) => !p(url));
 	return {
@@ -400,7 +416,7 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 };
 
 const __AT__HOSTNAME = (ctx, ...hostnames) => {
-	ctx.source += ` HOSTNAME ${hostnames.join(' ')}`;
+	ctx.source += ` HOSTNAME ${literalize(...hostnames)}`;
 	const p = createMatches(...hostnames);
 	ctx.__at_predicates.push((url) => p(url.hostname));
 	return {
@@ -412,7 +428,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 };
 
 const __AT__QUERY_ENTRIES_HAVING = (ctx, ...keys) => {
-	ctx.source += ` QUERY ENTRIES HAVING ${keys.join(' ')}`;
+	ctx.source += ` QUERY ENTRIES HAVING ${literalize(...keys)}`;
 	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
 	ctx.__at_predicates.push((url) => {
 		for ( const queryEntryKey of url.searchParams.keys() ) {
@@ -429,7 +445,7 @@ const __AT__QUERY_ENTRIES_HAVING = (ctx, ...keys) => {
 };
 
 const __AT__PATHNAME = (ctx, ...pathnames) => {
-	ctx.source += ` PATHNAME ${pathnames.join(' ')}`;
+	ctx.source += ` PATHNAME ${literalize(...pathnames)}`;
 	const p = createMatches(...pathnames);
 	ctx.__at_predicates.push((url) => p(url.pathname));
 	return {
