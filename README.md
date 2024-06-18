@@ -49,6 +49,7 @@
 * ![epicgames](favicons/epicgames.com.png) Epic Games (redirects)
 * ![epsilon](favicons/epsilon.com.png) Epsilon (dotomi.com) (redirects)
 * ![etsy](favicons/etsy.com.png) Etsy (URLs)
+* ![eventbrite](favicons/eventbrite.com.png) Eventbrite (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
 * ![geniuslink](favicons/geniuslink.com.png) Geniuslink (URLs)
