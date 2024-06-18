@@ -15,6 +15,7 @@
 * app.link (URLs)
 * AT (URLs)
 * ![backerkit](favicons/backerkit.com.png) BackerKit (URLs)
+* ![bamboohr](favicons/bamboohr.com.png) BambooHR (URLs)
 * ![bandcamp](favicons/bandcamp.com.png) Bandcamp (URLs)
 * ![bbc](favicons/bbc.com.png) BBC (URLs)
 * ![bestbuy](favicons/bestbuy.com.png) BestBuy (URLs)
