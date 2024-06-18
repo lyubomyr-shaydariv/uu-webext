@@ -113,6 +113,7 @@
 * ![salesforce](favicons/salesforce.com.png) Salesforce (URLs)
 * SC (URLs)
 * ![seek](favicons/seek.com.au.png) Seek (URLs)
+* ![shutterstock](favicons/shutterstock.com.png) Shutterstock (URLs)
 * Simple Share (URLs)
 * ![skimlinks](favicons/skimlinks.com.png) Skimlinks (redirects)
 * ![slack](favicons/slack.com.png) Slack (redirects)
