@@ -435,6 +435,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
@@ -447,6 +448,7 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
@@ -459,6 +461,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
@@ -485,6 +488,31 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	ctx.source += ` PATHNAME ${literalize(...pathnames)}`;
 	const p = createMatches(...pathnames);
 	ctx.__at_predicates.push((url) => p(url.pathname));
+	return {
+		AT: () => AT(ctx),
+		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
+		FROM: () => FROM(ctx)
+	};
+};
+
+const __AT__PATHNAME_PREFIX = (ctx, ...prefixes) => {
+	ctx.source += ` PATHNAME PREFIX ${literalize(...prefixes)}`;
+	const prefixSet = new Set();
+	for ( const prefix of prefixes ) {
+		if ( typeof(prefix) === 'string' || prefix instanceof String ) {
+			prefixSet.add(prefix);
+		} else {
+			throw new Error(`cannot create matcher for ${prefix}`);
+		}
+	}
+	ctx.__at_predicates.push((url) => {
+		for ( const prefix of prefixSet ) {
+			if ( url.pathname.startsWith(prefix) ) {
+				return true;
+			}
+		}
+		return false;
+	});
 	return {
 		AT: () => AT(ctx),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
@@ -522,6 +550,7 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys)
 	};
 };
