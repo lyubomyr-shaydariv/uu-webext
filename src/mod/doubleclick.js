@@ -7,7 +7,7 @@ export default [
 		.APPLY().GET_PROPERTY('tag_for_child_directed_treatment').SUBSTRING(2).TO_URL()
 		.DO().REDIRECT(),
 	RULE()
-		.AT().HOSTNAME('ad.doubleclick.net').PATHNAME(/^\/clk;/)
+		.AT().HOSTNAME('ad.doubleclick.net').PATHNAME_PREFIX('/clk;')
 		.FROM().QUERY()
 		.APPLY().SUBSTRING(1).TO_URL()
 		.DO().REDIRECT(),

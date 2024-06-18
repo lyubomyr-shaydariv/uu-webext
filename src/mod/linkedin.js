@@ -10,11 +10,11 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('u'),
 	RULE()
-		.AT().DOMAIN('linkedin.com').PATHNAME(/^\/help\//)
+		.AT().DOMAIN('linkedin.com').PATHNAME_PREFIX('/help/')
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('mcid', 'src', 'trk'),
 	RULE()
-		.AT().DOMAIN('linkedin.com').PATHNAME(/^\/in\//)
+		.AT().DOMAIN('linkedin.com').PATHNAME_PREFIX('/in/')
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('original_referer', 'trackingCode', 'trackingId'),
 	RULE()

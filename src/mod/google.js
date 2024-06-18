@@ -28,7 +28,7 @@ export default [
 		.APPLY().GET_PROPERTY('continue').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
-		.AT().DOMAIN('google.com').PATHNAME(/^\/amp\/s\//)
+		.AT().DOMAIN('google.com').PATHNAME_PREFIX('/amp/s/')
 		.FROM().PATHNAME()
 		.APPLY().SUBSTRING(7).TO_URL()
 		.DO().REDIRECT(),
