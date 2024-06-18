@@ -234,6 +234,8 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all rules from the [https://docs.flyingpress.com/en/article/ignore-query-parameters-yfejfj/ FlyingPress ignore query parameters list] (last updated 2024-08-06);
 * and some rules available online.
 
+URLs are normalized with [normalize-url](https://github.com/sindresorhus/normalize-url) by Sindre Sorhus.
+
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
 
 ## Support
