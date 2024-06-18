@@ -110,6 +110,7 @@
 			"mod/reuters.js",
 			"mod/salesforce.js",
 			"mod/sc.js",
+			"mod/seek.js",
 			"mod/simplereach.js",
 			"mod/skimlinks.js",
 			"mod/slack.js",
