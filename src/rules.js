@@ -380,6 +380,19 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 	ctx.__at_predicates.push((url) => p(url));
 	return {
 		AT: () => AT(ctx),
+		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
+		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
+		FROM: () => FROM(ctx)
+	};
+};
+
+const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
+	ctx.source += ` EXCEPT ${domains.join(' ')}`;
+	const p = createUrlMatchesByTrie((element) => element.split('.'), (url) => url.hostname.split('.'), ...domains);
+	ctx.__at_predicates.push((url) => !p(url));
+	return {
+		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES_HAVING: (...keys) => __AT__QUERY_ENTRIES_HAVING(ctx, ...keys),
 		FROM: () => FROM(ctx)
