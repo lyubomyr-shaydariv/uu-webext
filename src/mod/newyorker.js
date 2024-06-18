@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('newyorker.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('bxid', 'cndid', 'esrc', 'mbid', 'source')
+		.DO().REMOVE('bxid', 'cndid', 'esrc', 'source')
 ];
