@@ -110,6 +110,7 @@
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * ![rockerbox](favicons/rockerbox.com.png) Rockerbox (URLs)
+* ![rutracker](favicons/rutracker.org.png) RuTracker (URLs)
 * ![salesforce](favicons/salesforce.com.png) Salesforce (URLs)
 * SC (URLs)
 * ![seek](favicons/seek.com.au.png) Seek (URLs)
