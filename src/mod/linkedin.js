@@ -14,6 +14,10 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('mcid', 'src', 'trk'),
 	RULE()
+		.AT().DOMAIN('linkedin.com').PATHNAME(/^\/in\//)
+		.FROM().QUERY_ENTRIES()
+		.DO().REMOVE('original_referer', 'trackingCode', 'trackingId'),
+	RULE()
 		.AT().DOMAIN('linkedin.com').PATHNAME('/redir/redirect', '/safety/go')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('url').TO_URL()
