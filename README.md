@@ -144,6 +144,7 @@
 * ![youtube](favicons/youtube.com.png) YouTube (URLs, redirects)
 * Zanox (URLs)
 * ![zillow](favicons/zillow.com.png) Zillow (URLs)
+* ![zoopla](favicons/zoopla.co.uk.png) Zoopla (URLs)
 * ... and some other common stuff for URLs
 
 #### Candidates

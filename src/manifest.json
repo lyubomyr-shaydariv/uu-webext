@@ -146,6 +146,7 @@
 			"mod/youtube.js",
 			"mod/zanox.js",
 			"mod/zillow.js",
+			"mod/zoopla.js",
 			"main.js"
 		],
 		"type": "module"
