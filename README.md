@@ -11,6 +11,7 @@
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs, redirects)
 * ![apple](favicons/apple.com.png) Apple (URLs)
+* app.link (URLs)
 * AT (URLs)
 * ![backerkit](favicons/backerkit.com.png) BackerKit (URLs)
 * ![bandcamp](favicons/bandcamp.com.png) Bandcamp (URLs)

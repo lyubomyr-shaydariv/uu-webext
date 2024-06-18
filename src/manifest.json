@@ -14,6 +14,7 @@
 			"mod/aliexpress.js",
 			"mod/amazon.js",
 			"mod/apple.js",
+			"mod/applink.js",
 			"mod/at.js",
 			"mod/backerkit.js",
 			"mod/bandcamp.js",
