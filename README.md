@@ -24,6 +24,7 @@
 * ![blackbaud](favicons/blackbaud.com.png) Blackbaud (URLs)
 * ![bloomberg](favicons/bloomberg.com.png) Bloomberg (URLs)
 * ![blueshift](favicons/blueshift.com.png) Blueshift (URLs)
+* ![brave](favicons/brave.com.png) Brave (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![cell](favicons/cell.com.png) Cell Press (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
