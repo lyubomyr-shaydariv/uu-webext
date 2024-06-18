@@ -4,6 +4,7 @@
 
 * Action Map (URLs)
 * ![activecampaign](favicons/activecampaign.com.png) ActiveCampaign (URLs)
+* Action Network (URLs)
 * ![adjust](favicons/adjust.com.png) Adjust (redirects)
 * ![adobe](favicons/adobe.com.png) Adobe (URLs)
 * ![airbnb](favicons/airbnb.com.png) Airbnb (URLs)
