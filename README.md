@@ -124,6 +124,7 @@
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)
 * ![taobao](favicons/taobao.com.png) Taobao (redirects)
 * ![target](favicons/target.com.png) Target (redirects)
+* ![techcrunch](favicons/techcrunch.com.png) TechCrunch (URLs)
 * ![tiktok](favicons/tiktok.com.png) TikTok (URLs and redirects)
 * ![toyhouse](favicons/toyhou.se.png) Toyhouse (redirects)
 * ![tradedoubler](favicons/tradedoubler.com.png) Tradedoubler (redirects)
