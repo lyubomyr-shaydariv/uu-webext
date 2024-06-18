@@ -107,6 +107,7 @@
 * ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
+* ![rockerbox](favicons/rockerbox.com.png) Rockerbox (URLs)
 * ![salesforce](favicons/salesforce.com.png) Salesforce (URLs)
 * SC (URLs)
 * ![seek](favicons/seek.com.au.png) Seek (URLs)
