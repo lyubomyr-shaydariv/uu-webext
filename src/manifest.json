@@ -2,6 +2,7 @@
 	"author": "Lyubomyr Shaydariv",
 	"background": {
 		"scripts": [
+			"lib/normalize-url-8.0.1/index.js",
 			"literals.js",
 			"main.js",
 			"mod/_.js",
