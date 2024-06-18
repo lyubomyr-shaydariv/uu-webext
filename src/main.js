@@ -1,11 +1,34 @@
 /* global browser */
 
 import * as registry from '/registry.js';
+import normalizeUrl from '/lib/normalize-url-8.0.0/index.js';
 
 const MAX_LOOPS = 10;
 const ALL_RULES = Array.from(registry.getRules());
 const MIN_SLOWDOWN_THRESHOLD = 5;
 const MAX_SLOWDOWN_THRESHOLD = 10;
+
+const doNormalizeUrl = (url) => {
+	const denormalizedUrl = url.href;
+	const normalizedUrl = normalizeUrl(denormalizedUrl, {
+		normalizeProtocol: false,
+		removeDirectoryIndex: false,
+		removeExplicitPort: false,
+		removeQueryParameters: false,
+		removeSingleSlash: false,
+		removeTrailingSlash: false,
+		sortQueryParameters: true,
+		stripAuthentication: false,
+		stripHash: false,
+		stripProtocol: false,
+		stripTextFragment: false,
+		stripWWW: false
+	});
+	if ( denormalizedUrl !== normalizedUrl ) {
+		return new URL(normalizedUrl);
+	}
+	return url;
+};
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
@@ -34,7 +57,7 @@ const redirect = (url) => {
 	}
 	if ( redirectUrl.href !== url.href ) {
 		console.log(`Redirected from ${url.href} to ${redirectUrl.href}`);
-		return redirectUrl;
+		return doNormalizeUrl(redirectUrl);
 	}
 	return undefined;
 };
