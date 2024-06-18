@@ -166,17 +166,53 @@ const __F__FROM_URI_COMPONENT = (ctx) => {
 	return APPLY(ctx);
 };
 
-const __F__GET_PROPERTY = (ctx, key) => {
-	ctx.source += ` GET PROPERTY ${key}`;
-	ctx.__apply_functions.push((arg) => {
-		if ( arg === null ) {
-			return null;
+const __F__GET_PROPERTY = (ctx, ...keys) => {
+	ctx.source += ` GET PROPERTY ${keys.join(' ')}`;
+	switch ( keys.length ) {
+		case 0:
+			// do nothing
+			break;
+		case 1: {
+			const key = keys[0];
+			ctx.__apply_functions.push((arg) => {
+				if ( arg === null ) {
+					return null;
+				}
+				if ( arg === undefined ) {
+					return undefined;
+				}
+				if ( typeof(arg.get) === 'function' ) {
+					return arg.get(key);
+				}
+				return arg[key];
+			});
+			break;
 		}
-		if ( typeof(arg.get) === 'function' ) {
-			return arg.get(key);
+		default: {
+			ctx.__apply_functions.push((arg) => {
+				if ( arg === null ) {
+					return null;
+				}
+				if ( arg === undefined ) {
+					return undefined;
+				}
+				for ( const key of keys ) {
+					let value;
+					if ( typeof(arg.get) === 'function' ) {
+						value = arg.get(key);
+					} else {
+						value = arg[key];
+					}
+					if ( value === null || value === undefined ) {
+						continue;
+					}
+					return value;
+				}
+				return undefined;
+			});
+			break;
 		}
-		return arg[key];
-	});
+	}
 	return APPLY(ctx);
 };
 
@@ -245,7 +281,7 @@ const APPLY = (ctx) => {
 		FROM_BASE64: () => __F__FROM_BASE64(ctx),
 		FROM_JSON: () => __F__FROM_JSON(ctx),
 		FROM_URI_COMPONENT: () => __F__FROM_URI_COMPONENT(ctx),
-		GET_PROPERTY: (key) => __F__GET_PROPERTY(ctx, key),
+		GET_PROPERTY: (...keys) => __F__GET_PROPERTY(ctx, ...keys),
 		REPLACE_STRING: (pattern, replacement) => __F__REPLACE_STRING(ctx, pattern, replacement),
 		SUBSTRING: (from, to) => __F__SUBSTRING(ctx, from, to),
 		TO_URL: () => __F__TO_URL(ctx),
