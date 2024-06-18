@@ -137,6 +137,7 @@
 * ValueClick (redirects)
 * ![vero](favicons/www.getvero.com.png) Vero (URLs)
 * ![vk](favicons/vk.com.png) VK (redirects)
+* ![walmart](favicons/walmart.com.png) Walmart (URLs)
 * ![washingtonpost](favicons/washingtonpost.com.png) Washington Post (URLs)
 * Webtrekk (URLs)
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
