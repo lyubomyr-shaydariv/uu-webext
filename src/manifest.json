@@ -138,6 +138,7 @@
 			"mod/yandex.js",
 			"mod/youtube.js",
 			"mod/zanox.js",
+			"mod/zillow.js",
 			"main.js"
 		],
 		"type": "module"
