@@ -1,6 +1,8 @@
 import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
 import { areStrictlyEqual } from '/util.js';
 
+import JSON5 from '/lib/json5-2.2.3/index.min.mjs';
+
 const literalize = (...es) => {
 	const literals = new Array();
 	for ( const e of es ) {
@@ -314,6 +316,12 @@ const __F__FROM_JSON = (ctx) => {
 	return APPLY(ctx);
 };
 
+const __F__FROM_JSON5 = (ctx) => {
+	ctx.source += ' FROM JSON';
+	ctx.__apply_functions.push((arg) => JSON5.parse(arg));
+	return APPLY(ctx);
+};
+
 const __F__FROM_URI_COMPONENT = (ctx) => {
 	ctx.source += ' FROM URI COMPONENT';
 	ctx.__apply_functions.push((arg) => {
@@ -433,6 +441,7 @@ const APPLY = (ctx) => {
 		EXECUTE_REGEXP: (regExp) => __F__EXECUTE_REGEXP(ctx, regExp),
 		FROM_BASE64: () => __F__FROM_BASE64(ctx),
 		FROM_JSON: () => __F__FROM_JSON(ctx),
+		FROM_JSON5: () => __F__FROM_JSON5(ctx),
 		FROM_URI_COMPONENT: () => __F__FROM_URI_COMPONENT(ctx),
 		GET_PROPERTY: (...keys) => __F__GET_PROPERTY(ctx, ...keys),
 		REPLACE_STRING: (pattern, replacement) => __F__REPLACE_STRING(ctx, pattern, replacement),
