@@ -6,6 +6,10 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('_ga', 'adgroupid', 'dclid', 'gad_source', /^ga_.*/, 'gbraid', 'gclid', 'gclsrc', '_gl', 'gs_l', 'srsltid', 'usqp', 'wbraid'),
 	RULE()
+		.AT().DOMAIN('google.com').PATHNAME('/search')
+		.FROM().QUERY_ENTRIES()
+		.DO().RETAIN('q', 'tbm', 'udm'),
+	RULE()
 		.AT().DOMAIN('support.google.com')
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('rd', 'ref_topic', 'sjid', 'visit_id'),
