@@ -2,7 +2,7 @@ const literalize = (...es) => {
 	const literals = new Array();
 	for ( const e of es ) {
 		if ( typeof(e) === 'string' || e instanceof String ) {
-			literals.push(JSON.stringify(e)); // TODO escape string
+			literals.push(JSON.stringify(e));
 		} else if ( e instanceof RegExp ) {
 			literals.push(e);
 		} else if ( typeof(e) === 'number' || e instanceof Number ) {
@@ -28,8 +28,6 @@ const createMatches = (...keys) => {
 				regExps = [];
 			}
 			regExps.push(key);
-		// TODO else if glob-matcher
-		// TODO else if url-matcher
 		} else {
 			throw new Error(`cannot create matcher for ${key}`);
 		}
@@ -396,7 +394,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 	} else {
 		ctx.source += ` QUERY ENTRIES BY ${pairDelimiter} AND ${entryDelimiter}`;
 		ctx.createKeysContext = (url) => {
-			throw new Error(`TODO: parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`);
+			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`); // TODO
 		};
 	}
 	ctx.getValue = (url) => url.searchParams;
