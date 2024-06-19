@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('elqTrack', 'elqTrackId'),
+		.DO().REMOVE('elq', 'elqat', 'elqaid', 'elqCampaignId', 'elqTrack', 'elqTrackId'),
 	RULE() // how broad is this rule?
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
