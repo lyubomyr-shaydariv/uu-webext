@@ -132,6 +132,7 @@ Currently supported trackers:
 * ![onlyfans](favicons/onlyfans.com.webp) OnlyFans (redirects)
 * ![oracle](favicons/oracle.com.webp) Oracle (redirects)
 * ![outlook](favicons/outlook.com.webp) Outlook (redirects)
+* ![php](favicons/php.net.webp) PHP (session URLs)
 * ![pinterest](favicons/pinterest.com.webp) Pinterest (redirects)
 * ![pocket](favicons/getpocket.com.webp) Pocket (URL, redirects)
 * ![postmark](favicons/postmarkapp.com.webp) Postmark (redirects)
