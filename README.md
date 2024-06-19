@@ -144,6 +144,7 @@
 * ![walmart](favicons/walmart.com.png) Walmart (URLs)
 * ![washingtonpost](favicons/washingtonpost.com.png) Washington Post (URLs)
 * Webtrekk (URLs)
+* ![webtrends](favicons/webtrends.com.png) Webtrends Analytics (URLs)
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
 * ![workable](favicons/workable.com.png) Workable (redirects)
 * ![wsj](favicons/wsj.com.png) Wall Street Journal (URLs)
