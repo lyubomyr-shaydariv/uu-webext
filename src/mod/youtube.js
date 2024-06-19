@@ -18,5 +18,10 @@ export default [
 		.AT().DOMAIN('youtube.com').PATHNAME('/redirect')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('q').TO_URL()
+		.DO().REDIRECT(),
+	RULE()
+		.AT().DOMAIN('youtube.com').PATHNAME('/attribution_link')
+		.FROM().QUERY_ENTRIES()
+		.APPLY().GET_PROPERTY('u').REPLACE_STRING(/(.*)/, 'https://www.youtube.com$1').TO_URL()
 		.DO().REDIRECT()
 ];
