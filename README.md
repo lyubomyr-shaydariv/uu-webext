@@ -160,7 +160,7 @@
 #### Candidates
 * Parse.ly `Campaign` seems to be too board to be unsafely removed from all URLs.
 * Facebook, Product Hunt `ref` seems to be too board to be unsafely removed from all URLs.
-* Unknown `mp`, `sl`, `tpl`, `unlock` tracking parameters.
+* Unknown `campaign`, `campaignid`, `mp`, `sl`, `tpl`, `unlock` tracking parameters.
 
 #### Rejected
 * Unknown source `var` is a too broad generic query parameter.
