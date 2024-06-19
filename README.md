@@ -108,6 +108,7 @@
 * ![postmark](favicons/postmarkapp.com.png) Postmark (redirects)
 * ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
+* ![redfin](favicons/redfin.com.png) Redfin (URLs)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
 * ![rockerbox](favicons/rockerbox.com.png) Rockerbox (URLs)
 * ![rutracker](favicons/rutracker.org.png) RuTracker (URLs)
