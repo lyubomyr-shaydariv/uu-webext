@@ -121,6 +121,7 @@
 * ![onlyfans](favicons/onlyfans.com.png) OnlyFans (redirects)
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
+* ![php](favicons/php.net.png) PHP (session URLs)
 * ![pinterest](favicons/pinterest.com.png) Pinterest (redirects)
 * ![pocket](favicons/getpocket.com.png) Pocket (URL, redirects)
 * ![postmark](favicons/postmarkapp.com.png) Postmark (redirects)
