@@ -85,6 +85,7 @@
 * ![instagram](favicons/instagram.com.webp) Instagram (URLs and redirects)
 * ![instapage](favicons/instapage.com.webp) Instapage (redirects)
 * `itm_...` (URLs)
+* ![java](favicons/java.com.webp) Java Servlet API (session URLs)
 * ![javlibrary](favicons/javlibrary.com.webp) JavLibrary (redirects)
 * jdoqocy (redirects)
 * ![kickstarter](favicons/kickstarter.com.webp) Kickstarter (URLs)
