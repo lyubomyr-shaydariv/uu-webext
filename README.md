@@ -70,6 +70,7 @@
 * ![ibm](favicons/ibm.com.png) IBM (URLs)
 * icptrack (redirects)
 * ![imdb](favicons/imdb.com.png) IMDb (URLs and redirects)
+* ![impactradius](favicons/impact.com.png) Impact Radius (URLs)
 * ![instagram](favicons/instagram.com.png) Instagram (URLs and redirects)
 * ![instapage](favicons/instapage.com.png) Instapage (redirects)
 * `itm_...` (URLs)
