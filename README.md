@@ -64,6 +64,7 @@ Currently supported trackers:
 * ![eventbrite](favicons/eventbrite.com.webp) Eventbrite (URLs)
 * ![evernote](favicons/evernote.com.webp) Evernote (redirects)
 * ![facebook](favicons/facebook.com.webp) Facebook (URLs, redirects)
+* ![fastcompany](favicons/fastcompany.com.webp) Fast Company (URLs)
 * ![fever](favicons/feverup.com.webp) Fever (URLs)
 * ![flipkart](favicons/flipkart.com.webp) Flipkart (URLs)
 * ![flyingpress](favicons/flyingpress.com.webp) FlyingPress (URLs)
