@@ -194,7 +194,7 @@ const DO = (ctx) => {
 //--------------------------------------------------------------------------------------------------
 
 const __F__EXECUTE_REGEXP = (ctx, regExp) => {
-	ctx.source += ` EXECUTE REGEXP ${regExp}`;
+	ctx.source += ` EXECUTE REGEXP ${literalize(regExp)}`;
 	ctx.__apply_functions.push((arg) => regExp.exec(arg));
 	return APPLY(ctx);
 };
@@ -268,7 +268,7 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 };
 
 const __F__REPLACE_STRING = (ctx, pattern, replacement) => {
-	ctx.source += ` REPLACE STRING ${pattern} ${replacement}`;
+	ctx.source += ` REPLACE STRING ${literalize(pattern)} ${literalize(replacement)}`;
 	ctx.__apply_functions.push((arg) => {
 		if ( arg === null ) {
 			return null;
@@ -280,7 +280,7 @@ const __F__REPLACE_STRING = (ctx, pattern, replacement) => {
 
 const __F__SUBSTRING = (ctx, from, to) => {
 	if ( to === undefined ) {
-		ctx.source += ` SUBSTRING ${from}`;
+		ctx.source += ` SUBSTRING ${literalize(from)}`;
 		ctx.__apply_functions.push((arg) => {
 			if ( arg === null) {
 				return null;
@@ -288,7 +288,7 @@ const __F__SUBSTRING = (ctx, from, to) => {
 			return arg.substring(from);
 		});
 	} else {
-		ctx.source += ` SUBSTRING ${from} ${to}`;
+		ctx.source += ` SUBSTRING ${literalize(from)} ${literalize(to)}`;
 		ctx.__apply_functions.push((arg) => {
 			if ( arg === null) {
 				return null;
@@ -392,7 +392,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 			};
 		};
 	} else {
-		ctx.source += ` QUERY ENTRIES BY ${pairDelimiter} AND ${entryDelimiter}`;
+		ctx.source += ` QUERY ENTRIES BY ${literalize(pairDelimiter)} AND ${literalize(entryDelimiter)}`;
 		ctx.createKeysContext = (url) => {
 			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`); // TODO
 		};
