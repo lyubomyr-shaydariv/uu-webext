@@ -60,6 +60,7 @@ Currently supported trackers:
 * ![eventbrite](favicons/eventbrite.com.webp) Eventbrite (URLs)
 * ![evernote](favicons/evernote.com.webp) Evernote (redirects)
 * ![facebook](favicons/facebook.com.webp) Facebook (URLs, redirects)
+* ![fastcompany](favicons/fastcompany.com.webp) Fast Company (URLs)
 * ![fever](favicons/feverup.com.webp) Fever (URLs)
 * ![flipkart](favicons/flipkart.com.webp) Flipkart (URLs)
 * ![flyingpress](favicons/flyingpress.com.webp) FlyingPress (URLs)
@@ -239,4 +240,4 @@ The icon is merely generated with [Launcher icon generator](https://romannurik.g
 ## Support
 
 <a href="https://www.buymeacoffee.com/lyubomyr.shaydariv"><img height="36" src="https://img.buymeacoffee.com/button-api/?text=Buy me a little happiness&emoji=☘️&slug=lyubomyr.shaydariv&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=442200&coffee_colour=FFFFFF"/></a>
-<a href="https://ko-fi.com/lyubomyrshaydariv"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" border="0" alt="Buy me a little happiness at ko-fi.com"/></a>
+<a href="https://ko-fi.com/lyubomyrshaydariv"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi3.webp?v=3" border="0" alt="Buy me a little happiness at ko-fi.com"/></a>
