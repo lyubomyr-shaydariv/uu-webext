@@ -27,6 +27,7 @@
 * ![blueshift](favicons/blueshift.com.png) Blueshift (URLs)
 * ![branch](favicons/branch.io.png) Branch (URLs)
 * ![brave](favicons/brave.com.png) Brave (URLs)
+* Bronto (URLs)
 * ![caseking](favicons/caseking.de.png) CaseKing.de (URLs)
 * ![cell](favicons/cell.com.png) Cell Press (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
