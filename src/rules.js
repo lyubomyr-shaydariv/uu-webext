@@ -468,6 +468,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	};
 };
 
+// TODO support regexp keys
 const __AT__QUERY_ENTRIES_HAVING_ALL_OF = (ctx, ...keys) => {
 	ctx.source += ` QUERY ENTRIES HAVING ALL OF ${literalize(...keys)}`;
 	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
@@ -484,6 +485,7 @@ const __AT__QUERY_ENTRIES_HAVING_ALL_OF = (ctx, ...keys) => {
 	};
 };
 
+// TODO support regexp keys
 const __AT__QUERY_ENTRIES_HAVING_ANY_OF = (ctx, ...keys) => {
 	ctx.source += ` QUERY ENTRIES HAVING ANY OF ${literalize(...keys)}`;
 	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
