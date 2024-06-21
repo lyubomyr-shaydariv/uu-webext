@@ -6,9 +6,9 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('fbclid', 'fb_action_ids', 'fb_action_types', 'fb_comment_id', 'fb_ref', 'fb_source'),
 	RULE()
-		.AT().DOMAIN('facebook.com')
+		.AT().DOMAIN('facebook.com', 'm.facebook.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('fref', 'hrc', 'refsrc', 'sfnsn'),
+		.DO().RETAIN('id', 'story_fbid'),
 	RULE()
 		.AT().DOMAIN('facebook.com').PATHNAME('/l.php', '/flx/warn/')
 		.FROM().QUERY_ENTRY_KEYS()
