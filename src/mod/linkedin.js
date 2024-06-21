@@ -2,6 +2,10 @@ import { RULE } from '/rules.js';
 
 export default [
 	RULE()
+		.AT().ANYWHERE()
+		.FROM().QUERY_ENTRIES()
+		.DO().REMOVE('li_fat_id'),
+	RULE()
 		.AT().DOMAIN('linkedin.com')
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('eBP', 'lgCta', 'lgTemp', /li[a-z]{2}/, 'midSig', 'midToken', 'recommendedFlavor', 'refId', 'trackingId', 'trk', 'trkEmail'),
