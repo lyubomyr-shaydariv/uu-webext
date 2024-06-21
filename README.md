@@ -158,6 +158,7 @@ Currently supported trackers:
 * ![taobao](favicons/taobao.com.webp) Taobao (redirects)
 * ![target](favicons/target.com.webp) Target (redirects)
 * ![techcrunch](favicons/techcrunch.com.webp) TechCrunch (URLs)
+* ![threads](favicons/threads.net.webp) Threads (URLs)
 * ![tiktok](favicons/tiktok.com.webp) TikTok (URLs and redirects)
 * ![toyhouse](favicons/toyhou.se.webp) Toyhouse (redirects)
 * ![tradedoubler](favicons/tradedoubler.com.webp) Tradedoubler (redirects)
