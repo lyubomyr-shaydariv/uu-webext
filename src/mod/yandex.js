@@ -8,5 +8,5 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?yandex\.[^.]+$/)
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('lr', 'redircnt')
+		.DO().RETAIN('text')
 ];
