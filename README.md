@@ -159,6 +159,7 @@
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
 * ![workable](favicons/workable.com.png) Workable (redirects)
 * ![wsj](favicons/wsj.com.png) Wall Street Journal (URLs)
+* Wunderkind (URLs)
 * ![x](favicons/x.com.png) X (ex-Twitter) (URLs, redirects)
 * ![yahoo](favicons/yahoo.com.png) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.png) Yandex (URLs)
