@@ -64,6 +64,7 @@
 			"mod/github.js",
 			"mod/geniuslink.js",
 			"mod/gmx.js",
+			"mod/godatafeed.js",
 			"mod/google.js",
 			"mod/hackernoon.js",
 			"mod/harvardbusinessreview.js",
