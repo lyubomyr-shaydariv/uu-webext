@@ -173,6 +173,33 @@ const __DO__REMOVE = (ctx, ...keys) => {
 };
 
 // TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
+const __DO__REMOVE_ALL = (ctx) => {
+	ctx.source += ' REMOVE ALL';
+	return Object.defineProperties(
+		(url) => {
+			if ( !ctx.at(url) ) {
+				return false;
+			}
+			const keysCtx = ctx.createKeysContext(url);
+			const keysToRemove = new Set(keysCtx.getEntryKeys());
+			if ( keysToRemove.size === 0 ) {
+				return false;
+			}
+			keysCtx.removeKeys(...keysToRemove);
+			return true;
+		},
+		{
+			name: {
+				value: ctx.name
+			},
+			source: {
+				value: ctx.source
+			}
+		}
+	);
+};
+
+// TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
 const __DO__RETAIN = (ctx, ...keys) => {
 	ctx.source += ` RETAIN ${literalize(...keys)}`;
 	const matches = createMatches(...keys);
@@ -214,6 +241,7 @@ const DO = (ctx) => {
 		ASSIGN: (...values) => __DO__ASSIGN(ctx, ...values),
 		REDIRECT: () => __DO__REDIRECT(ctx),
 		REMOVE: (...keys) => __DO__REMOVE(ctx, ...keys),
+		REMOVE_ALL: () => __DO__REMOVE_ALL(ctx),
 		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys),
 	};
 };
