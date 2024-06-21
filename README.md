@@ -94,6 +94,7 @@ Currently supported trackers:
 * ![klarna](favicons/klarna.com.webp) Klarna (redirects)
 * ![klaviyo](favicons/klaviyo.com.webp) Klaviyo (URLs)
 * ![kraken](favicons/kraken.com.webp) Kraken (redirects)
+* ![lazada](favicons/lazada.com.webp) Lazada (URLs)
 * ![lever](favicons/lever.co.webp) Lever (redirects)
 * ![linkedin](favicons/www.linkedin.com.webp) LinkedIn (URLs, redirects)
 * ![listrak](favicons/listrak.com.webp) Listrak (URLs)
