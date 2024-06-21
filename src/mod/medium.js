@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('medium.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('_branch_match_id', 'source'),
+		.DO().REMOVE('source'),
 	RULE()
 		.AT().DOMAIN('medium.com').PATHNAME('/r/')
 		.FROM().QUERY_ENTRIES()

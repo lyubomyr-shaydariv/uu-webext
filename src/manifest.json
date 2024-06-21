@@ -28,6 +28,7 @@
 			"mod/blackbaud.js",
 			"mod/bloomberg.js",
 			"mod/blueshift.js",
+			"mod/branch.js",
 			"mod/brave.js",
 			"mod/caseking.js",
 			"mod/cell.js",
