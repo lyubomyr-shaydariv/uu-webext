@@ -100,6 +100,7 @@
 * ![narvar](favicons/narvar.com.png) Narvar (URLs)
 * ![netflix](favicons/netflix.com.png) Netflix (URLs)
 * ![newyorker](favicons/newyorker.com.png) New Yorker (URLs)
+* ![nextdoor](favicons/nextdoor.com.png) Nextdoor (URLs)
 * NS (URLs)
 * ![nypost](favicons/nypost.com.png) New York Post (URLs)
 * ![nytimes](favicons/nytimes.com.png) New York Times (URLs)
