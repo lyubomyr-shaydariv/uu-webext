@@ -138,6 +138,7 @@ Currently supported trackers:
 * SC (URLs)
 * ![seek](favicons/seek.com.au.webp) Seek (URLs)
 * ![shareasale](favicons/shareasale.com.webp) ShareASale (URLs)
+* ![shopee](favicons/shopee.com.webp) Shopee (URLs)
 * ![shutterstock](favicons/shutterstock.com.webp) Shutterstock (URLs)
 * Simple Share (URLs)
 * ![skimlinks](favicons/skimlinks.com.webp) Skimlinks (redirects)
