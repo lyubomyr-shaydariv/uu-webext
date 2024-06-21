@@ -115,7 +115,7 @@
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
 * ![pinterest](favicons/pinterest.com.png) Pinterest (redirects)
 * ![postmark](favicons/postmarkapp.com.png) Postmark (redirects)
-* ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (redirects)
+* ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (URLs and redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![redfin](favicons/redfin.com.png) Redfin (URLs)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
