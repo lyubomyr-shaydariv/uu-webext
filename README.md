@@ -91,6 +91,7 @@
 * ![klarna](favicons/klarna.com.png) Klarna (redirects)
 * ![klaviyo](favicons/klaviyo.com.png) Klaviyo (URLs)
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
+* ![lazada](favicons/lazada.com.png) Lazada (URLs)
 * ![lever](favicons/lever.co.png) Lever (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
 * ![listrak](favicons/listrak.com.png) Listrak (URLs)
