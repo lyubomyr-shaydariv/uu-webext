@@ -11,6 +11,7 @@
 * ![alibaba](favicons/alibaba.com.png) Alibaba (URLs)
 * ![aliexpress](favicons/aliexpress.com.png) AliExpress (URLs)
 * ![amazon](favicons/amazon.com.png) Amazon (URLs, redirects)
+* ![aol](favicons/aol.com.png) AOL (URLs)
 * ![apple](favicons/apple.com.png) Apple (URLs)
 * app.link (URLs)
 * AT (URLs)
