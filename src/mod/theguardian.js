@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('theguardian.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('CMP')
+		.DO().REMOVE_ALL()
 ];
