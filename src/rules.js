@@ -1,3 +1,5 @@
+import { areStrictlyEqual } from '/util.js';
+
 const literalize = (...es) => {
 	const literals = new Array();
 	for ( const e of es ) {
@@ -82,6 +84,32 @@ const createUrlMatchesByTrie = (getSegmentsFromElement, getSegmentsFromUrl, ...e
 //--------------------------------------------------------------------------------------------------
 // DO - actions
 //--------------------------------------------------------------------------------------------------
+
+// TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
+const __DO__ASSIGN = (ctx, ...values) => {
+	ctx.source += ` ASSIGN ${literalize(...values)}`;
+	return Object.defineProperties(
+		(url) => {
+			if ( !ctx.at(url) ) {
+				return false;
+			}
+			const currentValue = ctx.getValue(url);
+			if ( areStrictlyEqual(values, Array.isArray(currentValue) ? currentValue : [currentValue]) ) {
+				return false;
+			}
+			ctx.setValue(url, ...values);
+			return true;
+		},
+		{
+			name: {
+				value: ctx.name
+			},
+			source: {
+				value: ctx.source
+			}
+		}
+	);
+};
 
 // TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
 const __DO__REDIRECT = (ctx) => {
@@ -183,6 +211,7 @@ const __DO__RETAIN = (ctx, ...keys) => {
 const DO = (ctx) => {
 	ctx.source += ' DO';
 	return {
+		ASSIGN: (...values) => __DO__ASSIGN(ctx, ...values),
 		REDIRECT: () => __DO__REDIRECT(ctx),
 		REMOVE: (...keys) => __DO__REMOVE(ctx, ...keys),
 		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys),
@@ -353,6 +382,9 @@ const __FROM__PATHNAME = (ctx) => {
 		pathname.get = (index) => pathname.substring(1).split(PATH_DELIMITER_REGEXP)[index];
 		return pathname;
 	};
+	ctx.setValue = (url, value) => {
+		url.pathname = value;
+	};
 	return {
 		DO: () => DO(ctx),
 		APPLY: () => APPLY(ctx)
@@ -365,6 +397,9 @@ const __FROM__QUERY = (ctx) => {
 		const query = new String(url.search); // now it's an object, so the `get` function cab be mixed in
 		query.get = (/*index*/) => query;
 		return query;
+	};
+	ctx.setValue = (url, value) => {
+		url.search = value;
 	};
 	return {
 		DO: () => DO(ctx),
@@ -398,6 +433,9 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 		};
 	}
 	ctx.getValue = (url) => url.searchParams;
+	ctx.setValue = (url, ...entries) => {
+		url.searchParams = new URLSearchParams(/*...*/entries);
+	};
 	return {
 		DO: () => DO(ctx),
 		APPLY: () => APPLY(ctx)
