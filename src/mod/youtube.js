@@ -2,9 +2,9 @@ import {RULE} from '/rules.js';
 
 export default [
 	RULE()
-		.AT().DOMAIN('youtube.com')
+		.AT().DOMAIN('music.youtube.com', 'youtube.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().RETAIN('list', 'search_query', 't', 'v'),
+		.DO().RETAIN('list', 'search_query', 'v'),
 	RULE()
 		.AT().DOMAIN('youtu.be')
 		.FROM().QUERY_ENTRIES()
