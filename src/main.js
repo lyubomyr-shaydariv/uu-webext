@@ -54,18 +54,25 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 			'<all_urls>'
 		],
 		types: [
+			'beacon',
 			'csp_report',
 			'font',
 			'image',
+			'imageset',
 			'main_frame',
 			'media',
 			'object',
+			'object_subrequest',
 			'ping',
 			'script',
+			'speculative',
 			'stylesheet',
 			'sub_frame',
+			'web_manifest',
 			'websocket',
+			'xml_dtd',
 			'xmlhttprequest',
+			'xslt',
 			'other'
 		]
 	},
