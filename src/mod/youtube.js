@@ -2,9 +2,9 @@ import { RULE } from '/rules.js';
 
 export default [
 	RULE()
-		.AT().DOMAIN('youtube.com')
+		.AT().DOMAIN('music.youtube.com', 'youtube.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('app', 'embeds_euri', 'embeds_loader_url_for_pings', 'embeds_origin', 'embeds_referring_euri', 'feature', 'kw', 'pp', 'si', 'source_ve_path'),
+		.DO().RETAIN('list', 'search_query', 'v'),
 	RULE()
 		.AT().DOMAIN('youtu.be')
 		.FROM().QUERY_ENTRIES()
