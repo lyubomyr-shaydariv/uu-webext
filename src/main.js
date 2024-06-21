@@ -49,6 +49,25 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 		redirectUrl: redirectUrl.toString()
 	};
 },
-	{urls: ['<all_urls>'], types: ['main_frame', 'sub_frame', 'stylesheet', 'script', 'image', 'font', 'object', 'xmlhttprequest', 'ping', 'csp_report', 'media', 'websocket', 'other']},
+	{
+		urls: [
+			'<all_urls>'
+		],
+		types: [
+			'csp_report',
+			'font',
+			'image',
+			'main_frame',
+			'media',
+			'object',
+			'ping',
+			'script',
+			'stylesheet',
+			'sub_frame',
+			'websocket',
+			'xmlhttprequest',
+			'other'
+		]
+	},
 	['blocking']
 );
