@@ -83,6 +83,7 @@
 * ![kraken](favicons/kraken.com.png) Kraken (redirects)
 * ![lever](favicons/lever.co.png) Lever (redirects)
 * ![linkedin](favicons/www.linkedin.com.png) LinkedIn (URLs, redirects)
+* ![listrak](favicons/listrak.com.png) Listrak (URLs)
 * ![magento](favicons/magento.com.png) Magento (URLs)
 * ![mailchimp](favicons/mailchimp.com.png) MailChimp (URLs)
 * ![mailerlite](favicons/mailerlite.com.png) MailerLite (URLs)
