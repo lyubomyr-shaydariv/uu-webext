@@ -12,5 +12,5 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME_PREFIX('/itm/')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE(/^.*$/)
+		.DO().REMOVE_ALL()
 ];
