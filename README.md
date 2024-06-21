@@ -58,6 +58,7 @@
 * ![eventbrite](favicons/eventbrite.com.png) Eventbrite (URLs)
 * ![evernote](favicons/evernote.com.png) Evernote (redirects)
 * ![facebook](favicons/facebook.com.png) Facebook (URLs, redirects)
+* ![fastcompany](favicons/fastcompany.com.png) Fast Company (URLs)
 * ![fever](favicons/feverup.com.png) Fever (URLs)
 * ![flipkart](favicons/flipkart.com.png) Flipkart (URLs)
 * ![gamespot](favicons/gamespot.com.png) GameSpot (URLs)
