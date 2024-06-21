@@ -145,6 +145,7 @@
 * ![songkick](favicons/songkick.com.webp) Songkick (URLs)
 * ![soundcloud](favicons/soundcloud.com.webp) SoundCloud (redirects)
 * ![sourceforge](favicons/sourceforge.net.webp) SourceForge (URLs)
+* ![spiegel](favicons/spiegel.de.webp) Der Spiegel (URLs)
 * ![spotify](favicons/spotify.com.webp) Spotify (URLs)
 * ![springbot](favicons/springbot.com.webp) Springbot (URLs)
 * ![squarespace](favicons/squarespace.com.webp) Squarespace (URLs)
