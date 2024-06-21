@@ -135,6 +135,7 @@
 * SC (URLs)
 * ![seek](favicons/seek.com.au.png) Seek (URLs)
 * ![shareasale](favicons/shareasale.com.png) ShareASale (URLs)
+* ![shopee](favicons/shopee.com.png) Shopee (URLs)
 * ![shutterstock](favicons/shutterstock.com.png) Shutterstock (URLs)
 * Simple Share (URLs)
 * ![skimlinks](favicons/skimlinks.com.png) Skimlinks (redirects)
