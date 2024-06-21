@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('reddit.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('$3p', '$deep_link', '$original_link', '$original_url', '_branch_match_id', 'correlation_id', 'rdt', 'ref_campaign', 'ref_source', 'share_id'),
+		.DO().REMOVE_ALL(),
 	RULE()
 		.AT().HOSTNAME('out.reddit.com').PATHNAME(/^\/[^/]+$/)
 		.FROM().QUERY_ENTRY_KEYS()
