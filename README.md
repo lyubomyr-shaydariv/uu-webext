@@ -128,6 +128,7 @@
 * ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
+* ![springbot](favicons/springbot.com.png) Springbot (URLs)
 * ![squarespace](favicons/squarespace.com.png) Squarespace (URLs)
 * ![steam](favicons/store.steampowered.com.png) Steam (redirects)
 * STM (URLs)
