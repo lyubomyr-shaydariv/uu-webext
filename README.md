@@ -145,6 +145,7 @@
 * ![songkick](favicons/songkick.com.png) Songkick (URLs)
 * ![soundcloud](favicons/soundcloud.com.png) SoundCloud (redirects)
 * ![sourceforge](favicons/sourceforge.net.png) SourceForge (URLs)
+* ![spiegel](favicons/spiegel.de.png) Der Spiegel (URLs)
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![springbot](favicons/springbot.com.png) Springbot (URLs)
 * ![squarespace](favicons/squarespace.com.png) Squarespace (URLs)
