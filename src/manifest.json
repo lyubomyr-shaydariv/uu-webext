@@ -37,6 +37,7 @@
 			"mod/commissionfactory.js",
 			"mod/comscore.js",
 			"mod/connexity.js",
+			"mod/convertkit.js",
 			"mod/curseforge.js",
 			"mod/customerio.js",
 			"mod/customerexperienceanalytics.js",
