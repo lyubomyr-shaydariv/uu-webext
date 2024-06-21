@@ -8,5 +8,5 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?yandex\.[^.]+$/, 'ya.ru')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('clid', 'did', 'from', 'grhow', 'lr', 'mlid', 'msid', 'origin', 'persistent_id', 'redircnt', 'source-serpid', 'stid', 'suggest_reqid', 'utm-term')
+		.DO().RETAIN('text')
 ];
