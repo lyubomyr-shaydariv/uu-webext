@@ -163,18 +163,6 @@ val BuiltinRuleList =
                             .trimIndent()
                 ),
                 Rule(
-                    id = "bcd9fcb8-bf1c-41f8-b18d-b248507e43c7",
-                    name = "Instagram",
-                    description = "Remove tracking for Instagram",
-                    script =
-                        """
-                            if ($.matches(url, 'www\\.instagram\\.com')) {
-                                return $.setEncodedQuery(url, null);
-                            }
-                        """
-                            .trimIndent()
-                ),
-                Rule(
                     id = "c68c4cbf-9ae5-41f6-89ba-6e3f31ffb6a2",
                     name = "JD",
                     description = "Remove tracking for JD",
