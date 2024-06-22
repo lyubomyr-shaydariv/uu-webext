@@ -35,6 +35,7 @@
 			"mod/cell.js",
 			"mod/changeorg.js",
 			"mod/cision.js",
+			"mod/cj.js",
 			"mod/cnet.js",
 			"mod/commissionfactory.js",
 			"mod/comscore.js",

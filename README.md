@@ -32,6 +32,7 @@
 * ![cell](favicons/cell.com.png) Cell Press (URLs)
 * ![changeorg](favicons/change.org.png) Change.org (URLs)
 * ![cision](favicons/c212.net.png) Cision (redirects)
+* ![cj](favicons/cj.com.png) CJ (URLs)
 * ![cnet](favicons/cnet.com.png) CNET (URLs)
 * ![commissionfactory](favicons/commissionfactory.com.png) Commision Factory (redirects)
 * ![comScore](favicons/comscore.com.png) comScore (redirects)
