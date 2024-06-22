@@ -199,18 +199,6 @@ val BuiltinRuleList =
                             .trimIndent()
                 ),
                 Rule(
-                    id = "465d579e-bc3b-4c5b-bac3-9b84c67c7554",
-                    name = "Netflix",
-                    description = "Remove tracking for Netflix",
-                    script =
-                        """
-                            if ($.matches(url, 'www\\.netflix\\.com')) {
-                                return $.setEncodedQuery(url, null);
-                            }
-                        """
-                            .trimIndent()
-                ),
-                Rule(
                     id = "67035e8c-9418-47e7-9f62-56cd30666772",
                     name = "Reddit",
                     description = "Remove tracking for Reddit",
