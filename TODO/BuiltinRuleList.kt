@@ -274,18 +274,6 @@ val BuiltinRuleList =
                             .trimIndent()
                 ),
                 Rule(
-                    id = "9cb803b3-ed57-46ad-b604-8adb8c515c07",
-                    name = "Taobao",
-                    description = "Remove tracking for Taobao (and Tmall)",
-                    script =
-                        """
-                            if ($.matches(url, '.+\\.(taobao|tmall)\\.com')) {
-                                return $.retainQueryParameters(url, 'id');
-                            }
-                        """
-                            .trimIndent()
-                ),
-                Rule(
                     id = "7a6a2ddb-a0a4-43fe-a97f-7cb74cd29ad5",
                     name = "X",
                     description = "Remove tracking for X (formerly Twitter)",
