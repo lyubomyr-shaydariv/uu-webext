@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('instagram.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('e', 'g', 'igsh', 'saved_by', 'source', 'stkn', /^[a-z]{4}$/),
+		.DO().REMOVE_ALL(),
 	RULE()
 		.AT().DOMAIN('l.instagram.com')
 		.FROM().QUERY_ENTRY_KEYS()
