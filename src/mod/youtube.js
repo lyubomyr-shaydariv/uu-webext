@@ -4,7 +4,11 @@ export default [
 	RULE()
 		.AT().DOMAIN('youtube.com')
 		.FROM().QUERY_ENTRIES()
+<<<<<<< HEAD
 		.DO().RETAIN('list', 'search_query', 't', 'v'),
+=======
+		.DO().RETAIN('index', 'list', 't', 'v'),
+>>>>>>> No query parameters except `index`, `list`, `t`, and `v` are now retained at YouTube
 	RULE()
 		.AT().DOMAIN('youtu.be')
 		.FROM().QUERY_ENTRIES()
