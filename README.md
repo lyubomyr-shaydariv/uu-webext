@@ -117,6 +117,7 @@
 * ![oracle](favicons/oracle.com.png) Oracle (redirects)
 * ![outlook](favicons/outlook.com.png) Outlook (redirects)
 * ![pinterest](favicons/pinterest.com.png) Pinterest (redirects)
+* ![pocket](favicons/getpocket.com.png) Pocket (URL, redirects)
 * ![postmark](favicons/postmarkapp.com.png) Postmark (redirects)
 * ![rakutenadvertising](favicons/rakutenadvertising.com.png) Rakuten Advertising (URLs and redirects)
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
