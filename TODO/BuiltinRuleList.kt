@@ -274,18 +274,6 @@ val BuiltinRuleList =
                             .trimIndent()
                 ),
                 Rule(
-                    id = "7a6a2ddb-a0a4-43fe-a97f-7cb74cd29ad5",
-                    name = "X",
-                    description = "Remove tracking for X (formerly Twitter)",
-                    script =
-                        """
-                            if ($.matches(url, '(twitter|x)\\.com')) {
-                                return $.setEncodedQuery(url, null);
-                            }
-                        """
-                            .trimIndent()
-                ),
-                Rule(
                     id = "84c837db-f1c0-4738-b0ea-0f3d091885d7",
                     name = "Xiaohongshu",
                     description = "Remove tracking for Xiaohongshu",
