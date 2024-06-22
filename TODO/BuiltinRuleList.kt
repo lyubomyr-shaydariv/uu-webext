@@ -284,18 +284,6 @@ val BuiltinRuleList =
                             }
                         """
                             .trimIndent()
-                ),
-                Rule(
-                    id = "88a68140-7653-4923-991d-19d1a98cd5e3",
-                    name = "Youtube",
-                    description = "Remove tracking for Youtube",
-                    script =
-                        """
-                            if ($.matches(url, 'youtu\\.be|(www\\.)?youtube\\.com')) {
-                                return $.retainQueryParameters(url, 'index|list|t|v');
-                            }
-                        """
-                            .trimIndent()
                 )
             )
     )
