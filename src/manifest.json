@@ -68,6 +68,7 @@
 			"mod/giphy.js",
 			"mod/gmx.js",
 			"mod/godatafeed.js",
+			"mod/gog.js",
 			"mod/google.js",
 			"mod/hackernoon.js",
 			"mod/harvardbusinessreview.js",
