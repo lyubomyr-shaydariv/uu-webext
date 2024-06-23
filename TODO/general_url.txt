@@ -27,21 +27,6 @@ $removeparam=vsm_pid
 ! https://developers.cj.com/docs/advertiser-site-tracking/enhanced-tracking-integration
 $removeparam=cjdata
 $removeparam=cjevent
-! AT Internet
-$removeparam=/^at_custom/
-$removeparam=at_campaign
-$removeparam=at_campaign_type
-$removeparam=at_creation
-$removeparam=at_emailtype
-$removeparam=at_link
-$removeparam=at_link_id
-$removeparam=at_link_origin
-$removeparam=at_link_type
-$removeparam=at_medium
-$removeparam=at_ptr_name
-$removeparam=at_recipient_id
-$removeparam=at_recipient_list
-$removeparam=at_send_date
 ! Email subscription tracking
 $removeparam=_ope
 ! AappsFlyer
@@ -83,8 +68,6 @@ $removeparam=cm_me
 $removeparam=cm_cr
 $removeparam=/^cm_mmc/
 ! https://github.com/AdguardTeam/AdguardFilters/issues/155405
-! Used by shareasale.com
-$removeparam=sscid
 ! Click tracking. Probably used by malware
 ! https://github.com/AdguardTeam/AdguardFilters/issues/154659
 $removeparam=rtkcid
@@ -92,11 +75,6 @@ rtkcid=*&clickid=$removeparam=clickid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/152387
 ! Sovrn (VigLink) tracking
 $removeparam=cuid
-! impact.com
-$removeparam=ir_campaignid
-$removeparam=ir_adid
-$removeparam=irclickid
-$removeparam=ir_partnerid
 ! IO Technologies
 ! Identify a period of time for which unique visitors use our website
 $removeparam=__io_lv
@@ -296,9 +274,6 @@ $removeparam=mtm_source
 $removeparam=pk_campaign
 $removeparam=pk_medium
 $removeparam=pk_source
-! Branch.io ( https://stackoverflow.com/questions/37882810/what-is-meaning-of-branch-match-id )
-$removeparam=_branch_referrer
-$removeparam=_branch_match_id
 ! Valuecommerce ( https://help.valuecommerce.ne.jp/mer/dl/ITP2.0_for_iTAG.pdf )
 $removeparam=vc_lpp
 ! https://github.com/brave/brave-browser/issues/17507
@@ -314,8 +289,6 @@ $removeparam=ebisAdID
 $removeparam=wickedid
 ! https://github.com/AdguardTeam/AdguardFilters/issues/108478
 $removeparam=irgwc
-! Facebook analytics
-$removeparam=fbclid
 !
 $removeparam=adfrom
 $removeparam=nx_source
@@ -328,9 +301,4 @@ $removeparam=_openstat
 $removeparam=action_object_map
 $removeparam=action_ref_map
 $removeparam=action_type_map
-$removeparam=fb_action_ids
-$removeparam=fb_action_types
-$removeparam=fb_comment_id
-$removeparam=fb_ref
-$removeparam=fb_source
 !
