@@ -164,6 +164,7 @@
 * Webtrekk (URLs)
 * ![webtrends](favicons/webtrends.com.png) Webtrends Analytics (URLs)
 * ![wickedreports](favicons/wickedreports.com.png) Wicked Reports (URLs)
+* ![wired](favicons/wired.com.png) Wired (URLs)
 * ![workable](favicons/workable.com.png) Workable (redirects)
 * ![wsj](favicons/wsj.com.png) Wall Street Journal (URLs)
 * Wunderkind (URLs)
