@@ -125,7 +125,6 @@
 * ![reddit](favicons/reddit.com.png) Reddit (redirects)
 * ![redfin](favicons/redfin.com.png) Redfin (URLs)
 * ![reuters](favicons/reuters.com.png) Reuters (redirects)
-* ![rockerbox](favicons/rockerbox.com.png) Rockerbox (URLs)
 * ![rokt](favicons/rokt.com.png) Rokt (URLs)
 * ![rutracker](favicons/rutracker.org.png) RuTracker (URLs)
 * ![salesforce](favicons/salesforce.com.png) Salesforce (URLs)
