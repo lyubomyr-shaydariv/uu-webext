@@ -1143,7 +1143,6 @@ $removeparam=campid,domain=otto.de|ottoversand.at
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110942
 ||buzzfeednews.com^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110758
-||goodreads.com^$removeparam=ref
 ! https://github.com/AdguardTeam/AdguardFilters/issues/110462
 ||coconala.com^$removeparam=ref
 ||coconala.com^$removeparam=ref_kind
@@ -1749,17 +1748,6 @@ $removeparam=epi,domain=microsoft.com|xbox.com
 ||rakuten.co.jp^*&trflg=$removeparam=trflg
 ||search.yahoo.co.jp^$removeparam=fr
 ! https://github.com/AdguardTeam/AdguardFilters/issues/116479
-||flipkart.com^$removeparam=_refId
-||flipkart.com^$removeparam=/^affExtParam/
-||flipkart.com^$removeparam=affid
-||flipkart.com^$removeparam=cid
-||flipkart.com^$removeparam=iid
-||flipkart.com^$removeparam=lid
-||flipkart.com^$removeparam=/^otracker/
-||flipkart.com^$removeparam=pageUID
-||flipkart.com^$removeparam=pwsvid
-||flipkart.com^$removeparam=ssid
-||flipkart.com^$removeparam=store
 ! Daraz & Shop (Samesite)
 ||daraz.*$removeparam=/spm=|scm=|from=|keyori=|sugg=|search=|mp=|c=|^abtest|^abbucket|pos=|themeID=|algArgs=|clickTrackInfo=|acm=|item_id=|version=|up_id=|pvid=/
 ! Bilibili
