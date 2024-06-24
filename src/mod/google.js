@@ -16,7 +16,7 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('rd', 'ref_topic', 'sjid', 'visit_id'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)*google(?:\.[^.]+)+$/)
+		.AT().TLD('google')
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('_u', 'aqs', 'atyp', /^bi[a-z]+$/, /^btn/, 'cad', 'cd', 'client', 'cshid', 'dcr', 'dpr', 'ei', 'esrc', /^gfe/, /^gs_[a-z]+$/, /^gws_[a-z]+$/, 'fbs', 'ictx', 'ie', 'iflsig', 'je', 'oe', 'oq', 'pcampaignid', 'referrer', 'rlz', 'sa', 'sca_esv', 'sclient', 'sei', 'si', 'site', 'source', 'sourceid', 'sxsrf', 'uact', 'usg', 'ust', 'ved', 'vet', 'visit_id', 'zx'),
 	RULE()
