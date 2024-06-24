@@ -2,6 +2,7 @@
 	"author": "Lyubomyr Shaydariv",
 	"background": {
 		"scripts": [
+			"literals.js",
 			"rules.js",
 			"registry.js",
 			"mod/_.js",

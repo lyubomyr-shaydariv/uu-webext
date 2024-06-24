@@ -1,3 +1,4 @@
+import { Prefix } from './literals.js';
 import { areStrictlyEqual } from '/util.js';
 
 const literalize = (...es) => {
@@ -7,6 +8,8 @@ const literalize = (...es) => {
 			literals.push(JSON.stringify(e));
 		} else if ( e instanceof RegExp ) {
 			literals.push(e);
+		} else if ( e instanceof Prefix ) {
+			literals.push(`PREFIX(${JSON.stringify(e.toString())})`);
 		} else if ( typeof(e) === 'number' || e instanceof Number ) {
 			literals.push(e);
 		} else {
@@ -18,6 +21,7 @@ const literalize = (...es) => {
 
 const createMatches = (...keys) => {
 	let strings = null;
+	let prefixes = null;
 	let regExps = null;
 	for ( const key of keys ) {
 		if ( typeof(key) === 'string' || key instanceof String ) {
@@ -25,6 +29,11 @@ const createMatches = (...keys) => {
 				strings = new Set();
 			}
 			strings.add(key);
+		} else if ( key instanceof Prefix ) {
+			if ( prefixes === null ) {
+				prefixes = [];
+			}
+			prefixes.push(key);
 		} else if ( key instanceof RegExp ) {
 			if ( regExps === null ) {
 				regExps = [];
@@ -37,6 +46,13 @@ const createMatches = (...keys) => {
 	return (key) => {
 		if ( strings !== null && strings.has(key) ) {
 			return true;
+		}
+		if ( prefixes !== null ) {
+			for ( const prefix of prefixes ) {
+				if ( prefix.matches(key) ) {
+					return true;
+				}
+			}
 		}
 		if ( regExps !== null ) {
 			for ( const regExp of regExps ) {
@@ -534,7 +550,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	};
 };
 
-// TODO support regexp keys
+// TODO support regexp and prefix keys
 const __AT__QUERY_ENTRIES_HAVING_ALL_OF = (ctx, ...keys) => {
 	ctx.source += ` QUERY ENTRIES HAVING ALL OF ${literalize(...keys)}`;
 	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
@@ -551,7 +567,7 @@ const __AT__QUERY_ENTRIES_HAVING_ALL_OF = (ctx, ...keys) => {
 	};
 };
 
-// TODO support regexp keys
+// TODO support regexp and prefix keys
 const __AT__QUERY_ENTRIES_HAVING_ANY_OF = (ctx, ...keys) => {
 	ctx.source += ` QUERY ENTRIES HAVING ANY OF ${literalize(...keys)}`;
 	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
