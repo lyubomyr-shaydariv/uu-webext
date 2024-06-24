@@ -515,7 +515,6 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -529,7 +528,6 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -543,7 +541,6 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -597,32 +594,6 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	};
 };
 
-const __AT__PATHNAME_PREFIX = (ctx, ...prefixes) => {
-	ctx.source += ` PATHNAME PREFIX ${literalize(...prefixes)}`;
-	const prefixSet = new Set();
-	for ( const prefix of prefixes ) {
-		if ( typeof(prefix) === 'string' || prefix instanceof String ) {
-			prefixSet.add(prefix);
-		} else {
-			throw new Error(`cannot create matcher for ${prefix}`);
-		}
-	}
-	ctx.__at_predicates.push((url) => {
-		for ( const prefix of prefixSet ) {
-			if ( url.pathname.startsWith(prefix) ) {
-				return true;
-			}
-		}
-		return false;
-	});
-	return {
-		AT: () => AT(ctx),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
-		FROM: () => FROM(ctx)
-	};
-};
-
 // TODO consider associating tries in the global domain/hostname tries
 const AT = (ctx) => {
 	ctx.source += 'AT';
@@ -653,7 +624,6 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		PATHNAME_PREFIX: (...prefixes) => __AT__PATHNAME_PREFIX(ctx, ...prefixes),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys)
 	};
