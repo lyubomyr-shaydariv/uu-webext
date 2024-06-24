@@ -7,11 +7,11 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('campid', 'customid', 'mkcid', 'mkevt', 'mkrid', 'toolid'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/)
+		.AT().TLD('ebay')
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('_from', '_trkparms', '_trksid', 'amdata', 'epid', 'hash', 'var'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME(PREFIX('/itm/'))
+		.AT().TLD('ebay').PATHNAME(PREFIX('/itm/'))
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE_ALL()
 ];
