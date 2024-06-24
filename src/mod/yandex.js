@@ -6,7 +6,7 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('yadclid', 'yadordid', 'yclid', 'ymclid', 'ysclid', '_openstat'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?yandex\.[^.]+$/, 'ya.ru')
+		.AT().TLD('yandex').HOSTNAME('ya.ru') // currently this does not work, needs redesign
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('clid', 'did', 'from', 'grhow', 'lr', 'mlid', 'msid', 'origin', 'persistent_id', 'redircnt', 'source-serpid', 'stid', 'suggest_reqid', 'utm-term')
 ];
