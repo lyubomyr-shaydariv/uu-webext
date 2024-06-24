@@ -6,7 +6,7 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('guce_referrer', 'guce_referrer_sig', 'soc_src', 'soc_trk'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?yahoo\.[^.]+$/)
+		.AT().TLD('yahoo')
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('guccounter'),
 	RULE()
