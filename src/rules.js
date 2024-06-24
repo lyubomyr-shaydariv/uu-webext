@@ -661,6 +661,63 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	};
 };
 
+const __AT__TLD = (ctx, ...subdomains) => {
+	if ( !subdomains.every((e) => typeof e === 'string' || e instanceof String || e instanceof RegExp) ) {
+		throw new Error(`cannot build a TLD pattern from ${subdomains.join(' ')}`);
+	}
+	ctx.source += ` TLD ${literalize(...subdomains)}`;
+	const labelsAsStrings = new Set();
+	const labelsAsRegExps = [];
+	for ( const subdomain of subdomains ) {
+		if ( typeof subdomain === 'string' || subdomain instanceof String ) {
+			labelsAsStrings.add(subdomain);
+		} else if ( subdomain instanceof RegExp ) {
+			labelsAsRegExps.push(subdomain);
+		} else {
+			throw new Error(`cannot create subdomain-at-any-tld for ${subdomain}`);
+		}
+	}
+	const isLabelsAsStringSetEmpty = labelsAsStrings.size === 0;
+	const isLabelsAsRegExpArrayEmpty = labelsAsRegExps === 0;
+	if ( isLabelsAsStringSetEmpty && isLabelsAsRegExpArrayEmpty ) {
+		ctx.__at_predicates.push((/* url */) => false);
+	} else {
+		ctx.__at_predicates.push((url) => {
+			const domain = url.hostname;
+			/* global tldjs */
+			const publicSuffix = tldjs.getPublicSuffix(domain);
+			if ( publicSuffix === null ) {
+				return false;
+			}
+			const subdomains = domain.substr(0, domain.length - publicSuffix.length - 1);
+			for ( let i = subdomains.length; i >= 0; ) {
+				const prevI = subdomains.lastIndexOf('.', i);
+				const subdomain = subdomains.substring(prevI + 1, i + 1);
+				if ( !isLabelsAsStringSetEmpty && labelsAsStrings.has(subdomain) ) {
+					return true;
+				}
+				if ( !isLabelsAsRegExpArrayEmpty ) {
+					for ( const regExp of labelsAsRegExps ) {
+						if (regExp.test(subdomain)) {
+							return true;
+						}
+					}
+				}
+				i = prevI - 1;
+			}
+			return false;
+		});
+	}
+	return {
+		AT: () => AT(ctx),
+		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
+		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
+		/* eslint-disable-next-line sort-keys */
+		FROM: () => FROM(ctx)
+	};
+};
+
 // TODO consider associating tries in the global domain/hostname tries
 const AT = (ctx) => {
 	ctx.source += 'AT';
@@ -693,7 +750,8 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys)
+		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
+		TLD: (...tlds) => __AT__TLD(ctx, ...tlds)
 	};
 };
 
