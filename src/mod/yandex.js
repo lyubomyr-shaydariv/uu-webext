@@ -6,7 +6,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('yadclid', 'yadordid', 'yclid', 'ymclid', 'ysclid', '_openstat'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?yandex\.[^.]+$/)
+		.AT().TLD('yandex')
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('lr', 'redircnt')
 ];
