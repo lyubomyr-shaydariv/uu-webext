@@ -1,3 +1,4 @@
+import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
@@ -14,11 +15,11 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('u'),
 	RULE()
-		.AT().DOMAIN('linkedin.com').PATHNAME_PREFIX('/help/')
+		.AT().DOMAIN('linkedin.com').PATHNAME(PREFIX('/help/'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('mcid', 'src', 'trk'),
 	RULE()
-		.AT().DOMAIN('linkedin.com').PATHNAME_PREFIX('/in/')
+		.AT().DOMAIN('linkedin.com').PATHNAME(PREFIX('/in/'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('original_referer', 'trackingCode', 'trackingId'),
 	RULE()

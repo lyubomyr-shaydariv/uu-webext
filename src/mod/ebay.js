@@ -1,3 +1,4 @@
+import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
@@ -10,7 +11,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('_from', '_trkparms', '_trksid', 'amdata', 'epid', 'hash', 'var'),
 	RULE()
-		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME_PREFIX('/itm/')
+		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME(PREFIX('/itm/'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE_ALL()
 ];

@@ -1,3 +1,4 @@
+import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
@@ -10,7 +11,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('af', 'aff_request_id', 'algo_expid', 'algo_pvid', 'btsid', 'cv', 'dp', 'expid', 'gps-id', 'initiative_id', 'mall_affr', 'scm_id', 'sk', 'terminal_id', 'ws_ab_test'),
 	RULE()
-		.AT().HOSTNAME('aliexpress.com').PATHNAME_PREFIX('/item/')
+		.AT().HOSTNAME('aliexpress.com').PATHNAME(PREFIX('/item/'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('algo_exp_id', 'curPageLogUid', 'pdp_npi')
 ];

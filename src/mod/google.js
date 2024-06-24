@@ -1,3 +1,4 @@
+import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
@@ -28,7 +29,7 @@ export default [
 		.APPLY().GET_PROPERTY('continue').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
-		.AT().DOMAIN('google.com').PATHNAME_PREFIX('/amp/s/')
+		.AT().DOMAIN('google.com').PATHNAME(PREFIX('/amp/s/'))
 		.FROM().PATHNAME()
 		.APPLY().SUBSTRING(7).TO_URL()
 		.DO().REDIRECT(),
