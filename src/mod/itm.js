@@ -1,8 +1,9 @@
+import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE(/^itm_.*/)
+		.DO().REMOVE(PREFIX('itm_'))
 ];
