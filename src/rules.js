@@ -1,4 +1,4 @@
-import { Prefix } from './literals.js';
+import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
 import { areStrictlyEqual } from '/util.js';
 
 const literalize = (...es) => {
@@ -8,8 +8,10 @@ const literalize = (...es) => {
 			literals.push(JSON.stringify(e));
 		} else if ( e instanceof RegExp ) {
 			literals.push(e);
-		} else if ( e instanceof Prefix ) {
-			literals.push(`^${JSON.stringify(e.toString())}`);
+		} else if ( e instanceof AllLiteral ) {
+			literals.push(Array.from(e.literals).map(e => literalize(e)).join(' & '));
+		} else if ( e instanceof PrefixLiteral ) {
+			literals.push(`^${JSON.stringify(e.prefix.toString())}`);
 		} else if ( typeof(e) === 'number' || e instanceof Number ) {
 			literals.push(e);
 		} else {
@@ -23,13 +25,14 @@ const createMatches = (...keys) => {
 	let strings = null;
 	let prefixes = null;
 	let regExps = null;
+	let alls = null;
 	for ( const key of keys ) {
 		if ( typeof(key) === 'string' || key instanceof String ) {
 			if ( strings === null ) {
 				strings = new Set();
 			}
 			strings.add(key);
-		} else if ( key instanceof Prefix ) {
+		} else if ( key instanceof PrefixLiteral ) {
 			if ( prefixes === null ) {
 				prefixes = [];
 			}
@@ -39,6 +42,11 @@ const createMatches = (...keys) => {
 				regExps = [];
 			}
 			regExps.push(key);
+		} else if ( key instanceof AllLiteral ) {
+			if ( alls === null ) {
+				alls = [];
+			}
+			alls.push(key);
 		} else {
 			throw new Error(`cannot create matcher for ${key}`);
 		}
@@ -57,6 +65,13 @@ const createMatches = (...keys) => {
 		if ( regExps !== null ) {
 			for ( const regExp of regExps ) {
 				if  ( regExp.test(key) ) {
+					return true;
+				}
+			}
+		}
+		if ( alls !== null ) {
+			for ( const all of alls ) {
+				if ( all.matches(key) ) {
 					return true;
 				}
 			}
@@ -515,6 +530,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -528,6 +544,7 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -541,8 +558,56 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
+		FROM: () => FROM(ctx)
+	};
+};
+
+const __AT__QUERY_ENTRIES = (ctx, ...literals) => {
+	ctx.source += ` QUERY ENTRIES ${literalize(...literals)}`;
+	const literalGroups = groupLiterals(...literals);
+	const stringLiterals = literalGroups.get(String);
+	const prefixLiterals = literalGroups.get(PrefixLiteral);
+	const regExpLiterals = literalGroups.get(RegExp);
+	const allLiterals = literalGroups.get(AllLiteral);
+// TODO does this override createMatches semantically?
+	ctx.__at_predicates.push((url) => {
+		if ( url.searchParams.size === 0 ) {
+			return false;
+		}
+		const queryEntries = new Set(url.searchParams.keys());
+		if ( stringLiterals !== null && stringLiterals.isSubsetOf(queryEntries) ) {
+			return true;
+		}
+		if ( prefixLiterals !== null ) {
+			for ( const prefixLiteral of prefixLiterals ) {
+				if ( prefixLiteral.matches(...queryEntries) ) {
+					return true;
+				}
+			}
+		}
+		if ( regExpLiterals !== null ) {
+			for ( const regExpLiteral of regExpLiterals ) {
+				for ( const queryEntry of queryEntries ) {
+					if ( regExpLiteral.test(queryEntry) ) {
+						return true;
+					}
+				}
+			}
+		}
+		if ( allLiterals !== null ) {
+			for ( const allLiteral of allLiterals ) {
+				if ( allLiteral.matches(...queryEntries) ) {
+					return true;
+				}
+			}
+		}
+		return false;
+	});
+	return {
+		AT: () => AT(ctx),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -588,6 +653,7 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	ctx.__at_predicates.push((url) => p(url.pathname));
 	return {
 		AT: () => AT(ctx),
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
@@ -624,6 +690,7 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
 		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys)
 	};
