@@ -9,7 +9,7 @@ const literalize = (...es) => {
 		} else if ( e instanceof RegExp ) {
 			literals.push(e);
 		} else if ( e instanceof Prefix ) {
-			literals.push(`PREFIX(${JSON.stringify(e.toString())})`);
+			literals.push(`^${JSON.stringify(e.toString())}`);
 		} else if ( typeof(e) === 'number' || e instanceof Number ) {
 			literals.push(e);
 		} else {
