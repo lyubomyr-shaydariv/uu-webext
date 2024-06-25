@@ -6,7 +6,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('src'),
 	RULE()
-		.AT().DOMAIN('getpocket.com').QUERY_ENTRIES_HAVING_ALL_OF('url')
+		.AT().DOMAIN('getpocket.com').QUERY_ENTRIES('url')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('url').TO_URL()
 		.DO().REDIRECT()

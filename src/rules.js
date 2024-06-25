@@ -531,8 +531,6 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -545,8 +543,6 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -559,8 +555,6 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -612,41 +606,6 @@ const __AT__QUERY_ENTRIES = (ctx, ...literals) => {
 	};
 };
 
-// TODO support regexp and prefix keys
-const __AT__QUERY_ENTRIES_HAVING_ALL_OF = (ctx, ...keys) => {
-	ctx.source += ` QUERY ENTRIES HAVING ALL OF ${literalize(...keys)}`;
-	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
-	ctx.__at_predicates.push((url) => {
-		const queryEntryKeys = new Set(url.searchParams.keys());
-		if ( queryEntryKeys.size === 0 ) {
-			return false;
-		}
-		return keySet.isSubsetOf(queryEntryKeys);
-	});
-	return {
-		AT: () => AT(ctx),
-		FROM: () => FROM(ctx)
-	};
-};
-
-// TODO support regexp and prefix keys
-const __AT__QUERY_ENTRIES_HAVING_ANY_OF = (ctx, ...keys) => {
-	ctx.source += ` QUERY ENTRIES HAVING ANY OF ${literalize(...keys)}`;
-	const keySet = new Set(keys); // TODO specialize 0 and 1 keys
-	ctx.__at_predicates.push((url) => {
-		for ( const queryEntryKey of url.searchParams.keys() ) {
-			if ( keySet.has(queryEntryKey) ) {
-				return true;
-			}
-		}
-		return false;
-	});
-	return {
-		AT: () => AT(ctx),
-		FROM: () => FROM(ctx)
-	};
-};
-
 const __AT__PATHNAME = (ctx, ...pathnames) => {
 	ctx.source += ` PATHNAME ${literalize(...pathnames)}`;
 	const p = createMatches(...pathnames);
@@ -654,8 +613,6 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	return {
 		AT: () => AT(ctx),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -690,9 +647,7 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ALL_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ALL_OF(ctx, ...keys),
-		QUERY_ENTRIES_HAVING_ANY_OF: (...keys) => __AT__QUERY_ENTRIES_HAVING_ANY_OF(ctx, ...keys)
+		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys)
 	};
 };
 

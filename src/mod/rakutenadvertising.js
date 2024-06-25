@@ -1,3 +1,4 @@
+import { ALL } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
@@ -7,7 +8,7 @@ export default [
 		.APPLY().GET_PROPERTY('murl').TO_URL()
 		.DO().REDIRECT(),
 	RULE()
-		.AT().QUERY_ENTRIES_HAVING_ALL_OF('amtlist', 'cur', 'mid', 'ord', 'qlist', 'skulist')
+		.AT().QUERY_ENTRIES(ALL('amtlist', 'cur', 'mid', 'ord', 'qlist', 'skulist'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('amtlist', 'cur', 'mid', 'ord', 'qlist', 'skulist', 'namelist')
 ];

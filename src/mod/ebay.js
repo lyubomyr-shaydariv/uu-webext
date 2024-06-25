@@ -1,9 +1,9 @@
-import { PREFIX } from '/literals.js';
+import { ALL, PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
 	RULE()
-		.AT().QUERY_ENTRIES_HAVING_ALL_OF('campid', 'customid', 'mkcid', 'mkevt', 'mkrid', 'toolid')
+		.AT().QUERY_ENTRIES(ALL('campid', 'customid', 'mkcid', 'mkevt', 'mkrid', 'toolid'))
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('campid', 'customid', 'mkcid', 'mkevt', 'mkrid', 'toolid'),
 	RULE()
