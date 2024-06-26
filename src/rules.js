@@ -267,7 +267,7 @@ const __DO__RETAIN = (ctx, ...keys) => {
 };
 
 const DO = (ctx) => {
-	ctx.source += ' DO';
+	ctx.source += '\nDO';
 	return {
 		ASSIGN: (...values) => __DO__ASSIGN(ctx, ...values),
 		REDIRECT: () => __DO__REDIRECT(ctx),
@@ -400,7 +400,7 @@ const __F__TO_URL = (ctx) => {
 
 const APPLY = (ctx) => {
 	if ( ctx.__apply_isInitialized !== true ) {
-		ctx.source += ' APPLY';
+		ctx.source += '\nAPPLY';
 		ctx.__apply_functions = [];
 		ctx.__apply_isInitialized = true;
 	}
@@ -502,7 +502,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 };
 
 const FROM = (ctx) => {
-	ctx.source += ' FROM';
+	ctx.source += '\nFROM';
 	return {
 		PATHNAME: () => __FROM__PATHNAME(ctx),
 		QUERY: () => __FROM__QUERY(ctx),
