@@ -42,6 +42,66 @@ const unsafeHtmlCharToSafeHtmlChar = {
 const sanitizeHtml = (html) => html.replace(unsafeHtmlCharactersRegExp, (match, unsafeChar) => unsafeHtmlCharToSafeHtmlChar[unsafeChar]);
 
 //--------------------------------------------------------------------------------------------------
+// collections
+//--------------------------------------------------------------------------------------------------
+
+const makeMultimap = (getKey, ...objects) => {
+	const map = new Map();
+	for ( const object of objects ) {
+		const key = getKey(object);
+		let array = map.get(key);
+		if ( array === undefined ) {
+			array = [];
+			map.set(key, array);
+		}
+		array.push(object);
+	}
+	return map;
+};
+
+const makeSet = (getKey, ...objects) => {
+	switch ( objects.length ) {
+		case 0: {
+			return new Set();
+		}
+		case 1: {
+			return new Set([objects[0]]);
+		}
+		default: {
+			const map = new Map();
+			for ( const object of objects ) {
+				const key = getKey(object);
+				if ( map.has(key) ) {
+					continue;
+				}
+				map.set(key, object);
+			}
+			return new Set(map.values());
+		}
+	}
+};
+
+//--------------------------------------------------------------------------------------------------
+// preconditions
+//--------------------------------------------------------------------------------------------------
+
+const requireObjects = (testCondition, getMessage, ...objects) => {
+	for ( const object of objects ) {
+		if ( !testCondition(object) ) {
+			throw new Error(getMessage(object));
+		}
+	}
+};
+
+const requireStrings = (...strings) => {
+	requireObjects((e) => typeof(e) === 'string' || e instanceof String, (e) => `expected a string but was \`${e}\` of type \`${e?.constructor.name}\``, ...strings);
+};
+
+const requireType = (type, ...regExps) => {
+	requireObjects((e) => e instanceof type, (e) => `expected an object of type \`${type.name}\` but was \`${e}\` of type \`${e?.constructor.name}\``, ...regExps);
+};
+
+//--------------------------------------------------------------------------------------------------
 // stupid simple template engine
 //--------------------------------------------------------------------------------------------------
 
@@ -63,5 +123,10 @@ const createTemplate = (templateText) => {
 
 export {
 	areStrictlyEqual,
-	createTemplate
+	createTemplate,
+	makeMultimap,
+	makeSet,
+	requireObjects,
+	requireStrings,
+	requireType
 };

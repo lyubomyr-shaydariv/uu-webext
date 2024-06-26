@@ -3,15 +3,10 @@ grammar dsl;
 //--------------------------------------------------------------------------------------------------
 // literals
 //--------------------------------------------------------------------------------------------------
-/* TODO */
 abstractLiteral: abstractAtomLiteral | abstractSpecificLiteral;
-/* TODO */
 abstractAtomLiteral: subsetLiteral | abstractPrimitiveLiteral;
-/* TODO */
 abstractPrimitiveLiteral: stringLiteral | prefixLiteral | suffixLiteral | prefixSplitLiteral | suffixSplitLiteral | regExpLiteral;
-/* TODO */
 stringLiteral: STRING_LITERAL;
-/* TODO */
 prefixLiteral: PREFIX_LITERAL;
 /* TODO */
 suffixLiteral: SUFFIX_LITERAL;
@@ -19,9 +14,7 @@ suffixLiteral: SUFFIX_LITERAL;
 prefixSplitLiteral: PREFIX_SPLIT_LITERAL;
 /* TODO */
 suffixSplitLiteral: SUFFIX_SPLIT_LITERAL;
-/* TODO */
 regExpLiteral: REG_EXP_LITERAL;
-/* TODO */
 subsetLiteral: abstractPrimitiveLiteral ('&' abstractPrimitiveLiteral)*;
 /* TODO */
 abstractSpecificLiteral: domainLiteral | tldLiteral;
@@ -92,7 +85,6 @@ do_actionRedirect: 'REDIRECT';
 // strings
 //--------------------------------------------------------------------------------------------------
 // https://raw.githubusercontent.com/antlr/grammars-v4/master/javascript/ecmascript/ECMAScript.g4
-/* TODO */
 STRING_LITERAL: '"' DOUBLE_STRING_CHARACTER* '"' | '\'' SINGLE_STRING_CHARACTER* '\'';
 fragment SINGLE_STRING_CHARACTER: ~['\\\r\n] | '\\' ESCAPE_SEQUENCE | LINE_CONTINUATION;
 fragment DOUBLE_STRING_CHARACTER: ~["\\\r\n] | '\\' ESCAPE_SEQUENCE | LINE_CONTINUATION;
@@ -110,7 +102,6 @@ LINE_TERMINATOR: [\r\n\u2028\u2029] -> channel(HIDDEN);
 //--------------------------------------------------------------------------------------------------
 // prefixes
 //--------------------------------------------------------------------------------------------------
-/* TODO */
 PREFIX_LITERAL: '^' STRING_LITERAL;
 
 //--------------------------------------------------------------------------------------------------
@@ -135,7 +126,6 @@ SUFFIX_SPLIT_LITERAL: STRING_LITERAL '$' STRING_LITERAL;
 // regexps
 //--------------------------------------------------------------------------------------------------
 // https://raw.githubusercontent.com/antlr/grammars-v4/master/javascript/ecmascript/ECMAScript.g4
-/* TODO */
 REG_EXP_LITERAL: '/' REG_EXP_BODY '/' REG_EXP_FLAGS;
 fragment REG_EXP_BODY: REG_EXP_FIRST_CHAR REG_EXP_CHAR*;
 fragment REG_EXP_CHAR: ~[\r\n\u2028\u2029\\/[] | REG_EXP_BACKSLASH_SEQUENCE | REG_EXP_CLASS;

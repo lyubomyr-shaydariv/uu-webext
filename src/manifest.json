@@ -2,7 +2,8 @@
 	"author": "Lyubomyr Shaydariv",
 	"background": {
 		"scripts": [
-			"literals.js",
+			"dsl/abstract.js",
+			"dsl/literals.js",
 			"main.js",
 			"mod/_.js",
 			"mod/actionmap.js",

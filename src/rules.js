@@ -1,83 +1,35 @@
-import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
+import { AbstractLiteral, PrefixLiteral, RegExpLiteral, StringLiteral, SubsetLiteral, coerceAndOptimizeLiterals, compileFilter, compilePredicate, parseRawLiterals } from './dsl/literals.js';
 import { areStrictlyEqual } from '/util.js';
 
-const literalize = (...es) => {
-	const literals = new Array();
-	for ( const e of es ) {
-		if ( typeof(e) === 'string' || e instanceof String ) {
-			literals.push(JSON.stringify(e));
-		} else if ( e instanceof RegExp ) {
-			literals.push(e);
-		} else if ( e instanceof AllLiteral ) {
-			literals.push(Array.from(e.literals).map(e => literalize(e)).join(' & '));
-		} else if ( e instanceof PrefixLiteral ) {
-			literals.push(`^${JSON.stringify(e.prefix.toString())}`);
-		} else if ( typeof(e) === 'number' || e instanceof Number ) {
-			literals.push(e);
+const literalize = (...literals) => {
+	const rawLiterals = new Array();
+	for ( const literal of literals ) {
+		if ( typeof(literal) === 'string' || literal instanceof String ) { // TODO remove
+			rawLiterals.push(JSON.stringify(literal));
+		} else if ( literal instanceof RegExp ) { // TODO remove
+			rawLiterals.push(literal);
+		} else if ( literal instanceof AbstractLiteral ) {
+			rawLiterals.push(literal.toExpression());
+		} else if ( typeof(literal) === 'number' || literal instanceof Number ) { // TODO remove
+			rawLiterals.push(literal);
 		} else {
-			throw new Error(`cannot literalize ${e}`);
+			throw new Error(`cannot literalize ${literal}`);
 		}
 	}
-	return literals.join(' ');
+	return rawLiterals.join(' ');
 };
 
-const createMatches = (...keys) => {
-	let strings = null;
-	let prefixes = null;
-	let regExps = null;
-	let alls = null;
-	for ( const key of keys ) {
-		if ( typeof(key) === 'string' || key instanceof String ) {
-			if ( strings === null ) {
-				strings = new Set();
-			}
-			strings.add(key);
-		} else if ( key instanceof PrefixLiteral ) {
-			if ( prefixes === null ) {
-				prefixes = [];
-			}
-			prefixes.push(key);
-		} else if ( key instanceof RegExp ) {
-			if ( regExps === null ) {
-				regExps = [];
-			}
-			regExps.push(key);
-		} else if ( key instanceof AllLiteral ) {
-			if ( alls === null ) {
-				alls = [];
-			}
-			alls.push(key);
-		} else {
-			throw new Error(`cannot create matcher for ${key}`);
-		}
-	}
-	return (key) => {
-		if ( strings !== null && strings.has(key) ) {
-			return true;
-		}
-		if ( prefixes !== null ) {
-			for ( const prefix of prefixes ) {
-				if ( prefix.matches(key) ) {
-					return true;
-				}
-			}
-		}
-		if ( regExps !== null ) {
-			for ( const regExp of regExps ) {
-				if  ( regExp.test(key) ) {
-					return true;
-				}
-			}
-		}
-		if ( alls !== null ) {
-			for ( const all of alls ) {
-				if ( all.matches(key) ) {
-					return true;
-				}
-			}
-		}
-		return false;
-	};
+const ____SLOW____createMatches = (...rawLiterals) => {
+	const groups = coerceAndOptimizeLiterals(...rawLiterals);
+	const stringLiteral = groups.get(StringLiteral);
+	const prefixLiteral = groups.get(PrefixLiteral);
+	const regExpLiteral = groups.get(RegExpLiteral);
+	const subsetLiteral = groups.get(SubsetLiteral);
+	return (value) =>
+		stringLiteral !== undefined && stringLiteral.matches(value)
+			|| prefixLiteral !== undefined && prefixLiteral.matches(value)
+			|| regExpLiteral !== undefined && regExpLiteral.matches(value)
+			|| subsetLiteral !== undefined && subsetLiteral.matches(value);
 };
 
 const createUrlMatchesByTrie = (getSegmentsFromElement, getSegmentsFromUrl, ...elements) => {
@@ -168,27 +120,16 @@ const __DO__REDIRECT = (ctx) => {
 };
 
 // TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
-const __DO__REMOVE = (ctx, ...keys) => {
-	ctx.source += ` REMOVE ${literalize(...keys)}`;
-	const matches = createMatches(...keys);
+const __DO__REMOVE = (ctx, ...literals) => {
+	ctx.source += ` REMOVE ${literalize(...literals)}`;
+	const filter = compileFilter(...literals);
 	return Object.defineProperties(
 		(url) => {
 			if ( !ctx.at(url) ) {
 				return false;
 			}
 			const keysCtx = ctx.createKeysContext(url);
-			let keysToRemove = null;
-			for ( const entryKey of keysCtx.getEntryKeys() ) {
-				if ( matches(entryKey) ) {
-					if ( keysToRemove === null ) {
-						keysToRemove = [];
-					}
-					keysToRemove.push(entryKey);
-				}
-			}
-			if ( keysToRemove === null ) {
-				return false;
-			}
+			const keysToRemove = filter(...keysCtx.getEntryKeys());
 			keysCtx.removeKeys(...keysToRemove);
 			return true;
 		},
@@ -233,7 +174,7 @@ const __DO__REMOVE_ALL = (ctx) => {
 // TODO simplify the Object.defineProperties stuff and make it cover all rule clauses
 const __DO__RETAIN = (ctx, ...keys) => {
 	ctx.source += ` RETAIN ${literalize(...keys)}`;
-	const matches = createMatches(...keys);
+	const matches = ____SLOW____createMatches(...keys);
 	return Object.defineProperties(
 		(url) => {
 			if ( !ctx.at(url) ) {
@@ -271,7 +212,7 @@ const DO = (ctx) => {
 	return {
 		ASSIGN: (...values) => __DO__ASSIGN(ctx, ...values),
 		REDIRECT: () => __DO__REDIRECT(ctx),
-		REMOVE: (...keys) => __DO__REMOVE(ctx, ...keys),
+		REMOVE: (...rawLiterals) => __DO__REMOVE(ctx, ...parseRawLiterals(...rawLiterals)),
 		REMOVE_ALL: () => __DO__REMOVE_ALL(ctx),
 		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys),
 	};
@@ -493,6 +434,9 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 			return {
 				getEntryKeys: () => searchParams.keys(),
 				removeKeys: (...keys) => {
+					if ( keys.length === 0 ) {
+						return;
+					}
 					for ( const key of keys ) {
 						searchParams.delete(key);
 					}
@@ -544,7 +488,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		QUERY_ENTRIES: (...rawLiterals) => __AT__QUERY_ENTRIES(ctx, ...parseRawLiterals(...rawLiterals)),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -556,64 +500,27 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		QUERY_ENTRIES: (...rawLiterals) => __AT__QUERY_ENTRIES(ctx, ...parseRawLiterals(...rawLiterals)),
 		FROM: () => FROM(ctx)
 	};
 };
 
 const __AT__HOSTNAME = (ctx, ...hostnames) => {
 	ctx.source += ` HOSTNAME ${literalize(...hostnames)}`;
-	const p = createMatches(...hostnames);
+	const p = ____SLOW____createMatches(...hostnames);
 	ctx.__at_predicates.push((url) => p(url.hostname));
 	return {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		QUERY_ENTRIES: (...rawLiterals) => __AT__QUERY_ENTRIES(ctx, ...parseRawLiterals(...rawLiterals)),
 		FROM: () => FROM(ctx)
 	};
 };
 
 const __AT__QUERY_ENTRIES = (ctx, ...literals) => {
 	ctx.source += ` QUERY ENTRIES ${literalize(...literals)}`;
-	const literalGroups = groupLiterals(...literals);
-	const stringLiterals = literalGroups.get(String);
-	const prefixLiterals = literalGroups.get(PrefixLiteral);
-	const regExpLiterals = literalGroups.get(RegExp);
-	const allLiterals = literalGroups.get(AllLiteral);
-// TODO does this override createMatches semantically?
-	ctx.__at_predicates.push((url) => {
-		if ( url.searchParams.size === 0 ) {
-			return false;
-		}
-		const queryEntries = new Set(url.searchParams.keys());
-		if ( stringLiterals !== null && stringLiterals.isSubsetOf(queryEntries) ) {
-			return true;
-		}
-		if ( prefixLiterals !== null ) {
-			for ( const prefixLiteral of prefixLiterals ) {
-				if ( prefixLiteral.matches(...queryEntries) ) {
-					return true;
-				}
-			}
-		}
-		if ( regExpLiterals !== null ) {
-			for ( const regExpLiteral of regExpLiterals ) {
-				for ( const queryEntry of queryEntries ) {
-					if ( regExpLiteral.test(queryEntry) ) {
-						return true;
-					}
-				}
-			}
-		}
-		if ( allLiterals !== null ) {
-			for ( const allLiteral of allLiterals ) {
-				if ( allLiteral.matches(...queryEntries) ) {
-					return true;
-				}
-			}
-		}
-		return false;
-	});
+	const predicate = compilePredicate(...literals);
+	ctx.__at_predicates.push((url) => url.searchParams.size !== 0 ? predicate(...url.searchParams.keys()) : false);
 	return {
 		AT: () => AT(ctx),
 		FROM: () => FROM(ctx)
@@ -622,11 +529,11 @@ const __AT__QUERY_ENTRIES = (ctx, ...literals) => {
 
 const __AT__PATHNAME = (ctx, ...pathnames) => {
 	ctx.source += ` PATHNAME ${literalize(...pathnames)}`;
-	const p = createMatches(...pathnames);
+	const p = ____SLOW____createMatches(...pathnames);
 	ctx.__at_predicates.push((url) => p(url.pathname));
 	return {
 		AT: () => AT(ctx),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		QUERY_ENTRIES: (...parseLiterals) => __AT__QUERY_ENTRIES(ctx, ...parseRawLiterals(...parseLiterals)),
 		FROM: () => FROM(ctx)
 	};
 };
@@ -661,7 +568,7 @@ outer:
 		DOMAIN: (...domains) => __AT__DOMAIN(ctx, ...domains),
 		HOSTNAME: (...hostnames) => __AT__HOSTNAME(ctx, ...hostnames),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
-		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys)
+		QUERY_ENTRIES: (...rawLiterals) => __AT__QUERY_ENTRIES(ctx, ...parseRawLiterals(...rawLiterals))
 	};
 };
 

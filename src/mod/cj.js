@@ -1,4 +1,4 @@
-import { ALL } from '/literals.js';
+import { ALL } from '/dsl/literals.js';
 import { RULE } from '/rules.js';
 
 export default [

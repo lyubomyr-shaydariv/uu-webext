@@ -1,4 +1,4 @@
-import { PREFIX } from '/literals.js';
+import { PREFIX } from '/dsl/literals.js';
 import { RULE } from '/rules.js';
 
 export default [
