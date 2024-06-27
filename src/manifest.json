@@ -3,8 +3,7 @@
 	"background": {
 		"scripts": [
 			"literals.js",
-			"rules.js",
-			"registry.js",
+			"main.js",
 			"mod/_.js",
 			"mod/actionmap.js",
 			"mod/actionnetwork.js",
@@ -66,8 +65,8 @@
 			"mod/flipkart.js",
 			"mod/gamespot.js",
 			"mod/geniuslink.js",
-			"mod/github.js",
 			"mod/giphy.js",
+			"mod/github.js",
 			"mod/gmx.js",
 			"mod/godatafeed.js",
 			"mod/gog.js",
@@ -179,7 +178,9 @@
 			"mod/zanox.js",
 			"mod/zillow.js",
 			"mod/zoopla.js",
-			"main.js"
+			"registry.js",
+			"rules.js",
+			"util.js"
 		],
 		"type": "module"
 	},
