@@ -283,25 +283,45 @@ const DO = (ctx) => {
 
 const __F__EXECUTE_REGEXP = (ctx, regExp) => {
 	ctx.source += ` EXECUTE REGEXP ${literalize(regExp)}`;
-	ctx.__apply_functions.push((arg) => regExp.exec(arg));
+	ctx.__apply_functions.push((arg) => {
+		if ( arg === undefined || arg === null ) {
+			return arg;
+		}
+		return regExp.exec(arg);
+	});
 	return APPLY(ctx);
 };
 
 const __F__FROM_BASE64 = (ctx) => {
 	ctx.source += ' FROM BASE64';
-	ctx.__apply_functions.push((arg) => atob(arg));
+	ctx.__apply_functions.push((arg) => {
+		if ( arg === undefined || arg === null ) {
+			return arg;
+		}
+		return atob(arg);
+	});
 	return APPLY(ctx);
 };
 
 const __F__FROM_JSON = (ctx) => {
 	ctx.source += ' FROM JSON';
-	ctx.__apply_functions.push((arg) => JSON.parse(arg));
+	ctx.__apply_functions.push((arg) => {
+		if ( arg === undefined || arg === null ) {
+			return arg;
+		}
+		return JSON.parse(arg);
+	});
 	return APPLY(ctx);
 };
 
 const __F__FROM_URI_COMPONENT = (ctx) => {
 	ctx.source += ' FROM URI COMPONENT';
-	ctx.__apply_functions.push((arg) => decodeURIComponent(arg));
+	ctx.__apply_functions.push((arg) => {
+		if ( arg === undefined || arg === null ) {
+			return arg;
+		}
+		return decodeURIComponent(arg);
+	});
 	return APPLY(ctx);
 };
 
@@ -314,11 +334,8 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 		case 1: {
 			const key = keys[0];
 			ctx.__apply_functions.push((arg) => {
-				if ( arg === null ) {
-					return null;
-				}
-				if ( arg === undefined ) {
-					return undefined;
+				if ( arg === undefined || arg === null ) {
+					return arg;
 				}
 				if ( typeof(arg.get) === 'function' ) {
 					return arg.get(key);
@@ -329,11 +346,8 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 		}
 		default: {
 			ctx.__apply_functions.push((arg) => {
-				if ( arg === null ) {
-					return null;
-				}
-				if ( arg === undefined ) {
-					return undefined;
+				if ( arg === undefined || arg === null ) {
+					return arg;
 				}
 				for ( const key of keys ) {
 					let value;
@@ -358,8 +372,8 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 const __F__REPLACE_STRING = (ctx, pattern, replacement) => {
 	ctx.source += ` REPLACE STRING ${literalize(pattern)} ${literalize(replacement)}`;
 	ctx.__apply_functions.push((arg) => {
-		if ( arg === null ) {
-			return null;
+		if ( arg === undefined || arg === null ) {
+			return arg;
 		}
 		return arg.replace(pattern, replacement);
 	});
@@ -370,16 +384,16 @@ const __F__SUBSTRING = (ctx, from, to) => {
 	if ( to === undefined ) {
 		ctx.source += ` SUBSTRING ${literalize(from)}`;
 		ctx.__apply_functions.push((arg) => {
-			if ( arg === null) {
-				return null;
+			if ( arg === undefined || arg === null ) {
+				return arg;
 			}
 			return arg.substring(from);
 		});
 	} else {
 		ctx.source += ` SUBSTRING ${literalize(from)} ${literalize(to)}`;
 		ctx.__apply_functions.push((arg) => {
-			if ( arg === null) {
-				return null;
+			if ( arg === undefined || arg === null ) {
+				return arg;
 			}
 			return arg.substring(from, to);
 		});
@@ -390,8 +404,8 @@ const __F__SUBSTRING = (ctx, from, to) => {
 const __F__TO_URL = (ctx) => {
 	ctx.source += ' TO URL';
 	ctx.__apply_functions.push((arg) => {
-		if ( arg === null ) {
-			return null;
+		if ( arg === undefined || arg === null ) {
+			return arg;
 		}
 		return new URL(arg);
 	});
