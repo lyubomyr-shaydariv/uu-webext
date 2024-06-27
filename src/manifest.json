@@ -4,6 +4,7 @@
 		"scripts": [
 			"dsl/abstract.js",
 			"dsl/literals.js",
+			"dsl/module.js",
 			"main.js",
 			"mod/_.js",
 			"mod/actionmap.js",
