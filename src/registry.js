@@ -21,7 +21,7 @@ const rules = await Promise.all(browser.runtime
 			}
 			console.info(`Registering module ${module} declaring ${moduleRules.length} rule(s)`);
 			for ( const moduleRule of moduleRules ) {
-				console.debug(`\tRule: ${moduleRule.name}, ${moduleRule.source}`);
+				console.debug(`Rule: ${moduleRule.name}\n${moduleRule.source}`);
 			}
 			return moduleRules;
 		})
