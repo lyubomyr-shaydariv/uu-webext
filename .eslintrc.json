@@ -36,7 +36,7 @@
 		// TODO Uncomment "indent": ["error", "tab"],
 		// TODO Uncomment "init-declarations": ["error"],
 		"linebreak-style": ["error", "unix"	],
-		// TODO Uncomment "logical-assignment-operators": ["error"],
+		"logical-assignment-operators": ["error"],
 		// TODO Uncomment "max-classes-per-file": ["error"],
 		"max-depth": ["error"],
 		// TODO Uncomment "max-lines-per-function": ["error"],

@@ -484,8 +484,8 @@ const DEFAULT_PAIR_DELIMITER = '&';
 const DEFAULT_ENTRY_DELIMITER = '=';
 
 const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
-	pairDelimiter = pairDelimiter || DEFAULT_PAIR_DELIMITER;
-	entryDelimiter = entryDelimiter || DEFAULT_ENTRY_DELIMITER;
+	pairDelimiter ||= DEFAULT_PAIR_DELIMITER;
+	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER;
 	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {
 		ctx.source += ' QUERY ENTRIES';
 		ctx.createKeysContext = (url) => {
@@ -671,7 +671,7 @@ outer:
 
 // TODO device natural ID from the rule, or use surrogate UUID, whatsoever?
 const RULE = (name) => {
-	name = name || new Error().stack.split('\n')[1];
+	name ||= new Error().stack.split('\n')[1];
 	const ctx = {
 		name,
 		source: ''
