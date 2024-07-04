@@ -2,7 +2,7 @@ import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
 import { areStrictlyEqual } from '/util.js';
 
 const literalize = (...es) => {
-	const literals = new Array();
+	const literals = [];
 	for ( const e of es ) {
 		if ( typeof(e) === 'string' || e instanceof String ) {
 			literals.push(JSON.stringify(e));

@@ -46,7 +46,7 @@
 		// TODO Uncomment "max-statements": ["error"],
 		// TODO Uncomment "new-cap": ["error"],
 		"no-alert": ["error"],
-		// TODO Uncomment "no-array-constructor": ["error"],
+		"no-array-constructor": ["error"],
 		"no-async-promise-executor": ["error"],
 		"no-await-in-loop": ["error"],
 		"no-bitwise": ["error"],
