@@ -332,7 +332,7 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 			// do nothing
 			break;
 		case 1: {
-			const key = keys[0];
+			const [key] = keys;
 			ctx.__apply_functions.push((arg) => {
 				if ( arg === undefined || arg === null ) {
 					return arg;
@@ -489,7 +489,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {
 		ctx.source += ' QUERY ENTRIES';
 		ctx.createKeysContext = (url) => {
-			const searchParams = url.searchParams;
+			const {searchParams} = url;
 			return {
 				getEntryKeys: () => searchParams.keys(),
 				removeKeys: (...keys) => {

@@ -179,7 +179,7 @@
 		"operator-assignment": ["error"],
 		"prefer-arrow-callback": ["error"],
 		"prefer-const": ["error"],
-		// TODO Uncomment "prefer-destructuring": ["error"],
+		"prefer-destructuring": ["error"],
 		"prefer-exponentiation-operator": ["error"],
 		// TODO Uncomment "prefer-named-capture-group": ["error"],
 		"prefer-numeric-literals": ["error"],
