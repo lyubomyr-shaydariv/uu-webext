@@ -33,17 +33,18 @@ const redirect = (url) => {
 		console.log(`Redirected from ${url.href} to ${redirectUrl.href}`);
 		return redirectUrl;
 	}
+	return undefined;
 };
 
 const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
 browser.webRequest.onBeforeRequest.addListener((e) => {
 	if ( e.initiator && e.initiator.startsWith(EXTENSION_URL_PREFIX) ) {
-		return;
+		return undefined;
 	}
 	const redirectUrl = redirect(new URL(e.url));
 	if ( !redirectUrl ) {
-		return;
+		return undefined;
 	}
 	return {
 		redirectUrl: redirectUrl.toString()

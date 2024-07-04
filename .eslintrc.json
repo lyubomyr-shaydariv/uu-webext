@@ -17,7 +17,7 @@
 		// TODO Uncomment "capitalized-comments": ["error"],
 		// TODO Uncomment "class-methods-use-this": ["error"],
 		"complexity": ["error", {"max": 16}],
-		// TODO Uncomment "consistent-return": ["error"],
+		"consistent-return": ["error"],
 		"consistent-this": ["error"],
 		"constructor-super": ["error"],
 		"curly": ["error"],
