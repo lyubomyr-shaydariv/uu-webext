@@ -231,7 +231,7 @@ export default [
 			'array-bracket-newline': ['error', 'consistent'],
 			'array-bracket-spacing': ['error'],
 			'array-element-newline': ['error', 'consistent'],
-			// 'arrow-parens': ['error'],
+			'arrow-parens': ['error'],
 			'arrow-spacing': ['error'],
 			'block-spacing': ['error'],
 			'brace-style': ['error'],
