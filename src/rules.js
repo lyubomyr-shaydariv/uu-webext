@@ -64,7 +64,7 @@ const createMatches = (...keys) => {
 		}
 		if ( regExps !== null ) {
 			for ( const regExp of regExps ) {
-				if  ( regExp.test(key) ) {
+				if ( regExp.test(key) ) {
 					return true;
 				}
 			}
@@ -485,7 +485,7 @@ const __FROM__QUERY = (ctx) => {
 const DEFAULT_PAIR_DELIMITER = '&';
 const DEFAULT_ENTRY_DELIMITER = '=';
 
-const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
+const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter, entryDelimiter) => {
 	pairDelimiter ||= DEFAULT_PAIR_DELIMITER;
 	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER;
 	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {

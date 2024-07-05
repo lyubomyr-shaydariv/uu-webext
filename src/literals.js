@@ -64,7 +64,7 @@ class AllLiteral
 				}
 			}
 		}
-		if ( this.#regExps !==  null ) {
+		if ( this.#regExps !== null ) {
 nextRegExp:
 			for ( const regExp of this.#regExps ) {
 				for ( const value of values ) {

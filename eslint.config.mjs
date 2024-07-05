@@ -266,7 +266,7 @@ export default [
 			'no-floating-decimal': ['error'],
 			'no-mixed-operators': ['error'],
 			'no-mixed-spaces-and-tabs': ['error'],
-			// 'no-multi-spaces': ['error'],
+			'no-multi-spaces': ['error'],
 			'no-multiple-empty-lines': ['error'],
 			// 'no-tabs': ['error'],
 			'no-trailing-spaces': ['error'],
