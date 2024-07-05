@@ -38,23 +38,23 @@ export default [
 			// TODO Uncomment 'camelcase': ['error'],
 			// TODO Uncomment 'capitalized-comments': ['error'],
 			// TODO Uncomment 'class-methods-use-this': ['error'],
-			'complexity': ['error', { 'max': 16 }],
+			'complexity': ['error', { 'max': 16 }], // eslint-disable-line quote-props
 			'consistent-return': ['error'],
 			'consistent-this': ['error'],
 			'constructor-super': ['error'],
-			'curly': ['error'],
+			'curly': ['error'], // eslint-disable-line quote-props
 			'default-case': ['error'],
 			'default-case-last': ['error'],
 			'default-param-last': ['error'],
 			'dot-notation': ['error'],
-			'eqeqeq': ['error'],
+			'eqeqeq': ['error'], // eslint-disable-line quote-props
 			'for-direction': ['error'],
 			'getter-return': ['error'],
 			'grouped-accessor-pairs': ['error'],
 			'guard-for-in': ['error'],
 			'id-denylist': ['error'],
 			// TODO Uncomment 'indent': ['error', 'tab'],
-			'id-length': ['error', { 'min': 1 }],
+			'id-length': ['error', { 'min': 1 }], // eslint-disable-line quote-props
 			'id-match': ['error'],
 			'init-declarations': ['error'],
 			'logical-assignment-operators': ['error'],
@@ -124,7 +124,7 @@ export default [
 			'no-lonely-if': ['error'],
 			'no-loop-func': ['error'],
 			'no-loss-of-precision': ['error'],
-			'no-magic-numbers': ['error', {'ignore': [0, 1]}],
+			'no-magic-numbers': ['error', {'ignore': [0, 1]}], // eslint-disable-line quote-props
 			'no-misleading-character-class': ['error'],
 			// TODO Uncomment 'no-multi-assign': ['error'],
 			'no-multi-str': ['error'],
@@ -211,21 +211,21 @@ export default [
 			'prefer-rest-params': ['error'],
 			'prefer-spread': ['error'],
 			'prefer-template': ['error'],
-			'radix': ['error'],
+			'radix': ['error'], // eslint-disable-line quote-props
 			'require-atomic-updates': ['error'],
 			'require-await': ['error'],
 			// TODO Uncomment 'require-unicode-regexp': ['error'],
 			'require-yield': ['error'],
-			'sort-imports': ['error', { 'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'] }],
+			'sort-imports': ['error', { 'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'] }], // eslint-disable-line quote-props
 			'sort-keys': ['error'],
 			'sort-vars': ['error'],
-			'strict': ['error'],
+			'strict': ['error'], // eslint-disable-line quote-props
 			'symbol-description': ['error'],
 			'unicode-bom': ['error'],
 			'use-isnan': ['error'],
 			'valid-typeof': ['error'],
 			'vars-on-top': ['error'],
-			'yoda': ['error'],
+			'yoda': ['error'], // eslint-disable-line quote-props
 			// formatting rules
 			'@stylistic/js/function-call-spacing': ['error'], // eslint-disable-line sort-keys
 			// 'array-bracket-newline': ['error'],
@@ -279,10 +279,10 @@ export default [
 			'operator-linebreak': ['error'],
 			// 'padded-blocks': ['error'],
 			'padding-line-between-statements': ['error'],
-			// 'quote-props': ['error'],
-			'quotes': ['error', 'single'],
+			'quote-props': ['error', 'as-needed'],
+			'quotes': ['error', 'single'], // eslint-disable-line quote-props
 			'rest-spread-spacing': ['error'],
-			'semi': ['error', 'always'],
+			'semi': ['error', 'always'], // eslint-disable-line quote-props
 			'semi-spacing': ['error'],
 			'semi-style': ['error'],
 			'space-before-blocks': ['error'],
