@@ -3,3 +3,4 @@
 set -TEeuo pipefail
 
 npm install --save-dev eslint@9.6.0
+npm install --save-dev @stylistic/eslint-plugin-js

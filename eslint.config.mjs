@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import globals from 'globals';
 import js from '@eslint/js';
 import path from 'node:path';
+import stylisticJs from '@stylistic/eslint-plugin-js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,6 +26,9 @@ export default [
 				...globals.browser,
 			},
 			sourceType: 'module'
+		},
+		plugins: {
+			'@stylistic/js': stylisticJs
 		},
 		rules: {
 			'accessor-pairs': ['error'],
@@ -224,7 +228,78 @@ export default [
 			'use-isnan': ['error'],
 			'valid-typeof': ['error'],
 			'vars-on-top': ['error'],
-			'yoda': ['error']
+			'yoda': ['error'],
+			// formatting rules
+			// 'array-bracket-newline': ['error'],
+			// 'array-bracket-spacing': ['error'],
+			// 'array-element-newline': ['error'],
+			// 'arrow-parens': ['error'],
+			// 'arrow-spacing': ['error'],
+			// 'block-spacing': ['error'],
+			// 'brace-style': ['error'],
+			// 'comma-dangle': ['error'],
+			// 'comma-spacing': ['error'],
+			// 'comma-style': ['error'],
+			// 'computed-property-spacing': ['error'],
+			// 'dot-location': ['error'],
+			// 'eol-last': ['error'],
+			// 'func-call-spacing': ['error'],
+			// 'function-call-argument-newline': ['error'],
+			// '@stylistic/js/function-call-spacing': ['error'],
+			// 'function-paren-newline': ['error'],
+			// 'generator-star-spacing': ['error'],
+			// 'implicit-arrow-linebreak': ['error'],
+			// 'indent': ['error'],
+			// 'jsx-quotes': ['error'],
+			// 'key-spacing': ['error'],
+			// 'keyword-spacing': ['error'],
+			// 'line-comment-position': ['error'],
+			// 'linebreak-style': ['error'],
+			// 'lines-around-comment': ['error'],
+			// 'lines-between-class-members': ['error'],
+			// 'max-len': ['error'],
+			// 'max-statements-per-line': ['error'],
+			// 'multiline-comment-style': ['error'],
+			// 'multiline-ternary': ['error'],
+			// 'new-parens': ['error'],
+			// 'newline-per-chained-call': ['error'],
+			// 'no-confusing-arrow': ['error'],
+			// 'no-extra-parens': ['error'],
+			// 'no-extra-semi': ['error'],
+			// 'no-floating-decimal': ['error'],
+			// 'no-mixed-operators': ['error'],
+			// 'no-mixed-spaces-and-tabs': ['error'],
+			// 'no-multi-spaces': ['error'],
+			// 'no-multiple-empty-lines': ['error'],
+			// 'no-tabs': ['error'],
+			// 'no-trailing-spaces': ['error'],
+			// 'no-whitespace-before-property': ['error'],
+			// 'nonblock-statement-body-position': ['error'],
+			// 'object-curly-newline': ['error'],
+			// 'object-curly-spacing': ['error'],
+			// 'object-property-newline': ['error'],
+			// 'one-var-declaration-per-line': ['error'],
+			// 'operator-linebreak': ['error'],
+			// 'padded-blocks': ['error'],
+			// 'padding-line-between-statements': ['error'],
+			// 'quote-props': ['error'],
+			// 'quotes': ['error'],
+			// 'rest-spread-spacing': ['error'],
+			// 'semi': ['error'],
+			// 'semi-spacing': ['error'],
+			// 'semi-style': ['error'],
+			// 'space-before-blocks': ['error'],
+			// 'space-before-function-paren': ['error'],
+			// 'space-in-parens': ['error'],
+			// 'space-infix-ops': ['error'],
+			// 'space-unary-ops': ['error'],
+			// 'spaced-comment': ['error'],
+			// 'switch-colon-spacing': ['error'],
+			// 'template-curly-spacing': ['error'],
+			// 'template-tag-spacing': ['error'],
+			// 'wrap-iife': ['error'],
+			// 'wrap-regex': ['error'],
+			// 'yield-star-spacing': ['error']
 		}
 	}
 ];
