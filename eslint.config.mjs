@@ -121,7 +121,7 @@ export default [
 			'no-lonely-if': ['error'],
 			'no-loop-func': ['error'],
 			'no-loss-of-precision': ['error'],
-			// TODO Uncomment "no-magic-numbers": ["error"],
+			"no-magic-numbers": ["error", {'ignore': [0, 1]}],
 			'no-misleading-character-class': ['error'],
 			// TODO Uncomment "no-multi-assign": ["error"],
 			'no-multi-str': ['error'],

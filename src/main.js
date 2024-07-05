@@ -4,6 +4,8 @@ import * as registry from '/registry.js';
 
 const MAX_LOOPS = 10;
 const ALL_RULES = Array.from(registry.getRules());
+const MIN_SLOWDOWN_THRESHOLD = 5;
+const MAX_SLOWDOWN_THRESHOLD = 10;
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
@@ -24,9 +26,9 @@ const redirect = (url) => {
 		}
 	}
 	const timeElapsed = Date.now() - beginTimestamp;
-	if ( timeElapsed >= 10 ) {
+	if ( timeElapsed >= MAX_SLOWDOWN_THRESHOLD ) {
 		console.warn(`SLOWDOWN! Processing ${url.href} took ${timeElapsed} ms`);
-	} else if ( timeElapsed >= 5 ) {
+	} else if ( timeElapsed >= MIN_SLOWDOWN_THRESHOLD ) {
 		console.warn(`Slowdown! Processing ${url.href} took ${timeElapsed} ms`);
 	}
 	if ( redirectUrl.href !== url.href ) {

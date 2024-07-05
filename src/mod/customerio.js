@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { RULE } from '/rules.js';
 
 export default [

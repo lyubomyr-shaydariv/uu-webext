@@ -1,3 +1,4 @@
+/* eslint-disable no-magic-numbers */
 import { PREFIX } from '/literals.js';
 import { RULE } from '/rules.js';
 
