@@ -350,12 +350,9 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 					return arg;
 				}
 				for ( const key of keys ) {
-					let value;
-					if ( typeof(arg.get) === 'function' ) {
-						value = arg.get(key);
-					} else {
-						value = arg[key];
-					}
+					const value = typeof(arg.get) === 'function'
+						? arg.get(key)
+						: arg[key];
 					if ( value === null || value === undefined ) {
 						continue;
 					}
