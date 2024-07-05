@@ -275,7 +275,7 @@ export default [
 			'object-curly-newline': ['error'],
 			'object-curly-spacing': ['error'],
 			// 'object-property-newline': ['error'],
-			// 'one-var-declaration-per-line': ['error'],
+			'one-var-declaration-per-line': ['error'],
 			'operator-linebreak': ['error'],
 			'padded-blocks': ['off'],
 			'padding-line-between-statements': ['error'],
