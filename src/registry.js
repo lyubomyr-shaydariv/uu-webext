@@ -6,7 +6,7 @@ const rules = await Promise.all(browser.runtime
 	.getManifest()
 	.background
 	.scripts
-	.map((script) => script.startsWith(EXTENSION_URL_PREFIX) ? script.substring(EXTENSION_URL_PREFIX.length) : script)
+	.map((script) => (script.startsWith(EXTENSION_URL_PREFIX) ? script.substring(EXTENSION_URL_PREFIX.length) : script))
 	.filter((script) => script.startsWith('mod/'))
 	.map((module) => import(`./${module}`)
 		.then((loadedModule) => {
