@@ -449,7 +449,8 @@ const PATH_DELIMITER_REGEXP = /\//;
 const __FROM__PATHNAME = (ctx) => {
 	ctx.source += ' PATHNAME';
 	ctx.getValue = (url) => {
-		const pathname = new String(url.pathname); // now it's an object, so the `get` function cab be mixed in
+		// now it's an object, so the `get` function cab be mixed in
+		const pathname = new String(url.pathname);
 		pathname.get = (index) => pathname.substring(1).split(PATH_DELIMITER_REGEXP)[index];
 		return pathname;
 	};
@@ -466,7 +467,8 @@ const __FROM__PATHNAME = (ctx) => {
 const __FROM__QUERY = (ctx) => {
 	ctx.source += ' QUERY';
 	ctx.getValue = (url) => {
-		const query = new String(url.search); // now it's an object, so the `get` function cab be mixed in
+		// now it's an object, so the `get` function cab be mixed in
+		const query = new String(url.search);
 		query.get = (/*index*/) => query;
 		return query;
 	};
@@ -502,7 +504,8 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 	} else {
 		ctx.source += ` QUERY ENTRIES BY ${literalize(pairDelimiter)} AND ${literalize(entryDelimiter)}`;
 		ctx.createKeysContext = (url) => {
-			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`); // TODO
+			// TODO
+			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`);
 		};
 	}
 	ctx.getValue = (url) => url.searchParams;

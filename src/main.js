@@ -9,7 +9,8 @@ const MAX_SLOWDOWN_THRESHOLD = 10;
 
 const redirect = (url) => {
 	const beginTimestamp = Date.now();
-	let redirectUrl = new URL(url); // clone the url
+	// clone the url
+	let redirectUrl = new URL(url);
 	for ( let i = 0; i < MAX_LOOPS; i++ ) {
 		let isModified = false;
 		for ( const rule of ALL_RULES ) {

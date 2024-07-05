@@ -250,7 +250,7 @@ export default [
 			'jsx-quotes': ['error'],
 			'key-spacing': ['error'],
 			'keyword-spacing': ['error'],
-			// 'line-comment-position': ['error'],
+			'line-comment-position': ['error'],
 			'linebreak-style': ['error', 'unix'],
 			'lines-around-comment': ['error'],
 			// 'lines-between-class-members': ['error'],
