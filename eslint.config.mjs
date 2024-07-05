@@ -291,7 +291,7 @@ export default [
 			'semi-style': ['error'],
 			'space-before-blocks': ['error'],
 			// 'space-before-function-paren': ['error'],
-			// 'space-in-parens': ['error'],
+			'space-in-parens': ['off'],
 			'space-infix-ops': ['error'],
 			'space-unary-ops': ['error'],
 			// 'spaced-comment': ['error'],
