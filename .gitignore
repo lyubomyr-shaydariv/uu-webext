@@ -1,8 +1,5 @@
 /out
 
-# npx @eslint/migrate-config .eslintrc.json
-# sudo npm install --global eslint@9.6.0
-# npm init @eslint/config@latest
 node_modules
 package-lock.json
 package.json

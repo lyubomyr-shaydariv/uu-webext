@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+npm install --save-dev eslint@9.6.0

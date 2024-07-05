@@ -2,4 +2,4 @@
 
 set -TEeuo pipefail
 
-npx eslint
+npm init @eslint/config@latest

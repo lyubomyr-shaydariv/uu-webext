@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+npx @eslint/migrate-config .eslintrc.json
