@@ -4,7 +4,7 @@ import {areStrictlyEqual} from '/util.js';
 const literalize = (...es) => {
 	const literals = [];
 	for ( const e of es ) {
-		if ( typeof (e) === 'string' || e instanceof String ) {
+		if ( typeof e === 'string' || e instanceof String ) {
 			literals.push(JSON.stringify(e));
 		} else if ( e instanceof RegExp ) {
 			literals.push(e);
@@ -12,7 +12,7 @@ const literalize = (...es) => {
 			literals.push(Array.from(e.literals).map(e => literalize(e)).join(' & '));
 		} else if ( e instanceof PrefixLiteral ) {
 			literals.push(`^${JSON.stringify(e.prefix.toString())}`);
-		} else if ( typeof (e) === 'number' || e instanceof Number ) {
+		} else if ( typeof e === 'number' || e instanceof Number ) {
 			literals.push(e);
 		} else {
 			throw new Error(`cannot literalize ${e}`);
@@ -27,7 +27,7 @@ const createMatches = (...keys) => {
 	let regExps = null;
 	let alls = null;
 	for ( const key of keys ) {
-		if ( typeof (key) === 'string' || key instanceof String ) {
+		if ( typeof key === 'string' || key instanceof String ) {
 			if ( strings === null ) {
 				strings = new Set();
 			}
@@ -83,7 +83,7 @@ const createMatches = (...keys) => {
 const createUrlMatchesByTrie = (getSegmentsFromElement, getSegmentsFromUrl, ...elements) => {
 	const trie = {};
 	for ( const element of elements ) {
-		if ( typeof (element) === 'string' || element instanceof String ) {
+		if ( typeof element === 'string' || element instanceof String ) {
 			const segments = getSegmentsFromElement(element);
 			let node = trie;
 			for ( let i = segments.length - 1; i >= 0; i-- ) {
@@ -337,7 +337,7 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 				if ( arg === undefined || arg === null ) {
 					return arg;
 				}
-				if ( typeof (arg.get) === 'function' ) {
+				if ( typeof arg.get === 'function' ) {
 					return arg.get(key);
 				}
 				return arg[key];
@@ -350,7 +350,7 @@ const __F__GET_PROPERTY = (ctx, ...keys) => {
 					return arg;
 				}
 				for ( const key of keys ) {
-					const value = typeof (arg.get) === 'function'
+					const value = typeof arg.get === 'function'
 						? arg.get(key)
 						: arg[key];
 					if ( value === null || value === undefined ) {

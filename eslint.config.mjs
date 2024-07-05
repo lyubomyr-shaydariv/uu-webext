@@ -261,7 +261,7 @@ export default [
 			'new-parens': ['error'],
 			// 'newline-per-chained-call': ['error'],
 			'no-confusing-arrow': ['error'],
-			// 'no-extra-parens': ['error'],
+			'no-extra-parens': ['error'],
 			'no-extra-semi': ['error'],
 			'no-floating-decimal': ['error'],
 			'no-mixed-operators': ['error'],
