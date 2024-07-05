@@ -1,5 +1,5 @@
-import { AllLiteral, PrefixLiteral, groupLiterals } from './literals.js';
-import { areStrictlyEqual } from '/util.js';
+import {AllLiteral, PrefixLiteral, groupLiterals} from './literals.js';
+import {areStrictlyEqual} from '/util.js';
 
 const literalize = (...es) => {
 	const literals = [];

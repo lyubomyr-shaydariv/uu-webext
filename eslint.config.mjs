@@ -1,5 +1,5 @@
-import { FlatCompat } from '@eslint/eslintrc';
-import { fileURLToPath } from 'node:url';
+import {FlatCompat} from '@eslint/eslintrc';
+import {fileURLToPath} from 'node:url';
 import globals from 'globals';
 import js from '@eslint/js';
 import path from 'node:path';
@@ -38,7 +38,7 @@ export default [
 			// TODO Uncomment 'camelcase': ['error'],
 			// TODO Uncomment 'capitalized-comments': ['error'],
 			// TODO Uncomment 'class-methods-use-this': ['error'],
-			'complexity': ['error', { 'max': 16 }], // eslint-disable-line quote-props
+			'complexity': ['error', {'max': 16}], // eslint-disable-line quote-props
 			'consistent-return': ['error'],
 			'consistent-this': ['error'],
 			'constructor-super': ['error'],
@@ -54,7 +54,7 @@ export default [
 			'guard-for-in': ['error'],
 			'id-denylist': ['error'],
 			// TODO Uncomment 'indent': ['error', 'tab'],
-			'id-length': ['error', { 'min': 1 }], // eslint-disable-line quote-props
+			'id-length': ['error', {'min': 1}], // eslint-disable-line quote-props
 			'id-match': ['error'],
 			'init-declarations': ['error'],
 			'logical-assignment-operators': ['error'],
@@ -216,7 +216,7 @@ export default [
 			'require-await': ['error'],
 			// TODO Uncomment 'require-unicode-regexp': ['error'],
 			'require-yield': ['error'],
-			'sort-imports': ['error', { 'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'] }], // eslint-disable-line quote-props
+			'sort-imports': ['error', {'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}], // eslint-disable-line quote-props
 			'sort-keys': ['error'],
 			'sort-vars': ['error'],
 			'strict': ['error'], // eslint-disable-line quote-props
@@ -273,7 +273,7 @@ export default [
 			'no-whitespace-before-property': ['error'],
 			'nonblock-statement-body-position': ['error'],
 			'object-curly-newline': ['error'],
-			// 'object-curly-spacing': ['error'],
+			'object-curly-spacing': ['error'],
 			// 'object-property-newline': ['error'],
 			// 'one-var-declaration-per-line': ['error'],
 			'operator-linebreak': ['error'],

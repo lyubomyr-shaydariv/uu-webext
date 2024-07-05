@@ -128,16 +128,16 @@ const groupLiterals = (...literals) => {
 	for ( const literal of literals ) {
 		if ( typeof (literal) === 'string' || literal instanceof String ) {
 			const key = literal.valueOf();
-			uniqueStrings.set(key, { key, literal });
+			uniqueStrings.set(key, {key, literal});
 		} else if ( literal instanceof RegExp ) {
 			const key = literal.source;
-			uniqueRegExps.set(key, { key, literal });
+			uniqueRegExps.set(key, {key, literal});
 		} else if ( literal instanceof PrefixLiteral ) {
 			const key = literal.key();
-			uniquePrefixes.set(key, { key, literal });
+			uniquePrefixes.set(key, {key, literal});
 		} else if ( literal instanceof AllLiteral ) {
 			const key = literal.key();
-			uniqueAlls.set(key, { key, literal });
+			uniqueAlls.set(key, {key, literal});
 		} else {
 			throw new Error(`illegal literal: ${literal}`);
 		}

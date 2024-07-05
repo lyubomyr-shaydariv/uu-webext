@@ -1,4 +1,4 @@
-import { RULE } from '/rules.js';
+import {RULE} from '/rules.js';
 
 export default [
 	// static parameters

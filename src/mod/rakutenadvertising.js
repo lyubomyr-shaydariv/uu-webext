@@ -1,5 +1,5 @@
-import { ALL } from '/literals.js';
-import { RULE } from '/rules.js';
+import {ALL} from '/literals.js';
+import {RULE} from '/rules.js';
 
 export default [
 	RULE()
