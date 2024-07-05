@@ -243,7 +243,7 @@ export default [
 			'eol-last': ['error'],
 			'func-call-spacing': ['error'],
 			'function-call-argument-newline': ['off'],
-			// 'function-paren-newline': ['error'],
+			'function-paren-newline': ['off'],
 			'generator-star-spacing': ['error'],
 			'implicit-arrow-linebreak': ['error'],
 			// 'indent': ['error'],
