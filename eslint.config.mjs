@@ -239,7 +239,7 @@ export default [
 			'comma-spacing': ['error'],
 			'comma-style': ['error'],
 			'computed-property-spacing': ['error'],
-			// 'dot-location': ['error'],
+			'dot-location': ['error', 'property'],
 			'eol-last': ['error'],
 			'func-call-spacing': ['error'],
 			// 'function-call-argument-newline': ['error'],
