@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('mkwid','pcrid')
+		.DO().REMOVE('mkwid', 'pcrid')
 ];

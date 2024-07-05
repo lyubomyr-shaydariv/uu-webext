@@ -236,7 +236,7 @@ export default [
 			'block-spacing': ['error'],
 			'brace-style': ['error'],
 			'comma-dangle': ['error'],
-			// 'comma-spacing': ['error'],
+			'comma-spacing': ['error'],
 			'comma-style': ['error'],
 			'computed-property-spacing': ['error'],
 			// 'dot-location': ['error'],
