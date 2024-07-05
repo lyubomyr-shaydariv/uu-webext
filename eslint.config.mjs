@@ -216,7 +216,11 @@ export default [
 			'require-await': ['error'],
 			// TODO Uncomment 'require-unicode-regexp': ['error'],
 			'require-yield': ['error'],
-			'sort-imports': ['error', {'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}], // eslint-disable-line quote-props
+			'sort-imports': ['error', {'allowSeparatedGroups': false, // eslint-disable-line quote-props
+				'ignoreCase': false, // eslint-disable-line quote-props
+				'ignoreDeclarationSort': false, // eslint-disable-line quote-props
+				'ignoreMemberSort': false, // eslint-disable-line quote-props
+				'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}], // eslint-disable-line quote-props
 			'sort-keys': ['error'],
 			'sort-vars': ['error'],
 			'strict': ['error'], // eslint-disable-line quote-props
@@ -274,7 +278,7 @@ export default [
 			'nonblock-statement-body-position': ['error'],
 			'object-curly-newline': ['error'],
 			'object-curly-spacing': ['error'],
-			// 'object-property-newline': ['error'],
+			'object-property-newline': ['error'],
 			'one-var-declaration-per-line': ['error'],
 			'operator-linebreak': ['error'],
 			'padded-blocks': ['off'],
