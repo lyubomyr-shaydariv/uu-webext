@@ -273,7 +273,7 @@ const DO = (ctx) => {
 		REDIRECT: () => __DO__REDIRECT(ctx),
 		REMOVE: (...keys) => __DO__REMOVE(ctx, ...keys),
 		REMOVE_ALL: () => __DO__REMOVE_ALL(ctx),
-		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys),
+		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys)
 	};
 };
 

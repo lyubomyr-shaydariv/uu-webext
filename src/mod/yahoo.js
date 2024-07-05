@@ -12,5 +12,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('yahoo.com').PATHNAME('/search')
 		.FROM().QUERY_ENTRIES()
-		.DO().RETAIN('p'),
+		.DO().RETAIN('p')
 ];

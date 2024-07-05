@@ -16,14 +16,14 @@ const compat = new FlatCompat({
 
 export default [
 	{
-		ignores: ['src/lib'],
+		ignores: ['src/lib']
 	},
 	...compat.extends('eslint:recommended'),
 	{
 		languageOptions: {
 			ecmaVersion: 'latest',
 			globals: {
-				...globals.browser,
+				...globals.browser
 			},
 			sourceType: 'module'
 		},
@@ -211,7 +211,6 @@ export default [
 			'prefer-rest-params': ['error'],
 			'prefer-spread': ['error'],
 			'prefer-template': ['error'],
-			'quotes': ['error', 'single'],
 			'radix': ['error'],
 			'require-atomic-updates': ['error'],
 			'require-await': ['error'],
@@ -236,7 +235,7 @@ export default [
 			'arrow-spacing': ['error'],
 			'block-spacing': ['error'],
 			'brace-style': ['error'],
-			// 'comma-dangle': ['error'],
+			'comma-dangle': ['error'],
 			// 'comma-spacing': ['error'],
 			'comma-style': ['error'],
 			'computed-property-spacing': ['error'],
@@ -281,7 +280,7 @@ export default [
 			// 'padded-blocks': ['error'],
 			'padding-line-between-statements': ['error'],
 			// 'quote-props': ['error'],
-			// 'quotes': ['error'],
+			'quotes': ['error', 'single'],
 			'rest-spread-spacing': ['error'],
 			'semi': ['error', 'always'],
 			'semi-spacing': ['error'],

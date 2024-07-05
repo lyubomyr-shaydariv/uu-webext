@@ -12,5 +12,5 @@ export default [
 		.AT().HOSTNAME('ad.doubleclick.net').PATHNAME(PREFIX('/clk;'))
 		.FROM().QUERY()
 		.APPLY().SUBSTRING(1).TO_URL()
-		.DO().REDIRECT(),
+		.DO().REDIRECT()
 ];
