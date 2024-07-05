@@ -253,7 +253,7 @@ export default [
 			'line-comment-position': ['error'],
 			'linebreak-style': ['error', 'unix'],
 			'lines-around-comment': ['error'],
-			// 'lines-between-class-members': ['error'],
+			'lines-between-class-members': ['error'],
 			// 'max-len': ['error'],
 			'max-statements-per-line': ['error'],
 			// 'multiline-comment-style': ['error'],

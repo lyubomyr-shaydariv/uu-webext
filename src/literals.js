@@ -25,8 +25,11 @@ class AllLiteral
 	extends AbstractLiteral {
 
 	#literals;
+
 	#strings;
+
 	#prefixes;
+
 	#regExps;
 
 	constructor(...literals) {
