@@ -277,7 +277,7 @@ export default [
 			// 'object-property-newline': ['error'],
 			// 'one-var-declaration-per-line': ['error'],
 			'operator-linebreak': ['error'],
-			// 'padded-blocks': ['error'],
+			'padded-blocks': ['off'],
 			'padding-line-between-statements': ['error'],
 			'quote-props': ['error', 'as-needed'],
 			'quotes': ['error', 'single'], // eslint-disable-line quote-props
