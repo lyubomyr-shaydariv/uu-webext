@@ -268,7 +268,7 @@ export default [
 			'no-mixed-spaces-and-tabs': ['error'],
 			'no-multi-spaces': ['error'],
 			'no-multiple-empty-lines': ['error'],
-			// 'no-tabs': ['error'],
+			'no-tabs': ['error', {'allowIndentationTabs': true}], // eslint-disable-line quote-props
 			'no-trailing-spaces': ['error'],
 			'no-whitespace-before-property': ['error'],
 			'nonblock-statement-body-position': ['error'],
