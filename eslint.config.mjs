@@ -242,7 +242,7 @@ export default [
 			'dot-location': ['error', 'property'],
 			'eol-last': ['error'],
 			'func-call-spacing': ['error'],
-			// 'function-call-argument-newline': ['error'],
+			'function-call-argument-newline': ['off'],
 			// 'function-paren-newline': ['error'],
 			'generator-star-spacing': ['error'],
 			'implicit-arrow-linebreak': ['error'],
