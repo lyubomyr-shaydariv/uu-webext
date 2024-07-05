@@ -228,7 +228,7 @@ export default [
 			'yoda': ['error'], // eslint-disable-line quote-props
 			// formatting rules
 			'@stylistic/js/function-call-spacing': ['error'], // eslint-disable-line sort-keys
-			// 'array-bracket-newline': ['error'],
+			'array-bracket-newline': ['error', 'consistent'],
 			'array-bracket-spacing': ['error'],
 			// 'array-element-newline': ['error'],
 			// 'arrow-parens': ['error'],
