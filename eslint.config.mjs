@@ -244,7 +244,7 @@ export default [
 			'func-call-spacing': ['error'],
 			// 'function-call-argument-newline': ['error'],
 			// 'function-paren-newline': ['error'],
-			// 'generator-star-spacing': ['error'],
+			'generator-star-spacing': ['error'],
 			'implicit-arrow-linebreak': ['error'],
 			// 'indent': ['error'],
 			'jsx-quotes': ['error'],

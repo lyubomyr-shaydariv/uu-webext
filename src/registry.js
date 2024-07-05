@@ -36,7 +36,7 @@ const rules = await Promise.all(browser.runtime
 		return allRules;
 	});
 
-const getRules = function* () {
+const getRules = function *() {
 	for ( const rule of rules ) {
 		yield rule;
 	}
