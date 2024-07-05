@@ -259,7 +259,7 @@ export default [
 			// 'multiline-comment-style': ['error'],
 			// 'multiline-ternary': ['error'],
 			'new-parens': ['error'],
-			// 'newline-per-chained-call': ['error'],
+			'newline-per-chained-call': ['off'],
 			'no-confusing-arrow': ['error'],
 			'no-extra-parens': ['error'],
 			'no-extra-semi': ['error'],
