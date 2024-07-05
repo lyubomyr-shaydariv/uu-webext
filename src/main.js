@@ -53,9 +53,6 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 	};
 },
 	{
-		urls: [
-			'<all_urls>'
-		],
 		types: [
 			'beacon',
 			'csp_report',
@@ -77,6 +74,9 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 			'xmlhttprequest',
 			'xslt',
 			'other'
+		],
+		urls: [
+			'<all_urls>'
 		]
 	},
 	['blocking']

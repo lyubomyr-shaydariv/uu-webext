@@ -32,11 +32,11 @@ const areStrictlyEqual = (o1, o2) => {
 const unsafeHtmlCharactersRegExp = /([&<>"'])/g;
 
 const unsafeHtmlCharToSafeHtmlChar = {
-	'&': '&amp;',
-	'<': '&lt;',
-	'>': '&gt;',
 	'"': '&quot;',
-	'\'': '&apos;'
+	'&': '&amp;',
+	'\'': '&apos;',
+	'<': '&lt;',
+	'>': '&gt;'
 };
 
 const sanitizeHtml = (html) => html.replace(unsafeHtmlCharactersRegExp, (match, unsafeChar) => unsafeHtmlCharToSafeHtmlChar[unsafeChar]);

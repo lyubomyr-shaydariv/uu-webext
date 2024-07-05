@@ -438,6 +438,7 @@ const APPLY = (ctx) => {
 		REPLACE_STRING: (pattern, replacement) => __F__REPLACE_STRING(ctx, pattern, replacement),
 		SUBSTRING: (from, to) => __F__SUBSTRING(ctx, from, to),
 		TO_URL: () => __F__TO_URL(ctx),
+		/* eslint-disable-next-line sort-keys */
 		DO: () => DO(ctx)
 	};
 };
@@ -460,6 +461,7 @@ const __FROM__PATHNAME = (ctx) => {
 	};
 	return {
 		DO: () => DO(ctx),
+		/* eslint-disable-next-line sort-keys */
 		APPLY: () => APPLY(ctx)
 	};
 };
@@ -476,6 +478,7 @@ const __FROM__QUERY = (ctx) => {
 	};
 	return {
 		DO: () => DO(ctx),
+		/* eslint-disable-next-line sort-keys */
 		APPLY: () => APPLY(ctx)
 	};
 };
@@ -511,6 +514,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter,  entryDelimiter) => {
 	};
 	return {
 		DO: () => DO(ctx),
+		/* eslint-disable-next-line sort-keys */
 		APPLY: () => APPLY(ctx)
 	};
 };
@@ -545,6 +549,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		/* eslint-disable-next-line sort-keys */
 		FROM: () => FROM(ctx)
 	};
 };
@@ -557,6 +562,7 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		/* eslint-disable-next-line sort-keys */
 		FROM: () => FROM(ctx)
 	};
 };
@@ -569,6 +575,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		/* eslint-disable-next-line sort-keys */
 		FROM: () => FROM(ctx)
 	};
 };
@@ -627,6 +634,7 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	return {
 		AT: () => AT(ctx),
 		QUERY_ENTRIES: (...keys) => __AT__QUERY_ENTRIES(ctx, ...keys),
+		/* eslint-disable-next-line sort-keys */
 		FROM: () => FROM(ctx)
 	};
 };

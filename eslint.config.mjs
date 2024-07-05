@@ -216,7 +216,7 @@ export default [
 			'require-yield': ['error'],
 			'semi': ['error', 'always'],
 			'sort-imports': ['error', { 'allowSeparatedGroups': false, 'ignoreCase': false, 'ignoreDeclarationSort': false, 'ignoreMemberSort': false, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single'] }],
-			// TODO Uncomment "sort-keys": ["error"],
+			"sort-keys": ["error"],
 			'sort-vars': ['error'],
 			'strict': ['error'],
 			'symbol-description': ['error'],
