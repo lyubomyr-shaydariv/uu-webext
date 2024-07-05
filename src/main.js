@@ -1,4 +1,4 @@
-/*global browser*/
+/* global browser */
 
 import * as registry from '/registry.js';
 

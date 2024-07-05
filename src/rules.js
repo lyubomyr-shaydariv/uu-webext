@@ -469,7 +469,7 @@ const __FROM__QUERY = (ctx) => {
 	ctx.getValue = (url) => {
 		// now it's an object, so the `get` function cab be mixed in
 		const query = new String(url.search);
-		query.get = (/*index*/) => query;
+		query.get = (/* index */) => query;
 		return query;
 	};
 	ctx.setValue = (url, value) => {
@@ -510,7 +510,7 @@ const __FROM__QUERY_ENTRIES = (ctx, pairDelimiter, entryDelimiter) => {
 	}
 	ctx.getValue = (url) => url.searchParams;
 	ctx.setValue = (url, ...entries) => {
-		url.searchParams = new URLSearchParams(/*...*/entries);
+		url.searchParams = new URLSearchParams(/* ... */entries);
 	};
 	return {
 		DO: () => DO(ctx),

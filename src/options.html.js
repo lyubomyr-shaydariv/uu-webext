@@ -1,4 +1,4 @@
-/*global browser*/
+/* global browser */
 
 const manifest = browser.runtime.getManifest();
 

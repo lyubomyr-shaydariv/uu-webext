@@ -294,7 +294,21 @@ export default [
 			'space-in-parens': ['off'],
 			'space-infix-ops': ['error'],
 			'space-unary-ops': ['error'],
-			// 'spaced-comment': ['error'],
+			'spaced-comment': [
+				'error',
+				'always',
+				{
+					'block': { // eslint-disable-line quote-props
+						'balanced': true, // eslint-disable-line quote-props
+						'exceptions': ['*'], // eslint-disable-line quote-props
+						'markers': ['!'] // eslint-disable-line quote-props
+					},
+					'line': { // eslint-disable-line quote-props
+						'exceptions': ['-', '+'], // eslint-disable-line quote-props
+						'markers': ['/'] // eslint-disable-line quote-props
+					}
+				}
+			],
 			'switch-colon-spacing': ['error'],
 			'template-curly-spacing': ['error'],
 			'template-tag-spacing': ['error'],

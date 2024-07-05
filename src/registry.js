@@ -1,4 +1,4 @@
-/*global browser*/
+/* global browser */
 
 const EXTENSION_URL_PREFIX = browser.runtime.getURL('');
 
