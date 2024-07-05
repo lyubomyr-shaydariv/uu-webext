@@ -289,7 +289,7 @@ export default [
 			// 'space-before-function-paren': ['error'],
 			// 'space-in-parens': ['error'],
 			'space-infix-ops': ['error'],
-			// 'space-unary-ops': ['error'],
+			'space-unary-ops': ['error'],
 			// 'spaced-comment': ['error'],
 			'switch-colon-spacing': ['error'],
 			'template-curly-spacing': ['error'],

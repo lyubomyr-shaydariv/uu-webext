@@ -31,7 +31,7 @@ class AllLiteral
 
 	constructor(...literals) {
 		super();
-		if ( !literals.every((e) => typeof(e) === 'string' || e instanceof String || e instanceof RegExp || e instanceof PrefixLiteral) ) {
+		if ( !literals.every((e) => typeof (e) === 'string' || e instanceof String || e instanceof RegExp || e instanceof PrefixLiteral) ) {
 			throw new Error(`illegal literals: ${literals}`);
 		}
 		const groups = groupLiterals(...literals);
@@ -126,7 +126,7 @@ const groupLiterals = (...literals) => {
 	const uniquePrefixes = new Map();
 	const uniqueAlls = new Map();
 	for ( const literal of literals ) {
-		if ( typeof(literal) === 'string' || literal instanceof String ) {
+		if ( typeof (literal) === 'string' || literal instanceof String ) {
 			const key = literal.valueOf();
 			uniqueStrings.set(key, { key, literal });
 		} else if ( literal instanceof RegExp ) {
