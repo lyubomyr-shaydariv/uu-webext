@@ -2,6 +2,4 @@
 
 set -TEeuo pipefail
 
-readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
-
-eslint "$BASE_DIR/src"
+eslint
