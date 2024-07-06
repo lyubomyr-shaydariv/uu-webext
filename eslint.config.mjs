@@ -196,7 +196,7 @@ export default [
 			// TODO Uncomment 'no-warning-comments': ['error'],
 			'no-with': ['error'],
 			'object-shorthand': ['error'],
-			// TODO Uncomment 'one-var': ['error'],
+			'one-var': ['off'],
 			'operator-assignment': ['error'],
 			'prefer-arrow-callback': ['error'],
 			'prefer-const': ['error'],
