@@ -133,7 +133,7 @@ export default [
 			'no-new': ['error'],
 			'no-new-func': ['error'],
 			'no-new-native-nonconstructor': ['error'],
-			// TODO Uncomment 'no-new-wrappers': ['error'],
+			'no-new-wrappers': ['error'],
 			'no-nonoctal-decimal-escape': ['error'],
 			'no-obj-calls': ['error'],
 			'no-object-constructor': ['error'],

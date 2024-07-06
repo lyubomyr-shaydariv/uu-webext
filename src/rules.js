@@ -450,7 +450,7 @@ const __FROM__PATHNAME = (ctx) => {
 	ctx.source += ' PATHNAME';
 	ctx.getValue = (url) => {
 		// now it's an object, so the `get` function cab be mixed in
-		const pathname = new String(url.pathname);
+		const pathname = new String(url.pathname); // eslint-disable-line no-new-wrappers
 		pathname.get = (index) => pathname.substring(1).split(PATH_DELIMITER_REGEXP)[index];
 		return pathname;
 	};
@@ -468,7 +468,7 @@ const __FROM__QUERY = (ctx) => {
 	ctx.source += ' QUERY';
 	ctx.getValue = (url) => {
 		// now it's an object, so the `get` function cab be mixed in
-		const query = new String(url.search);
+		const query = new String(url.search); // eslint-disable-line no-new-wrappers
 		query.get = (/* index */) => query;
 		return query;
 	};
