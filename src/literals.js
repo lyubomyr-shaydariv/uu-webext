@@ -7,15 +7,15 @@ class AbstractLiteral {
 		}
 	}
 
-	key() {
+	key() { // eslint-disable-line class-methods-use-this
 		throw new Error('cannot invoke an abstract method');
 	}
 
-	matches() {
+	matches() { // eslint-disable-line class-methods-use-this
 		throw new Error('cannot invoke an abstract method');
 	}
 
-	toString() {
+	toString() { // eslint-disable-line class-methods-use-this
 		throw new Error('cannot invoke an abstract method');
 	}
 

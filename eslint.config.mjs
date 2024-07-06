@@ -37,7 +37,7 @@ export default [
 			'block-scoped-var': ['error'],
 			// TODO Uncomment 'camelcase': ['error'],
 			// TODO Uncomment 'capitalized-comments': ['error'],
-			// TODO Uncomment 'class-methods-use-this': ['error'],
+			'class-methods-use-this': ['error'],
 			'complexity': ['error', {'max': 16}], // eslint-disable-line quote-props
 			'consistent-return': ['error'],
 			'consistent-this': ['error'],
