@@ -202,7 +202,7 @@ export default [
 			'prefer-const': ['error'],
 			'prefer-destructuring': ['error'],
 			'prefer-exponentiation-operator': ['error'],
-			// TODO Uncomment 'prefer-named-capture-group': ['error'],
+			'prefer-named-capture-group': ['off'],
 			'prefer-numeric-literals': ['error'],
 			'prefer-object-has-own': ['error'],
 			'prefer-object-spread': ['error'],
