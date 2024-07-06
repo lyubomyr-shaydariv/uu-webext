@@ -166,7 +166,7 @@ export default [
 			'no-throw-literal': ['error'],
 			'no-undef': ['error'],
 			'no-undef-init': ['error'],
-			// TODO Uncomment 'no-undefined': ['error'],
+			'no-undefined': ['off'],
 			// TODO Uncomment 'no-underscore-dangle': ['error'],
 			'no-unexpected-multiline': ['error'],
 			'no-unmodified-loop-condition': ['error'],
