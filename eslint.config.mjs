@@ -181,7 +181,7 @@ export default [
 			'no-unused-private-class-members': ['error'],
 			'no-unused-vars': ['error'],
 			// TODO Uncomment 'no-use-before-define': ['error'],
-			// TODO Uncomment 'no-useless-assignment': ['error'],
+			'no-useless-assignment': ['error'],
 			'no-useless-backreference': ['error'],
 			'no-useless-call': ['error'],
 			'no-useless-catch': ['error'],
