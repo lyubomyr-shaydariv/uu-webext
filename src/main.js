@@ -82,3 +82,7 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 	},
 	['blocking']
 );
+
+export {
+	redirect
+};
