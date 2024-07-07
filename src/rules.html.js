@@ -7,8 +7,8 @@ const targetNode = document.querySelector('#target');
 const template = createTemplate(templateNode.textContent);
 
 for ( const rule of registry.getRules() ) {
-	targetNode.innerHTML += template.renderSanitizedHTML({
+	targetNode.appendChild(template.renderSanitizedHTMLNode({
 		ruleName: rule.name,
 		ruleSource: rule.source
-	});
+	}));
 }

@@ -42,6 +42,14 @@ const unsafeHtmlCharToSafeHtmlChar = {
 const sanitizeHtml = (html) => html.replace(unsafeHtmlCharactersRegExp, (match, unsafeChar) => unsafeHtmlCharToSafeHtmlChar[unsafeChar]);
 
 //--------------------------------------------------------------------------------------------------
+// DOM functions
+//--------------------------------------------------------------------------------------------------
+
+const domParser = new DOMParser();
+
+const parseAsDomNode = (text) => domParser.parseFromString(text, 'text/html').body.firstElementChild;
+
+//--------------------------------------------------------------------------------------------------
 // stupid simple template engine
 //--------------------------------------------------------------------------------------------------
 
@@ -56,8 +64,10 @@ const createTemplate = (templateText) => {
 		return finalize(propertyValue);
 	});
 	const renderSanitizedHTML = (properties) => render(properties, sanitizeHtml);
+	const renderSanitizedHTMLNode = (properties) => parseAsDomNode(renderSanitizedHTML(properties));
 	return {
-		renderSanitizedHTML
+		renderSanitizedHTML,
+		renderSanitizedHTMLNode
 	};
 };
 
