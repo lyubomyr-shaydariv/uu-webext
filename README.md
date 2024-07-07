@@ -190,7 +190,8 @@
 
 | Scope | Is supported? | Notes |
 | ----- | ------------- | ----- |
-| Navigation and HTTP requests in general | Yes | This allows untracking URLs for every HTTP request the browser sends utilizing the [webRequest API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest). This also why **uU** requires global permissions to modify HTTP requests for all sites. |
+| Navigation and HTTP requests in general | Yes | This allows untracking URLs for every HTTP request the browser sends utilizing the [webRequest API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/webRequest). This also why **uU** requires the permissions `webRequest` and `webRequestBlocking` to modify HTTP requests for all sites. |
+| Bookmarks sanitizing | Yes | This allows untracking URLs for each bookmark whose tracked URL invaded your bookmark collections utilizing the [bookmarks API](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/bookmarks). This also why **uU** requires global permissions `bookmarks` to access the bookmarks. |
 | Sharing links | Yes, via the context menu | Currently **uU** does not untrack URLs on the page (in the DOM). The "Copy Untracked Link" from the context menu copies an untracked link similarly "Copy Link Without Site Tracking" that is implemented by Mozilla Firefox itself. |
 | On-page links | No | To be discussed. |
 | Warned page redirects | Dropped | In principle, this is greatly supported by [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) and the feature of **uU** is a subject for potential removal. |
