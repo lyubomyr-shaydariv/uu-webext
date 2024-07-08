@@ -45,6 +45,42 @@ const sanitizeHtml = (html) => html.replace(unsafeHtmlCharactersRegExp, (match, 
 // DOM functions
 //--------------------------------------------------------------------------------------------------
 
+const expandDomTemplate = () => {
+	const expand = (hostElement, templateElement, modifyDom, fillDom, items) => { // eslint-disable-line max-params
+		for ( const item of items ) {
+			const templateElementClone = templateElement.content.cloneNode(true);
+			const fs = fillDom(item);
+			for ( const cssSelector in fs ) {
+				if ( !Object.hasOwn(fs, cssSelector) ) {
+					continue;
+				}
+				const templateElements = templateElementClone.querySelectorAll(cssSelector);
+				const f = fs[cssSelector];
+				f(...templateElements);
+			}
+			modifyDom(hostElement, templateElementClone);
+		}
+	};
+	const withData = (hostElement, templateElement, modifyDom, fillDom, items) => ({ // eslint-disable-line max-params
+		expand: () => expand(hostElement, templateElement, modifyDom, fillDom, items)
+	});
+	const filling = (hostElement, templateElement, modifyDom, fillDom) => ({ // eslint-disable-line max-params
+		withData: (...items) => withData(hostElement, templateElement, modifyDom, fillDom, items)
+	});
+	const modifying = (hostElement, templateElement, modifyDom) => ({
+		filling: (fillDom) => filling(hostElement, templateElement, modifyDom, fillDom)
+	});
+	const using = (hostElement, templateElement) => ({
+		modifying: (modifyDom) => modifying(hostElement, templateElement, modifyDom)
+	});
+	const at = (hostElement) => ({
+		using: (templateElement) => using(hostElement, templateElement)
+	});
+	return {
+		at
+	};
+};
+
 const domParser = new DOMParser();
 
 const parseAsDomNode = (text) => domParser.parseFromString(text, 'text/html').body.firstElementChild;
@@ -73,5 +109,6 @@ const createTemplate = (templateText) => {
 
 export {
 	areStrictlyEqual,
-	createTemplate
+	createTemplate,
+	expandDomTemplate
 };

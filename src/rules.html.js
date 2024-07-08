@@ -1,14 +1,19 @@
 import * as registry from '/registry.js';
-import {createTemplate} from '/util.js';
+import {expandDomTemplate} from '/util.js';
 
-const templateNode = document.querySelector('#template');
-const targetNode = document.querySelector('#target');
-
-const template = createTemplate(templateNode.textContent);
-
-for ( const rule of registry.getRules() ) {
-	targetNode.appendChild(template.renderSanitizedHTMLNode({
-		ruleName: rule.name,
-		ruleSource: rule.source
-	}));
-}
+expandDomTemplate()
+	.at(document.getElementById('rules'))
+	.using(document.getElementById('ruleTemplate'))
+	.modifying((hostElement, templateElement) => {
+		hostElement.appendChild(templateElement);
+	})
+	.filling((item) => ({
+		'.ruleName': (e) => {
+			e.innerText = item.name;
+		},
+		'.ruleSource': (e) => {
+			e.innerText = item.source;
+		}
+	}))
+	.withData(...registry.getRules())
+	.expand();

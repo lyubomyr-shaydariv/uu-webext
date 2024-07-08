@@ -3,12 +3,22 @@
 <head>
 	<title>uU: bookmarks</title>
 	<meta charset='UTF-8'/>
+	<link rel="stylesheet" href="/common.css"/>
 	<script type='module' src='/bookmarks.html.js'></script>
-	<script id='clean-all-bookmarks-item-template' type='text/x-uu-template'><li>Modified <strong>${title}</strong><br/>from <em>${url}</em><br/>to <em>${redirectUrl}</em></li></script>
 </head>
 <body>
-	<h1><img src='icon-48x48.png' style='vertical-align: middle;'/>uU bookmarks</h1>
+	<h1><img src='icon-48x48.png'/>uU bookmarks</h1>
 	<button id='clean-all-bookmarks'>Clean all bookmarks</button>
 	<ol id="clean-all-bookmarks-results"></ol>
+	<template id='bookmarkToModifyTemplate'>
+		<li>
+			Found <strong class='bookmarkTitle'></strong> to be modified<br/>from <em class='bookmarkUrl'></em><br/>to <em class='bookmarkRedirectUrl'></em>
+		</li>
+	</template>
+	<template id='modifedBookmarkTemplate'>
+		<li>
+			Modified <strong class='bookmarkTitle'></strong><br/>from <em class='bookmarkUrl'></em><br/>to <em class='bookmarkRedirectUrl'></em>
+		</li>
+	</template>
 </body>
 </html>
