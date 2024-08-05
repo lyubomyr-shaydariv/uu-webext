@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('change.org')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('guest', 'recruited_by_id', 'recruiter', 'short_display_name', 'source_location')
+		.DO().REMOVE('guest', 'psf_variant', 'recruited_by_id', 'recruiter', 'share_intent', 'short_display_name', 'source_location')
 ];
