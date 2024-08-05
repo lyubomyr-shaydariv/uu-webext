@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('twitter.com', 'x.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('cn', 'cxt', /^ref_.*/, 's', 't'),
+		.DO().REMOVE('cn', 'cxt', /^ref_.*/, 's', 'src', 't'),
 	RULE()
 		.AT().DOMAIN('twitter.com', 'x.com').QUERY_ENTRIES('ref_url')
 		.FROM().QUERY_ENTRIES()
