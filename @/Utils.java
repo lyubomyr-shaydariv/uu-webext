@@ -113,38 +113,8 @@ public class Utils {
     public static final Pattern outlookRedirect = Pattern.compile("(.*)safelinks\\.protection\\.outlook\\.com/?[?]?((?!url).)*url=([^&]+)");
     private static final Pattern extractPlace = Pattern.compile("/maps/place/(((?!/data).)*)");
     private static final Pattern googleRedirect = Pattern.compile("https?://(www\\.)?google(\\.\\w{2,})?(\\.\\w{2,})/url\\?(q=|q%3D)(.*)");
-    private static final String[] G_TRACKING = {
-            "sourceid",
-            "aqs",
-            "client",
-            "source",
-            "ust",
-            "usg"
-    };
 
     private static final String[] UTM_PARAMS = {
-            "utm_\\w+",
-            "ga_source",
-            "ga_medium",
-            "ga_term",
-            "ga_content",
-            "ga_campaign",
-            "ga_place",
-            "yclid",
-            "_openstat",
-            "fb_action_ids",
-            "fb_action_types",
-            "fb_source",
-            "fb_ref",
-            "fbclid",
-            "action_object_map",
-            "action_type_map",
-            "action_ref_map",
-            "gs_l",
-            "mkt_tok",
-            "hmb_campaign",
-            "hmb_medium",
-            "hmb_source",
             "[\\?|&]ref[\\_]?",
             "amp[_#\\w]+",
             "click"
