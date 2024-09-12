@@ -3,15 +3,15 @@ grammar dsl;
 //--------------------------------------------------------------------------------------------------
 // literals
 //--------------------------------------------------------------------------------------------------
-/* TODO */ literal: atomLiteral | specificLiteral;
-/* TODO */ atomLiteral: subsetLiteral | primitiveLiteral;
-/* TODO */ primitiveLiteral: stringLiteral | prefixLiteral | suffixLiteral | prefixSplitLiteral | suffixSplitLiteral | regExpLiteral;
-/* TODO */ stringLiteral: STRING_LITERAL;
-/* TODO */ prefixLiteral: PREFIX_LITERAL;
-/* TODO */ suffixLiteral: SUFFIX_LITERAL;
-/* TODO */ prefixSplitLiteral: PREFIX_SPLIT_LITERAL;
-/* TODO */ suffixSplitLiteral: SUFFIX_SPLIT_LITERAL;
-/* TODO */ regExpLiteral: REG_EXP_LITERAL;
+literal: atomLiteral | specificLiteral;
+atomLiteral: subsetLiteral | primitiveLiteral;
+primitiveLiteral: stringLiteral | prefixLiteral | suffixLiteral | prefixSplitLiteral | suffixSplitLiteral | regExpLiteral;
+stringLiteral: STRING_LITERAL;
+prefixLiteral: PREFIX_LITERAL;
+suffixLiteral: SUFFIX_LITERAL;
+prefixSplitLiteral: PREFIX_SPLIT_LITERAL;
+suffixSplitLiteral: SUFFIX_SPLIT_LITERAL;
+regExpLiteral: REG_EXP_LITERAL;
 /* TODO */ subsetLiteral: primitiveLiteral ('&' primitiveLiteral)*;
 /* TODO */ specificLiteral: domainLiteral | tldLiteral;
 /* TODO */ domainLiteral: DOMAIN_LITERAL;
