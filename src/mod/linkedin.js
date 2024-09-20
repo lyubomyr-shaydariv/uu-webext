@@ -9,7 +9,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('linkedin.com')
 		.FROM().QUERY_ENTRIES()
-		.DO().REMOVE('eBP', 'lgCta', 'lgTemp', /li[a-z]{2}/, 'midSig', 'midToken', 'recommendedFlavor', 'refId', 'trackingId', 'trk', 'trkEmail'),
+		.DO().REMOVE('eBP', 'eid', 'lgCta', 'lgTemp', /li[a-z]{2}/, 'midSig', 'midToken', 'otpToken', 'recommendedFlavor', 'refId', 'trackingId', 'trk', 'trkEmail'),
 	RULE()
 		.AT().DOMAIN('linkedin.com').PATHNAME('/learning')
 		.FROM().QUERY_ENTRIES()
