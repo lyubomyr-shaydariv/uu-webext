@@ -145,6 +145,7 @@
 * ![spotify](favicons/spotify.com.png) Spotify (URLs)
 * ![springbot](favicons/springbot.com.png) Springbot (URLs)
 * ![squarespace](favicons/squarespace.com.png) Squarespace (URLs)
+* ![stealthgram](favicons/stealthgram.com.png) stealthGram (redirects)
 * ![steam](favicons/store.steampowered.com.png) Steam (redirects)
 * STM (URLs)
 * ![takeads](favicons/tatrck.com.png) Takeads (redirects)
