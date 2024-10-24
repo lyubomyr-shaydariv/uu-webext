@@ -10,7 +10,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('google.com').PATHNAME('/search')
 		.FROM().QUERY_ENTRIES()
-		.DO().RETAIN('ech', 'gl', 'hl', 'q', 'pb', 'tbm', 'tbs', 'tch', 'udm'),
+		.DO().RETAIN('ech', 'gl', 'hl', 'num', 'q', 'pb', 'start', 'tbm', 'tbs', 'tch', 'udm'),
 	RULE()
 		.AT().DOMAIN('support.google.com')
 		.FROM().QUERY_ENTRIES()
