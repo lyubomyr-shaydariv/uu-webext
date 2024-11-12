@@ -6,6 +6,8 @@ readonly BASE_DIR="$(dirname -- $(readlink -e -- "$0"))"
 
 readonly PROVIDER="${PROVIDER:-google}"
 
+EXIT_CODE=0
+
 case "$PROVIDER" in
 'duckduckgo')
 	download_favicon() {
@@ -31,30 +33,36 @@ case "$PROVIDER" in
 	;;
 esac
 
-echo "$0: favicon provider: $PROVIDER" >&2
+printf '%s: favicon provider: %s\n' "$0" "$PROVIDER"
 
 for FAVICON_FILE; do
 	DOMAIN="${FAVICON_FILE%.*}"
 	printf '%s\n' "$DOMAIN"
+	FAVICON_FILE="$FAVICON_FILE~"
 	download_favicon "$DOMAIN" "$FAVICON_FILE"
 	MIME_TYPE="$(file --brief --mime-type "$FAVICON_FILE")"
 	TARGET_FILE=
+	if [[ "$MIME_TYPE" == 'image/'* ]]; then
+		mogrify -strip "$FAVICON_FILE"
+	fi
 	case "$MIME_TYPE" in
 	'image/jpeg')
 		echo "$0: warn: $DOMAIN provided a JPEG favicon" >&2
-		mogrify -strip "$FAVICON_FILE"
-		TARGET_FILE="$BASE_DIR/$DOMAIN.jpg"
 		;;
 	'image/png')
-		mogrify -strip "$FAVICON_FILE"
-		TARGET_FILE="$BASE_DIR/$DOMAIN.png"
+		;;
+	'image/webp')
+		continue
 		;;
 	*)
 		echo "$0: warn: unrecognized MIME-type $MIME_TYPE for $FAVICON_FILE" >&2
+		EXIT_CODE=1
 		continue
 		;;
 	esac
-	if [[ ! "$FAVICON_FILE" -ef "$TARGET_FILE" ]]; then
-		mv "$FAVICON_FILE" "$TARGET_FILE"
-	fi
+	TARGET_FILE="$BASE_DIR/$DOMAIN.webp"
+	cwebp -lossless -z 9 "$FAVICON_FILE" -o "$TARGET_FILE"
+	rm -vrf "$FAVICON_FILE"
 done
+
+exit "$EXIT_CODE"
