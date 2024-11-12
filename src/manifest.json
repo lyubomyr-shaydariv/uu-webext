@@ -193,8 +193,8 @@
 		"url": "https://github.com/lyubomyr-shaydariv/"
 	},
 	"icons": {
-		"48": "icon-48x48.png",
-		"128": "icon-128x128.png"
+		"48": "icon-48x48.webp",
+		"128": "icon-128x128.webp"
 	},
 	"manifest_version": 2,
 	"name": "uU (untrack URLs)",
