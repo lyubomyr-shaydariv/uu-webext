@@ -20,7 +20,7 @@ export default [
 		.FROM().QUERY_ENTRIES()
 		.DO().REMOVE('ei', 'gs_gbg', 'gs_lcp', 'gs_mss', 'gs_rn', 'gws_rd', 'sei', 'ved'),
 	RULE()
-		.AT().DOMAIN('google.com').PATHNAME('/url/')
+		.AT().DOMAIN('google.com').PATHNAME('/url', '/url/')
 		.FROM().QUERY_ENTRIES()
 		.APPLY().GET_PROPERTY('q', 'url').TO_URL()
 		.DO().REDIRECT(),
