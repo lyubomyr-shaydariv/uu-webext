@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('facebook.com', 'm.facebook.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().RETAIN('id', 'story_fbid'),
+		.DO().RETAIN('id', 'story_fbid', 'sfnsn'),
 	RULE()
 		.AT().DOMAIN('facebook.com').PATHNAME('/l.php', '/flx/warn/')
 		.FROM().QUERY_ENTRY_KEYS()
