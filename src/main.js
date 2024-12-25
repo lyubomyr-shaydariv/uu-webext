@@ -55,26 +55,26 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 },
 	{
 		types: [
-			'beacon',
-			'csp_report',
-			'font',
-			'image',
-			'imageset',
-			'main_frame',
-			'media',
-			'object',
-			'object_subrequest',
-			'ping',
-			'script',
-			'speculative',
-			'stylesheet',
-			'sub_frame',
-			'web_manifest',
-			'websocket',
-			'xml_dtd',
-			'xmlhttprequest',
-			'xslt',
-			'other'
+			// 'beacon', // TODO unlock
+			// 'csp_report', // TODO unlock
+			// 'font', // TODO unlock
+			// 'image', // TODO unlock
+			// 'imageset', // TODO unlock
+			'main_frame', // TODO unlock
+			// 'media', // TODO unlock
+			// 'object', // TODO unlock
+			// 'object_subrequest', // TODO unlock
+			// 'ping', // TODO unlock
+			// 'script', // TODO unlock
+			// 'speculative', // TODO unlock
+			// 'stylesheet', // TODO unlock
+			'sub_frame', // TODO unlock
+			// 'web_manifest', // TODO unlock
+			// 'websocket', // TODO unlock
+			// 'xml_dtd', // TODO unlock
+			// 'xmlhttprequest', // TODO unlock
+			// 'xslt', // TODO unlock
+			// 'other' // TODO unlock
 		],
 		urls: [
 			'<all_urls>'
