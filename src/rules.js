@@ -281,6 +281,25 @@ const DO = (ctx) => {
 // APPLY - functions
 //--------------------------------------------------------------------------------------------------
 
+// `APPEND ORIGINAL QUERY ENTRIES` is very limited:
+// - it does not allow specyfing which query parameters are appended
+// - query parameters cannot be transformed
+const __F__APPEND_ORIGINAL_QUERY_ENTRIES = (ctx) => {
+	ctx.source += ' APPEND ORIGINAL QUERY ENTRIES';
+	ctx.__apply_functions.push((arg) => {
+		if ( arg === undefined || arg === null ) {
+			return arg;
+		}
+		const newSearchParams = new URLSearchParams(arg.search);
+		for ( const [k, v] of new URLSearchParams(ctx.__original_url.search) ) {
+			newSearchParams.append(k, v);
+		}
+		arg.search = newSearchParams.toString();
+		return arg;
+	});
+	return APPLY(ctx);
+};
+
 const __F__EXECUTE_REGEXP = (ctx, regExp) => {
 	ctx.source += ` EXECUTE REGEXP ${literalize(regExp)}`;
 	ctx.__apply_functions.push((arg) => {
@@ -427,6 +446,7 @@ const APPLY = (ctx) => {
 		return arg;
 	};
 	return {
+		APPEND_ORIGINAL_QUERY_ENTRIES: () => __F__APPEND_ORIGINAL_QUERY_ENTRIES(ctx),
 		EXECUTE_REGEXP: (regExp) => __F__EXECUTE_REGEXP(ctx, regExp),
 		FROM_BASE64: () => __F__FROM_BASE64(ctx),
 		FROM_JSON: () => __F__FROM_JSON(ctx),
@@ -645,10 +665,12 @@ const AT = (ctx) => {
 	if ( ctx.__at_predicate_list === undefined ) {
 		ctx.__at_predicate_list = [];
 	}
+	ctx.__original_url = null;
 	ctx.__at_predicates = [];
 	ctx.__at_predicate_list.push(ctx.__at_predicates);
 	if ( ctx.at === undefined ) {
 		ctx.at = function(url) {
+			ctx.__original_url = new URL(url.toString());
 			if ( ctx.__at_predicate_list.length === 0 ) {
 				return true;
 			}
