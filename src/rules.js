@@ -282,17 +282,19 @@ const DO = (ctx) => {
 //--------------------------------------------------------------------------------------------------
 
 // `APPEND ORIGINAL QUERY ENTRIES` is very limited:
-// - it does not allow specyfing which query parameters are appended
 // - query parameters cannot be transformed
-const __F__APPEND_ORIGINAL_QUERY_ENTRIES = (ctx) => {
+const __F__APPEND_ORIGINAL_QUERY_ENTRIES = (ctx, ...keys) => {
 	ctx.source += ' APPEND ORIGINAL QUERY ENTRIES';
+	const uniqueKeys = new Set(...keys);
 	ctx.__apply_functions.push((arg) => {
 		if ( arg === undefined || arg === null ) {
 			return arg;
 		}
 		const newSearchParams = new URLSearchParams(arg.search);
 		for ( const [k, v] of new URLSearchParams(ctx.__original_url.search) ) {
-			newSearchParams.append(k, v);
+			if ( uniqueKeys.has(k) ) {
+				newSearchParams.append(k, v);
+			}
 		}
 		arg.search = newSearchParams.toString();
 		return arg;
@@ -446,7 +448,7 @@ const APPLY = (ctx) => {
 		return arg;
 	};
 	return {
-		APPEND_ORIGINAL_QUERY_ENTRIES: () => __F__APPEND_ORIGINAL_QUERY_ENTRIES(ctx),
+		APPEND_ORIGINAL_QUERY_ENTRIES: (...keys) => __F__APPEND_ORIGINAL_QUERY_ENTRIES(ctx, ...keys),
 		EXECUTE_REGEXP: (regExp) => __F__EXECUTE_REGEXP(ctx, regExp),
 		FROM_BASE64: () => __F__FROM_BASE64(ctx),
 		FROM_JSON: () => __F__FROM_JSON(ctx),
