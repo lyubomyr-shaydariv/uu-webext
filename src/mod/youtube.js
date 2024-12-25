@@ -12,7 +12,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('youtu.be')
 		.FROM().PATHNAME()
-		.APPLY().GET_PROPERTY(0).REPLACE_STRING(/(.*)/, 'https://www.youtube.com/watch?v=$1').TO_URL()
+		.APPLY().GET_PROPERTY(0).REPLACE_STRING(/(.*)/, 'https://www.youtube.com/watch?v=$1').TO_URL().APPEND_ORIGINAL_QUERY_ENTRIES('t')
 		.DO().REDIRECT(),
 	RULE()
 		.AT().DOMAIN('youtube.com').PATHNAME('/redirect')
