@@ -1,6 +1,6 @@
 ## ![uU](icon-32x32.webp)
 
-**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** (if possible).
+**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs**, bypasses **tracked redirects** (if possible) and sanitizes URLs.
 
 Currently supported trackers:
 
@@ -182,6 +182,10 @@ Currently supported trackers:
 * ![zillow](favicons/zillow.com.webp) Zillow (URLs)
 * ![zoopla](favicons/zoopla.co.uk.webp) Zoopla (URLs)
 * ... and some other common stuff for URLs
+
+Currently supported sanitizers:
+
+* Direct [plain XSS](https://salt.security/blog/over-1-million-websites-are-at-risk-of-sensitive-information-leakage---xss-is-dead-long-live-xss) in query parameters.
 
 #### Candidates
 * Parse.ly `Campaign` seems to be too board to be unsafely removed from all URLs.
