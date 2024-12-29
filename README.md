@@ -1,6 +1,8 @@
 ## ![uU](icon-32x32.webp)
 
-**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** for the following services (if possible):
+**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** (if possible).
+
+Currently supported trackers:
 
 * Action Map (URLs)
 * ![activecampaign](favicons/activecampaign.com.webp) ActiveCampaign (URLs)
