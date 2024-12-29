@@ -84,7 +84,7 @@ Currently supported trackers:
 * icptrack (redirects)
 * ![imdb](favicons/imdb.com.webp) IMDb (URLs and redirects)
 * ![impact](favicons/impact.com.webp) Impact (ex-Impact Radius) (URLs)
-* ![instagram](favicons/instagram.com.webp) Instagram (URLs and redirects)
+* ![instagram](favicons/instagram.com.webp) Instagram (URLs and redirects). Note: recent 2024 share identifiers are unsupported
 * ![instapage](favicons/instapage.com.webp) Instapage (redirects)
 * `itm_...` (URLs)
 * ![javlibrary](favicons/javlibrary.com.webp) JavLibrary (redirects)
