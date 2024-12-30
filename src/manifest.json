@@ -175,6 +175,7 @@
 			"mod/wsj.js",
 			"mod/wunderkind.js",
 			"mod/x.js",
+			"mod/xss.js",
 			"mod/yahoo.js",
 			"mod/yandex.js",
 			"mod/youtube.js",
