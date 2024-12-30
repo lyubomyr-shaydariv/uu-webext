@@ -24,6 +24,6 @@ The parameters below are declared right here because the rest of the parameters 
 export default [
 	RULE()
 		.AT().ANYWHERE()
-		.FROM().QUERY_ENTRIES()
+		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('adid', 'age-verified', 'ao_noptimize', 'cache_bust', 'campaignid', 'cn-reloaded')
 ];

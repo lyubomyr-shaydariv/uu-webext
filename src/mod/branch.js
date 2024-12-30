@@ -3,6 +3,6 @@ import {RULE} from '/rules.js';
 export default [
 	RULE()
 		.AT().ANYWHERE()
-		.FROM().QUERY_ENTRIES()
+		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('_branch_match_id', '_branch_referrer')
 ];

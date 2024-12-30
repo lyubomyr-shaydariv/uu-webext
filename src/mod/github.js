@@ -3,7 +3,7 @@ import {RULE} from '/rules.js';
 export default [
 	RULE()
 		.AT().DOMAIN('github.com')
-		.FROM().QUERY_ENTRIES()
+		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('email_source', 'email_token'),
 	RULE()
 		.AT().DOMAIN('github-redirect.dependabot.com')

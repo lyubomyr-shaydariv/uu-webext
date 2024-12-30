@@ -4,7 +4,7 @@ import {RULE} from '/rules.js';
 export default [
 	RULE()
 		.AT().HOSTNAME('search.aol.com').PATHNAME(PREFIX('/aol/search;'))
-		.FROM().QUERY_ENTRIES()
+		.FROM().QUERY_ENTRY_KEYS()
 		.DO().RETAIN('q'),
 	RULE()
 		.AT().HOSTNAME('search.aol.com').PATHNAME(PREFIX('/aol/search;'))

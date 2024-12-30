@@ -3,7 +3,7 @@ import {RULE} from '/rules.js';
 export default [
 	RULE()
 		.AT().HOSTNAME('mandrillapp.com').PATHNAME('/track/click/')
-		.FROM().QUERY_ENTRIES()
+		.FROM().QUERY_ENTRY_KEYS()
 		.APPLY().GET_PROPERTY('p').FROM_BASE64().FROM_JSON().GET_PROPERTY('p').FROM_JSON().GET_PROPERTY('url').TO_URL()
 		.DO().REDIRECT()
 ];
