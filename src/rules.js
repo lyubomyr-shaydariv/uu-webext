@@ -541,6 +541,42 @@ const __FROM__QUERY_ENTRY_KEYS = (ctx, pairDelimiter, entryDelimiter) => {
 	};
 };
 
+const __FROM__QUERY_ENTRY_VALUES = (ctx, pairDelimiter, entryDelimiter) => {
+	pairDelimiter ||= DEFAULT_PAIR_DELIMITER;
+	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER;
+	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {
+		ctx.source += ' QUERY ENTRY VALUES';
+		ctx.createKeysContext = (url) => {
+			const {searchParams} = url;
+			return {
+				getEntryValues: () => searchParams.values(),
+				removeValues: (...values) => {
+					values = new Set(...values);
+					throw values;
+for ( const value of values ) {
+	searchParams.delete(key);
+}
+				}
+			};
+		};
+	} else {
+		ctx.source += ` QUERY ENTRY VALUES BY ${literalize(pairDelimiter)} AND ${literalize(entryDelimiter)}`;
+		ctx.createKeysContext = (url) => {
+			// TODO
+			throw new Error(`cannot parse ${url.search} pair-delimited with '${pairDelimiter}' and entry-delimited with '${entryDelimiter}'`);
+		};
+	}
+	ctx.getValue = (url) => url.searchParams;
+	ctx.setValue = (url, ...entries) => {
+		url.searchParams = new URLSearchParams(/* ... */entries);
+	};
+	return {
+		DO: () => DO(ctx),
+		/* eslint-disable-next-line sort-keys */
+		APPLY: () => APPLY(ctx)
+	};
+};
+
 const FROM = (ctx) => {
 	ctx.source += '\nFROM';
 	return {
