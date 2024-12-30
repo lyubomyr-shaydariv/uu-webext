@@ -284,7 +284,7 @@ const DO = (ctx) => {
 // `APPEND ORIGINAL QUERY ENTRIES` is very limited:
 // - query parameters cannot be transformed
 const __F__APPEND_ORIGINAL_QUERY_ENTRIES = (ctx, ...keys) => {
-	ctx.source += ' APPEND ORIGINAL QUERY ENTRIES';
+	ctx.source += ` APPEND ORIGINAL QUERY ENTRIES ${literalize(...keys)}`;
 	const uniqueKeys = new Set(...keys);
 	ctx.__apply_functions.push((arg) => {
 		if ( arg === undefined || arg === null ) {
