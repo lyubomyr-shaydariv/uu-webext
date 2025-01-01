@@ -55,26 +55,26 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 },
 	{
 		types: [
-			// 'beacon', // TODO unlock
-			// 'csp_report', // TODO unlock
-			// 'font', // TODO unlock
-			// 'image', // TODO unlock
-			// 'imageset', // TODO unlock
-			'main_frame', // TODO unlock
-			// 'media', // TODO unlock
-			// 'object', // TODO unlock
-			// 'object_subrequest', // TODO unlock
-			// 'ping', // TODO unlock
-			// 'script', // TODO unlock
-			// 'speculative', // TODO unlock
-			// 'stylesheet', // TODO unlock
-			'sub_frame', // TODO unlock
-			// 'web_manifest', // TODO unlock
-			// 'websocket', // TODO unlock
-			// 'xml_dtd', // TODO unlock
-			// 'xmlhttprequest', // TODO unlock
-			// 'xslt', // TODO unlock
-			// 'other' // TODO unlock
+			// 'beacon', // TODO unlock if configurable
+			// 'csp_report', // TODO unlock if configurable
+			// 'font', // TODO unlock if configurable
+			// 'image', // TODO unlock if configurable
+			// 'imageset', // TODO unlock if configurable
+			'main_frame',
+			// 'media', // TODO unlock if configurable
+			// 'object', // TODO unlock if configurable
+			// 'object_subrequest', // TODO unlock if configurable
+			// 'ping', // TODO unlock if configurable
+			// 'script', // TODO unlock if configurable
+			// 'speculative', // TODO unlock if configurable
+			// 'stylesheet', // TODO unlock if configurable
+			'sub_frame',
+			// 'web_manifest', // TODO unlock if configurable
+			// 'websocket', // TODO unlock if configurable
+			// 'xml_dtd', // TODO unlock if configurable
+			// 'xmlhttprequest', // TODO unlock if configurable
+			// 'xslt', // TODO unlock if configurable
+			'other'
 		],
 		urls: [
 			'<all_urls>'
