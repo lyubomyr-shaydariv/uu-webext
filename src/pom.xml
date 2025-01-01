@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>lsh</groupId>
+	<artifactId>uu-parent</artifactId>
+	<packaging>pom</packaging>
+	<version>0-SNAPSHOT</version>
+
+	<modules>
+		<module>core</module>
+	</modules>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>jakarta.annotation</groupId>
+				<artifactId>jakarta.annotation-api</artifactId>
+				<version>3.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>5.11.4</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-params</artifactId>
+				<version>5.11.4</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>5.14.2</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.36</version>
+				<scope>provided</scope>
+			</dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>3.5.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<rules>
+						<banDynamicVersions/>
+						<banTransitiveDependencies/>
+						<dependencyConvergence/>
+						<requireMavenVersion>
+							<version>[3.6.3,)</version>
+						</requireMavenVersion>
+						<requireSnapshotVersion/>
+					</rules>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<failOnWarning>false</failOnWarning>
+					<showDeprecation>true</showDeprecation>
+					<showWarnings>true</showWarnings>
+					<release>19</release>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.2</version>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+	<reporting>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>3.6.0</version>
+			</plugin>
+		</plugins>
+
+	</reporting>
+
+	<profiles>
+
+		<profile>
+
+			<id>generate-javadoc</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.projectlombok</groupId>
+						<artifactId>lombok-maven-plugin</artifactId>
+						<version>1.18.20.0</version>
+						<configuration>
+							<addOutputDirectory>false</addOutputDirectory>
+							<outputDirectory>${project.build.directory}/delombok</outputDirectory>
+							<sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>delombok</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>org.projectlombok</groupId>
+								<artifactId>lombok</artifactId>
+								<version>1.18.34</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.11.2</version>
+						<configuration>
+							<sourcepath>${project.build.directory}/delombok</sourcepath>
+						</configuration>
+						<executions>
+							<execution>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>javadoc</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>show-dependency-tree</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-dependency-plugin</artifactId>
+						<version>3.8.1</version>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>tree</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<!-- NOTE: optionally run with the -U flag -->
+
+		<profile>
+
+			<id>show-dependency-updates</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<version>2.18.0</version>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>display-dependency-updates</goal>
+									<goal>display-plugin-updates</goal>
+									<goal>display-extension-updates</goal>
+									<goal>display-parent-updates</goal>
+									<goal>display-property-updates</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>upgrade-dependencies</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<version>2.16.2</version>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>use-latest-versions</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>use-checkstyle</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<version>3.6.0</version>
+						<dependencies>
+							<dependency>
+								<groupId>com.puppycrawl.tools</groupId>
+								<artifactId>checkstyle</artifactId>
+								<version>10.17.0</version>
+							</dependency>
+						</dependencies>
+						<executions>
+							<execution>
+								<phase>validate</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+								<configuration>
+									<configLocation>checkstyle-rules.xml</configLocation>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>use-jacoco</id>
+
+			<build>
+
+				<plugins>
+
+					<!--
+					TODO exclude never-executing code blocks
+					See more: https://github.com/jacoco/jacoco/wiki/FilteringOptions#filters-for-code-where-test-execution-is-questionable-or-impossible-by-design
+					-->
+					<plugin>
+						<groupId>org.jacoco</groupId>
+						<artifactId>jacoco-maven-plugin</artifactId>
+						<version>0.8.12</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>prepare-agent</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>generate-code-coverage-report</id>
+								<phase>test</phase>
+								<goals>
+									<goal>report</goal>
+								</goals>
+								<configuration>
+									<formats>
+										<format>CSV</format>
+										<format>HTML</format>
+									</formats>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+		<profile>
+
+			<id>use-pmd</id>
+
+			<build>
+
+				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<version>3.26.0</version>
+						<executions>
+							<execution>
+								<id>cpd-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>cpd-check</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>check</id>
+								<phase>process-classes</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+
+			</build>
+
+		</profile>
+
+	</profiles>
+
+	<developers>
+
+		<developer>
+			<id>lsh</id>
+			<name>Lyubomyr Shaydariv</name>
+			<roles>
+				<role>developer</role>
+			</roles>
+			<timezone>Europe/Kyiv</timezone>
+		</developer>
+
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+</project>

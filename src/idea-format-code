@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "$IDEA_HOME" ]; then
+	echo "$0: fatal: IDEA_HOME is not set" >&2
+	exit 1
+fi
+
+BASE_DIR="$(dirname "$(realpath "$0")")"
+
+"$IDEA_HOME/bin/idea.sh" format -s "$BASE_DIR/idea-code-style.xml" -r "$BASE_DIR/src" "$BASE_DIR/pom.xml"
