@@ -5,5 +5,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('flipkart.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE(PREFIX('affExtParam'), 'affid', /[cilp]id/, 'collection-tab-name', 'fm', 'marketplace', PREFIX('otracker'), /p\[\]/, 'pageUID', 'ppn', 'ppt', 'pwsvid', '_redIf', /sattr\[\]/, 'srno', 'ssid', 'st', 'store')
+		.DO().REMOVE(PREFIX('affExtParam'), 'affid', /[cilp]id/, 'collection-tab-name', 'fm', 'marketplace', PREFIX('otracker'), /p\[\]/, 'pageUID', 'ppn', 'ppt', 'pwsvid', '_refId', /sattr\[\]/, 'srno', 'ssid', 'st', 'store')
 ];
