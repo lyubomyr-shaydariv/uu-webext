@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('bestbuy.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('acampID', 'intl', 'loc', 'mpid')
+		.DO().REMOVE('acampID', 'intl', 'irclickid', 'irgwc', 'loc', 'mpid')
 ];
