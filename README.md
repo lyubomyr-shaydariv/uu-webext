@@ -112,6 +112,7 @@ Currently supported trackers:
 * ![marin](favicons/marinsoftware.com.webp) Marin (URLs)
 * ![matomo](favicons/matomo.org.webp) Matomo/Piwik (URLs)
 * ![medium](favicons/medium.com.webp) Medium (redirects)
+* ![meetup](favicons/meetup.com.webp) Meetup (URLs)
 * ![messenger](favicons/messenger.com.webp) Messenger (redirects)
 * ![microsoft](favicons/www.microsoft.com.webp) Microsoft (URLs)
 * ![microsoft-365](favicons/www.office.com.webp) Microsoft 365 (former Microsoft Office) (redirects)
