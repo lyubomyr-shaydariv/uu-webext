@@ -111,6 +111,7 @@
 			"mod/medium.js",
 			"mod/messenger.js",
 			"mod/microsoft.js",
+			"mod/mirror.js",
 			"mod/mozilla.js",
 			"mod/msn.js",
 			"mod/narvar.js",

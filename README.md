@@ -113,6 +113,7 @@ Currently supported trackers:
 * ![messenger](favicons/messenger.com.webp) Messenger (redirects)
 * ![microsoft](favicons/www.microsoft.com.webp) Microsoft (URLs)
 * ![microsoft-365](favicons/www.office.com.webp) Microsoft 365 (former Microsoft Office) (redirects)
+* ![mirror](favicons/mirror.co.uk.webp) Mirror (URLs)
 * ![mozilla](favicons/mozilla.org.webp) Mozilla (redirects)
 * ![msn](favicons/msn.com.webp) MSN (URLs)
 * ![narvar](favicons/narvar.com.webp) Narvar (URLs)
