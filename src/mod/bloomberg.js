@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('bloomberg.com', 'bloomberglaw.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('in_source', 'leadSource', 'srnd', 'trk')
+		.DO().REMOVE('in_source', 'leadSource', 'sref', 'srnd', 'trk')
 ];
