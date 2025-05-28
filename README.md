@@ -36,6 +36,7 @@ Currently supported trackers:
 * ![cision](favicons/c212.net.webp) Cision (redirects)
 * ![cj](favicons/cj.com.webp) CJ (URLs)
 * ![cnet](favicons/cnet.com.webp) CNET (URLs)
+* ![cnn](favicons/cnn.com.webp) CNN (URLs)
 * ![commissionfactory](favicons/commissionfactory.com.webp) Commission Factory (redirects)
 * ![comScore](favicons/comscore.com.webp) comScore (redirects)
 * ![connexity](favicons/connexity.com.webp) Connexity (redirects)
