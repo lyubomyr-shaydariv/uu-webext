@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('msn.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('cvid', 'ocid')
+		.DO().REMOVE('cvid', 'ei', 'ocid', 'pc')
 ];
