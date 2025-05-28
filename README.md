@@ -174,6 +174,7 @@ Currently supported trackers:
 * ![wickedreports](favicons/wickedreports.com.webp) Wicked Reports (URLs)
 * ![wikipedia](favicons/wikipedia.org.webp) Wikipedia (URLs)
 * ![wired](favicons/wired.com.webp) Wired (URLs)
+* ![wise](favicons/wise.com.webp) Wise (URLs)
 * ![workable](favicons/workable.com.webp) Workable (redirects)
 * ![wsj](favicons/wsj.com.webp) Wall Street Journal (URLs)
 * Wunderkind (URLs)
