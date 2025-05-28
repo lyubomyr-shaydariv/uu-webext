@@ -10,7 +10,7 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('cn', 'cxt', /^ref_.*/, 's', 'src', 't'),
 	RULE()
-		.AT().DOMAIN('twitter.com', 'x.com').QUERY_ENTRY_KEYS('ref_url')
+		.AT().DOMAIN('twitter.com', 'x.com').QUERY_ENTRY_KEYS('ref_src', 'ref_url')
 		.FROM().QUERY_ENTRY_KEYS()
 		.APPLY().GET_PROPERTY('ref_url').FROM_URI_COMPONENT().TO_URL()
 		.DO().REDIRECT(),
