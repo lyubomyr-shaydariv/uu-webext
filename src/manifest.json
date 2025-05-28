@@ -76,6 +76,7 @@
 			"mod/goodreads.js",
 			"mod/google.js",
 			"mod/hackernoon.js",
+			"mod/handelsblatt.js",
 			"mod/harvardbusinessreview.js",
 			"mod/hive.js",
 			"mod/hrefli.js",

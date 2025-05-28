@@ -76,6 +76,7 @@ Currently supported trackers:
 * ![google](favicons/google.com.webp) Google (URLs, redirects including AMP; **NOTE:** [Google Docs HTML-exported pages](https://fosstodon.org/@Joe_0237/111145684757912952) are only supported/intercepted when open in the browser: _Today I found out that google docs infects html exports with spyware, no scripts, but links in your document are replaced with invisible google tracking redirects. I was using their software because a friend wanted me to work with him on a google doc, he is a pretty big fan of their software, but we were both somehow absolutely shocked that they would go that far._)
 * ![guardian](favicons/theguardian.com.webp) The Guardian (URLs)
 * ![hackernoon](favicons/hackernoon.com.webp) HackerNoon (URLs)
+* ![handelsblatt](favicons/handelsblatt.com.webp) Handelsblatt (URLs)
 * ![harvardbusinessreview](favicons/hbr.org.webp) Harvard Business Review (URLs)
 * ![hive](favicons/hive.co.webp) Hive (URLs)
 * href.li (redirects)
