@@ -164,6 +164,7 @@ Currently supported trackers:
 * ![threads](favicons/threads.com.webp) Threads (URLs)
 * ![tiktok](favicons/tiktok.com.webp) TikTok (URLs and redirects)
 * ![toyhouse](favicons/toyhou.se.webp) Toyhouse (redirects)
+* ![tokopedia](favicons/tokopedia.com.webp) Tokopedia (URLs)
 * ![tradedoubler](favicons/tradedoubler.com.webp) Tradedoubler (redirects)
 * go.trafficrouter.io (redirects)
 * ![tumblr](favicons/tumblr.com.webp) Tumblr (redirects)
