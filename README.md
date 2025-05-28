@@ -30,6 +30,7 @@ Currently supported trackers:
 * ![branch](favicons/branch.io.webp) Branch (URLs)
 * ![brave](favicons/brave.com.webp) Brave (URLs)
 * Bronto (URLs)
+* ![carousell](favicons/carousell.com.webp) Carousell (URLs)
 * ![caseking](favicons/caseking.de.webp) CaseKing.de (URLs)
 * ![cell](favicons/cell.com.webp) Cell Press (URLs)
 * ![changeorg](favicons/change.org.webp) Change.org (URLs)
