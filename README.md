@@ -64,6 +64,7 @@ Currently supported trackers:
 * ![fever](favicons/feverup.com.webp) Fever (URLs)
 * ![flipkart](favicons/flipkart.com.webp) Flipkart (URLs)
 * ![flyingpress](favicons/flyingpress.com.webp) FlyingPress (URLs)
+* ![forbes](favicons/forbes.com.webp) Forbes (URLs)
 * ![gamespot](favicons/gamespot.com.webp) GameSpot (URLs)
 * ![geniuslink](favicons/geniuslink.com.webp) Geniuslink (URLs)
 * ![github](favicons/github.com.webp) GitHub (URLs)
