@@ -16,6 +16,7 @@ Currently supported trackers:
 * ![aol](favicons/aol.com.webp) AOL (URLs)
 * ![apple](favicons/apple.com.webp) Apple (URLs)
 * app.link (URLs)
+* ![theathletic](favicons/theathletic.com.webp) The Athletic (URLs)
 * ![atinternet](favicons/atinternet.com.webp) AT Internet (URLs)
 * ![backerkit](favicons/backerkit.com.webp) BackerKit (URLs)
 * ![bamboohr](favicons/bamboohr.com.webp) BambooHR (URLs)
