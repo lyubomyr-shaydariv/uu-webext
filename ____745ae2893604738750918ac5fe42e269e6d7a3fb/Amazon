@@ -1,0 +1,51 @@
+// Common Amazon domains
+"amazon.com", "amazon.co.uk", "amazon.de", "amazon.fr", "amazon.it", "amazon.es", "amazon.ca", "amazon.co.jp", "amazon.in", "amazon.com.br", "amazon.com.mx", "amazon.com.au", "amzn.to", "amzn.eu", "amzn.asia"
+
+// Basic tracking
+"tag", "linkCode", "linkId", "camp", "creative", "creativeASIN", "ref_", "ref", "refRID", "ie",
+// Product tracking
+"pf_rd_m", "pf_rd_s", "pf_rd_r", "pf_rd_t", "pf_rd_p", "pf_rd_i", "pd_rd_w", "pd_rd_wg", "pd_rd_r", "pd_rd_i", "pf_rd_sg", "pd_rd_sg", "pd_dcr", "pd_rd_w-k", "pd_rd_r-k",
+// Search & discovery tracking
+"qid", "rank", "spIA", "spLa", "suggestionType", "sprefix", "crid", "cv_ct_cx", "cv_ct_id", "cv_ct_pg",
+// Share & referral tracking
+"share", "share_at", "socialMediaReferral", "referer", "ms3_c", "spLM", "spPD", "spIAC",
+// Analytics & attribution
+"smid", "ascsubtag", "tag_id", "sa-no-redirect", "pldnSite", "th", "psc", "dchild", "almBrandId",
+// Navigation tracking
+"navLanguage", "rnid", "rh", "srs", "starsLeft", "qsid", "sr", "sres", "__mk_de_DE", "__mk_en_US",
+// Session & request tracking
+"sessionId", "sqid", "colid", "coliid", "ubid", "visitId", "asc_campaign", "asc_source", "asc_refurl",
+// A/B testing & experiments
+"feature", "variant", "experiment", "treatment", "bucket", "version", "isTest", "qualifier",
+// Recommendation tracking
+"_encoding", "bbn", "dc", "dcm", "field-lbr_brands_browse-bin", "fst", "lo", "me", "pf", "pf_rd_r", "pf_rd_t",
+// Device & platform tracking
+"deviceType", "deviceVersion", "appVersion", "platform", "isAndroid", "isIOS", "isMobile", "isTablet",
+// Cart & checkout tracking
+"carId", "cartInitiateId", "fromAnywhere", "sbbutton", "ascsess", "asc_contentid", "asc_item", "asc_topic",
+// Affiliate & commission tracking
+"associateTag", "ascsubtag", "marketplaceID", "maas", "adId", "ad-id", "campaign", "adgrpid",
+// Prime & subscription tracking
+"primeCampaignId", "primeExpirationDate", "primeStatus", "benefitId", "benefitOptimizationId", "subscriptionId",
+// Wish list & registry tracking
+"colid", "coliid", "wl_id", "registry", "registryId", "registryType", "weblab-wl", "wl-id",
+// Technical & misc parameters
+"encoding", "node", "nodeId", "field-keywords", "url", "path", "hidden-keywords", "fap", "fie", "redirect", "redirectASIN", "sspa", "spNs",
+// Legacy parameters
+"t", "marketplaceId", "merchant", "queueName", "sr", "rdc", "rdm", "rdl", "sourcecustomerorglistid", "sourcecustomerorglistitemid", "sz", "idx"
+
+// Parameters to preserve for non-product pages
+"keywords", // Search keywords
+"k", // Search keywords (alternative)
+"i", // Category/index
+"rh", // Refinement hierarchy
+"s", // Sort parameter
+"page", // Pagination
+"node", // Category node
+"field-keywords", // Search field
+"field-brand", // Brand filter
+"field-price-range", // Price filter
+"field-availability", // Availability filter
+"sort", // Sort order
+"lo", // Layout option
+"fs" // Filter state

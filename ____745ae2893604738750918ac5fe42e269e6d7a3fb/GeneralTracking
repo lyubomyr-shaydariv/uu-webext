@@ -1,0 +1,17 @@
+// UTM parameters
+"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id", "utm_name", "utm_reader", "utm_brand", "utm_pubreferrer", "utm_swu", "utm_viz_id", "utm_referrer", "utm_social", "utm_social-type",
+// Click IDs
+"fbclid", "gclid", "dclid", "twclid", "msclkid", "yclid", "gbraid", "wbraid", "ko_click_id", "epik", "pp", "gclsrc", "gad_source",
+// Analytics
+"_ga", "_gl", "_hsenc", "_hsmi", "__hssc", "__hstc", "mc_cid", "mc_eid", "_openstat", "vgo_ee", "hsCtaTracking", "_ke", "_kx", "__hmb", "__hmc", "__hmd", "__hml", "__s", "rb_clickid", "ai", "_bta_tid", "_bta_c",
+// General tracking
+"ref", "referer", "referrer", "source", "src", "share", "si", "spm", "campaign_id", "ad_id", "affiliate", "aff_id", "click_id", "clickid", "session_id", "sessionid", "soc_src", "soc_trk", "trk", "trkInfo",
+// Email tracking
+"eid", "mid", "ml_subscriber", "ml_subscriber_hash", "eh", "amp", "amp_device_id", "usqp", "ved", "usp", "sa", "cid", "icid",
+// Social & sharing
+"shared_by", "share_id", "share_token", "__twitter_impression", "spJobID", "spMailingID", "spReportId", "spUserID", "__tn__", "fb_action_ids",
+// E-commerce
+"irclickid", "irgwc", "ircid", "sharedid", "sscid", "wickedid", "zanpid", "pepperjam_enterprise_affiliate", "ranMID", "ranEAID", "ranSiteID", "shareasale_site_id", "shareasale_user_id"
+
+// Prefixes that indicate tracking parameters
+"wt.", "WT.", "pk_", "at_", "sc_", "campaign", "itm_", "elq", "matomo_", "mtm_", "clk", "ito", "xtor", "piwik_", "dm_", "cx_"
