@@ -1,0 +1,52 @@
+// Basic tracking
+"si", "pp", "feature", "app", "attribution_link", "embeds_referring_euri", "embeds_referring_origin", "embeds_euri", "source_ve_path", "gclid", "ytclid",
+// Share & referral tracking
+"share", "shared_via", "ref", "referer", "referrer", "fbclid", "sms_ss", "ucbcb", "share_source",
+// Analytics & attribution
+"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id", "utm_reader", "utm_pubreferrer",
+// Playback & session tracking
+"session_id", "ei", "ved", "sourceid", "ssfr", "continuation", "itct", "ctoken", "sttm",
+// Engagement tracking
+"lact", "action_name", "action_type", "annotation_id", "src_vid", "feature_id", "c", "client",
+// Navigation tracking
+"redir_token", "next", "flow", "entry_point", "bp", "sp", "sr_origin", "algo", "aq",
+// Mobile app tracking
+"app_version", "app_name", "device_id", "install_id", "app_install_ctx", "vndapp", "vndclient", "mweb",
+// A/B testing & experiments
+"variant", "experiment_id", "bucket", "treatment", "version_id", "test_group", "disable_polymer",
+// Recommendation tracking
+"rec_id", "recommendation_info", "shelf_id", "video_id_list", "suggested_video_id", "rv",
+// Notification tracking
+"notification_id", "notification_type", "alert_type", "push_id", "email_id", "sms_id",
+// Search & discovery
+"search_sort", "search_filter", "search_type", "search_token", "query_source", "suggested_by",
+// Ads & monetization
+"ad_id", "campaign_id", "creative_id", "placement_id", "ad_type", "ad_signal", "autonav", "autoplay",
+// Channel & creator tracking
+"channel_feature", "creator_channel_id", "ab_beacon", "subscribe_feature", "notification_menu_feature",
+// Playlist tracking (non-essential ones)
+"playnext", "shuffle", "mix_id", "nolist",
+// Technical & misc
+"bpctr", "pbjreload", "pbj", "hl", "gl", "persist_hl", "persist_gl", "has_verified", "nohtml5", "html5", "spfreload", "disable_related_pause_replay", "ytrcc", "vvt", "vl", "vq", "vss_host", "vps", "vpst", "vpstf", "vpsrc", "w", "h", "bh", "bw", "adsense_video_doc_id",
+// Legacy parameters
+"annotation_src", "endscreen_src", "iv_load_policy", "iv_allow_external_links", "iv_endscreen_url", "annotation_3_module", "cid", "cin", "cver"
+
+// Parameters essential for YouTube functionality
+"v",     // Video ID
+"t",     // Timestamp (e.g., t=1m30s)
+"list",  // Playlist ID
+"index", // Position in playlist
+"start", // Start time in seconds
+"end",   // End time in seconds
+"ab_channel", // Channel name (sometimes needed)
+"search_query", // For search results
+"q",     // Alternative search query parameter
+"radio", // Radio station ID (YouTube Music)
+"p",     // Page parameter for search results
+"page",  // Alternative page parameter
+"sort",  // Sort order
+"view",  // View type (grid/list)
+"shelf_id", // Shelf identifier (needed for navigation)
+"nolist" // Disable playlist (user preference)
+
+"youtube.com", "youtu.be", "youtube-nocookie.com", "music.youtube.com"
