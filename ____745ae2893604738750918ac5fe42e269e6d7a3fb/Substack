@@ -1,0 +1,34 @@
+// UTM parameters (most common)
+"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id",
+// Email tracking
+"isFreemail", "isFromEmail", "email_source", "email_type", "email_id", "email_click",
+// Referral & token tracking
+"r", "ref", "referrer", "token", "access_token", "auth_token", "jwt", "session_id",
+// Analytics & attribution
+"source", "src", "origin", "attribution", "attribution_id", "attribution_source",
+// Engagement tracking
+"action", "clicked", "opened", "shared", "forwarded", "replied", "reaction",
+// A/B testing
+"experiment", "variant", "test", "bucket", "ab_test", "feature_flag", "rollout",
+// Newsletter tracking
+"newsletter_id", "edition_id", "issue_id", "subscriber_id", "list_id", "segment_id",
+// Social media tracking
+"social_source", "social_action", "social_network", "tw_source", "fb_source", "li_source",
+// App tracking
+"app_source", "app_version", "device_id", "platform", "os_version", "app_link",
+// Payment & subscription tracking
+"payment_source", "subscription_source", "trial_source", "upgrade_source", "plan_id",
+// Navigation tracking
+"nav_source", "nav_type", "entry_point", "exit_point", "page_source", "section",
+// Comment & interaction tracking
+"comment_id", "reply_to", "thread_id", "notification_id", "notif_type",
+// Search & discovery
+"search_source", "search_term", "discovery_source", "recommendation_source", "suggested_by",
+// Time-based tracking
+"timestamp", "ts", "time", "date", "expires", "exp", "iat", "nbf"
+
+// Parameters essential for Substack functionality
+"publication_id",  // Essential for identifying the publication
+"post_id"         // Essential for identifying the specific post
+
+"substack.com"
