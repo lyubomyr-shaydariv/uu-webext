@@ -196,8 +196,8 @@ Currently supported trackers:
 * ... and some other common stuff for URLs
 
 #### Candidates
-* Parse.ly `Campaign` seems to be too board to be unsafely removed from all URLs.
-* Facebook, Product Hunt `ref` seems to be too board to be unsafely removed from all URLs.
+* Parse.ly `Campaign` seems to be too board to be safely removed from all URLs.
+* Facebook, Product Hunt `ref` seems to be too board to be safely removed from all URLs.
 * Unknown `campaign`, `campaignid`, `mp`, `sl`, `tpl`, `unlock` tracking parameters.
 
 #### Rejected
