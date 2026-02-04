@@ -1,10 +1,7 @@
-// Common Amazon domains
-"amazon.com", "amazon.co.uk", "amazon.de", "amazon.fr", "amazon.it", "amazon.es", "amazon.ca", "amazon.co.jp", "amazon.in", "amazon.com.br", "amazon.com.mx", "amazon.com.au", "amzn.to", "amzn.eu", "amzn.asia"
-
 // Basic tracking
-"tag", "linkCode", "linkId", "camp", "creative", "creativeASIN", "ref_", "ref", "refRID", "ie",
+"ie",
 // Product tracking
-"pf_rd_m", "pf_rd_s", "pf_rd_r", "pf_rd_t", "pf_rd_p", "pf_rd_i", "pd_rd_w", "pd_rd_wg", "pd_rd_r", "pd_rd_i", "pf_rd_sg", "pd_rd_sg", "pd_dcr", "pd_rd_w-k", "pd_rd_r-k",
+"pf_rd_sg", "pd_rd_sg", "pd_dcr", "pd_rd_w-k", "pd_rd_r-k",
 // Search & discovery tracking
 "qid", "rank", "spIA", "spLa", "suggestionType", "sprefix", "crid", "cv_ct_cx", "cv_ct_id", "cv_ct_pg",
 // Share & referral tracking
@@ -18,7 +15,7 @@
 // A/B testing & experiments
 "feature", "variant", "experiment", "treatment", "bucket", "version", "isTest", "qualifier",
 // Recommendation tracking
-"_encoding", "bbn", "dc", "dcm", "field-lbr_brands_browse-bin", "fst", "lo", "me", "pf", "pf_rd_r", "pf_rd_t",
+"_encoding", "bbn", "dc", "dcm", "field-lbr_brands_browse-bin", "fst", "lo", "me", "pf",
 // Device & platform tracking
 "deviceType", "deviceVersion", "appVersion", "platform", "isAndroid", "isIOS", "isMobile", "isTablet",
 // Cart & checkout tracking
