@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('igshid', 'ig_rid'),
+		.DO().REMOVE('igshid', 'ig_cache_key', 'ig_mid', 'ig_rid', 'ig_share_sheet'),
 	RULE()
 		.AT().DOMAIN('instagram.com')
 		.FROM().QUERY_ENTRY_KEYS()
