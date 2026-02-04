@@ -1,5 +1,5 @@
 // Basic tracking
-"igsh", "igshid", "ig_cache_key", "ig_mid", "ig_share_sheet", "__a", "__d", "_rdr", "hl",
+"__a", "__d", "_rdr", "hl",
 // Share tracking
 "share_app_id", "share_sheet_id", "share_id", "ig_did", "share_campaign_id", "share_link_id",
 // Analytics & attribution
