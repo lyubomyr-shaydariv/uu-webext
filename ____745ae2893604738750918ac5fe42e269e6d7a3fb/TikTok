@@ -1,5 +1,3 @@
-// Basic tracking
-"_r", "_t", "_d", "tt_from", "tt_content", "share_source", "u_code", "preview_pb", "share_app_id", "share_link_id",
 // Share & referral tracking
 "share_item_id", "share_author_id", "share_app_name", "timestamp", "utm_source", "utm_campaign", "utm_medium",
 // Analytics & attribution
