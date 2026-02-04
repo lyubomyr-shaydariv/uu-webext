@@ -1,14 +1,5 @@
-// utmParameters
-"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "utm_id", "utm_reader", "utm_name", "utm_referrer", "utm_social", "utm_social-type", "utm_brand", "utm_cid", "utm_viz_id", "utm_pubreferrer"
-
-// socialMediaTracking
-"fbclid", "gclid", "dclid", "msclkid", "twclid"
-
-// analyticsTracking
-"ga_source", "ga_medium", "ga_term", "ga_content", "ga_campaign", "ga_place", "yclid", "ml_subscriber", "ml_subscriber_hash", "_openstat"
-
 // ecommerceTracking
-"mc_cid", "mc_eid", "mc_tc"
+"mc_tc"
 
 // socialSharing
 "share_id", "igshid", "igsh", "ref", "referrer", "source", "source_platform", "si", "__a", "__d", "_rdr", "hl"
@@ -20,7 +11,7 @@
 "ig_cache_key", "ig_mid", "ig_share_sheet"
 
 // facebookSpecific
-"__cft__", "__tn__", "_branch_match_id", "epa", "_gl", "mibextid", "fb_action_ids", "fb_action_types", "fb_source", "fb_ref", "fb_comment_id", "fb_story_location", "fb_dtsg_ag", "fbid"
+"__cft__", "epa", "fb_story_location", "fb_dtsg_ag", "fbid"
 
 // twitterSpecific
 "s", "t", "ref_src", "ref_url", "via"
@@ -38,55 +29,46 @@
 "feature", "pp", "si", "embeds_referring_euri", "embeds_referring_origin", "source_ve_path", "embeds_euri", "app", "attribution_link", "ytclid"
 
 // tiktokSpecific
-"_t", "_r", "checksum", "sec_uid", "share_app_id", "share_link_id", "tt_from", "u_code", "user_id", "preview_pb", "language", "timestamp", "utm_source", "utm_campaign", "utm_medium", "aid", "iid"
+"_t", "_r", "checksum", "sec_uid", "share_app_id", "share_link_id", "tt_from", "u_code", "user_id", "preview_pb", "language", "timestamp", "aid", "iid"
 
 // linkedinSpecific
 "trackingId", "lipi", "licu", "trk", "trkEmail", "trkInfo", "midToken", "midSig", "eBP", "tscp", "refId", "veh"
 
 // pinterestSpecific
-"e_t", "e_t_s", "e_t_cs", "ouuid", "cid", "sfo", "sfo_s", "nic", "nic_v", "pin_unauth", "dpi", "utm_source", "i", "w", "m", "n"
+"e_t", "e_t_s", "e_t_cs", "ouuid", "cid", "sfo", "sfo_s", "nic", "nic_v", "pin_unauth", "dpi", "i", "w", "m", "n"
 
 // spotifySpecific
-"si", "utm_source", "utm_medium", "utm_campaign", "utm_content", "dl_branch", "dl_mobileapp", "go", "nd", "uri"
+"si", "dl_branch", "dl_mobileapp", "go", "nd", "uri"
 
 // mediumSpecific
-"source", "sk", "source_user_id", "source_post_link", "utm_source", "utm_medium", "utm_campaign"
-
-// discordSpecific
-"utm_source", "utm_medium", "utm_campaign", "utm_content"
+"source", "sk", "source_user_id", "source_post_link"
 
 // telegramSpecific
-"utm_source", "utm_medium", "utm_campaign", "utm_content", "tgme", "start", "startgroup", "game", "voicechat"
+"tgme", "start", "startgroup", "game", "voicechat"
 
 // whatsappSpecific
-"utm_source", "utm_medium", "utm_campaign", "utm_content", "app_absent", "link_medium", "link_source"
+"app_absent", "link_medium", "link_source"
 
 // snapchatSpecific
-"share_id", "locale", "attachment_url", "utm_source", "utm_campaign", "utm_medium", "utm_content", "utm_term"
+"share_id", "locale", "attachment_url"
 
 // aliexpressSpecific
 "spm", "scm", "scm_id", "scm-url", "pvid", "algo_expid", "algo_pvid", "ns", "abbucket", "acm", "utparam", "pos", "cv", "af", "mall_affr", "sk", "dp", "terminal_id", "aff_fcid", "aff_fsk", "aff_platform", "aff_trace_key", "shareId", "platform", "businessType", "title", "srcSns"
 
 // ebaySpecific
-"mkrid", "siteid", "mkcid", "mkevt", "mkpid", "trksid", "campid", "toolid", "customid", "amdata", "var", "selected"
+"siteid", "mkpid", "trksid", "selected"
 
 // shopifySpecific
-"variant", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "omnisendContactID", "sca_ref", "mc_cid", "mc_eid", "_pos", "_sid", "_ss", "_s", "_shopify_s", "_shopify_sa_t", "_shopify_sa_p", "_shopify_y", "cart_sig"
+"variant", "omnisendContactID", "sca_ref", "_pos", "_sid", "_ss", "_s", "_shopify_s", "_shopify_sa_t", "_shopify_sa_p", "_shopify_y", "cart_sig"
 
 // netflixSpecific
-"trackId", "tctx", "jb", "jbv", "dgs"
-
-// twitchSpecific
-"tt_medium", "tt_content", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"
-
-// githubSpecific
-"utm_source", "utm_medium", "utm_campaign", "utm_content", "email_token", "email_source"
+"dgs"
 
 // stackoverflowSpecific
-"utm_source", "utm_medium", "utm_campaign", "utm_content", "rq", "rv", "lq", "md"
+"rq", "rv", "lq", "md"
 
 // bingSpecific
-"cvid", "FORM", "qpvt", "qs", "sc", "sp", "sk", "ghsh", "ghacc", "ghpl", "ghpr", "ghc", "ghhc", "ghpos"
+"FORM", "qpvt", "qs", "sc", "sp", "sk", "ghsh", "ghacc", "ghpl", "ghpr", "ghc", "ghhc", "ghpos"
 
 // duckduckgoSpecific
 "t", "ia", "iax", "atb", "v7-it"
