@@ -4,6 +4,7 @@
 
 Currently supported trackers:
 
+* ![4pda](favicons/4pda.to.webp) 4PDA (redirects)
 * Action Map (URLs)
 * ![activecampaign](favicons/activecampaign.com.webp) ActiveCampaign (URLs)
 * Action Network (URLs)
