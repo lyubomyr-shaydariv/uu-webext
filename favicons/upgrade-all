@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -TEeuo pipefail
+
+BASE_DIR="$(readlink --canonicalize-existing -- "$0")"
+BASE_DIR="$(dirname -- "$BASE_DIR")"
+declare -r BASE_DIR
+
+for FILE; do
+	printf '%s\n' "${FILE%.*}"
+done \
+	| "$BASE_DIR/upgrade"

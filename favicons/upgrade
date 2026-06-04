@@ -2,67 +2,54 @@
 
 set -TEeuo pipefail
 
-readonly BASE_DIR="$(dirname -- $(readlink -e -- "$0"))"
+declare -r PROVIDER="${PROVIDER:-google}"
 
-readonly PROVIDER="${PROVIDER:-google}"
-
-EXIT_CODE=0
+declare -i EXIT_CODE=0
 
 case "$PROVIDER" in
-'duckduckgo')
+'duckduckgo'|'ddg')
 	download_favicon() {
 		local -r DOMAIN="${1?no domain}"
 		local -r FAVICON_FILE="${2?no favicon file}"
-		curl --location --silent "https://external-content.duckduckgo.com/ip3/$DOMAIN.ico" \
-			> "$FAVICON_FILE"~
-		convert "$FAVICON_FILE"~ -resize 16x16 "$FAVICON_FILE"
-		rm "$FAVICON_FILE"~
+		curl --location --silent -- "https://external-content.duckduckgo.com/ip3/$DOMAIN.ico" \
+			> "$FAVICON_FILE"
 	}
 	;;
 'google')
 	download_favicon() {
 		local -r DOMAIN="${1?no domain}"
 		local -r FAVICON_FILE="${2?no favicon file}"
-		curl --location --silent "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" \
+		curl --location --silent -- "https://www.google.com/s2/favicons?domain=$DOMAIN&sz=16" \
 			> "$FAVICON_FILE"
 	}
 	;;
 *)
-	echo "$0: fatal: unrecognized provider: $PROVIDER" >&2
+	echo "$0: fatal: unrecognized favicon provider: $PROVIDER" >&2
 	exit 1
 	;;
 esac
 
-printf '%s: favicon provider: %s\n' "$0" "$PROVIDER"
+echo "$0: info: favicon provider: $PROVIDER" >&2
 
-for FAVICON_FILE; do
-	DOMAIN="${FAVICON_FILE%.*}"
+while read -r DOMAIN; do
 	printf '%s\n' "$DOMAIN"
-	FAVICON_FILE="$FAVICON_FILE~"
-	download_favicon "$DOMAIN" "$FAVICON_FILE"
-	MIME_TYPE="$(file --brief --mime-type "$FAVICON_FILE")"
-	TARGET_FILE=
-	if [[ "$MIME_TYPE" == 'image/'* ]]; then
-		mogrify -strip "$FAVICON_FILE"
-	fi
+	TMP_FAVICON_FILE="$DOMAIN~"
+	download_favicon "$DOMAIN" "$TMP_FAVICON_FILE"
+	MIME_TYPE="$(file --brief --mime-type "$TMP_FAVICON_FILE")"
 	case "$MIME_TYPE" in
 	'image/jpeg')
 		echo "$0: warn: $DOMAIN provided a JPEG favicon" >&2
+		cwebp -quiet -lossless -z 9 -resize 16 16 "$TMP_FAVICON_FILE" -o "$DOMAIN.webp"
 		;;
-	'image/png')
-		;;
-	'image/webp')
-		continue
+	'image/png'|'image/webp')
+		cwebp -quiet -lossless -z 9 -resize 16 16 "$TMP_FAVICON_FILE" -o "$DOMAIN.webp"
 		;;
 	*)
-		echo "$0: warn: unrecognized MIME-type $MIME_TYPE for $FAVICON_FILE" >&2
+		echo "$0: error: unrecognized MIME-type $MIME_TYPE for $TMP_FAVICON_FILE" >&2
 		EXIT_CODE=1
-		continue
 		;;
 	esac
-	TARGET_FILE="$BASE_DIR/$DOMAIN.webp"
-	cwebp -lossless -z 9 "$FAVICON_FILE" -o "$TARGET_FILE"
-	rm -vrf "$FAVICON_FILE"
+	rm -f -- "$TMP_FAVICON_FILE"
 done
 
-exit "$EXIT_CODE"
+exit $EXIT_CODE
