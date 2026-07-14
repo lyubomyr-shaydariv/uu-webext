@@ -6,6 +6,7 @@
 			"main.js",
 			"mod/_.js",
 			"mod/4pda.js",
+			"mod/9gag.js",
 			"mod/actionmap.js",
 			"mod/actionnetwork.js",
 			"mod/activecampaign.js",
