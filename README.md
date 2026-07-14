@@ -169,6 +169,7 @@ Currently supported trackers:
 * ![techcrunch](favicons/techcrunch.com.webp) TechCrunch (URLs)
 * ![threads](favicons/threads.com.webp) Threads (URLs)
 * ![tiktok](favicons/tiktok.com.webp) TikTok (URLs and redirects)
+* ![thetimes](favicons/thetimes.co.uk.webp) The Times (URLs)
 * ![toyhouse](favicons/toyhou.se.webp) Toyhouse (redirects)
 * ![tokopedia](favicons/tokopedia.com.webp) Tokopedia (URLs)
 * ![tradedoubler](favicons/tradedoubler.com.webp) Tradedoubler (redirects)
