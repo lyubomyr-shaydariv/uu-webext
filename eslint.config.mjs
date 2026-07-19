@@ -53,9 +53,9 @@ export default [
 			'grouped-accessor-pairs': ['error'],
 			'guard-for-in': ['error'],
 			'id-denylist': ['error'],
-			// TODO Uncomment 'indent': ['error', 'tab'],
 			'id-length': ['error', {'min': 1}], // eslint-disable-line quote-props
 			'id-match': ['error'],
+			'indent': ['error', 'tab'], // eslint-disable-line quote-props
 			'init-declarations': ['error'],
 			'logical-assignment-operators': ['error'],
 			// TODO Uncomment 'max-classes-per-file': ['error'],

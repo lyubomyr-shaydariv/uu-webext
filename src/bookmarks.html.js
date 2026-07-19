@@ -84,5 +84,5 @@ document.getElementById('clean-all-bookmarks')
 							console.log('ERROR', err);
 						});
 				}
-		});
+			});
 	});

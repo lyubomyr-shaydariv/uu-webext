@@ -349,40 +349,40 @@ const __F__FROM_URI_COMPONENT = (ctx) => {
 const __F__GET_PROPERTY = (ctx, ...keys) => {
 	ctx.source += ` GET PROPERTY ${literalize(...keys)}`;
 	switch ( keys.length ) {
-		case 0:
-			// do nothing
-			break;
-		case 1: {
-			const [key] = keys;
-			ctx.__apply_functions.push((arg) => {
-				if ( arg === undefined || arg === null ) {
-					return arg;
+	case 0:
+		// do nothing
+		break;
+	case 1: {
+		const [key] = keys;
+		ctx.__apply_functions.push((arg) => {
+			if ( arg === undefined || arg === null ) {
+				return arg;
+			}
+			if ( typeof arg.get === 'function' ) {
+				return arg.get(key);
+			}
+			return arg[key];
+		});
+		break;
+	}
+	default: {
+		ctx.__apply_functions.push((arg) => {
+			if ( arg === undefined || arg === null ) {
+				return arg;
+			}
+			for ( const key of keys ) {
+				const value = typeof arg.get === 'function'
+					? arg.get(key)
+					: arg[key];
+				if ( value === null || value === undefined ) {
+					continue;
 				}
-				if ( typeof arg.get === 'function' ) {
-					return arg.get(key);
-				}
-				return arg[key];
-			});
-			break;
-		}
-		default: {
-			ctx.__apply_functions.push((arg) => {
-				if ( arg === undefined || arg === null ) {
-					return arg;
-				}
-				for ( const key of keys ) {
-					const value = typeof arg.get === 'function'
-						? arg.get(key)
-						: arg[key];
-					if ( value === null || value === undefined ) {
-						continue;
-					}
-					return value;
-				}
-				return undefined;
-			});
-			break;
-		}
+				return value;
+			}
+			return undefined;
+		});
+		break;
+	}
 	}
 	return APPLY(ctx);
 };
@@ -609,7 +609,7 @@ const __AT__QUERY_ENTRY_KEYS = (ctx, ...literals) => {
 	const prefixLiterals = literalGroups.get(PrefixLiteral);
 	const regExpLiterals = literalGroups.get(RegExp);
 	const allLiterals = literalGroups.get(AllLiteral);
-// TODO does this override createMatches semantically?
+	// TODO does this override createMatches semantically?
 	ctx.__at_predicates.push((url) => {
 		if ( url.searchParams.size === 0 ) {
 			return false;
@@ -676,7 +676,7 @@ const AT = (ctx) => {
 			if ( ctx.__at_predicate_list.length === 0 ) {
 				return true;
 			}
-outer:
+			outer:
 			for ( const predicates of ctx.__at_predicate_list ) {
 				for ( const predicate of predicates ) {
 					if ( !predicate(url) ) {

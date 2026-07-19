@@ -68,7 +68,7 @@ class AllLiteral
 			}
 		}
 		if ( this.#regExps !== null ) {
-nextRegExp:
+			nextRegExp:
 			for ( const regExp of this.#regExps ) {
 				for ( const value of values ) {
 					if ( regExp.test(value) ) {

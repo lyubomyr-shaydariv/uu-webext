@@ -52,36 +52,33 @@ browser.webRequest.onBeforeRequest.addListener((e) => {
 	return {
 		redirectUrl: redirectUrl.toString()
 	};
-},
-	{
-		types: [
-			// 'beacon', // TODO unlock if configurable
-			// 'csp_report', // TODO unlock if configurable
-			// 'font', // TODO unlock if configurable
-			// 'image', // TODO unlock if configurable
-			// 'imageset', // TODO unlock if configurable
-			'main_frame',
-			// 'media', // TODO unlock if configurable
-			// 'object', // TODO unlock if configurable
-			// 'object_subrequest', // TODO unlock if configurable
-			// 'ping', // TODO unlock if configurable
-			// 'script', // TODO unlock if configurable
-			// 'speculative', // TODO unlock if configurable
-			// 'stylesheet', // TODO unlock if configurable
-			'sub_frame',
-			// 'web_manifest', // TODO unlock if configurable
-			// 'websocket', // TODO unlock if configurable
-			// 'xml_dtd', // TODO unlock if configurable
-			// 'xmlhttprequest', // TODO unlock if configurable
-			// 'xslt', // TODO unlock if configurable
-			'other'
-		],
-		urls: [
-			'<all_urls>'
-		]
-	},
-	['blocking']
-);
+}, {
+	types: [
+		// 'beacon', // TODO unlock if configurable
+		// 'csp_report', // TODO unlock if configurable
+		// 'font', // TODO unlock if configurable
+		// 'image', // TODO unlock if configurable
+		// 'imageset', // TODO unlock if configurable
+		'main_frame',
+		// 'media', // TODO unlock if configurable
+		// 'object', // TODO unlock if configurable
+		// 'object_subrequest', // TODO unlock if configurable
+		// 'ping', // TODO unlock if configurable
+		// 'script', // TODO unlock if configurable
+		// 'speculative', // TODO unlock if configurable
+		// 'stylesheet', // TODO unlock if configurable
+		'sub_frame',
+		// 'web_manifest', // TODO unlock if configurable
+		// 'websocket', // TODO unlock if configurable
+		// 'xml_dtd', // TODO unlock if configurable
+		// 'xmlhttprequest', // TODO unlock if configurable
+		// 'xslt', // TODO unlock if configurable
+		'other'
+	],
+	urls: [
+		'<all_urls>'
+	]
+}, ['blocking']);
 
 export {
 	redirect
