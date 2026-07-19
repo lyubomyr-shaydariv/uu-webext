@@ -54,7 +54,7 @@ class AllLiteral
 	}
 
 	matches(...values) {
-		values = new Set(values);
+		values = new Set(values); // eslint-disable-line no-param-reassign
 		if ( this.#strings !== null ) {
 			if ( !this.#strings.isSubsetOf(values) ) {
 				return false;

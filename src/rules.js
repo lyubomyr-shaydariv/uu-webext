@@ -150,7 +150,7 @@ const __DO__REDIRECT = (ctx) => {
 			if ( !ctx.at(url) ) {
 				return false;
 			}
-			url = ctx.apply(url);
+			url = ctx.apply(url); // eslint-disable-line no-param-reassign
 			if ( url === undefined ) {
 				return false;
 			}
@@ -508,8 +508,8 @@ const DEFAULT_PAIR_DELIMITER = '&';
 const DEFAULT_ENTRY_DELIMITER = '=';
 
 const __FROM__QUERY_ENTRY_KEYS = (ctx, pairDelimiter, entryDelimiter) => {
-	pairDelimiter ||= DEFAULT_PAIR_DELIMITER;
-	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER;
+	pairDelimiter ||= DEFAULT_PAIR_DELIMITER; // eslint-disable-line no-param-reassign
+	entryDelimiter ||= DEFAULT_ENTRY_DELIMITER; // eslint-disable-line no-param-reassign
 	if ( pairDelimiter === DEFAULT_PAIR_DELIMITER && entryDelimiter === DEFAULT_ENTRY_DELIMITER ) {
 		ctx.source += ' QUERY ENTRY KEYS';
 		ctx.createKeysContext = (url) => {
@@ -703,7 +703,7 @@ const AT = (ctx) => {
 
 // TODO device natural ID from the rule, or use surrogate UUID, whatsoever?
 const RULE = (name) => {
-	name ||= new Error().stack.split('\n')[1];
+	name ||= new Error().stack.split('\n')[1]; // eslint-disable-line no-param-reassign
 	const ctx = {
 		name,
 		source: ''

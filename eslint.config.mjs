@@ -139,7 +139,7 @@ export default [
 			'no-object-constructor': ['error'],
 			'no-octal': ['error'],
 			'no-octal-escape': ['error'],
-			// TODO Uncomment 'no-param-reassign': ['error'],
+			'no-param-reassign': ['error'],
 			'no-plusplus': ['off'],
 			'no-promise-executor-return': ['error'],
 			'no-proto': ['error'],

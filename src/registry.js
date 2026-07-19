@@ -31,7 +31,7 @@ const rules = await Promise.all(browser.runtime
 	)
 )
 	.then((allRules) => {
-		allRules = allRules.flat();
+		allRules = allRules.flat(); // eslint-disable-line no-param-reassign
 		console.log(`Rules loaded: ${allRules.length}`);
 		return allRules;
 	});
