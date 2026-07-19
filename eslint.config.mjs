@@ -126,7 +126,7 @@ export default [
 			'no-loss-of-precision': ['error'],
 			'no-magic-numbers': ['error', {'ignore': [0, 1]}], // eslint-disable-line quote-props
 			'no-misleading-character-class': ['error'],
-			// TODO Uncomment 'no-multi-assign': ['error'],
+			'no-multi-assign': ['error'],
 			'no-multi-str': ['error'],
 			// TODO Uncomment 'no-negated-condition': ['error'],
 			'no-nested-ternary': ['error'],

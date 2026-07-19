@@ -91,7 +91,7 @@ const createUrlMatchesByTrie = (getSegmentsFromElement, getSegmentsFromUrl, ...e
 				if ( segment in node ) {
 					node = node[segment];
 				} else {
-					node = node[segment] = {};
+					node = node[segment] = {}; // eslint-disable-line no-multi-assign
 				}
 			}
 		} else {
