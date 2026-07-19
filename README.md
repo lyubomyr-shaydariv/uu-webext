@@ -252,6 +252,7 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all rules from [tracking-query-params-registry](https://github.com/mpchadwick/tracking-query-params-registry/tree/e02782673a18c47846b6640a38df121443cc985c) by Max Chadwick (last updated 2024-06-22);
 * all rules from the [FlyingPress ignore query parameters list](https://docs.flyingpress.com/en/article/ignore-query-parameters-yfejfj/) (last updated 2024-08-06);
 * some rules from [Tarnhelm](https://github.com/lz233/Tarnhelm) by lz233 (last updated 2026-06-26);
+* all tracking parameters mentioned at [privacytests.org](https://privacytests.org/) (last updated 2026-07-19);
 * and some rules available online.
 
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
