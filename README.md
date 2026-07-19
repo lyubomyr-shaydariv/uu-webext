@@ -244,13 +244,13 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all rules from [Intercept Redirect](https://github.com/bjornstar/intercept-redirect) by Bjorn Stromberg (last updated 2024-06-12);
 * no rules from [Butter](https://chromewebstore.google.com/detail/butter/jllpdjjoodaanpjhanfppkaemlplcmom) by Doctor Popular (last updated 2024-06-14);
 * no rules from [Feedly UTM Redirector](https://chromewebstore.google.com/detail/feedly-utm-redirector/dncdghkgllioakckpodciedefmdfmgcb) by thakyuu (last updated 2024-06-14);
-* no rules from [Fuck UTM](https://chromewebstore.google.com/detail/fuck-utm/jjaagodohagklnhkkjlbojpbecdgfbcc) by Smitha Milli (last updated 2024-06-14) (NOTE: I also considered poisoning tracking parameters in mind);
+* no rules from [Fuck UTM](https://chromewebstore.google.com/detail/fuck-utm/jjaagodohagklnhkkjlbojpbecdgfbcc) by Smitha Milli (last updated 2024-06-14);
 * all rules from [UTM Eraser](https://chromewebstore.google.com/detail/utm-eraser/cepijkcnhhbjgiofhdhbomcgdmfjbbhb) by Nick (last updated 2024-06-14);
 * all rules from [Brave](https://raw.githubusercontent.com/brave/brave-core/master/components/query_filter/utils.cc) by the Brave authors (last updated 2024-06-15);
 * most rules from [avoison](https://github.com/dryack/avoision) by dryack (last updated 2024-06-16);
 * all clean-URLs rules from [adblock-lists](https://github.com/brave/adblock-lists) by the Brave authors (last updated 2024-06-18);
 * all rules from [tracking-query-params-registry](https://github.com/mpchadwick/tracking-query-params-registry/tree/e02782673a18c47846b6640a38df121443cc985c) by Max Chadwick (last updated 2024-06-22);
-* all rules from the [https://docs.flyingpress.com/en/article/ignore-query-parameters-yfejfj/ FlyingPress ignore query parameters list] (last updated 2024-08-06);
+* all rules from the [FlyingPress ignore query parameters list](https://docs.flyingpress.com/en/article/ignore-query-parameters-yfejfj/) (last updated 2024-08-06);
 * some rules from [Tarnhelm](https://github.com/lz233/Tarnhelm) by lz233 (last updated 2026-06-26);
 * and some rules available online.
 
