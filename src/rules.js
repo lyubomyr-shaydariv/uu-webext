@@ -457,8 +457,7 @@ const APPLY = (ctx) => {
 		REPLACE_STRING: (pattern, replacement) => __F__REPLACE_STRING(ctx, pattern, replacement),
 		SUBSTRING: (from, to) => __F__SUBSTRING(ctx, from, to),
 		TO_URL: () => __F__TO_URL(ctx),
-		/* eslint-disable-next-line sort-keys */
-		DO: () => DO(ctx)
+		DO: () => DO(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -481,8 +480,7 @@ const __FROM__PATHNAME = (ctx) => {
 	};
 	return {
 		DO: () => DO(ctx),
-		/* eslint-disable-next-line sort-keys */
-		APPLY: () => APPLY(ctx)
+		APPLY: () => APPLY(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -499,8 +497,7 @@ const __FROM__QUERY = (ctx) => {
 	};
 	return {
 		DO: () => DO(ctx),
-		/* eslint-disable-next-line sort-keys */
-		APPLY: () => APPLY(ctx)
+		APPLY: () => APPLY(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -536,8 +533,7 @@ const __FROM__QUERY_ENTRY_KEYS = (ctx, pairDelimiter, entryDelimiter) => {
 	};
 	return {
 		DO: () => DO(ctx),
-		/* eslint-disable-next-line sort-keys */
-		APPLY: () => APPLY(ctx)
+		APPLY: () => APPLY(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -571,8 +567,7 @@ const __AT__DOMAIN = (ctx, ...domains) => {
 		EXCEPT: (...domains) => __AT_DOMAIN__EXCEPT(ctx, ...domains),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
-		/* eslint-disable-next-line sort-keys */
-		FROM: () => FROM(ctx)
+		FROM: () => FROM(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -584,8 +579,7 @@ const __AT_DOMAIN__EXCEPT = (ctx, ...domains) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
-		/* eslint-disable-next-line sort-keys */
-		FROM: () => FROM(ctx)
+		FROM: () => FROM(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -597,8 +591,7 @@ const __AT__HOSTNAME = (ctx, ...hostnames) => {
 		AT: () => AT(ctx),
 		PATHNAME: (...pathnames) => __AT__PATHNAME(ctx, ...pathnames),
 		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
-		/* eslint-disable-next-line sort-keys */
-		FROM: () => FROM(ctx)
+		FROM: () => FROM(ctx) // eslint-disable-line sort-keys
 	};
 };
 
@@ -656,8 +649,7 @@ const __AT__PATHNAME = (ctx, ...pathnames) => {
 	return {
 		AT: () => AT(ctx),
 		QUERY_ENTRY_KEYS: (...keys) => __AT__QUERY_ENTRY_KEYS(ctx, ...keys),
-		/* eslint-disable-next-line sort-keys */
-		FROM: () => FROM(ctx)
+		FROM: () => FROM(ctx) // eslint-disable-line sort-keys
 	};
 };
 
