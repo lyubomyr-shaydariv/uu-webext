@@ -2,5 +2,15 @@
 
 set -Eeuo pipefail
 
-npm install --save-dev eslint@9.6.0
-npm install --save-dev @stylistic/eslint-plugin-js
+BASE_DIR="$(readlink --canonicalize-existing -- "$0")"
+BASE_DIR="$(dirname -- "$BASE_DIR")"
+declare -r BASE_DIR
+
+npm install "$@"
+
+if command -v jq > /dev/null; then
+	jq --tab . "$BASE_DIR/package.json" \
+		> "$BASE_DIR/package.json~"
+	cp --preserve=all -- "$BASE_DIR/package.json~" "$BASE_DIR/package.json" # preserve inode
+	rm --verbose -- "$BASE_DIR/package.json~"
+fi
