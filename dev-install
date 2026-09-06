@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -TEeuo pipefail
+set -Eeuo pipefail
 
 npm install --save-dev eslint@9.6.0
 npm install --save-dev @stylistic/eslint-plugin-js

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -TEeuo pipefail
+set -Eeuo pipefail
 
 BASE_DIR="$(readlink --canonicalize-existing -- "$0")"
 BASE_DIR="$(dirname -- "$BASE_DIR")"

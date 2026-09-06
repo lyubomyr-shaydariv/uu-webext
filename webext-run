@@ -1,7 +1,9 @@
 #!/bin/bash
 
-set -TEeuo pipefail
+set -Eeuo pipefail
 
-readonly BASE_DIR="$(dirname -- "$(readlink -e -- "$0")")"
+BASE_DIR="$(readlink --canonicalize-existing -- "$0")"
+BASE_DIR="$(dirname -- "$BASE_DIR")"
+declare -r BASE_DIR
 
 web-ext run --verbose --firefox="$FIREFOX" --devtools --source-dir="$BASE_DIR/src" --artifacts-dir="$BASE_DIR/out"

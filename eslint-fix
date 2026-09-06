@@ -1,5 +1,5 @@
 #!/bin/bash
 
-set -TEeuo pipefail
+set -Eeuo pipefail
 
 npx eslint --fix -- "$@"

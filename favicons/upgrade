@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -TEeuo pipefail
+set -Eeuo pipefail
 
 declare -r PROVIDER="${PROVIDER:-google}"
 
