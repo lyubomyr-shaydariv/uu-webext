@@ -285,7 +285,7 @@ const DO = (ctx) => {
 // - query parameters cannot be transformed
 const __F__APPEND_ORIGINAL_QUERY_ENTRY_KEYS = (ctx, ...keys) => {
 	ctx.source += ` APPEND ORIGINAL QUERY ENTRY KEYS ${literalize(...keys)}`;
-	const uniqueKeys = new Set(...keys);
+	const uniqueKeys = new Set(keys);
 	ctx.__apply_functions.push((arg) => {
 		if ( arg === undefined || arg === null ) {
 			return arg;
