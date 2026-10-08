@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('facebook.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('__cft__[0]', '__cft__%5B0%5D', 'extid', 'fref', 'hrc', 'mibextid', '__tn__', 'refsrc', 'sfnsn', 'tracking'),
+		.DO().REMOVE('__cft__[0]', '__cft__%5B0%5D', '__tn__', 'extid', 'fref', 'hrc', 'mibextid', 'ref', 'referral_code', 'referral_story_type', 'refsrc', 'sfnsn', 'tracking'),
 	RULE()
 		.AT().DOMAIN('facebook.com').PATHNAME('/l.php', '/flx/warn/')
 		.FROM().QUERY_ENTRY_KEYS()
