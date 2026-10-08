@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('tt_content', 'tt_medium')
+		.DO().REMOVE('tt_content', 'tt_email_id', 'tt_medium')
 ];
