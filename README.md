@@ -269,6 +269,7 @@ The **uU** and **μuU** untracking rules are built on top of:
 * all rules from [URL Tracking Stripper & Redirect Skipper](https://github.com/newhouse/url-tracking-stripper) by newhouse (last updated 2024-06-14, completed 2026-10-11);
 * most rules (except .cn-related sites) from [Untracker](https://github.com/zhanghai/Untracker) by zhanghai (last updated 2024-07-31, completed 2026-10-22);
 * all rules from [Nitropack]https://support.nitropack.io/en/articles/8390299-ignored-parameters) (last updated and completed 2024-06-17)
+* all rules from [tidy-url](https://github.com/DrKain/tidy-url) by DrKain (last updated 2026-10-09);
 * and some rules available online.
 
 The icon is merely generated with [Launcher icon generator](https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html#foreground.type=clipart&foreground.clipart=arrow_forward&foreground.space.trim=1&foreground.space.pad=0.25&foreColor=rgba(96%2C%20125%2C%20139%2C%200)&backColor=rgb(123%2C%20207%2C%2025)&crop=0&backgroundShape=square&effects=shadow&name=ic_launcher) by Roman Nurik.
