@@ -1,111 +1,13 @@
 module.exports = [
     {
-        name: 'Global',
-        match: /.*/,
-        rules: [
-            // https://en.wikipedia.org/wiki/UTM_parameters
-            'utm_source', 'utm_medium', 'utm_term', 'utm_campaign',
-            'utm_content', 'utm_name', 'utm_cid', 'utm_reader', 'utm_viz_id',
-            'utm_pubreferrer', 'utm_swu', 'utm_social-type', 'utm_brand',
-            'utm_team', 'utm_feeditemid', 'utm_id', 'utm_marketing_tactic', 
-            'utm_creative_format', 'utm_campaign_id', 'utm_source_platform',
-            'utm_timestamp', 'utm_souce', 'utm_couponvalue',
-            // ITM parameters, a variant of UTM parameters
-            'itm_source', 'itm_medium', 'itm_term', 'itm_campaign', 'itm_content',
-            'itm_channel', 'itm_source_s', 'itm_medium_s', 'itm_campaign_s',
-            'itm_audience',
-            // INT parameters, another variant of UTM
-            'int_source', 'int_cmp_name', 'int_cmp_id', 'int_cmp_creative',
-            'int_medium', 'int_campaign', 'int_content',
-            // piwik (https://github.com/DrKain/tidy-url/issues/49)
-            'pk_campaign', 'pk_cpn', 'pk_source', 'pk_medium',
-            'pk_keyword', 'pk_kwd', 'pk_content', 'pk_cid',
-            'piwik_campaign', 'piwik_cpn', 'piwik_source', 'piwik_medium',
-            'piwik_keyword', 'piwik_kwd', 'piwik_content', 'piwik_cid',
-            // Google Ads
-            'gclid', 'ga_source', 'ga_medium', 'ga_term', 'ga_content', 'ga_campaign',
-            'ga_place', 'gclid', 'gclsrc',
-            // https://github.com/DrKain/tidy-url/issues/21
-            'hsa_cam', 'hsa_grp', 'hsa_mt', 'hsa_src', 'hsa_ad', 'hsa_acc',
-            'hsa_net', 'hsa_kw', 'hsa_tgt', 'hsa_ver', 'hsa_la', 'hsa_ol',
-            // Facebook
-            'fbclid',
-            // Olytics
-            'oly_enc_id', 'oly_anon_id',
-            // Vero
-            'vero_id', 'vero_conv',
-            // Drip
-            '__s', 
-            // HubSpot
-            '_hsenc', '_hsmi', '__hssc', '__hstc', '__hsfp', 'hsCtaTracking',
-            // Marketo
-            'mkt_tok',
-            // Matomo (https://github.com/DrKain/tidy-url/issues/47)
-            'mtm_campaign', 'mtm_keyword', 'mtm_kwd', 'mtm_source', 'mtm_medium',
-            'mtm_content', 'mtm_cid', 'mtm_group', 'mtm_placement', 
-            // Oracle Eloqua
-            'elqTrackId', 'elq', 'elqaid', 'elqat', 'elqCampaignId', 'elqTrack',
-            // MailChimp
-            'mc_cid', 'mc_eid',
-            // Other              
-            'ncid', 'cmpid', 'mbid',
-            // Reddit Ads (https://github.com/DrKain/tidy-url/issues/31)
-            'rdt_cid'
-        ]
-    },
-    {
         name: 'audible.com',
         match: /www.audible.com/i,
         rules: ['qid', 'sr', 'pf_rd_p', 'pf_rd_r', 'plink', 'ref']
     },
     {
-        name: 'bandcamp.com',
-        match: /.*.bandcamp.com/gi,
-        rules: [
-            'from', 'search_item_id', 'search_item_type', 'search_match_part', 'search_page_id',
-            'search_page_no', 'search_rank', 'search_sig'
-        ]
-    },
-    {
         name: 'amazon.com',
         match: /amazon\.[a-z0-9]{0,3}/i,
-        rules: [
-            'psc', 'colid', 'coliid', 'linkId', 'tag', 'linkCode', 'ms3_c',
-            'pf_rd_s', 'pf_rd_t', ' pf_rd_i', 'pf_rd_m', 'pd_rd_w', 'qid', 'sr',
-            'keywords', 'dchild', 'ref', 'ref_', 'rnid', 'pf_rd_r', 'pf_rd_p', 'pd_rd_r',
-            'smid', 'pd_rd_wg', 'content-id', 'spLa', 'crid', 'sprefix',
-            'hvlocint', 'hvdvcmdl', 'hvptwo', 'hvpone', 'hvpos',
-            'qu', 'pd_rd_i', 'nc2', 'nc1', 'trk', 'sc_icampaign', 'trkCampaign',
-            'ufe', 'sc_icontent', 'sc_ichannel', 'sc_iplace', 'sc_country',
-            'sc_outcome', 'sc_geo', 'sc_campaign', 'sc_channel'
-        ],
         replace: [/(\/ref|&ref_)=[^\/?]*/i]
-    },
-    {
-        name: 'reddit.com',
-        match: /.*.reddit.com/i,
-        rules: [
-            'ref_campaign', 'ref_source', 'tags', 'keyword', 'channel', 'campaign',
-            'user_agent', 'domain', 'base_url', '$android_deeplink_path',
-            '$deeplink_path', '$og_redirect', 'share_id', 'correlation_id', 'ref',
-            'rdt'
-        ]
-    },
-    {
-        name: 'app.link',
-        match: /.*\.app\.link/i,
-        rules: [
-            'tags', 'keyword', 'channel', 'campaign',
-            'user_agent', 'domain', 'base_url', '$android_deeplink_path',
-            '$deeplink_path', '$og_redirect', 'compact_view', 'dnt',
-            'adblock', 'geoip_country', 'referrer_domain',
-            'referrer_url'
-        ]
-    },
-    {
-        name: 'twitch.tv',
-        match: /www.twitch.tv/i,
-        rules: ['tt_medium', 'tt_content', 'tt_email_id']
     },
     {
         name: 'twitch.tv-email',
@@ -114,64 +16,9 @@ module.exports = [
         decode: { handler: 'twitch.tv-email', targetPath: true }
     },
     {
-        name: 'blog.twitch.tv',
-        match: /blog.twitch.tv/i,
-        rules: ['utm_referrer']
-    },
-    {
         name: 'pixiv.net',
         match: /www.pixiv.net/i,
         rules: ['p', 'i', 'g']
-    },
-    {
-        name: 'spotify.com',
-        match: /open.spotify.com/i,
-        rules: [
-            'si', 'utm_source', 'context', 'sp_cid',
-            '_branch_match_id', '_branch_referrer'
-        ],
-        allow: ['go', 'nd']
-    },
-    {
-        name: 'aliexpress.com',
-        match: /^(?:https?:\/\/)?(?:[^.]+\.)?aliexpress\.(?:[a-z]{2,}){1,}/i,
-        rules: [
-            '_t', 'spm', 'algo_pvid', 'algo_expid', 'btsid', 'ws_ab_test',
-            'initiative_id', 'origin', 'widgetId', 'tabType', 'productId',
-            'productIds', 'gps-id', 'scm', 'scm_id', 'scm-url', 'pvid',
-            'algo_exp_id', 'pdp_pi', 'fromRankId', 'sourceType', 'utparam',
-            'gatewayAdapt', '_evo_buckets', 'tpp_rcmd_bucket_id', 'scenario',
-            'pdp_npi', 'tt', 'spreadType', 'srcSns', 'bizType', 'social_params',
-            'aff_fcid', 'aff_fsk', 'aff_platform', 'aff_trace_key', 'shareId',
-            'platform', 'businessType', 'terminal_id', 'afSmartRedirect', 'sk',
-            'gbraid'
-        ],
-        allow: ['sku_id', 'pdp_ext_f']
-    },
-    {
-        name: 'google.com',
-        match: /www.google\..*/i,
-        rules: [
-            'sourceid', 'client', 'aqs', 'sxsrf', 'uact', 'ved', 'iflsig', 'source',
-            'ei', 'oq', 'gs_lcp', 'sclient', 'bih', 'biw', 'sa', 'dpr', 'rlz',
-            'gs_lp', 'sca_esv', 'si', 'gs_l', 'gs_lcrp'
-        ],
-        amp: {
-            regex: /www\.google\.(?:.*)\/amp\/s\/(.*)/gim,
-        },
-        redirect: 'url'
-    },
-    {
-        name: 'youtube.com',
-        match: /.*.youtube.com/i,
-        rules: ['gclid', 'feature', 'app', 'src', 'lId', 'cId', 'embeds_referring_euri'],
-        redirect: 'q'
-    },
-    {
-        name: 'humblebundle.com',
-        match: /www.humblebundle.com/i,
-        rules: ['hmb_source', 'hmb_medium', 'hmb_campaign', 'mcID', 'linkID'],
-        allow: ['partner']
     },
     {
         name: 'greenmangaming.com',
@@ -189,22 +36,9 @@ module.exports = [
         rules: ['subref', 'amp']
     },
     {
-        name: 'imgur.com',
-        match: /imgur.com/i,
-        rules: ['source']
-    },
-    {
         name: 'plex.tv',
         match: /.*.plex.tv/i,
         rules: ['origin', 'plex_utm', 'sl', 'ckhid']
-    },
-    {
-        name: 'imdb.com',
-        match: /^.*\.imdb\.com/i,
-        rules: [
-            'ref_', 'ref\\_', 'pf_rd_m', 'pf_rd_r', 'pf_rd_p', 'pf_rd_s',
-            'pf_rd_t', 'pf_rd_i', 'ref_hp_hp_e_2', 'rf', 'ref'
-        ]
     },
     {
         name: 'gog.com',
@@ -213,38 +47,6 @@ module.exports = [
             'at_gd', 'rec_scenario_id', 'rec_sub_source_id', 'rec_item_id',
             'vds_id', 'prod_id', 'rec_source'
         ]
-    },
-    {
-        name: 'tiktok.com',
-        match: /www.tiktok.com/i,
-        rules: [
-            'is_copy_url', 'is_from_webapp', 'sender_device', 'sender_web_id',
-            'sec_user_id', 'share_app_id', 'share_item_id', 'share_link_id',
-            'social_sharing', '_r', 'source', 'user_id', 'u_code', 'tt_from', 
-            'share_author_id', 'sec_uid', 'checksum', '_d', 'refer', 'enter_from',
-            'enter_method', 'attr_medium', 'attr_source'
-        ],
-        allow: ['lang']
-    },
-    {
-        name: 'tiktok.com/link',
-        match: /tiktok\.com\/link\/v2/i,
-        match_href: true,
-        redirect: 'target'
-    },
-    {
-        name: 'facebook.com',
-        match: /.*.facebook.com/i,
-        rules: ['fbclid', 'fb_ref', 'fb_source', 'referral_code', 'referral_story_type', 'tracking', 'ref'],
-        redirect: 'u',
-        exclude: [
-            /www\.facebook\.com\/sharer/gi
-        ]
-    },
-    {
-        name: 'yandex.com',
-        match: /yandex.com/i,
-        rules: ['lr', 'from', 'grhow', 'origin', '_openstat']
     },
     {
         name: 'store.steampowered.com',
@@ -257,35 +59,9 @@ module.exports = [
         rules: ['source']
     },
     {
-        name: 'linkedin.com',
-        match: /.*.linkedin.com/i,
-        rules: [
-            'contextUrn', 'destRedirectURL', 'lipi', 'licu', 'trk',
-            'trkInfo', 'originalReferer', 'upsellOrderOrigin',
-            'upsellTrk', 'upsellTrackingId', 'src', 'trackingId',
-            'midToken', 'midSig', 'trkEmail', 'eid'
-        ],
-        allow: [ 'otpToken' ]
-    },
-    {
         name: 'indeed.com',
         match: /.*.indeed.com/i,
         rules: ['from', 'attributionid']
-    },
-    {
-        name: 'discord.com',
-        match: /(?:.*\.)?discord\.com/i,
-        rules: ['source' , 'ref']
-    },
-    {
-        name: 'medium.com',
-        match: /medium.com/i,
-        rules: ['source']
-    },
-    {
-        name: 'twitter.com',
-        match: /twitter.com/i,
-        rules: ['s', 'src', 'ref_url', 'ref_src']
     },
     {
         name: 'voidu.com',
@@ -314,21 +90,6 @@ module.exports = [
         rules: ['m']
     },
     {
-        name: 'apple.com',
-        match: /.*.apple.com/i,
-        rules: ['uo', 'app', 'at', 'ct', 'ls', 'pt', 'mt', 'itsct', 'itscg', 'referrer', 'src', 'cid']
-    },
-    {
-        name: 'music.apple.com',
-        match: /music.apple.com/i,
-        rules: ['i', 'lId', 'cId', 'sr', 'src']
-    },
-    {
-        name: 'play.google.com',
-        match: /play.google.com/i,
-        rules: ['referrer', 'pcampaignid']
-    },
-    {
         name: 'adtraction.com',
         match: /adtraction.com/i,
         redirect: 'url'
@@ -344,11 +105,6 @@ module.exports = [
         rules: ['PID', 'clickid', 'irgwc', 'cid', 'acid', 'linkTrack']
     },
     {
-        name: 'itch.io',
-        match: /itch.io/i,
-        rules: ['fbclid']
-    },
-    {
         name: 'steamcommunity.com',
         match: /steamcommunity.com/i,
         redirect: 'url'
@@ -360,48 +116,9 @@ module.exports = [
         match_href: true
     },
     {
-        name: 'microsoft.com',
-        match: /microsoft.com/i,
-        rules: ['refd', 'icid']
-    },
-    {
         name: 'berrybase.de',
         match: /berrybase.de/i,
         rules: ['sPartner']
-    },
-    {
-        name: 'instagram.com',
-        match: /instagram.com/i,
-        rules: ['igshid', 'igsh', 'source'],
-        redirect: 'u'
-    },
-    {
-        name: 'hubspot.com',
-        match: /hubspot.com/i,
-        rules: ['hubs_content-cta', 'hubs_content']
-    },
-    {
-        name: 'ebay.com',
-        match: /^(?:https?:\/\/)?(?:[^.]+\.)?ebay\.[a-z0-9]{0,3}/i,
-        rules: [
-            'amdata', 'var', 'hash', '_trkparms', '_trksid', '_from', 'mkcid',
-            'mkrid', 'campid', 'toolid', 'mkevt', 'customid', 'siteid', 'ufes_redirect',
-            'ff3', 'pub', 'media', 'widget_ver', 'ssspo', 'sssrc', 'ssuid'
-        ],
-        allow: ['epid', '_nkw']
-    },
-    {
-        name: 'shopee.com',
-        match: /^(?:https?:\/\/)?(?:[^.]+\.)?shopee\.[a-z0-9]{0,3}/i,
-        rules: [
-            'af_siteid', 'pid', 'af_click_lookback', 'af_viewthrough_lookback',
-            'is_retargeting', 'af_reengagement_window', 'af_sub_siteid', 'c'
-        ]
-    },
-    {
-        name: 'msn.com',
-        match: /www.msn.com/i,
-        rules: ['ocid', 'cvid', 'pc']
     },
     {
         name: 'nuuvem.com',
@@ -423,24 +140,6 @@ module.exports = [
         name: 'cnbc.com',
         match: /www.cnbc.com/i,
         rules: ['__source']
-    },
-    {
-        name: 'yahoo.com',
-        match: /yahoo.com/i,
-        rules: [
-            'guce_referrer', 'guce_referrer_sig', 'guccounter',
-            'soc_src', 'soc_trk', 'tsrc'
-        ]
-    },
-    {
-        name: 'techcrunch.com',
-        match: /techcrunch.com/i,
-        rules: ['guce_referrer', 'guce_referrer_sig', 'guccounter']
-    },
-    {
-        name: 'office.com',
-        match: /office.com/i,
-        rules: ['from']
     },
     {
         name: 'ticketmaster.co.nz',
@@ -475,11 +174,6 @@ module.exports = [
         name: 'countdown.co.nz',
         match: /www.countdown.co.nz/i,
         rules: ['promo_name', 'promo_creative', 'promo_position', 'itemID']
-    },
-    {
-        name: 'etsy.com',
-        match: /www.etsy.com/i,
-        rules: ['click_key', 'click_sum', 'rec_type', 'ref', 'frs', 'sts', 'dd_referrer']
     },
     {
         name: 'wattpad.com',
@@ -607,19 +301,6 @@ module.exports = [
         rules: ['subchannel', 'source', 'subcampaign', 'campaign', 'channel', '_ga']
     },
     {
-        name: 'baidu.com',
-        match: /^www.baidu.com/i,
-        rules: [
-            'rsv_spt', 'rsv_idx', 'rsv_pq', 'rsv_t', 'rsv_bp', 'rsv_dl',
-            'rsv_iqid', 'rsv_enter', 'rsv_sug1', 'rsv_sug2', 'rsv_sug3',
-            'rsv_sug4', 'rsv_sug5', 'rsv_sug6', 'rsv_sug7', 'rsv_sug8',
-            'rsv_sug9', 'rsv_sug7', 'rsv_btype',
-            'tn', 'sa', 'rsf', 'rqid', 'usm', '__pc2ps_ab', 'p_signature',
-            'p_sign', 'p_timestamp', 'p_tk', 'oq'
-        ],
-        allow: ['wd', 'ie']
-    },
-    {
         name: 'primevideo.com',
         match: /^www.primevideo.com/i,
         rules: ['dclid'],
@@ -629,11 +310,6 @@ module.exports = [
         name: 'threadless.com',
         match: /^www.threadless.com/i,
         rules: ['itm_source_s', 'itm_medium_s', 'itm_campaign_s'],
-    },
-    {
-        name: 'wsj.com',
-        match: /^www.wsj.com/i,
-        rules: ['mod'],
     },
     {
         name: 'thewarehouse.co.nz',
@@ -694,22 +370,6 @@ module.exports = [
         name: 'cookiepro.com',
         match: /^.*.cookiepro.com/i,
         rules: ['source', 'referral']
-    },
-    {
-        name: 'pinterest.com',
-        match: /^www\.pinterest\..*/i,
-        rules: ['rs']
-    },
-    {
-        name: 'bing.com',
-        match: /^www\.bing\.com/i,
-        rules: [
-            'qs', 'form', 'sp', 'pq', 'sc', 'sk', 'cvid', 'FORM',
-            'ck', 'simid', 'thid', 'cdnurl', 'pivotparams', 'ghsh', 'ghacc',
-            'ccid', '', 'ru'
-        ],
-        readded: ['sim','exph', 'expw', 'vt', 'mediaurl', 'first'],
-        allow: ['q', 'tsc', 'iss', 'id', 'view', 'setlang'],
     },
     {
         name: 'jf79.net',
@@ -793,16 +453,6 @@ module.exports = [
         rules: ['qr']
     },
     {
-        name: 'matomo.org',
-        match: /matomo\.org/i,
-        rules: [
-            'menu', 'footer', 'header', 'hp-reasons-learn', 'hp-top',
-            'above-fold', 'step1-hp', 'mid-hp', 'take-back-control-hp',
-            'hp-reasons-icon', 'hp-reasons-heading', 'hp-reasons-p',
-            'hp-bottom', 'footer', 'menu'
-        ]
-    },
-    {
         name: 'eufy.com',
         match: /eufy\.com/i,
         rules: ['ref']
@@ -816,16 +466,6 @@ module.exports = [
         name: 'wish.com',
         match: /www\.wish\.com/i,
         rules: ['share']
-    },
-    {
-        name: 'change.org',
-        match: /www\.change\.org/i,
-        rules: ['source_location']
-    },
-    {
-        name: 'washingtonpost.com',
-        match: /.*\.washingtonpost\.com/i,
-        rules: ['itid', 's_l']
     },
     {
         name: 'lowes.com',
@@ -1021,14 +661,6 @@ module.exports = [
         decode: { param: 'final' }
     },
     {
-        name: 'cooking.nytimes.com',
-        match: /cooking.nytimes.com/i,
-        rules: [
-            'smid', 'variant', 'algo', 'req_id', 'surface', 'imp_id',
-            'action', 'region', 'module', 'pgType'
-        ]
-    },
-    {
         name: 'optigruen.com',
         match: /www\.optigruen\.[a-z0-9]{0,3}/i,
         rules: ['cHash', 'chash', 'mdrv']
@@ -1056,13 +688,6 @@ module.exports = [
     {
         name: 'walmart.com',
         match: /walmart.com/i,
-        rules: [
-            'athAsset', 'povid', 'wmlspartner', 'athcpid', 'athpgid', 'athznid',
-            'athmtid', 'athstid', 'athguid', 'athwpid', 'athtvid', 'athcgid',
-            'athieid', 'athancid', 'athbdg', 'campaign_id', 'eventST', 'bt',
-            'pos', 'rdf', 'tax', 'plmt', 'mloc', 'pltfm', 'pgId', 'pt', 'spQs',
-            'adUid', 'adsRedirect'
-        ],
         redirect: 'rd'
     },
     {
@@ -1116,21 +741,6 @@ module.exports = [
         name: 'porndude.link',
         match: /porndude.link/i,
         rules: ['ref']
-    },
-    {
-        name: 'xvideos.com',
-        match: /xvideos.com/i,
-        rules: ['sxcaf']
-    },
-    {
-        name: 'xvideos.red',
-        match: /xvideos.red/i,
-        rules: ['sxcaf', 'pmsc', 'pmln']
-    },
-    {
-        name: 'xhamster.com',
-        match: /xhamster.com/i,
-        rules: ['source']
     },
     {
         name: 'patchbot.io',
@@ -1225,8 +835,7 @@ module.exports = [
                 text: 'amp.theguardian.com',
                 with: 'theguardian.com'
             }
-        },
-        rules: ['INTCMP', 'acquisitionData', 'REFPVID']
+        }
     },
     {
         name: 'indiatoday.in',
