@@ -8,5 +8,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('music.apple.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('i')
+		.DO().REMOVE('cId', 'i', 'lId', 'sr', 'src')
 ];
