@@ -8,7 +8,7 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?yahoo\.[^.]+$/)
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('guccounter'),
+		.DO().REMOVE('guccounter', 'tsrc'),
 	RULE()
 		.AT().DOMAIN('yahoo.com').PATHNAME('/search')
 		.FROM().QUERY_ENTRY_KEYS()
