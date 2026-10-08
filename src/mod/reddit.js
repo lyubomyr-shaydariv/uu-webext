@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('reddit.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('$3p', '$deep_link', '$original_link', '$original_url', '_branch_match_id', 'correlation_id', 'rdt', 'ref', 'ref_campaign', 'ref_source', 'share_id'),
+		.DO().REMOVE('$3p', '$android_deeplink_path', '$deep_link', '$deeplink_path', '$og_redirect', '$original_link', '$original_url', '_branch_match_id', 'base_url', 'campaign', 'channel', 'correlation_id', 'domain', 'keyword', 'rdt', 'ref', 'ref_campaign', 'ref_source', 'share_id', 'tags', 'user_agent'),
 	RULE()
 		.AT().HOSTNAME('out.reddit.com').PATHNAME(/^\/[^/]+$/)
 		.FROM().QUERY_ENTRY_KEYS()
