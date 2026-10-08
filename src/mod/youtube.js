@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('youtube.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('app', 'embeds_euri', 'embeds_loader_url_for_pings', 'embeds_origin', 'embeds_referring_euri', 'feature', 'kw', 'pp', 'si', 'source_ve_path'),
+		.DO().REMOVE('app', 'cId', 'embeds_euri', 'embeds_loader_url_for_pings', 'embeds_origin', 'embeds_referring_euri', 'feature', 'kw', 'lId', 'pp', 'si', 'src', 'source_ve_path'),
 	RULE()
 		.AT().DOMAIN('youtu.be')
 		.FROM().QUERY_ENTRY_KEYS()
