@@ -50,6 +50,7 @@ Currently supported trackers:
 * Customer Experience Analytics (URLs)
 * ![dialoginsight](favicons/dialoginsight.com.webp) Dialog Insight (URLs)
 * ![digidip](favicons/digidip.net.webp) digidip (redirects)
+* ![discord](favicons/discord.com.webp) Discord (URLs)
 * ![disneyplus](favicons/disneyplus.com.webp) Disney+ (URLs)
 * ![disqus](favicons/disq.us.webp) Disqus (URLs, redirects)
 * ![dotdigital](favicons/dotdigital.com.webp) Dotdigital (URLs)
