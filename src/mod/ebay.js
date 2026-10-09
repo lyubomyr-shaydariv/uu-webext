@@ -9,7 +9,7 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/)
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('_from', '_trkparms', '_trksid', 'amdata', 'epid', 'hash', 'ssspo', 'sssrc', 'ssuid', 'var'),
+		.DO().REMOVE('_from', '_trkparms', '_trksid', 'amdata', 'epid', 'ff3', 'hash', 'media', 'pub', 'siteid', 'ssspo', 'sssrc', 'ssuid', 'ufes_redirect', 'var', 'widget_ver'),
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME(PREFIX('/itm/'))
 		.FROM().QUERY_ENTRY_KEYS()
