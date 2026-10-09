@@ -18,7 +18,7 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)*google(?:\.[^.]+)+$/)
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('aqs', 'bih', 'biw', 'cad', 'cd', 'dcr', 'dpr', 'ei', 'esrc', 'gs_gbg', 'gs_l', 'gs_lcp', 'gs_lcrp', 'gs_lp', 'gs_mss', 'gs_rn', 'gws_rd', 'oe', 'pcampaignid', 'referrer', 'rlz', 'sca_esv', 'sclient', 'sei', 'site', 'sourceid', 'sxsrf', 'usg', 'ved', 'vet', 'visit_id'),
+		.DO().REMOVE('aqs', 'bih', 'biw', 'cad', 'cd', 'client', 'dcr', 'dpr', 'ei', 'esrc', 'gs_gbg', 'gs_l', 'gs_lcp', 'gs_lcrp', 'gs_lp', 'gs_mss', 'gs_rn', 'gws_rd', 'iflsig', 'oe', 'oq', 'pcampaignid', 'referrer', 'rlz', 'sa', 'sca_esv', 'sclient', 'sei', 'si', 'site', 'source','sourceid', 'sxsrf', 'uact', 'usg', 'ved', 'vet', 'visit_id'),
 	RULE()
 		.AT().DOMAIN('google.com').PATHNAME('/url', '/url/')
 		.FROM().QUERY_ENTRY_KEYS()
