@@ -197,6 +197,7 @@ Currently supported trackers:
 * Wunderkind (URLs)
 * ![x](favicons/x.com.webp) X (ex-Twitter) (URLs, redirects)
 * ![xhamster](favicons/www.xhamster.com.webp) xHamster (URLs)
+* ![xvideos](favicons/xvideos.com.webp) XVideos (URLs)
 * ![yahoo](favicons/yahoo.com.webp) Yahoo (URLs)
 * ![yandex](favicons/yandex.ru.webp) Yandex (URLs)
 * ![youtube](favicons/youtube.com.webp) YouTube (URLs, redirects)
