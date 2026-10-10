@@ -203,6 +203,7 @@ Currently supported trackers:
 * ![yandex](favicons/yandex.ru.webp) Yandex (URLs)
 * ![youtube](favicons/youtube.com.webp) YouTube (URLs, redirects)
 * Zanox (URLs)
+* ![zeit](favicons/zeit.de.webp) Die Zeit (URLs)
 * ![zillow](favicons/zillow.com.webp) Zillow (URLs)
 * ![zoopla](favicons/zoopla.co.uk.webp) Zoopla (URLs)
 * ... and some other common stuff for URLs
