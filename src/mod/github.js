@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('github.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('email_source', 'email_token'),
+		.DO().REMOVE('email_source', 'email_token', 'reference_location'),
 	RULE()
 		.AT().DOMAIN('github-redirect.dependabot.com')
 		.FROM().PATHNAME()
