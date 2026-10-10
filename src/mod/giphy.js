@@ -4,5 +4,5 @@ export default [
 	RULE()
 		.AT().DOMAIN('giphy.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('ref')
+		.DO().REMOVE('cid', 'ct', 'ref', 'rid')
 ];
