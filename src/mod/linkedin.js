@@ -9,7 +9,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('linkedin.com', 'lnkd.in')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('contextUrn', 'destRedirectURL', 'eBP', 'eid', 'lgCta', 'lgTemp', /li[a-z]{2}/, 'midSig', 'midToken', 'originalReferer', 'otpToken', 'recommendedFlavor', 'refId', 'src', 'trackingId', 'trk', 'trkEmail', 'trkInfo', 'upsellOrderOrigin', 'upsellTrackingId', 'upsellTrk'),
+		.DO().REMOVE('contextUrn', 'courseClaim', 'destRedirectURL', 'eBP', 'eid', 'isSS', 'lgCta', 'lgTemp', /li[a-z]{2}/, 'midSig', 'midToken', 'origin', 'originalReferer', 'original_referer', 'otpToken', 'recommendedFlavor', 'referenceId', 'refId', 'src', 'trackingId', 'trk', 'trkEmail', 'trkInfo', 'u', 'upsellOrderOrigin', 'upsellTrackingId', 'upsellTrk'),
 	RULE()
 		.AT().DOMAIN('linkedin.com', 'lnkd.in').PATHNAME('/learning')
 		.FROM().QUERY_ENTRY_KEYS()
@@ -21,7 +21,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('linkedin.com', 'lnkd.in').PATHNAME(PREFIX('/in/'))
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('original_referer', 'trackingCode', 'trackingId'),
+		.DO().REMOVE('trackingCode', 'trackingId'),
 	RULE()
 		.AT().DOMAIN('linkedin.com', 'lnkd.in').PATHNAME('/redir/redirect', '/safety/go')
 		.FROM().QUERY_ENTRY_KEYS()
