@@ -13,5 +13,10 @@ export default [
 	RULE()
 		.AT().HOSTNAME(/^(?:[^.]+\.)?ebay(?:\.[a-z]+)?\.[a-z]+$/).PATHNAME(PREFIX('/itm/'))
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE_ALL()
+		.DO().REMOVE_ALL(),
+	RULE()
+		.AT().DOMAIN('rover.ebay.com').PATHNAME('/rover')
+		.FROM().QUERY_ENTRY_KEYS()
+		.APPLY().GET_PROPERTY('mpre').TO_URL()
+		.DO().REDIRECT()
 ];
