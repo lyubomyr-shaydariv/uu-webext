@@ -189,6 +189,7 @@ Currently supported trackers:
 * Webtrekk (URLs)
 * ![webtrends](favicons/webtrends.com.webp) Webtrends Analytics (URLs)
 * ![wickedreports](favicons/wickedreports.com.webp) Wicked Reports (URLs)
+* ![wikimapia](favicons/wikimapia.org.webp) Wikimapia (redirects)
 * ![wikipedia](favicons/wikipedia.org.webp) Wikipedia (URLs)
 * ![wired](favicons/wired.com.webp) Wired (URLs)
 * ![wise](favicons/wise.com.webp) Wise (URLs)
