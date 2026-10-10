@@ -130,7 +130,6 @@ Currently supported trackers:
 * ![newyorker](favicons/newyorker.com.webp) New Yorker (URLs)
 * ![nextdoor](favicons/nextdoor.com.webp) Nextdoor (URLs)
 * NS (URLs)
-* ![nypost](favicons/nypost.com.webp) New York Post (URLs)
 * ![nytimes](favicons/nytimes.com.webp) New York Times (URLs)
 * ojrq.net (redirects)
 * ![omeda](favicons/omeda.com.webp) Omeda (URLs)

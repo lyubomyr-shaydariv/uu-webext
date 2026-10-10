@@ -4,11 +4,11 @@ export default [
 	RULE()
 		.AT().ANYWHERE()
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('twclid'),
+		.DO().REMOVE('__twitter_impression', 'twclid'),
 	RULE()
 		.AT().DOMAIN('twitter.com', 'x.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('cn', 'cxt', /^ref_.*/, 's', 'src', 't'),
+		.DO().REMOVE('cn', 'cxt', /^ref_.*/, 's', 'si', 'src', 't'),
 	RULE()
 		.AT().DOMAIN('twitter.com', 'x.com').QUERY_ENTRY_KEYS('ref_src', 'ref_url')
 		.FROM().QUERY_ENTRY_KEYS()
