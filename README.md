@@ -180,6 +180,7 @@ Currently supported trackers:
 * go.trafficrouter.io (redirects)
 * ![tumblr](favicons/tumblr.com.webp) Tumblr (redirects)
 * ![twitch](favicons/twitch.tv.webp) Twitch (URLs)
+* ![upwork](favicons/upwork.com.webp) Upwork (redirects)
 * Urchin Tracking Module (URLs)
 * ValueClick (redirects)
 * ![vero](favicons/www.getvero.com.webp) Vero (URLs)
