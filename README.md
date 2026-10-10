@@ -143,6 +143,7 @@ Currently supported trackers:
 * ![reddit](favicons/reddit.com.webp) Reddit (redirects)
 * ![redfin](favicons/redfin.com.webp) Redfin (URLs)
 * ![reuters](favicons/reuters.com.webp) Reuters (redirects)
+* ![roblox](favicons/roblox.com.webp) Roblox (URLs)
 * ![rokt](favicons/rokt.com.webp) Rokt (URLs)
 * ![rutracker](favicons/rutracker.org.webp) RuTracker (URLs)
 * ![salesforce](favicons/salesforce.com.webp) Salesforce (URLs)
