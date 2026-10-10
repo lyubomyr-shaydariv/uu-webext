@@ -21,6 +21,7 @@ Currently supported trackers:
 * ![theathletic](favicons/theathletic.com.webp) The Athletic (URLs)
 * ![atinternet](favicons/atinternet.com.webp) AT Internet (URLs)
 * ![backerkit](favicons/backerkit.com.webp) BackerKit (URLs)
+* ![baidu](favicons/baidu.com.webp) Baidu (URLs)
 * ![bamboohr](favicons/bamboohr.com.webp) BambooHR (URLs)
 * ![bandcamp](favicons/bandcamp.com.webp) Bandcamp (URLs)
 * ![bbc](favicons/bbc.com.webp) BBC (URLs)
