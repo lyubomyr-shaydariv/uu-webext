@@ -4,7 +4,7 @@ export default [
 	RULE()
 		.AT().DOMAIN('steampowered.com')
 		.FROM().QUERY_ENTRY_KEYS()
-		.DO().REMOVE('snr'),
+		.DO().REMOVE('ref', 'snr'),
 	RULE()
 		.AT().DOMAIN('steamcommunity.com').PATHNAME('/linkfilter/')
 		.FROM().QUERY_ENTRY_KEYS()
