@@ -49,6 +49,7 @@ Currently supported trackers:
 * ![curseforge](favicons/curseforge.com.webp) CurseForge (redirects)
 * ![customer.io](favicons/customer.io.webp) Customer.io (redirects)
 * Customer Experience Analytics (URLs)
+* ![dailymail](favicons/dailymail.co.uk.webp) Daily Mail Online (URLs)
 * ![dialoginsight](favicons/dialoginsight.com.webp) Dialog Insight (URLs)
 * ![digidip](favicons/digidip.net.webp) digidip (redirects)
 * ![discord](favicons/discord.com.webp) Discord (URLs)
