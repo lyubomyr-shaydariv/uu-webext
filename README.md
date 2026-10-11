@@ -1,6 +1,6 @@
 ## ![uU](icon-32x32.webp)
 
-**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **tracked redirects** (if possible).
+**uU (untrack URLs)** is a browser extension that sanitizes **tracked URLs** and bypasses **transparent tracked redirects**.
 
 Currently supported trackers:
 
