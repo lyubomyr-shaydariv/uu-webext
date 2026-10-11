@@ -104,6 +104,7 @@ Currently supported trackers:
 * ![kickstarter](favicons/kickstarter.com.webp) Kickstarter (URLs)
 * ![klarna](favicons/klarna.com.webp) Klarna (redirects)
 * ![klaviyo](favicons/klaviyo.com.webp) Klaviyo (URLs)
+* ![klix.ba](favicons/klix.ba.webp) Klix.ba (URLs)
 * ![kraken](favicons/kraken.com.webp) Kraken (redirects)
 * ![lazada](favicons/lazada.com.webp) Lazada (URLs)
 * ![lever](favicons/lever.co.webp) Lever (redirects)
