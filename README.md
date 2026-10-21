@@ -167,6 +167,7 @@ Currently supported trackers:
 * ![springbot](favicons/springbot.com.webp) Springbot (URLs)
 * ![squarespace](favicons/squarespace.com.webp) Squarespace (URLs)
 * ![sssinstagram](favicons/sssinstagram.com.webp) SSSInstagram (redirects)
+* ![stackexchange](favicons/stackexchange.com.webp) StackExchange (URLs)
 * ![stealthgram](favicons/stealthgram.com.webp) stealthGram (redirects)
 * ![steam](favicons/store.steampowered.com.webp) Steam (redirects)
 * STM (URLs)
