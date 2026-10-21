@@ -266,6 +266,27 @@ const __DO__RETAIN = (ctx, ...keys) => {
 	);
 };
 
+const __DO__SUBSTITUTE = (ctx, pattern, replacement) => {
+	ctx.source += ` SUBSTITUTE ${literalize(pattern, replacement)}`;
+	return Object.defineProperties(
+		(url) => {
+			if ( !ctx.at(url) ) {
+				return false;
+			}
+			ctx.substituteValue(url, pattern, replacement);
+			return true;
+		},
+		{
+			name: {
+				value: ctx.name
+			},
+			source: {
+				value: ctx.source
+			}
+		}
+	);
+};
+
 const DO = (ctx) => {
 	ctx.source += '\nDO';
 	return {
@@ -273,7 +294,8 @@ const DO = (ctx) => {
 		REDIRECT: () => __DO__REDIRECT(ctx),
 		REMOVE: (...keys) => __DO__REMOVE(ctx, ...keys),
 		REMOVE_ALL: () => __DO__REMOVE_ALL(ctx),
-		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys)
+		RETAIN: (...keys) => __DO__RETAIN(ctx, ...keys),
+		SUBSTITUTE: (pattern, replacement) => __DO__SUBSTITUTE(ctx, pattern, replacement)
 	};
 };
 
@@ -477,6 +499,9 @@ const __FROM__PATHNAME = (ctx) => {
 	};
 	ctx.setValue = (url, value) => {
 		url.pathname = value;
+	};
+	ctx.substituteValue = (url, pattern, replacement) => {
+		url.pathname = url.pathname.replace(pattern, replacement);
 	};
 	return {
 		DO: () => DO(ctx),
