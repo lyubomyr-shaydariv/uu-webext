@@ -233,7 +233,7 @@ Currently supported trackers:
 | Warned page redirects | Dropped | In principle, this is greatly supported by [uMatrix](https://addons.mozilla.org/firefox/addon/umatrix/) and the feature of **uU** is a subject for potential removal. |
 | Randomized tracking parameters poisoning | No | To be discussed. |
 
-### Why Firefox only
+### Why Firefox and Gecko-based browsers only
 
 Currently **uU** and **μuU** are designed for use in Mozilla Firefox only just because Mozilla Firefox does not restrict `manifest.json` to the very limited v3 that is forced in Google Chrome.
 I didn't check how the extension works in browsers other than Mozilla Firefox.
