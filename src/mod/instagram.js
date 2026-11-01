@@ -6,7 +6,7 @@ export default [
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('igshid', 'ig_cache_key', 'ig_mid', 'ig_rid', 'ig_share_sheet'),
 	RULE()
-		.AT().DOMAIN('instagram.com')
+		.AT().DOMAIN('instagram.com').EXCEPT('bigzipfiles.instagram.com')
 		.FROM().QUERY_ENTRY_KEYS()
 		.DO().REMOVE('e', 'g', 'igsh', 'saved_by', 'source', 'stkn', /^[a-z]{4}$/),
 	RULE()
