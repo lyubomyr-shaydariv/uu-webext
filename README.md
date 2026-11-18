@@ -171,6 +171,7 @@ Currently supported trackers:
 * ![stealthgram](favicons/stealthgram.com.webp) stealthGram (redirects)
 * ![steam](favicons/store.steampowered.com.webp) Steam (redirects)
 * STM (URLs)
+* ![substack](favicons/substack.com.webp) Substack (URLs)
 * ![takeads](favicons/tatrck.com.webp) Takeads (redirects)
 * ![taobao](favicons/taobao.com.webp) Taobao (redirects)
 * ![target](favicons/target.com.webp) Target (redirects)
